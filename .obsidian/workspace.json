@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "3a69fb928b6ab925",
+        "id": "f98809bf9f94ac8d",
         "type": "split",
         "children": [
           {
@@ -17,7 +17,7 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "_notes/week1-2_probability_and_markov/Week1P4 - ML Fundamentals.md",
+                    "file": "_notes/week1-2_probability_and_markov/Week1/Week1P4 - ML Fundamentals.md",
                     "mode": "source",
                     "source": false
                   },
@@ -28,50 +28,11 @@
             ]
           },
           {
-            "id": "b28b42f5188a2358",
+            "id": "0ffacfd1d4fedf07",
             "type": "tabs",
             "children": [
               {
-                "id": "0ee5008afc460708",
-                "type": "leaf",
-                "pinned": true,
-                "state": {
-                  "type": "terminal:terminal",
-                  "state": {
-                    "terminal:terminal": {
-                      "cwd": "C:\\Users\\Hanjie\\Documents\\obsidian",
-                      "focus": false,
-                      "profile": {
-                        "args": [],
-                        "executable": "C:\\Windows\\System32\\cmd.exe",
-                        "name": "",
-                        "platforms": {
-                          "win32": true
-                        },
-                        "pythonExecutable": "python3",
-                        "restoreHistory": false,
-                        "rightClickAction": "copyPaste",
-                        "successExitCodes": [
-                          "0",
-                          "SIGINT",
-                          "SIGTERM"
-                        ],
-                        "terminalOptions": {
-                          "documentOverride": null
-                        },
-                        "type": "integrated",
-                        "useWin32Conhost": true
-                      },
-                      "serial": null
-                    }
-                  },
-                  "pinned": true,
-                  "icon": "terminal",
-                  "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
-                }
-              },
-              {
-                "id": "c22b0b8e29450639",
+                "id": "43a61c6c8fb50bf9",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -109,8 +70,7 @@
                   "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
                 }
               }
-            ],
-            "currentTab": 1
+            ]
           }
         ],
         "direction": "horizontal"
@@ -271,12 +231,16 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "c22b0b8e29450639",
+  "active": "43a61c6c8fb50bf9",
   "lastOpenFiles": [
-    "_notes/week1-2_probability_and_markov/Week1P4 - ML Fundamentals.md",
-    "_notes/week1-2_probability_and_markov/Week1P3 - Joint & Marginal Distributions.md",
-    "_notes/week1-2_probability_and_markov/Week1P2 - Naive Bayes & Gaussian Naive Bayes.md",
-    "_notes/week1-2_probability_and_markov/Week1P1 - Conditional Probability & Bayes Rule.md",
+    "_notes/week1-2_probability_and_markov/Week1/Week1P4 - ML Fundamentals.md",
+    "Untitled",
+    "_notes/week1-2_probability_and_markov/resources/百面机器学习.pdf",
+    "ç™¾é¢æœºå™¨å­¦ä¹ ç®—æ³•å·¥ç¨‹å¸ˆå¸¦ä½ åŽ»é¢è¯•.pdf.md",
+    "_notes/week1-2_probability_and_markov/Week1/Week1P3 - Joint & Marginal Distributions.md",
+    "_notes/week1-2_probability_and_markov/Week1/Week1P2 - Naive Bayes & Gaussian Naive Bayes.md",
+    "_notes/week1-2_probability_and_markov/Week1/Week1P1 - Conditional Probability & Bayes Rule.md",
+    "_notes/week1-2_probability_and_markov/Week1",
     "_notes/week1-2_probability_and_markov/Week1_Probability_and_Markov.md",
     "_notes/Week10_Integration_and_Project.md",
     "_notes/Week8_9_Neural_Networks_and_Backprop.md",
@@ -284,12 +248,10 @@
     "_notes/Week5_6_Linear_Algebra_for_ML.md",
     "_notes/Week4_Information_Theory.md",
     "index.html",
-    "ç™¾é¢æœºå™¨å­¦ä¹ ç®—æ³•å·¥ç¨‹å¸ˆå¸¦ä½ åŽ»é¢è¯•.pdf.md",
     "_layouts/note.html",
     "_layouts",
     "_config.yml",
     "_notes/week3_language_model/resources/Happy-LLM-v1.0.pdf",
-    "_notes/week1-2_probability_and_markov/resources/百面机器学习.pdf",
     "_notes/week1-2_probability_and_markov/resources/Screenshot 2025-08-05 at 9.30.27 PM.png",
     "_notes/week1-2_probability_and_markov/resources/Screenshot 2025-08-05 at 8.22.11 PM.png",
     "_notes/week1-2_probability_and_markov/resources/p-r_curve.png",
@@ -297,8 +259,6 @@
     "_notes/week3_language_model/Week3_Ngram_Language_Modeling.md",
     "_notes/week3_language_model/resources",
     "_notes/week1-2_probability_and_markov/resources",
-    "_notes/week3_language_model",
-    "_notes/week1-2_probability_and_markov",
     "_notes/Foundational knowledge plan.md",
     "index.md",
     "README.md",

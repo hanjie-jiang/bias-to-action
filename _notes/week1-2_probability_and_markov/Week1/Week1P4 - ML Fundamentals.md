@@ -5,7 +5,7 @@ title: Week1P4 - ML Fundamentals
 title: ML Fundamentals from textbook
 ---
 ### Resources
-[[ç™¾é¢æœºå™¨å­¦ä¹ ç®—æ³•å·¥ç¨‹å¸ˆå¸¦ä½ åŽ»é¢è¯•.pdf]]
+[[[[百面机器学习.pdf]]]]
 
 ### Feature Engineering
 
