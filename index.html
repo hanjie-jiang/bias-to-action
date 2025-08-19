@@ -1,112 +1,192 @@
 ---
-title: Notes
+layout: default
+title: Notes Index
 ---
 
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>{{ page.title | default: site.title }}</title>
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-    h1 { margin-bottom: .5rem; }
-    .muted { color:#777; margin-bottom:1rem; }
-    .tree { list-style: none; padding-left: 0; }
-    .tree ul { list-style: none; margin: .25rem 0 .25rem 1rem; padding-left: 1rem; border-left: 1px solid #ddd; }
-    .tree li { margin: .15rem 0; }
-    .folder, .file { display: inline-flex; align-items: center; gap: .35rem; }
-    .folder .toggle { cursor: pointer; user-select: none; width: 1rem; display: inline-block; text-align: center; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
-</head>
-<body>
-  <h1>Foundations of ML</h1>
-  <div class="muted">Click folders to expand/collapse.</div>
+<!-- ============= Integrated Front Page (uses window.NOTES from default layout) ============= -->
+<style>
+  :root{
+    --bg: hsl(220 50% 99%);
+    --ink: hsl(220 35% 16%);
+    --blue: hsl(205 100% 85%);
+    --blue-ink: hsl(205 70% 30%);
+    --orange: hsl(24 100% 85%);
+    --orange-ink: hsl(24 70% 30%);
+    --pink: hsl(330 100% 88%);
+    --pink-ink: hsl(330 60% 28%);
+    --neutral-1: hsl(210 20% 95%);
+    --neutral-2: hsl(210 16% 90%);
+    --shadow: 0 6px 26px rgba(0,0,0,.07);
+  }
+  main { color: var(--ink); }
+  /* Hero (Variant B style) */
+  .hero {
+    border-radius: 18px; padding: 2rem 1.25rem; text-align: center;
+    background: linear-gradient(120deg, var(--pink), var(--blue) 60%, var(--orange));
+    box-shadow: var(--shadow);
+  }
+  .hero h1 { margin: 0 0 .25rem; font-size: clamp(1.9rem, 3.2vw, 2.8rem); }
+  .hero p { margin: 0 auto; max-width: 65ch; line-height: 1.7; }
+  .actions{ margin-top: .9rem; display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; }
+  .btn{ border:none; background:#fff; color:var(--ink); padding:.6rem .95rem; border-radius:999px; box-shadow:var(--shadow); cursor:pointer; text-decoration:none; }
+  .btn.alt{ background: var(--neutral-1); }
+  .btn:focus-visible{ outline:3px solid var(--blue-ink); outline-offset:2px; }
+  /* Features grid */
+  .grid{ display:grid; gap:.8rem; margin: 1.25rem 0; }
+  @media (min-width:740px){ .grid{ grid-template-columns: repeat(4,1fr);} }
+  .card{ background:#fff; border:1px solid var(--neutral-2); border-radius:14px; padding:1rem; box-shadow: var(--shadow); }
+  .card h3{ margin:.1rem 0 .35rem; font-size:1rem; }
+  .muted{ color:#6b7280; font-size:.95rem; }
+  /* Callout */
+  .callout{ background:#fff; border-left:6px solid var(--blue-ink); border-radius:10px; padding:.9rem 1rem; box-shadow: var(--shadow); }
+  /* Search + lists */
+  .toolbar{ display:grid; gap:.6rem; margin:1rem 0; }
+  .search{ width:100%; padding:.65rem .85rem; border:1px solid var(--neutral-2); border-radius:10px; }
+  .cards{ display:grid; gap:12px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .folder-card{ border:1px solid var(--neutral-2); border-radius:12px; padding:12px 14px; background:#fff; box-shadow: var(--shadow); }
+  .folder-card h3{ margin:.1rem 0 2px; font-size:1rem; }
+  .list{ list-style:none; padding-left:0; margin:.5rem 0 0; }
+  .list li{ border-bottom:1px solid var(--neutral-1); padding:.5rem 0; }
+  .list small{ display:block; color:#6b7280; font-size:.82rem; }
+  a { text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  /* Print: remove shadows/gradients, keep content readable */
+  @media print{
+    .hero{ background:#fff !important; box-shadow:none; border:1px solid #ddd; }
+    .card, .folder-card, .callout{ box-shadow:none; }
+  }
+</style>
 
-  <!-- Jekyll emits all notes as JSON that we’ll organize into a tree -->
-  <script>
-  window.NOTES = [
-  {% assign items = site.notes | sort: "url" %}
-  {% for doc in items %}
-    {
-      "url": "{{ doc.url | relative_url }}",
-      "title": {{ (doc.title | default: doc.basename_without_ext) | jsonify }},
-      "path": "{{ doc.url | replace_first: '/notes/', '' | replace: '//', '/' }}"
-    }{% unless forloop.last %},{% endunless %}
-  {% endfor %}
-  ];
-  </script>
+<section aria-labelledby="title-hero">
+  <header class="hero" id="top">
+    <h1 id="title-hero">Foundations of ML — Pastel Edition</h1>
+    <p>Browse with the left sidebar, or use search and sections below. MathJax renders inline <code>$x^2$</code> and block equations.</p>
+    <div class="actions">
+      <a class="btn" href="#start-here">Start Here</a>
+      <a class="btn alt" href="#all-notes">All Notes</a>
+    </div>
+  </header>
 
-  <ul id="tree" class="tree"></ul>
+  <!-- Features -->
+  <div class="grid" aria-label="Features">
+    <article class="card"><h3>Browse by Topic</h3><p class="muted">Use the left tree to expand folders.</p></article>
+    <article class="card"><h3>Search Notes</h3><p class="muted">Filter by title or path below.</p></article>
+    <article class="card"><h3>Recently Updated</h3><p class="muted">We can hook this to commit timestamps next.</p></article>
+    <article class="card"><h3>Math Ready</h3><p class="muted">Inline and block LaTeX via MathJax.</p></article>
+  </div>
 
-  <script>
-  (function () {
-    function insert(node, parts, item) {
-      const part = parts.shift();
-      if (!part) return;
-      if (!node.children) node.children = {};
-      if (parts.length === 0) { // file bucket under this key
-        (node.children[part] ||= { __files: [] }).__files.push(item);
-      } else {
-        insert((node.children[part] ||= {}), parts, item);
-      }
-    }
-    const root = {};
-    (window.NOTES || []).forEach(n => {
-      const clean = n.path.replace(/\/+$/,'');
-      insert(root, clean.split('/'), n);
+  <!-- Search + Section cards -->
+  <div class="toolbar" aria-label="Quick tools">
+    <input id="search" class="search" type="search" placeholder="Search notes…" aria-label="Search notes">
+    <section>
+      <h2 style="margin:.2rem 0 .4rem;">Sections</h2>
+      <div id="folder-cards" class="cards" role="list"></div>
+    </section>
+  </div>
+
+  <!-- Start here -->
+  <aside id="start-here" class="callout" role="note">
+    <strong>Start Here:</strong> Overview → Week 1 → Week 2. Use the sidebar to follow the curriculum path.
+  </aside>
+
+  <!-- All notes -->
+  <h2 id="all-notes" style="margin:1rem 0 .4rem;">All Notes</h2>
+  <ul id="all-list" class="list"></ul>
+</section>
+
+<!-- Integration script: uses window.NOTES from the default layout; 
+     falls back to a Jekyll-emitted array if window.NOTES is missing. -->
+<script>
+  // Fallback (rare): emit from Jekyll if default layout didn't attach window.NOTES for some reason.
+  window.ALL_NOTES = (window.NOTES && window.NOTES.length)
+    ? window.NOTES.slice()
+    : [
+      {% assign items = site.notes | sort: "url" %}
+      {% for doc in items %}
+      { "url": "{{ doc.url | relative_url }}",
+        "title": {{ (doc.title | default: doc.basename_without_ext) | jsonify }},
+        "path": "{{ doc.url | replace_first: '/notes/', '' | replace: '//', '/' }}" }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ];
+
+  (function(){
+    const notes = window.ALL_NOTES || [];
+    // Build top-level folder groups from path first segment
+    const groups = {};
+    notes.forEach(n => {
+      const clean = (n.path || '').replace(/\/+$/,'');
+      const parts = clean.split('/');
+      const top = (parts.length > 1) ? parts[0] : '(root)';
+      (groups[top] ||= []).push(n);
     });
 
-    function render(node, ul) {
-      const names = Object.keys(node.children || {}).sort((a,b)=>a.localeCompare(b));
-      names.forEach(name => {
-        const entry = node.children[name];
+    // Render folder cards
+    const cardsEl = document.getElementById('folder-cards');
+    const names = Object.keys(groups).sort((a,b)=>a.localeCompare(b));
+    names.forEach(name => {
+      const group = groups[name].slice().sort((a,b)=>a.path.localeCompare(b.path));
+      const card = document.createElement('div');
+      card.className = 'folder-card';
+      const h3 = document.createElement('h3'); h3.textContent = name;
+      const meta = document.createElement('div'); meta.className = 'muted';
+      meta.textContent = `${group.length} ${group.length===1?'note':'notes'}`;
+      const ul = document.createElement('ul'); ul.className = 'list'; ul.style.display = 'none';
+      group.forEach(n => {
         const li = document.createElement('li');
-        const files = entry.__files || [];
-        const hasChildren = Object.keys(entry).some(k => k !== '__files');
+        const a = document.createElement('a'); a.href = n.url; a.textContent = n.title || n.path;
+        const small = document.createElement('small'); small.textContent = n.path;
+        li.appendChild(a); li.appendChild(small); ul.appendChild(li);
+      });
+      card.onclick = () => { ul.style.display = (ul.style.display==='none') ? 'block' : 'none'; };
+      card.appendChild(h3); card.appendChild(meta); card.appendChild(ul);
+      cardsEl.appendChild(card);
+    });
 
-        if (hasChildren) {
-          const toggle = document.createElement('span');
-          toggle.className = 'toggle';
-          toggle.textContent = '▸';
-          const label = document.createElement('span');
-          label.className = 'folder';
-          label.appendChild(toggle);
-          label.appendChild(document.createTextNode(name));
-          const inner = document.createElement('ul');
-          inner.style.display = 'none';
-          label.onclick = () => {
-            const open = inner.style.display !== 'none';
-            inner.style.display = open ? 'none' : 'block';
-            toggle.textContent = open ? '▸' : '▾';
-          };
-          li.appendChild(label);
-          li.appendChild(inner);
-          render(entry, inner);
-          files.forEach(f => {
-            const fli = document.createElement('li');
-            fli.className = 'file';
-            const a = document.createElement('a');
-            a.href = f.url; a.textContent = f.title || name;
-            fli.appendChild(a);
-            inner.appendChild(fli);
-          });
-          ul.appendChild(li);
-        } else {
-          files.forEach(f => {
-            const fli = document.createElement('li');
-            fli.className = 'file';
-            const a = document.createElement('a');
-            a.href = f.url; a.textContent = f.title || name;
-            fli.appendChild(a);
-            ul.appendChild(fli);
-          });
-        }
+    // Render All Notes list
+    const listEl = document.getElementById('all-list');
+    function renderList(items){
+      listEl.innerHTML = '';
+      items.forEach(n => {
+        const li = document.createElement('li');
+        const a = document.createElement('a'); a.href = n.url; a.textContent = n.title || n.path;
+        const small = document.createElement('small'); small.textContent = n.path;
+        li.appendChild(a); li.appendChild(small); listEl.appendChild(li);
       });
     }
-    render(root, document.getElementById('tree'));
+    const sorted = notes.slice().sort((a,b)=>a.path.localeCompare(b.path));
+    renderList(sorted);
+
+    // Search (title/path contains, case-insensitive) + simple keyboard nav
+    const input = document.getElementById('search');
+    let current = -1;
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      current = -1;
+      if (!q) { renderList(sorted); return; }
+      const filtered = sorted.filter(n =>
+        (n.title && n.title.toLowerCase().includes(q)) ||
+        (n.path && n.path.toLowerCase().includes(q))
+      );
+      renderList(filtered);
+    });
+    input.addEventListener('keydown', (e) => {
+      const items = Array.from(listEl.querySelectorAll('a'));
+      if (!items.length) return;
+      if (e.key === 'ArrowDown'){ e.preventDefault(); current = Math.min(items.length-1, current+1); items[current].focus(); }
+      if (e.key === 'ArrowUp'){ e.preventDefault(); current = Math.max(0, current-1); items[current].focus(); }
+      if (e.key === 'Enter' && current >= 0){ items[current].click(); }
+    });
+
+    // Gentle hero motion (respects reduced motion)
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      const hero = document.querySelector('.hero');
+      hero && hero.addEventListener('mousemove', (e) => {
+        const r = hero.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - .5;
+        const y = (e.clientY - r.top) / r.height - .5;
+        hero.style.transform = `translate(${x*3}px, ${y*3}px)`;
+      });
+      hero && hero.addEventListener('mouseleave', () => { hero.style.transform = 'translate(0,0)'; });
+    }
   })();
-  </script>
-</body>
-</html>
+</script>
