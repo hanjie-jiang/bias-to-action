@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --sidebar: 280px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    header { padding: .75rem 1rem; border-bottom: 1px solid #eee; display: flex; gap: 1rem; align-items: center; }
+    header a { text-decoration: none; color: #0366d6; }
+    .layout { display: grid; grid-template-columns: 1fr; }
+    main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
+    pre, code { background:#f6f8fa; padding:.2rem .4rem; border-radius:4px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    h1, h2, h3 { margin-top: 1.25rem; }
+    @media (min-width: 1100px) {
+      .layout { grid-template-columns: var(--sidebar) 1fr; gap: 2rem; }
+      aside { border-right: 1px solid #eee; height: calc(100vh - 57px); overflow:auto; padding: 1rem; position: sticky; top: 57px; }
+      main { margin: 2rem 2rem 4rem 0; }
+    }
+    /* tree */
+    .tree { list-style: none; padding-left: 0; margin: 0; }
+    .tree ul { list-style: none; margin: .25rem 0 .25rem 1rem; padding-left: 1rem; border-left: 1px solid #ddd; }
+    .tree li { margin: .15rem 0; }
+    .folder, .file { display: inline-flex; align-items: center; gap: .35rem; }
+    .folder .toggle { cursor: pointer; user-select: none; width: 1rem; display: inline-block; text-align: center; }
+    .muted { color:#777; font-size:.9em; margin-bottom:.5rem; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+
+  <!-- MathJax (for $...$ and $$...$$ everywhere) -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true
+      },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+    };
+  </script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header>
+    <a href="{{ '/' | relative_url }}"><strong>{{ site.title }}</strong></a>
+    {% if page.url != '/' %}<a href="{{ '/' | relative_url }}">← Back to index</a>{% endif %}
+  </header>
+
+  <div class="layout">
+    <aside>
+      <div class="muted">Navigate</div>
+      <ul id="tree" class="tree"></ul>
+    </aside>
+
+    <main>
+      {{ content }}
+    </main>
+  </div>
+
+  <!-- Build a hierarchical tree from the notes collection -->
+  <script>
+  window.NOTES = [
+  {% assign items = site.notes | sort: "url" %}
+  {% for doc in items %}
+    {
+      "url": "{{ doc.url | relative_url }}",
+      "title": {{ (doc.title | default: doc.basename_without_ext) | jsonify }},
+      "path": "{{ doc.url | replace_first: '/notes/', '' | replace: '//', '/' }}"
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  ];
+
+  (function () {
+    function insert(node, parts, item) {
+      const part = parts.shift(); if (!part) return;
+      if (!node.children) node.children = {};
+      if (parts.length === 0) (node.children[part] ||= { __files: [] }).__files.push(item);
+      else insert((node.children[part] ||= {}), parts, item);
+    }
+    const root = {};
+    (window.NOTES||[]).forEach(n => insert(root, n.path.replace(/\/+$/,'').split('/'), n));
+
+    function render(node, ul) {
+      const names = Object.keys(node.children||{}).sort((a,b)=>a.localeCompare(b));
+      names.forEach(name => {
+        const entry = node.children[name];
+        const li = document.createElement('li');
+        const files = entry.__files || [];
+        const hasChildren = Object.keys(entry).some(k => k !== '__files');
+
+        if (hasChildren) {
+          const toggle = document.createElement('span'); toggle.className='toggle'; toggle.textContent='▸';
+          const label = document.createElement('span'); label.className='folder';
+          label.appendChild(toggle); label.appendChild(document.createTextNode(name));
+          const inner = document.createElement('ul'); inner.style.display='none';
+          label.onclick = () => { const open = inner.style.display!=='none'; inner.style.display=open?'none':'block'; toggle.textContent=open?'▸':'▾'; };
+          li.appendChild(label); li.appendChild(inner);
+          render(entry, inner);
+          files.forEach(f => { const fli=document.createElement('li'); fli.className='file'; const a=document.createElement('a'); a.href=f.url; a.textContent=f.title||name; fli.appendChild(a); inner.appendChild(fli); });
+          ul.appendChild(li);
+        } else {
+          files.forEach(f => { const fli=document.createElement('li'); fli.className='file'; const a=document.createElement('a'); a.href=f.url; a.textContent=f.title||name; fli.appendChild(a); ul.appendChild(fli); });
+        }
+      });
+    }
+    render(root, document.getElementById('tree'));
+  })();
+  </script>
+</body>
+</html>

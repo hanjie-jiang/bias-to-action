@@ -231,8 +231,9 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "43a61c6c8fb50bf9",
+  "active": "bce7fa621cc656ae",
   "lastOpenFiles": [
+    "_layouts/default.html",
     "_notes/week1-2_probability_and_markov/Week1/Week1P4 - ML Fundamentals.md",
     "Untitled",
     "_notes/week1-2_probability_and_markov/resources/百面机器学习.pdf",
