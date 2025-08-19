@@ -149,8 +149,8 @@ def mean_precision_at_k(ground_truth_sets, ranked_lists, k):
     # ground_truth_sets and ranked_lists are aligned lists
     return sum(precision_at_k(g, r, k) for g, r in zip(ground_truth_sets, ranked_lists)) / len(ground_truth_sets)
 ```
-- **Precision@k** â†’ for **one** case $q$ (one list).
-- **Mean Precision@k** â†’ average of those values over **all** cases $q \in Q$.
+- **Precision@k** for **one** case $q$ (one list).
+- **Mean Precision@k** average of those values over **all** cases $q \in Q$.
 
 **Example**: when dealing with video vague search functionality, it seems that the search ranking model can return the top 5 precision pretty high, however, the user in reality still cannot find the videos they want, especially those unpopular ones. Where does this problem coming from?
 
@@ -201,26 +201,26 @@ $$\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}$$
     - The target never hits zero/near-zero and units are meaningful (e.g., dollars, Â°C).
     - You care about _calibration_ and smooth optimization (differentiable).
 - **Use MAPE** when:
-    - Stakeholders want an average **percentage** error thatâ€™s easy to read.
+    - Stakeholders want an average **percentage** error that is easy to read.
     - True values are **strictly positive and not near zero** (e.g., revenue, demand > 0).
-    - Youâ€™re okay that over-forecasts and under-forecasts are weighted differently (MAPE tends to penalize under-forecasting less when $y$ is small).
+    - You're okay that over-forecasts and under-forecasts are weighted differently (MAPE tends to penalize under-forecasting less when $y$ is small).
 - **Use sMAPE** when:
-    - You want a percentage-like metric thatâ€™s **less explosive near zero** than MAPE.
+    - You want a percentage-like metric that is **less explosive near zero** than MAPE.
     - You have occasional zeros or tiny values.
-    - You accept that sMAPE has its own quirks (bounded but not perfectly â€œsymmetricâ€ in practice).
+    - You accept that sMAPE has its own quirks (bounded but not perfectly symmetric in practice).
 ###### Strengths & gotchas (TL;DR)
 - **RMSE**
-    - âœ… Sensitive to large mistakes (good if that matches cost).
-    - âš ï¸ Outlier-heavy data can dominate the score.
-    - âš ï¸ Scale-dependentâ€”hard to compare across series with different scales.
+    - Sensitive to large mistakes (good if that matches cost).
+    - Outlier-heavy data can dominate the score.
+    - Scale-dependent hard to compare across series with different scales.
 - **MAPE**
-    - âœ… Intuitive (%).
-    - âš ï¸ Undefined at y=0; huge when y â‰ˆ 0.
-    - âš ï¸ Can favor **under-forecasting** for small y.
+    - Intuitive (%).
+    - Undefined at y=0; huge when y â‰ˆ 0.
+    - Can favor **under-forecasting** for small y.
 - **sMAPE**
-    - âœ… Handles zeros better; bounded.        
-    - âš ï¸ Still quirky near zero and not a true â€œcostâ€ for optimization.
-    - âš ï¸ Different papers/tools use slightly different variantsâ€”state your formula.
+    - Handles zeros better; bounded.        
+    - Still quirky near zero and not a true â€œcostâ€ for optimization.
+    - Different papers/tools use slightly different variantsâ€”state your formula.
 ###### Other basic metrics you should know
 - **MAE**: Robust to outliers vs RMSE; easy to explain (units).
 ###### Simple decision guide
@@ -235,9 +235,9 @@ $$\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}$$
 5. **Mixed scales or many series?**
     - **WAPE** or **MASE** are safe, comparable choices.
 ###### Practical tips
-- If you must report a % and have zeros, say: _â€œWe use sMAPE (formula shown) instead of MAPE to handle zeros; we also report WAPE for scale-free comparability.â€_
+- If you must report a % and have zeros, say: We use sMAPE (formula shown) instead of MAPE to handle zeros; we also report WAPE for scale-free comparability.
 - Always **state the exact formula** you use (especially for sMAPE) to avoid confusion.
-- <span style="color:#FF6961">Consider reporting **two metrics**: one business-facing (% like WAPE/sMAPE) + one technical (MAE/RMSE).</span>
+- <span style="color:#FF6961">Consider reporting two metrics: one business-facing (% like WAPE/sMAPE) + one technical (MAE/RMSE).</span>
 
 Overall, one should always report a pair / set of MECE metrics to evaluate their algorithms to better understand & discover the problems in the model, to better solve cases in real business settings.
 
@@ -522,9 +522,9 @@ $$\hat y_i = w\,x_i$$
 
 $$\sum_i (y_i - w x_i)^2$$
 **L2-regularized loss** (ridge):
-$$\underbrace{\sum_i (y_i - w x_i)^2}_{\text{fit the data}} \;+\; \underbrace{\lambda\, w^2}_{\text{penalize big weights}}$$â€‹â€‹
-- $\lambda>0$ controls the strength of the penalty (larger $\lambda$ â‡’ stronger shrinkage).
-- In practice, we usually **donâ€™t penalize the bias/intercept**.
+$$\underbrace{\sum_i (y_i - w x_i)^2}_{\text{fit the data}} \;+\; \underbrace{\lambda\, w^2}_{\text{penalize big weights}}$$
+- $\lambda>0$ controls the strength of the penalty (larger $\lambda$ stronger shrinkage).
+- In practice, we usually **don't penalize the bias/intercept**.
 ###### How L2 Penalizes the Parameter
 
 Take derivative w.r.t. $w$ and set to 0:
@@ -586,15 +586,23 @@ for lmbda in [10, 100]:
 
 ##### Additional Resources
 [[https://www.youtube.com/watch?v=efR1C6CvhmE&ab_channel=StatQuestwithJoshStarmer|StatQuest Part1 SVM Main Idea]]
+[[https://www.youtube.com/watch?v=Toet3EiSFcM&ab_channel=StatQuestwithJoshStarmer|StatQuest Part2 The Polynomial Kernel]]
 ##### Main Idea behind SVM
 #svm #max-margin-classifier
-###### Soft Margin Classifier (Support Vector Classifier)
-When data are 3-dimensional, the **Support Vector Classifier is a 2-dimensional plane in a 3-dimensional space**. In mathematical world, a plane is a "flat affine 2-dimensional subspace (hyperplane)".
-
-But it only works well on data that are perfectly separated into two groups, when it comes down to data that are within certain range versus out-of-range, it cannot handle that well.
-###### Support Vector Machine
-
-
+- **Soft Margin Classifier (Support Vector Classifier)**
+	When data are 3-dimensional, the **Support Vector Classifier is a 2-dimensional plane in a 3-dimensional space**. In mathematical world, a plane is a "flat affine 2-dimensional subspace (hyperplane)".
+	
+	But it only works well on data that are perfectly separated into two groups, when it comes down to data that are within certain range versus out-of-range, it cannot handle that well.
+- **Support Vector Machine**
+	In order to make the mathematics possible, SVM use something called kernel functions to systematically find support vector classifiers in higher dimensions.
+- **Kernel Functions**
+	When d = 1, the polynomial kernel computes the relationships between each pair of observations in 1-dimension, and these relationships are used to find a support vector classifier. In summary, the polynomial kernel systematically increases dimensions by setting d, the degree of the polynomial. 
+	- **Polynomial Kernel** #polynomial-kernel
+		$(a\times b + r)^d$ is the polynomial kernel format, where d sets the dimension of the kernel. Using $(a\times b + \frac{1}{2})^2$ as an example: $$(a\times b + \frac{1}{2})^2 = (a\times b + \frac{1}{2})(a\times b + \frac{1}{2}) = ab + a^2b^2+\frac{1}{4} = (a,a^2,\frac{1}{2})\cdot (b,b^2,\frac{1}{2})$$
+		where $(a,a^2,\frac{1}{2})$ and $(b,b^2,\frac{1}{2})$ are the coordinates of the data points x-y-z dimensions. $r$ and $d$ are determined via cross validation. Once we determines the parameters, then we plug in all the pairs of data points and do the math to get the high-dimensional relationships.
+	- **Radial Function Kernel** #rbf #radial-kernel
+		Radial function kernel finds support vector classifiers in infinite dimensions but in one / two dimensional data, it behaves like weighted nearest neighborhood model.
+		The equation looks like this $e^{-\gamma(a-b)^2}$ where $a$ and $b$ are the x-axis coordinates of two different data points. $\gamma$ is the parameter that determines how much influence the pair of data points have on each other.
 #### 
 
 

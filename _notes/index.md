@@ -6,11 +6,11 @@ hide:
 ---
 
 <style>
-/* Pastel hero */
+/* Pastel hero + cards (scoped) */
 .hero {
-  --bg1: #f7e9ff;   /* lavender */
-  --bg2: #e6f7ff;   /* powder blue */
-  --bg3: #eaffe6;   /* mint */
+  --bg1: #f7e9ff;  /* lavender */
+  --bg2: #e6f7ff;  /* powder blue */
+  --bg3: #eaffe6;  /* mint */
   background:
     radial-gradient(1200px 600px at 10% 20%, var(--bg1) 0, transparent 60%),
     radial-gradient(1200px 600px at 90% 10%, var(--bg2) 0, transparent 60%),
@@ -25,7 +25,6 @@ hide:
 .hero .subtitle { font-size: 1.125rem; opacity: .8; margin: 0 0 1.25rem 0; }
 .hero__actions .md-button { margin: .25rem .4rem; }
 
-/* Card grid */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -52,9 +51,8 @@ hide:
 
 <div class="hero">
   <div class="hero__content">
-    <h1>Obsidian Notes</h1>
-    <p class="subtitle">Curated notes on ML, probability, and foundations.</p>
-
+    <h1>Machine Learning Notes</h1>
+    <p class="subtitle">Curated notes on probability, foundations, and neural networks.</p>
     <p class="hero__actions">
       <a href="week1-2_probability_and_markov/Week1/Week1P1-conditional_probability_and_bayes_rule.md" class="md-button md-button--primary">Bayes’ Rule</a>
       <a href="week1-2_probability_and_markov/Week1/Week1P2-naive_bayes_and_gaussian_naive_bayes.md" class="md-button">Naive Bayes</a>
@@ -73,8 +71,10 @@ hide:
     <h3>Neural Networks</h3>
     <p>Backpropagation, activations, training tips.</p>
   </a>
-  <a class="card" href="Foundational knowledge plan.md">
-    <h3>Study Plans</h3>
-    <p>Structured roadmaps & resources.</p>
+  <a class="card" href="Week5_6_Linear_Algebra_for_ML.md">
+    <h3>Linear Algebra</h3>
+    <p>Vectors, matrices, SVD, and more.</p>
   </a>
 </section>
+
+> Tip: You can also use wikilinks like [[Week1P2-naive_bayes_and_gaussian_naive_bayes|Naive Bayes]] anywhere.

@@ -1,45 +1,13 @@
-site_name: Obsidian Notes
-site_url: https://hanjie-jiang.github.io/machine-learning-notes/
-repo_url: https://github.com/hanjie-jiang/machine-learning-notes
-use_directory_urls: true
-repo_name: machine-learning-notes
-edit_uri: _notes/   # adjust branch/folder if different
-
-docs_dir: _notes
-
 site_name: Machine Learning Notes
 docs_dir: _notes
-theme:
-  name: material
-# …
-plugins:
-  - search
-  - roamlinks:
-      wiki_link_extension: .md
-
-nav:
-  - Home: index.md
-  - Foundations:
-      - Probability & Markov:
-          - Week 1 Overview: week1-2_probability_and_markov/Week1/README.md
-          - Bayes’ Rule: week1-2_probability_and_markov/Week1/Week1P1-conditional_probability_and_bayes_rule.md
-          - Naive Bayes: week1-2_probability_and_markov/Week1/Week1P2-naive_bayes_and_gaussian_naive_bayes.md
-          - Joint & Marginal: week1-2_probability_and_markov/Week1/Week1P3-joint_and_marginal_distributions.md
-          - ML Fundamentals: week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals.md
-      - Linear Algebra: Week5_6_Linear_Algebra_for_ML.md
-      - Information Theory: Entropy.md
-  - Neural Networks:
-      - Overview: Week8_9_Neural_Networks_and_Backprop.md
 
 theme:
   name: material
-  language: en
   font:
     text: Inter
     code: JetBrains Mono
   features:
     - navigation.instant
-    - navigation.tracking
     - navigation.sections
     - navigation.top
     - content.code.copy
@@ -49,19 +17,6 @@ theme:
     - toc.integrate
     - search.suggest
     - search.highlight
-  palette:
-    - scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-      primary: indigo
-      accent: indigo
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-      primary: indigo
-      accent: indigo
 
 plugins:
   - search
@@ -75,33 +30,30 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
   - pymdownx.betterem
   - pymdownx.tilde
   - pymdownx.tasklist
   - pymdownx.arithmatex:
       generic: true
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://unpkg.com/mermaid@10/dist/mermaid.min.js
 
-extra_css:
-  # optional if you want to move hero.css into assets/styles/
-  # - assets/styles/hero.css
-
 nav:
   - Home: index.md
-  - Week 1 - Probability and Markov:
-      - Bayes’ Rule: week1-2_probability_and_markov/Week1/Week1P1-conditional_probability_and_bayes_rule.md
-      - Naive Bayes: week1-2_probability_and_markov/Week1/Week1P2-naive_bayes_and_gaussian_naive_bayes.md
-      - Joint & Marginal: week1-2_probability_and_markov/Week1/Week1P3-joint_and_marginal_distributions.md
-      - ML Fundamentals: week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals.md
-  - Other Notes:
-      - Entropy: Entropy.md
-      - Neural Networks: Week8_9_Neural_Networks_and_Backprop.md
-      - Study Plan: Foundational knowledge plan.md
+  - Foundations:
+      - Probability & Markov:
+          - Week 1 Overview: week1-2_probability_and_markov/Week1/README.md
+          - Bayes’ Rule: week1-2_probability_and_markov/Week1/Week1P1-conditional_probability_and_bayes_rule.md
+          - Naive Bayes: week1-2_probability_and_markov/Week1/Week1P2-naive_bayes_and_gaussian_naive_bayes.md
+          - Joint & Marginal: week1-2_probability_and_markov/Week1/Week1P3-joint_and_marginal_distributions.md
+          - ML Fundamentals: week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals.md
+      - Linear Algebra: Week5_6_Linear_Algebra_for_ML.md
+      - Information Theory: Entropy.md
+  - Neural Networks:
+      - Overview: Week8_9_Neural_Networks_and_Backprop.md

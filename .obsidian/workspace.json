@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "daffb66fc5b426f8",
+        "id": "c6eb679d7576f717",
         "type": "split",
         "children": [
           {
@@ -28,11 +28,11 @@
             ]
           },
           {
-            "id": "43387761ae7da37c",
+            "id": "5436b057130efc4b",
             "type": "tabs",
             "children": [
               {
-                "id": "dcf367129b7287dd",
+                "id": "f2fb1f38cef5e46d",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -234,7 +234,7 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "dcf367129b7287dd",
+  "active": "f2fb1f38cef5e46d",
   "lastOpenFiles": [
     "_notes/week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals.md",
     "_notes/assets/images",
