@@ -1,3 +1,6 @@
+﻿---
+title: Week1P1 - Conditional Probability & BayesΓÇÖ Rule
+---
 **Resources**
 - [StatQuest: Conditional Probability (YouTube)](https://www.youtube.com/watch?v=_IgyaD7vOOA)
 - [StatQuest: Bayes' Rule](https://www.youtube.com/watch?v=9wCnvr7Xw4E)
@@ -22,7 +25,7 @@ To generalize:
 $$p(\text{something will happen}\vert\text{we know})=\frac{p(\text{something will happen})}{p(\text{we know})}$$
 
 <span style="background-color: #FEE9E7">So the conditional probability is the probability that something will happen scaled by whatever knowledge we already have about the event</span>
-##### Bayes’ Theorem
+##### Bayesâ€™ Theorem
 $$p(\text{something will happen}\vert\text{we know})=\frac{p(\text{something will happen})}{p(\text{we know})}$$
 
 Taking the conditional probabilities from the section above, we can calculate:

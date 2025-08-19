@@ -1,7 +1,10 @@
-#### **Week 1–2: Probability Foundations + Markov Assumption**
+﻿---
+title: Foundational knowledge plan
+---
+#### **Week 1â€“2: Probability Foundations + Markov Assumption**
 - [[Week1_Probability_and_Markov]]
 - Topics:
-    - [[Week1P1 - Conditional Probability & Bayes’ Rule]]
+    - [[Week1P1 - Conditional Probability & Bayesâ€™ Rule]]
     - [[Week1P2 - Naive Bayes & Gaussian Naive Bayes]]
     - [[Week1P3 - Joint & Marginal Distributions]]
     - Markov Assumption: what it is and why it matters in NLP
@@ -12,7 +15,7 @@
 	- [StatQuest: Naive Bayes](https://www.youtube.com/watch?v=O2L2Uv9pdDA)
     - [StatQuest: Gaussian Naive Bayes](https://www.youtube.com/watch?v=H3EjCKtlVog)
     - [Khan Academy - Probability & Statistics](https://www.khanacademy.org/math/statistics-probability)
-    - “Speech and Language Processing” by Jurafsky & Martin — Ch. 3 (Markov models)
+    - â€œSpeech and Language Processingâ€ by Jurafsky & Martin â€” Ch. 3 (Markov models)
 #### **Week 3: N-gram Models & Language Modeling**
 - [[Week3_Ngram_Language_Modeling]]
 - Topics:
@@ -24,7 +27,7 @@
 - Resources:
     - The Illustrated Transformer - start with n-gram part
     - [Happy-LLM intro chapter](./llm_learning/foundations_of_ML/week3_language_model/resources/![[Happy-LLM-v1.0.pdf]])
-    - Optional: fastai’s n-gram language model notebook
+    - Optional: fastaiâ€™s n-gram language model notebook
 #### **Week 4: Intro to Information Theory**
 - [[Week4_Information_Theory]]
 
@@ -42,12 +45,12 @@
         
 - Resources:
     
-    - [3Blue1Brown – But what is entropy?](https://www.youtube.com/watch?v=H3QBX2Zyb-U)
+    - [3Blue1Brown â€“ But what is entropy?](https://www.youtube.com/watch?v=H3QBX2Zyb-U)
         
     - Stanford CS224n Lecture 1
         
 
-#### **Week 5–6: Linear Algebra for ML**
+#### **Week 5â€“6: Linear Algebra for ML**
 - [[Week5_6_Linear_Algebra_for_ML]]
 
 - Topics:
@@ -93,7 +96,7 @@
     - [Gradient Descent Visualization (YouTube)](https://www.youtube.com/watch?v=IHZwWFHWa-w)
         
 
-#### **Week 8–9: Neural Networks & Backpropagation**
+#### **Week 8â€“9: Neural Networks & Backpropagation**
 - [[Week8_9_Neural_Networks_and_Backprop]]
 
 - Topics:
@@ -112,7 +115,7 @@
         
 - Resources:
     
-    - Michael Nielsen’s NN book: http://neuralnetworksanddeeplearning.com/
+    - Michael Nielsenâ€™s NN book: http://neuralnetworksanddeeplearning.com/
         
     - CS231n lecture on backprop
         
@@ -130,4 +133,4 @@
     
     - Review all learned concepts
         
-    - Prepare to transition to Happy-LLM’s transformer section
+    - Prepare to transition to Happy-LLMâ€™s transformer section

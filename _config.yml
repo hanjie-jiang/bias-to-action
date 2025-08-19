@@ -1,0 +1,21 @@
+title: Obsidian Notes
+theme: jekyll-theme-minimal
+
+# Publish all Markdown in _notes (including subfolders) permalink: /notes/:path/ is the key that preserves your nested paths
+collections:
+  notes:
+    output: true
+    permalink: /notes/:path/
+
+# Use a simple layout for notes unless a file overrides it
+defaults:
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: note
+
+# Keep junk out of the site build
+exclude:
+  - .obsidian
+  - README.md

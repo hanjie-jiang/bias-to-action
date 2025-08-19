@@ -1,3 +1,6 @@
+﻿---
+title: Week5_6_Linear_Algebra_for_ML
+---
 ### Linear Algebra for Machine Learning
 
 #### Introduction

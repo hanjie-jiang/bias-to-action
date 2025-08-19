@@ -1,3 +1,6 @@
+﻿---
+title: Week4_Information_Theory
+---
 ### Introduction to Information Theory
 
 #### Introduction
@@ -6,7 +9,7 @@ Information theory quantifies uncertainty and information content. Concepts such
 #### Knowledge Points
 - [[Entropy]]
 - [[Cross-Entropy]]
-- [[Kullback–Leibler (KL) Divergence]]
+- [[Kullbackâ€“Leibler (KL) Divergence]]
 - [[Why information theory matters for language modeling]]
 - [[Manual entropy calculation exercise]]
 - [[Implementing cross-entropy loss]] 

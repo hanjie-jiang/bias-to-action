@@ -1,6 +1,9 @@
+﻿---
+title: Week1P4 - ML Fundamentals
+---
 
 ### Resources
-[[百面机器学习算法工程师带你去面试.pdf]]
+[[ç™¾é¢æœºå™¨å­¦ä¹ ç®—æ³•å·¥ç¨‹å¸ˆå¸¦ä½ åŽ»é¢è¯•.pdf]]
 
 ### Feature Engineering
 
@@ -50,7 +53,7 @@ We introduce a feature cross selection based on decision tree models. Taking CTR
 2. age + searched item type
 3. paid user + search item type
 4. paid user + age
-How to best construct the decision trees? One can use the [Gradient Boosting Decision Tree，GBDT](https://medium.com/@ruchi.awasthi63/gradient-boosted-decision-tree-clearly-explained-bd1d8c7d9923) or use[ the link](https://neptune.ai/blog/gradient-boosted-decision-trees-guide) to get a better idea of the algorithm. The idea behind is that whenever before constructing a decision tree, we first calculate the error from the true value and iteratively construct the tree from the error.
+How to best construct the decision trees? One can use the [Gradient Boosting Decision Treeï¼ŒGBDT](https://medium.com/@ruchi.awasthi63/gradient-boosted-decision-tree-clearly-explained-bd1d8c7d9923) or use[ the link](https://neptune.ai/blog/gradient-boosted-decision-trees-guide) to get a better idea of the algorithm. The idea behind is that whenever before constructing a decision tree, we first calculate the error from the true value and iteratively construct the tree from the error.
 
 ##### Textual Descriptive Models
 Related Content: [[Week3_Ngram_Language_Modeling]]
@@ -140,8 +143,8 @@ def mean_precision_at_k(ground_truth_sets, ranked_lists, k):
     # ground_truth_sets and ranked_lists are aligned lists
     return sum(precision_at_k(g, r, k) for g, r in zip(ground_truth_sets, ranked_lists)) / len(ground_truth_sets)
 ```
-- **Precision@k** → for **one** case $q$ (one list).
-- **Mean Precision@k** → average of those values over **all** cases $q \in Q$.
+- **Precision@k** â†’ for **one** case $q$ (one list).
+- **Mean Precision@k** â†’ average of those values over **all** cases $q \in Q$.
 
 **Example**: when dealing with video vague search functionality, it seems that the search ranking model can return the top 5 precision pretty high, however, the user in reality still cannot find the videos they want, especially those unpopular ones. Where does this problem coming from?
 
@@ -154,8 +157,8 @@ Hence, in general, when people evaluate the goodness of a sort algorithm, they a
 Each data point on the curve corresponds to a precision-recall combination at a certain threshold for True samples of choice, for example 0.95 / 0.9, etc. The closer to the origin (0,0) point, the bigger the threshold is.
 
 ###### How to pick the threshold in practice
-- **Capacity-constrained:** If reviewers can handle 300 cases/day, pick the smallest threshold that yields ≈300 flags/day; report the resulting (Precision, Recall).
-- **Recall target:** If policy demands **≥95% recall**, choose the lowest threshold achieving that, then report precision (and expected review load).
+- **Capacity-constrained:** If reviewers can handle 300 cases/day, pick the smallest threshold that yields â‰ˆ300 flags/day; report the resulting (Precision, Recall).
+- **Recall target:** If policy demands **â‰¥95% recall**, choose the lowest threshold achieving that, then report precision (and expected review load).
 - **Cost-based:** Minimize $\text{Cost}_{\text{false positives}}\cdot{\text{False Positives}}+\text{Cost}_{\text{false negatives}}\cdot{\text{False Negatives}}$ over thresholds.
 Also report **AUPRC** to compare models independent of a single threshold (higher is better, especially with class imbalance).
 ##### Root-mean Squared Errors (RMSE)
@@ -183,35 +186,35 @@ When comparing with RMSE, MAPE normalizes the error rate of each data point to m
 #smape #regression-metrics
 ###### Quick definitions
 
-Let $y$ be the true value and $\hat y$​ the prediction.    
+Let $y$ be the true value and $\hat y$â€‹ the prediction.    
 **sMAPE** (common form): 
 $$\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}$$
 ###### When to use which
 - **Use RMSE** when:
     - Big errors are much worse than small ones (squared penalty).
-    - The target never hits zero/near-zero and units are meaningful (e.g., dollars, °C).
+    - The target never hits zero/near-zero and units are meaningful (e.g., dollars, Â°C).
     - You care about _calibration_ and smooth optimization (differentiable).
 - **Use MAPE** when:
-    - Stakeholders want an average **percentage** error that’s easy to read.
+    - Stakeholders want an average **percentage** error thatâ€™s easy to read.
     - True values are **strictly positive and not near zero** (e.g., revenue, demand > 0).
-    - You’re okay that over-forecasts and under-forecasts are weighted differently (MAPE tends to penalize under-forecasting less when $y$ is small).
+    - Youâ€™re okay that over-forecasts and under-forecasts are weighted differently (MAPE tends to penalize under-forecasting less when $y$ is small).
 - **Use sMAPE** when:
-    - You want a percentage-like metric that’s **less explosive near zero** than MAPE.
+    - You want a percentage-like metric thatâ€™s **less explosive near zero** than MAPE.
     - You have occasional zeros or tiny values.
-    - You accept that sMAPE has its own quirks (bounded but not perfectly “symmetric” in practice).
+    - You accept that sMAPE has its own quirks (bounded but not perfectly â€œsymmetricâ€ in practice).
 ###### Strengths & gotchas (TL;DR)
 - **RMSE**
-    - ✅ Sensitive to large mistakes (good if that matches cost).
-    - ⚠️ Outlier-heavy data can dominate the score.
-    - ⚠️ Scale-dependent—hard to compare across series with different scales.
+    - âœ… Sensitive to large mistakes (good if that matches cost).
+    - âš ï¸ Outlier-heavy data can dominate the score.
+    - âš ï¸ Scale-dependentâ€”hard to compare across series with different scales.
 - **MAPE**
-    - ✅ Intuitive (%).
-    - ⚠️ Undefined at y=0; huge when y ≈ 0.
-    - ⚠️ Can favor **under-forecasting** for small y.
+    - âœ… Intuitive (%).
+    - âš ï¸ Undefined at y=0; huge when y â‰ˆ 0.
+    - âš ï¸ Can favor **under-forecasting** for small y.
 - **sMAPE**
-    - ✅ Handles zeros better; bounded.        
-    - ⚠️ Still quirky near zero and not a true “cost” for optimization.
-    - ⚠️ Different papers/tools use slightly different variants—state your formula.
+    - âœ… Handles zeros better; bounded.        
+    - âš ï¸ Still quirky near zero and not a true â€œcostâ€ for optimization.
+    - âš ï¸ Different papers/tools use slightly different variantsâ€”state your formula.
 ###### Other basic metrics you should know
 - **MAE**: Robust to outliers vs RMSE; easy to explain (units).
 ###### Simple decision guide
@@ -221,12 +224,12 @@ $$\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}$$
     - Use **RMSE** (or set a business-weighted loss).
 3. **Need % interpretability across series?**
     - Use **sMAPE**, or **MASE** (if comparing to a baseline).
-4. **Care about relative ratios (under/over by ×%)?**
+4. **Care about relative ratios (under/over by Ã—%)?**
     - Use **RMSLE/MSLE** (with positive targets).
 5. **Mixed scales or many series?**
     - **WAPE** or **MASE** are safe, comparable choices.
 ###### Practical tips
-- If you must report a % and have zeros, say: _“We use sMAPE (formula shown) instead of MAPE to handle zeros; we also report WAPE for scale-free comparability.”_
+- If you must report a % and have zeros, say: _â€œWe use sMAPE (formula shown) instead of MAPE to handle zeros; we also report WAPE for scale-free comparability.â€_
 - Always **state the exact formula** you use (especially for sMAPE) to avoid confusion.
 - <span style="color:#FF6961">Consider reporting **two metrics**: one business-facing (% like WAPE/sMAPE) + one technical (MAE/RMSE).</span>
 
@@ -341,7 +344,7 @@ seg_df = pd.DataFrame({
     "x_right (FPR_{i+1})": x_right,
     "y_left (TPR_i)": y_left,
     "y_right (TPR_{i+1})": y_right,
-    "width = Δx": width,
+    "width = Î”x": width,
     "avg_height = (y_i + y_{i+1})/2": avg_height,
     "trapezoid_area = width * avg_height": area
 }).round(4)
@@ -378,21 +381,21 @@ We have touched on the P-R curve for evaluating classification or sort algorithm
 
 ##### What each curve shows
 - **ROC**: y = True Positive Rate (recall), x = False Positive Rate.  
-    _“How well do I separate positives from negatives overall?”_    
-    _"If I take the items my model flags as positive, how many are actually positive?”
+    _â€œHow well do I separate positives from negatives overall?â€_    
+    _"If I take the items my model flags as positive, how many are actually positive?â€
 - **PR**: y = Precision, x = Recall.  
-    _“When I go after positives, how clean are my catches?”_
-    _“As I move the threshold, how well do I trade off catching positives vs accidentally flagging negatives?”_
+    _â€œWhen I go after positives, how clean are my catches?â€_
+    _â€œAs I move the threshold, how well do I trade off catching positives vs accidentally flagging negatives?â€_
 ##### When to use which
-- **Use PR (Precision–Recall) when positives are rare or review capacity is limited.**  
-    Examples: fraud (≤1%), disease screening, anomaly detection, search/retrieval, human-in-the-loop queues.  
-    Why: PR focuses on the _quality of retrieved positives_. Baseline matters: random **AUPRC ≈ prevalence** (e.g., 1% positives → random AUPRC = 0.01).
+- **Use PR (Precisionâ€“Recall) when positives are rare or review capacity is limited.**  
+    Examples: fraud (â‰¤1%), disease screening, anomaly detection, search/retrieval, human-in-the-loop queues.  
+    Why: PR focuses on the _quality of retrieved positives_. Baseline matters: random **AUPRC â‰ˆ prevalence** (e.g., 1% positives â†’ random AUPRC = 0.01).
 - **Use ROC when classes are roughly balanced or you care about both error types evenly.**  
     Examples: many general classifiers, spam vs ham with moderate prevalence, A/B classifiers in balanced datasets.  
     Why: ROC is insensitive to class imbalance and summarizes ranking quality across thresholds. Random **AUC-ROC = 0.5**.
 ##### Intuition about imbalance
-- With 1,000,000 negatives and 1,000 positives, an FPR of **0.5%** looks tiny on ROC, but it’s **5,000 false alarms**—precision will be poor.  
-    PR makes this visible; ROC can look deceptively “great.”
+- With 1,000,000 negatives and 1,000 positives, an FPR of **0.5%** looks tiny on ROC, but itâ€™s **5,000 false alarms**â€”precision will be poor.  
+    PR makes this visible; ROC can look deceptively â€œgreat.â€
 ##### How to choose in practice
 - **Rare positives or ops-constrained?** Prefer **PR** (and report Precision/Recall at your operating threshold or **Precision@k**).
 - **Balanced costs/distribution?** **ROC** is fine (and stable).
@@ -400,7 +403,7 @@ We have touched on the P-R curve for evaluating classification or sort algorithm
 ##### Reading the curves
 - **ROC**: closer to top-left is better; AUC near 1 is strong.
 - **PR**: higher curve is better; sustaining high precision as recall grows is ideal.
-- Curves can **cross**. Pick the model that’s better in the **recall region you care about** (e.g., recall ≥ 0.9). Consider **partial AUC** (ROC) or **AUPRC over a recall range**.
+- Curves can **cross**. Pick the model thatâ€™s better in the **recall region you care about** (e.g., recall â‰¥ 0.9). Consider **partial AUC** (ROC) or **AUPRC over a recall range**.
 ##### What to report (good default)
 - **AUPRC + AUC-ROC** (global picture)
 - **(Precision, Recall)** (or $F_\beta$) at the **chosen threshold**
@@ -430,7 +433,7 @@ Cosine **distance** (common definition):
 $$d_{\text{cos}}(x,y)=1-\text{cos\_sim}(x,y)\in[0,2]$$
 
 - **What it measures:** difference in **direction** (angle) only.
-- **Scale-invariant:** multiplying a vector by a positive constant doesn’t change it.
+- **Scale-invariant:** multiplying a vector by a positive constant doesnâ€™t change it.
 
 Overall, on unit vectors, Euclidean and cosine distances are monotonic transforms.
 Also, on a unit circle, one would see:
@@ -465,14 +468,14 @@ In ML algorithm design, we usually split the samples into training and test data
 - **Bootstrap**: 
 	- Make a **fake test set** by randomly picking the same number of rows from your real test set **with replacement** (so rows can repeat and some are left out).
 		- Suppose the test set has **n rows**.
-		- Pick **n indices at random WITH replacement** from `0..n-1`. (Duplicates allowed; some rows won’t be picked.)
+		- Pick **n indices at random WITH replacement** from `0..n-1`. (Duplicates allowed; some rows wonâ€™t be picked.)
 		- Those picked rows form one **fake test set**. 
-	- On that fake set, compute your metric (accuracy, F1, AUC, RMSE—whatever you care about).
-	- Repeat steps 1–2 a lot (like **1,000 times**).
+	- On that fake set, compute your metric (accuracy, F1, AUC, RMSEâ€”whatever you care about).
+	- Repeat steps 1â€“2 a lot (like **1,000 times**).
 	- Now you have 1,000 metric values.
 	    - The **average** is your central estimate.
 	    - The **middle 95% range** (ignore the lowest 2.5% and highest 2.5%) is your **95% confidence interval**.
-As $n$ gets large, about **36.8%** of items are “out-of-bag” (never selected) and **63.2%** appear at least once. This is the source of the “.632” bootstrap terminology
+As $n$ gets large, about **36.8%** of items are â€œout-of-bagâ€ (never selected) and **63.2%** appear at least once. This is the source of the â€œ.632â€ bootstrap terminology
 
 #### Hyperparameter tuning
 #hyperparameter-tuning 
@@ -481,7 +484,7 @@ For a lot of algorithm engineers, hyperparameter tuning can be really of headach
 ##### What are some of the common ways of hyperparameter tuning?
 - **grid search**: Exhaustive on a small, **low-dimensional** space. Deterministic but expensive; scales poorly. In reality, it tend to be used as a bigger search space and larger step size to find the possible range of optimal results, then to shrink the search space and find more accurate optimal solution.
 - **random search**: Sample hyperparams at random (often **log-uniform** for learning rates). Much better than grid when only a few dims matter but cannot guarantee for a optimal solution.
-- **Bayesian optimization**: Model “config → score” to pick promising next trials. Unlike random/grid search **don’t learn** from past trials, BO **uses what you’ve learned so far** to place the next (expensive) trial where it’s most likely to pay off.
+- **Bayesian optimization**: Model â€œconfig â†’ scoreâ€ to pick promising next trials. Unlike random/grid search **donâ€™t learn** from past trials, BO **uses what youâ€™ve learned so far** to place the next (expensive) trial where itâ€™s most likely to pay off.
 
 #### Overfit and Underfit
 #overfit #underfit
@@ -513,9 +516,9 @@ $$\hat y_i = w\,x_i$$
 
 $$\sum_i (y_i - w x_i)^2$$
 **L2-regularized loss** (ridge):
-$$\underbrace{\sum_i (y_i - w x_i)^2}_{\text{fit the data}} \;+\; \underbrace{\lambda\, w^2}_{\text{penalize big weights}}$$​​
-- $\lambda>0$ controls the strength of the penalty (larger $\lambda$ ⇒ stronger shrinkage).
-- In practice, we usually **don’t penalize the bias/intercept**.
+$$\underbrace{\sum_i (y_i - w x_i)^2}_{\text{fit the data}} \;+\; \underbrace{\lambda\, w^2}_{\text{penalize big weights}}$$â€‹â€‹
+- $\lambda>0$ controls the strength of the penalty (larger $\lambda$ â‡’ stronger shrinkage).
+- In practice, we usually **donâ€™t penalize the bias/intercept**.
 ###### How L2 Penalizes the Parameter
 
 Take derivative w.r.t. $w$ and set to 0:
@@ -523,10 +526,10 @@ Take derivative w.r.t. $w$ and set to 0:
 $$\frac{\partial}{\partial w}\Big[\sum_i (y_i - w x_i)^2 + \lambda w^2\Big] = -2\sum_i x_i(y_i - w x_i) + 2\lambda w = 0$$
 
 Rearrange:
-$$ w\big(\sum_i x_i^2 + \lambda\big) = \sum_i x_i y_i \quad\Rightarrow\quad \boxed{\,w_{\text{ridge}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2 + \lambda}\,}$$​​​
+$$â€‰w\big(\sum_i x_i^2 + \lambda\big) = \sum_i x_i y_i \quad\Rightarrow\quad \boxed{\,w_{\text{ridge}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2 + \lambda}\,}$$â€‹â€‹â€‹
 Compare to **unregularized** OLS:
-$$w_{\text{OLS}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2}$$​​
-L2 adds$\lambda$ to the denominator ⇒ **shrinks $w$ toward 0**.
+$$w_{\text{OLS}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2}$$â€‹â€‹
+L2 adds$\lambda$ to the denominator â‡’ **shrinks $w$ toward 0**.
 
 ###### Tiny Numeric Example
 
@@ -564,7 +567,7 @@ def ridge_weight(lmbda):
 
 print("w_OLS        =", Sxy / Sxx)
 for lmbda in [10, 100]:
-    print(f"w_ridge(λ={lmbda}) =", ridge_weight(lmbda))
+    print(f"w_ridge(Î»={lmbda}) =", ridge_weight(lmbda))
 ```
 
 **Notes**
@@ -574,3 +577,4 @@ for lmbda in [10, 100]:
 
 ### Classical Algorithms
 #### Support Vector Machine (SVM)
+

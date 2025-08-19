@@ -1,3 +1,6 @@
+﻿---
+title: Week7_Calculus_and_Gradient_Descent
+---
 ### Calculus & Gradient Descent
 
 #### Introduction
