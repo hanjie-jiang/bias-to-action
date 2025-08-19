@@ -7,6 +7,10 @@ title: ML Fundamentals from textbook
 ### Resources
 [[[[百面机器学习.pdf]]]]
 
+
+
+
+
 ### Feature Engineering
 
 Two types of data:
@@ -528,9 +532,9 @@ Take derivative w.r.t. $w$ and set to 0:
 $$\frac{\partial}{\partial w}\Big[\sum_i (y_i - w x_i)^2 + \lambda w^2\Big] = -2\sum_i x_i(y_i - w x_i) + 2\lambda w = 0$$
 
 Rearrange:
-$$â€‰w\big(\sum_i x_i^2 + \lambda\big) = \sum_i x_i y_i \quad\Rightarrow\quad \boxed{\,w_{\text{ridge}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2 + \lambda}\,}$$â€‹â€‹â€‹
+$$w\big(\sum_i x_i^2 + \lambda\big) = \sum_i x_i y_i \quad\Rightarrow\quad \boxed{\,w_{\text{ridge}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2 + \lambda}\,}$$
 Compare to **unregularized** OLS:
-$$w_{\text{OLS}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2}$$â€‹â€‹
+$$w_{\text{OLS}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2}$$
 L2 adds$\lambda$ to the denominator â‡’ **shrinks $w$ toward 0**.
 
 ###### Tiny Numeric Example
@@ -579,4 +583,18 @@ for lmbda in [10, 100]:
 
 ### Classical Algorithms
 #### Support Vector Machine (SVM)
+
+##### Additional Resources
+[[https://www.youtube.com/watch?v=efR1C6CvhmE&ab_channel=StatQuestwithJoshStarmer|StatQuest Part1 SVM Main Idea]]
+##### Main Idea behind SVM
+#svm #max-margin-classifier
+###### Soft Margin Classifier (Support Vector Classifier)
+When data are 3-dimensional, the **Support Vector Classifier is a 2-dimensional plane in a 3-dimensional space**. In mathematical world, a plane is a "flat affine 2-dimensional subspace (hyperplane)".
+
+But it only works well on data that are perfectly separated into two groups, when it comes down to data that are within certain range versus out-of-range, it cannot handle that well.
+###### Support Vector Machine
+
+
+#### 
+
 
