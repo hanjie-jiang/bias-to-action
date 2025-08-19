@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "f98809bf9f94ac8d",
+        "id": "3c5d2191368f9a45",
         "type": "split",
         "children": [
           {
@@ -17,22 +17,22 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "_notes/week1-2_probability_and_markov/Week1/Week1P4 - ML Fundamentals.md",
+                    "file": "_notes/week1-2_probability_and_markov/Week1_Probability_and_Markov.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "Week1P4 - ML Fundamentals"
+                  "title": "Week1_Probability_and_Markov"
                 }
               }
             ]
           },
           {
-            "id": "0ffacfd1d4fedf07",
+            "id": "b3d60205b42a6225",
             "type": "tabs",
             "children": [
               {
-                "id": "43a61c6c8fb50bf9",
+                "id": "04f09ef35d329afb",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -67,11 +67,11 @@
                   },
                   "pinned": true,
                   "icon": "terminal",
-                  "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
+                  "title": "Terminal: Select C:\\Windows\\System32\\conhost.exe"
                 }
               },
               {
-                "id": "d0ae03c503fb4ef9",
+                "id": "4f7dc84a7adb1028",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -271,51 +271,50 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "d0ae03c503fb4ef9",
+  "active": "4f7dc84a7adb1028",
   "lastOpenFiles": [
-    "_layouts/default.html",
+    "_notes/week1-2_probability_and_markov/Week1_Probability_and_Markov.md",
+    "_notes/assets/styles/hero.css",
+    "_notes/assets/styles",
+    "_notes/styles/hero.css",
+    "Week1P1 - Conditional Probability & Bayesâ€™ Rule.md",
+    "_notes/week1-2_probability_and_markov/Week1/Week1P1-conditional_probability_and_bayes_rule.md",
     "_notes/week1-2_probability_and_markov/Week1/Week1P4 - ML Fundamentals.md",
-    "Untitled",
-    "_notes/week1-2_probability_and_markov/resources/百面机器学习.pdf",
-    "ç™¾é¢æœºå™¨å­¦ä¹ ç®—æ³•å·¥ç¨‹å¸ˆå¸¦ä½ åŽ»é¢è¯•.pdf.md",
+    "_notes/week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals.md",
+    "_notes/week1-2_probability_and_markov/Week1/Week1P3-joint_and_marginal_distributions.md",
+    "_notes/week1-2_probability_and_markov/Week1/Week1P2-naive_bayes_and_gaussian_naive_bayes.md",
+    "_notes/week1-2_probability_and_markov/Week1/Week1P3 - Joint and Marginal Distributions.md",
+    "_notes/week1-2_probability_and_markov/Week1/Week1P2 - Naive Bayes and Gaussian Naive Bayes.md",
+    "_notes/week1-2_probability_and_markov/Week1/Week1P1 - Conditional Probability and Bayes Rule.md",
+    "_notes/hero.css",
+    "_notes/styles",
+    "_notes/assets",
+    "_notes/index.md",
     "_notes/week1-2_probability_and_markov/Week1/Week1P3 - Joint & Marginal Distributions.md",
     "_notes/week1-2_probability_and_markov/Week1/Week1P2 - Naive Bayes & Gaussian Naive Bayes.md",
     "_notes/week1-2_probability_and_markov/Week1/Week1P1 - Conditional Probability & Bayes Rule.md",
-    "_notes/week1-2_probability_and_markov/Week1",
-    "_notes/week1-2_probability_and_markov/Week1_Probability_and_Markov.md",
+    "requirements.txt",
+    "mkdocs.yml",
+    "_layouts/default.html",
+    "Untitled",
+    "ç™¾é¢æœºå™¨å­¦ä¹ ç®—æ³•å·¥ç¨‹å¸ˆå¸¦ä½ åŽ»é¢è¯•.pdf.md",
     "_notes/Week10_Integration_and_Project.md",
     "_notes/Week8_9_Neural_Networks_and_Backprop.md",
     "_notes/Week7_Calculus_and_Gradient_Descent.md",
     "_notes/Week5_6_Linear_Algebra_for_ML.md",
     "_notes/Week4_Information_Theory.md",
-    "index.html",
-    "_layouts/note.html",
-    "_layouts",
-    "_config.yml",
-    "_notes/week3_language_model/resources/Happy-LLM-v1.0.pdf",
     "_notes/week1-2_probability_and_markov/resources/Screenshot 2025-08-05 at 9.30.27 PM.png",
     "_notes/week1-2_probability_and_markov/resources/Screenshot 2025-08-05 at 8.22.11 PM.png",
     "_notes/week1-2_probability_and_markov/resources/p-r_curve.png",
     "_notes/week1-2_probability_and_markov/resources/conditional_probability.png",
     "_notes/week3_language_model/Week3_Ngram_Language_Modeling.md",
-    "_notes/week3_language_model/resources",
-    "_notes/week1-2_probability_and_markov/resources",
     "_notes/Foundational knowledge plan.md",
     "index.md",
     "README.md",
     "foundations_of_ML/week1-2_probability_and_markov/Week1P4 - ML Fundamentals.md",
-    "百面机器学习算法工程师带你去面试.pdf.md",
-    "2025-08-19.md",
     "foundations_of_ML/week1-2_probability_and_markov/resources/p-r_curve.png",
     "foundations_of_ML/week1-2_probability_and_markov/resources/Screenshot 2025-08-05 at 9.30.27 PM.png",
     "foundations_of_ML/week1-2_probability_and_markov/resources/Screenshot 2025-08-05 at 8.22.11 PM.png",
-    "foundations_of_ML/week1-2_probability_and_markov/resources/conditional_probability.png",
-    "foundations_of_ML/week1-2_probability_and_markov/Week1_Probability_and_Markov.md",
-    "foundations_of_ML/week1-2_probability_and_markov/Week1P3 - Joint & Marginal Distributions.md",
-    "foundations_of_ML/week1-2_probability_and_markov/Week1P2 - Naive Bayes & Gaussian Naive Bayes.md",
-    "foundations_of_ML/week1-2_probability_and_markov/Week1P1 - Conditional Probability & BayesΓÇÖ Rule.md",
-    "foundations_of_ML/week3_language_model/Week3_Ngram_Language_Modeling.md",
-    "foundations_of_ML/Foundational knowledge plan.md",
-    "foundations_of_ML/Week7_Calculus_and_Gradient_Descent.md"
+    "foundations_of_ML/week1-2_probability_and_markov/resources/conditional_probability.png"
   ]
 }

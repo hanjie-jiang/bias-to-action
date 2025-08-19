@@ -1,0 +1,52 @@
+site_name: Obsidian Notes
+site_url: https://<your-username>.github.io/obsidian-notes-hanjie/
+repo_url: https://github.com/<your-username>/obsidian-notes-hanjie
+use_directory_urls: true
+
+docs_dir: _notes
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - content.code.copy
+    - toc.integrate
+
+plugins:
+  - search
+  - roamlinks:
+      wiki_link_extension: .md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.betterem
+  - pymdownx.tilde
+  - pymdownx.tasklist
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  # optional if you want to move hero.css into assets/styles/
+  # - assets/styles/hero.css
+
+nav:
+  - Home: index.md
+  - Week 1 - Probability and Markov:
+      - Bayes’ Rule: week1-2_probability_and_markov/Week1/Week1P1-conditional_probability_and_bayes_rule.md
+      - Naive Bayes: week1-2_probability_and_markov/Week1/Week1P2-naive_bayes_and_gaussian_naive_bayes.md
+      - Joint & Marginal: week1-2_probability_and_markov/Week1/Week1P3-joint_and_marginal_distributions.md
+      - ML Fundamentals: week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals.md
+  - Other Notes:
+      - Entropy: Entropy.md
+      - Neural Networks: Week8_9_Neural_Networks_and_Backprop.md
+      - Study Plan: Foundational knowledge plan.md
