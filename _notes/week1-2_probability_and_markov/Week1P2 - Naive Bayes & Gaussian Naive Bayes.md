@@ -1,6 +1,10 @@
-﻿---
+---
 title: Week1P2 - Naive Bayes & Gaussian Naive Bayes
 ---
+---
+title: Naive Bayes & Gaussian Naive Bayes
+---
+
 **Resources**
 - [StatQuest: Conditional Probability (YouTube)](https://www.youtube.com/watch?v=_IgyaD7vOOA)
 - [StatQuest: Bayes' Rule](https://www.youtube.com/watch?v=9wCnvr7Xw4E)

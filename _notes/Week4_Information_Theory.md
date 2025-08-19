@@ -1,8 +1,9 @@
-﻿---
+---
 title: Week4_Information_Theory
 ---
-### Introduction to Information Theory
-
+---
+title: Introduction to Information Theory
+---
 #### Introduction
 Information theory quantifies uncertainty and information content. Concepts such as entropy and cross-entropy are deeply entwined with language modeling and loss functions used to train neural networks.
 

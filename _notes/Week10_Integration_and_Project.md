@@ -1,7 +1,9 @@
-﻿---
+---
 title: Week10_Integration_and_Project
 ---
-### Integration & Mini-Project
+---
+title: Integration & Mini-Project
+---
 
 #### Introduction
 The capstone week integrates probabilistic and neural methods. You will build a hybrid language predictor that combines an n-gram baseline with a small neural network, reinforcing all concepts learned so far.

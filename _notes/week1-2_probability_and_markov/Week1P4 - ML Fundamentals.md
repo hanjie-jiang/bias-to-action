@@ -1,7 +1,9 @@
-﻿---
+---
 title: Week1P4 - ML Fundamentals
 ---
-
+---
+title: ML Fundamentals from textbook
+---
 ### Resources
 [[ç™¾é¢æœºå™¨å­¦ä¹ ç®—æ³•å·¥ç¨‹å¸ˆå¸¦ä½ åŽ»é¢è¯•.pdf]]
 

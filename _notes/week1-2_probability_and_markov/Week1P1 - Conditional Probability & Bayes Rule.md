@@ -1,6 +1,10 @@
-﻿---
+---
 title: Week1P1 - Conditional Probability & BayesΓÇÖ Rule
 ---
+---
+title: Conditional Probability & Bayes Rule
+---
+
 **Resources**
 - [StatQuest: Conditional Probability (YouTube)](https://www.youtube.com/watch?v=_IgyaD7vOOA)
 - [StatQuest: Bayes' Rule](https://www.youtube.com/watch?v=9wCnvr7Xw4E)

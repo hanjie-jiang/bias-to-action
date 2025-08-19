@@ -1,8 +1,9 @@
-﻿---
+---
 title: Week7_Calculus_and_Gradient_Descent
 ---
-### Calculus & Gradient Descent
-
+---
+title: Calculus & Gradient Descent
+---
 #### Introduction
 Calculus provides the machinery to compute derivatives, which are essential for optimizing neural networks. Understanding gradients and how gradient descent navigates a loss landscape is critical for debugging and improving models.
 

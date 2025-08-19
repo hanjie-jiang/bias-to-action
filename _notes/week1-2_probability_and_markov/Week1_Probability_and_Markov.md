@@ -1,6 +1,10 @@
-﻿---
+---
 title: Week1_Probability_and_Markov
 ---
+---
+title: Probability & Markov
+---
+
 ### Probability Foundations & Markov Assumption
 
 #### Introduction

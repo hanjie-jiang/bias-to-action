@@ -1,8 +1,9 @@
-﻿---
+---
 title: Week8_9_Neural_Networks_and_Backprop
 ---
-### Neural Networks & Backpropagation
-
+---
+title: Neural Networks & Backpropagation
+---
 #### Introduction
 Neural networks approximate complex nonlinear functions by stacking layers of linear transformations and nonlinear activations. Backpropagation efficiently computes gradients for training, enabling deep learning breakthroughs.
 
