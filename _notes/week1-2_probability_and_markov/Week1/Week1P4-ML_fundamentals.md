@@ -1,23 +1,16 @@
 ---
-title: Week1P4 - ML Fundamentals
----
----
 title: ML Fundamentals from textbook
 ---
 ### Resources
 [[[[百面机器学习.pdf]]]]
 
-
-
-
-
-### Feature Engineering
+# Feature Engineering
 
 Two types of data:
 - Structured / Tabular data: Could be viewed as a data table from the relational database, which every columns has their clear definition, including **numerical** and **categorial** data types.
 - Unstructured data: Includes **text, image, audio, video data**, and the information that this type of data contains cannot be represented easily as a numerical value, and also they do not have clear categorical definition, furthermore, the size of these data are not identical.
 
-##### Normalization of Features
+## Normalization of Features
 
 ###### Why does one need to do normalization on numerical features?
 
@@ -30,7 +23,7 @@ Using stochastic gradient descent (SGD) as an example, when two numerical featur
 
 [^1]: need to work on the definition of this and learn more about information theory
 
-##### Categorical Features
+## Categorical Features
 Categorical features include male / female, blood type (A,B,AB,O) and etc, which can only select values from a finite set of choices. Categorical features original input are mostly strings. Despite that **decision trees and some other numbers of models can directly take in the strings, for logistic regression or SVM models, the categorical features need to be translated to numerical form** so that they could properly work.
 
 ###### How to do feature engineering on categorical features?
@@ -42,7 +35,7 @@ One would need to encode the features to a higher dimensional vector to represen
 	- high-dimensional features can be difficult in following scenarios: 1) K-nearest neighbors, the distance between two high-dimensional vectors can be hard to measure, 2) logistic regression, the parameters can increase with higher dimensions, thus causing overfitting problems and 3) only some of the dimensions could be helpful when doing clustering or predictions, so one could think to reduce dimensions with feature selections.
 - **binary encoding**: using binary to do a hash mapping on the original category ID, this can help save space when comparing with the one-hot encoding as it is usually of fewer dimensions.
 
-##### High Dimensional Feature Crosses
+## High Dimensional Feature Crosses
 
 ###### What are feature crosses? And how to deal with high-dimensional feature crosses?
 
@@ -61,7 +54,7 @@ We introduce a feature cross selection based on decision tree models. Taking CTR
 4. paid user + age
 How to best construct the decision trees? One can use the [Gradient Boosting Decision Treeï¼ŒGBDT](https://medium.com/@ruchi.awasthi63/gradient-boosted-decision-tree-clearly-explained-bd1d8c7d9923) or use[ the link](https://neptune.ai/blog/gradient-boosted-decision-trees-guide) to get a better idea of the algorithm. The idea behind is that whenever before constructing a decision tree, we first calculate the error from the true value and iteratively construct the tree from the error.
 
-##### Textual Descriptive Models
+## Textual Descriptive Models
 Related Content: [[Week3_Ngram_Language_Modeling]]
 
 Text is a category of unstructured data. How to work with textual data has always been one of the most important research directions.
@@ -74,7 +67,7 @@ Text is a category of unstructured data. How to work with textual data has alway
 - Word Embedding: word embedding is a family of word vector models, the main idea is to project each word to a low-dimensional space (K = 50 -300 dimensions) using a dense vector. Each dimension in K-dimension would be viewed as a implicit topic. 
 <span style="background-color: #FEE9E7">In general, in shallow learning models (traditional ML models), a good feature engineering step can help extremely good performance. Deep learning on the other hand, could help us with an automated feature engineering way via hidden layers. Hence, it makes sense for the deep learning model to beat the shallow learning model in general. Recurrent neural network and convolutional neural network are both good at capture the characteristics of the text while lowering the number of parameters that the model needs to learn, which can expedite the speed of training and also lower the risk of overfitting. </span>
 
-##### Word2Vec
+## Word2Vec
 One of the most common word embedding models, it is actually a shallow neural network. It can be of two different types of structures: 
 1. Continuous Bag of Words
 2. Skip-gram
@@ -93,7 +86,7 @@ One of the most common word embedding models, it is actually a shallow neural ne
 		- projection/hidden layer
 		- output layer: w(t-2), w(t-1), ..., w(t+1), w(t+2) using softmax
 
-##### Image Data not sufficient - Cold Start
+## Image Data not sufficient - Cold Start
 When doing machine learning modeling, one very big problem that everyone may face would be not sufficient training data. 
 
 ###### What would you do if the training data is not sufficient? How to mitigate this issue?
@@ -121,8 +114,8 @@ One big problem that comes **from not enough data is overfitting**, which is tha
 		- using pre-trained general model from big dataset, we could fine-tune specifically using the small datasets
 
 
-### Model Evaluation
-#### Evaluation metrics and their limitations
+# Model Evaluation
+## Evaluation metrics and their limitations
 When doing model evaluation, the classification / sort / regression problems seems to always use different metrics for evaluation. 
 ##### Accuracy and its limitations
 The accuracy only measures the number of correct labels divided by the number of total labels. This can potentially lead to a issue **when the number of labels are limited in the dataset**. When negative samples composed 99% of the data, if every label is a negative one, we still get 99% accuracy. So, if we use more effective mean accuracy that quantifies the mean accuracy under each category, it would be a better metrics to work with.
@@ -463,7 +456,7 @@ When measuring user A/B preference, we focus more on relative difference, hence 
 ###### Is cosine distance a strictly defined distance?
 No, it is not strictly defined as it satisfies the Non-negativity & identity (strictness), symmetry but does not satisfy the triangle inequality. A use case of this question is that when reading the word vector of `comedy` and `funny` and also `happy` and `funny`, their cosine distance is < 0.3, whereas the distance between `comedy`and `happy` is 0.7. 
 
-#### Model Evaluation Methods
+## Model Evaluation Methods
 #holdout #cross-validation #bootstrap
 In ML algorithm design, we usually split the samples into training and test data set, where the training set is used to training the model and the test set is used to evaluate the model. In sample split and model evaluation process, we could use different sampling or evaluation methods. 
 
@@ -483,7 +476,7 @@ In ML algorithm design, we usually split the samples into training and test data
 	    - The **middle 95% range** (ignore the lowest 2.5% and highest 2.5%) is your **95% confidence interval**.
 As $n$ gets large, about **36.8%** of items are â€œout-of-bagâ€ (never selected) and **63.2%** appear at least once. This is the source of the â€œ.632â€ bootstrap terminology
 
-#### Hyperparameter tuning
+## Hyperparameter tuning
 #hyperparameter-tuning 
 For a lot of algorithm engineers, hyperparameter tuning can be really of headache, as there is no other way other than empirically tune the parameters to a reasonable range, while it is really important for the algorithm to be effective.
 
@@ -492,7 +485,7 @@ For a lot of algorithm engineers, hyperparameter tuning can be really of headach
 - **random search**: Sample hyperparams at random (often **log-uniform** for learning rates). Much better than grid when only a few dims matter but cannot guarantee for a optimal solution.
 - **Bayesian optimization**: Model â€œconfig â†’ scoreâ€ to pick promising next trials. Unlike random/grid search **donâ€™t learn** from past trials, BO **uses what youâ€™ve learned so far** to place the next (expensive) trial where itâ€™s most likely to pay off.
 
-#### Overfit and Underfit
+## Overfit and Underfit
 #overfit #underfit
 This section tells how one could efficiently recognize overfit and underfit scenarios and do model improvements based on what has been identified. 
 
@@ -511,7 +504,7 @@ This section tells how one could efficiently recognize overfit and underfit scen
 	- increase the complexity of model. 
 	- decrease regularization parameters. 
 
-##### L2 / L1 Regularization
+## L2 / L1 Regularization
 #l2-regularization #l1-regularization #l2 #l1
 ###### Setup
 Model (no intercept for simplicity):
@@ -580,9 +573,96 @@ for lmbda in [10, 100]:
 - Standardize features before using L2/L1 (esp. linear/logistic).
 - Tune $\lambda$ via cross-validation.
 - Do **not** penalize the bias term.
+# Classical Algorithms
 
-### Classical Algorithms
-#### Support Vector Machine (SVM)
+## Linear Regression
+#linear-regression
+There are two central provinces in the world of regression: simple linear regression and multiple linear regression. 
+
+### Formula of Simple Linear Regression
+The formula of linear regression can be represented as $$y=c+m\cdot x$$
+The formula revolves around minimizing residuals. Imagine residuals as the distance between the actual and predicted values of the dependent variable $y$:
+$$m = \frac{\sum_{i=1}^N{(x_i-\bar x)(y_i-\bar y)}}{\sum_{i=1}^N(x_i-\bar x)^2}$$
+and the constant corresponds to $c=\bar y - m \cdot\bar x$. 
+
+```
+import numpy as np
+
+# Step 1: Get the data set
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 4, 5, 4, 5])
+
+# Step 2: Compute the mean of the X and y
+mean_x = np.mean(x)
+mean_y = np.mean(y)
+
+# Step 3: Calculate the coefficients
+m = np.sum((x - mean_x) * (y - mean_y)) / np.sum((x - mean_x) ** 2)
+c = mean_y - m * mean_x
+
+# Voila! We have our model
+print(f"Model: y = {c} + {m}*x")  # Output: Model: y= 2.2 + 0.6*x
+```
+
+### Formula of Multiple Linear Regression
+#normal-equation #r2-score
+For simple linear regression formula, we have $y=\beta_0 + \beta_1x$, for multiple linear regression, we add multiple independent variables $x_1, x_2, ... , x_m$. Suppose we had n data points, each with m features, then X would be like: $$\mathbf{X}=\begin{bmatrix}  
+1 & x_{1,1} & x_{1,2} & ... & x_{1,m} \\  
+1 & x_{2,1} & x_{2,2} & ... & x_{2,m} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & x_{n,1} & x_{n,2} & ... & x_{n,m} \\
+\end{bmatrix} \in \mathbb{R^{n\times (m+1)}}, \mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} \in \mathbb{R^{n\times 1}}, \mathbf{\beta} = \begin{bmatrix} \beta_0 \\ \beta_1 \\ \vdots \\ \beta_m \end{bmatrix} \in  \mathbb{R^{(m+1)\times 1}}$$ Each row represents the m features for a single data point. The first column with $\mathbf{1}$s are the bias / intercept of each equation. The normal equation would be of form
+$$\beta = (X^T X)^{-1}X^Ty$$
+The predicted $\hat y$ values can be represented as
+$$\hat y = (1 \cdot \beta_0)+(\beta_1 \cdot x_1) + (\beta_2 \cdot x_2) + \dots + (\beta_m \cdot x_m)$$
+To calculate all the predictions at once, we take the dot product of $X$ and $\beta$:
+$$\mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} = X\cdot \beta =\begin{bmatrix}  
+1 & x_{1,1} & x_{1,2} & ... & x_{1,m} \\  
+1 & x_{2,1} & x_{2,2} & ... & x_{2,m} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & x_{n,1} & x_{n,2} & ... & x_{n,m} \\
+\end{bmatrix} \begin{bmatrix} \beta_0 \\ \beta_1 \\ \vdots \\ \beta_m \end{bmatrix} $$
+### Linear Regression Model Evaluation
+#### coefficient of determination ($R^2$ score)
+$$R^2=1-\frac{SS_\text{residuals}}{SS_\text{total}} = 1 - \frac{\sum_{i=1}^n(y_i - \hat y_i)^2}{\sum_{i=1}^n(y_i - \bar y_i)^2}$$ Where $SS_\text{residuals}$ denotes the residual sum of squares for predictions and $SS_\text{total}$ denotes the total sum of squares from actual values. A higher R-squared value / closer to 1 indicates a good model fit.
+
+```
+import numpy as np
+# given data
+housing_data = np.array([[1800, 3], [2400, 4], [1416, 2], [3000, 5]])
+prices = np.array([350000, 475000, 230000, 640000])
+
+# adding 1s to our matrix
+ones = np.ones(shape=(len(housing_data), 1))
+X = np.append(ones, housing_data, axis=1)
+
+# calculating coefficients
+coefficients = np.linalg.inv(X.T @ X) @ X.T @ prices
+
+# predicting prices
+predicted_prices = X @ coefficients
+
+# calculating residuals
+residuals = prices - predicted_prices
+
+# calculating total sum of squares
+sst = np.sum((prices - np.mean(prices)) ** 2)
+
+# calculating residual sum of squares
+ssr = np.sum(residuals ** 2)
+
+# calculating R^2
+r2 = 1 - (ssr/sst)
+
+print("Coefficients:", coefficients)
+print("Predicted prices:", predicted_prices)
+print("R^2:", r2)
+```
+
+### Gradient Descent
+#gradient-descent
+**Gradient descent** is an iterative optimization algorithm for minimizing a function, usually a loss function, quantifying the disparity between predicted and actual results. The goal of gradient descent is to find the parameters that minimize the value of the loss function.
+## Support Vector Machine (SVM)
 
 ##### Additional Resources
 [[https://www.youtube.com/watch?v=efR1C6CvhmE&ab_channel=StatQuestwithJoshStarmer|StatQuest Part1 SVM Main Idea]]
@@ -603,6 +683,21 @@ for lmbda in [10, 100]:
 	- **Radial Function Kernel** #rbf #radial-kernel
 		Radial function kernel finds support vector classifiers in infinite dimensions but in one / two dimensional data, it behaves like weighted nearest neighborhood model.
 		The equation looks like this $e^{-\gamma(a-b)^2}$ where $a$ and $b$ are the x-axis coordinates of two different data points. $\gamma$ is the parameter that determines how much influence the pair of data points have on each other.
-#### 
+## Logistic Regression
+Logistic regression are the most widely used and most fundamental model that one could use in the ML industry. One should always understand the deduction of logistic regression and application of it, as it is used in medical diagnosis, credit evaluation, email junk categorization, etc. 
+### What is the difference between logistic regression and linear regression?
+#logistic-regression #linear-regression #multilabel-classification  #softmax #binomial-distribution #normal-distribution #maximum-likelihood-estimation
+- **logistic regression is used for categorization whereas linear regression is used for regression problems**. This is the most significant difference between the two. In logistic regression, when given x and hyperparameter $\theta$, we could get the expectation value of the $y$ values to predict the categorization of the values. On the other hand, in linear regression, one is solving $y' = \theta^Tx$ , which is the approximate of the real relationship of $y = \theta^Tx+\epsilon$ where $\epsilon$ corresponds to the system error.
+- The actual logistic regression equation can be formulated via $\log{\frac{p}{1-p}}=\theta^Tx$, where $p=P(y=1|x)$ , corresponding to given x the probability of y being positive. **Thus the most important difference between logistic regression and linear regression would be that the logistic regression $y$s are discretized whereas the linear regression $y$s are continuous.** When $x$ and $\theta$ are given, logistic regression can also be seen as generalized linear models where $y$ follows the binary distribution, whereas  when using least-squares for linear regression we view $y$ follows the normal distribution. 
+
+### What is the same between logistic regression and linear regression?
+- They both used maximum likelihood estimation for modeling the training data. 
+- They both could use gradient descent for getting the hyperparameters, and it is also a common strategy that all the supervised learning methods use.
+
+### What approaches do logistic regression take for multi-label classification problems? What are some use cases for this type of problems?
+
+
+#### Note for binomial distribution vs normal distribution
+The main difference between a binomial distribution and a normal distribution lies in the type of data they describe: ==binomial distributions deal with discrete data from a fixed number of trials, while normal distributions describe continuous data that tends to cluster around a mean==. Binomial distributions are characterized by a fixed number of trials, each with two possible outcomes (success or failure), while normal distributions are continuous, symmetric, and have a bell-shaped curve
 
 

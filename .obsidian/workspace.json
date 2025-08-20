@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "c6eb679d7576f717",
+        "id": "6b2c38e96b68447f",
         "type": "split",
         "children": [
           {
@@ -28,11 +28,11 @@
             ]
           },
           {
-            "id": "5436b057130efc4b",
+            "id": "25d30c2db93781ad",
             "type": "tabs",
             "children": [
               {
-                "id": "f2fb1f38cef5e46d",
+                "id": "e11a14234336e97c",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -105,7 +105,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#multiclass-classification",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -126,8 +126,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -194,13 +193,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Untitled"
+              "title": "Outline"
             }
           },
           {
@@ -214,12 +212,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -234,7 +231,7 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "f2fb1f38cef5e46d",
+  "active": "e11a14234336e97c",
   "lastOpenFiles": [
     "_notes/week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals.md",
     "_notes/assets/images",

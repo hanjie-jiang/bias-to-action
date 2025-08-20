@@ -54,10 +54,10 @@ hide:
     <h1>Machine Learning Notes</h1>
     <p class="subtitle">Curated notes on probability, foundations, and neural networks.</p>
     <p class="hero__actions">
-      <a href="week1-2_probability_and_markov/Week1/Week1P1-conditional_probability_and_bayes_rule.md" class="md-button md-button--primary">Bayes’ Rule</a>
-      <a href="week1-2_probability_and_markov/Week1/Week1P2-naive_bayes_and_gaussian_naive_bayes.md" class="md-button">Naive Bayes</a>
-      <a href="week1-2_probability_and_markov/Week1/Week1P3-joint_and_marginal_distributions.md" class="md-button">Joint & Marginal</a>
-      <a href="week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals.md" class="md-button">ML Fundamentals</a>
+      <a href="week1-2_probability_and_markov\Week1\Week1P1-conditional_probability_and_bayes_rule.md" class="md-button md-button--primary">Bayes’ Rule</a>
+      <a href="week1-2_probability_and_markov\Week1\Week1P2-naive_bayes_and_gaussian_naive_bayes.md" class="md-button">Naive Bayes</a>
+      <a href="week1-2_probability_and_markov\Week1\Week1P3-joint_and_marginal_distributions.md" class="md-button">Joint & Marginal</a>
+      <a href="week1-2_probability_and_markov\Week1\Week1P4-ML_fundamentals.md" class="md-button">ML Fundamentals</a>
     </p>
   </div>
 </div>
@@ -76,5 +76,3 @@ hide:
     <p>Vectors, matrices, SVD, and more.</p>
   </a>
 </section>
-
-> Tip: You can also use wikilinks like [[Week1P2-naive_bayes_and_gaussian_naive_bayes|Naive Bayes]] anywhere.
