@@ -1,30 +1,29 @@
 ---
 title: Home
 hide:
-  - toc          # keep sidebar visible; don't hide 'navigation'
+  - toc
 ---
 
 <style>
-/* Pastel hero + cards (scoped) */
+/* Pastel hero + cards */
 .hero {
-  --bg1: #f7e9ff;  /* lavender */
-  --bg2: #e6f7ff;  /* powder blue */
-  --bg3: #eaffe6;  /* mint */
+  --bg1: #f7e9ff;
+  --bg2: #e6f7ff;
+  --bg3: #eaffe6;
   background:
     radial-gradient(1200px 600px at 10% 20%, var(--bg1) 0, transparent 60%),
     radial-gradient(1200px 600px at 90% 10%, var(--bg2) 0, transparent 60%),
     radial-gradient(1200px 600px at 50% 90%, var(--bg3) 0, transparent 60%);
   border-radius: 1.5rem;
   padding: 5rem 2rem;
-  margin: 0 0 2rem 0;
+  margin-bottom: 2rem;
   text-align: center;
 }
 .hero__content { max-width: 900px; margin: 0 auto; }
-.hero h1 { margin: 0 0 .5rem 0; font-size: clamp(2rem, 4vw, 3rem); }
-.hero .subtitle { font-size: 1.125rem; opacity: .8; margin: 0 0 1.25rem 0; }
+.hero h1 { margin: 0 0 .5rem; font-size: clamp(2rem, 4vw, 3rem); }
+.hero .subtitle { font-size: 1.125rem; opacity: .8; margin-bottom: 1.25rem; }
 .hero__actions .md-button { margin: .25rem .4rem; }
 
-/* Card grid */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -53,18 +52,16 @@ hide:
   <div class="hero__content">
     <h1>Machine Learning Notes</h1>
     <p class="subtitle">Curated notes on probability, foundations, and neural networks.</p>
-
-    <!-- Use Markdown links with Material button classes for clean URLs -->
     <p class="hero__actions">
       [ML Fundamentals](ml_fundamentals/ML_fundamentals.md){ .md-button .md-button--primary }
-      [Probability & Markov](probability_and_markov/Probability_and_Markov_Overview.md){ .md-button } 
+      [Probability & Markov](probability_and_markov/Probability_and_Markov_Overview.md){ .md-button }
       [Language Model](language_model/Ngram_Language_Modeling.md){ .md-button }
     </p>
   </div>
 </div>
 
 <section class="cards">
-  [<span><h3>Information Theory</h3><p>Entropy, cross-entropy, KL divergence.</p></span>](Information_Theory.md){ .card }
+  [<span><h3>Information Theory</h3><p>Entropy, cross‑entropy and KL divergence.</p></span>](Information_Theory.md){ .card }
   [<span><h3>Neural Networks</h3><p>Backpropagation, activations, training tips.</p></span>](Neural_Networks_and_Backprop.md){ .card }
-  [<span><h3>Linear Algebra</h3><p>Vectors, matrices, SVD, and more.</p></span>](Linear_Algebra_for_ML.md){ .card }
+  [<span><h3>Linear Algebra</h3><p>Vectors, matrices, SVD and more.</p></span>](Linear_Algebra_for_ML.md){ .card }
 </section>
