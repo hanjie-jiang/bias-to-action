@@ -1,7 +1,9 @@
 ---
 title: ML Fundamentals from textbook
 ---
-# Feature Engineering
+# Resources Used
+
+![baimian-ml.pdf](<../resources/baimian-ml.pdf>)# Feature Engineering
 
 Two types of data:
 - Structured / Tabular data: Could be viewed as a data table from the relational database, which every columns has their clear definition, including **numerical** and **categorial** data types.
@@ -584,10 +586,10 @@ $$\mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} = X\cdo
 #### coefficient of determination ($R^2$ score)
 $$R^2=1-\frac{SS_\text{residuals}}{SS_\text{total}} = 1 - \frac{\sum_{i=1}^n(y_i - \hat y_i)^2}{\sum_{i=1}^n(y_i - \bar y_i)^2}$$ Where $SS_\text{residuals}$ denotes the residual sum of squares for predictions and $SS_\text{total}$ denotes the total sum of squares from actual values. A higher R-squared value / closer to 1 indicates a good model fit.
 
-```
+```text
 import numpy as np
 # given data
-housing_data = np.array([[1800, 3], [2400, 4],[1416, 2], [3000, 5]])
+housing_data = np.array(\[\[1800, 3\], \[2400, 4\],\[1416, 2\], \[3000, 5\]\])
 prices = np.array([350000, 475000, 230000, 640000])
 
 # adding 1s to our matrix
@@ -617,6 +619,7 @@ print("Coefficients:", coefficients)
 print("Predicted prices:", predicted_prices)
 print("R^2:", r2)
 ```
+
 
 ### Gradient Descent
 #gradient-descent #learning-rate

@@ -8,25 +8,25 @@
       
       
       
-        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/Week5_6_Linear_Algebra_for_ML/">
+        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/week1-2_probability_and_markov/Week1/">
       
       
-        <link rel="prev" href="../week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals/">
+        <link rel="prev" href="../..">
       
       
-        <link rel="next" href="../Week8_9_Neural_Networks_and_Backprop/">
+        <link rel="next" href="Week1P1-conditional_probability_and_bayes_rule/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
     
     
       
-        <title>Week5_6_Linear_Algebra_for_ML - Machine Learning Notes</title>
+        <title>Week 1 Overview - Machine Learning Notes</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
       
       
 
@@ -45,9 +45,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/styles/layout.css">
+      <link rel="stylesheet" href="../../assets/styles/layout.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -65,11 +65,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#title-linear-algebra-for-machine-learning" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -82,7 +77,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Week5_6_Linear_Algebra_for_ML
+              Week 1 Overview
             
           </span>
         </div>
@@ -184,7 +179,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -202,7 +197,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -266,6 +261,8 @@
                 
   
   
+    
+  
   
   
     
@@ -275,11 +272,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -295,7 +292,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Probability & Markov
@@ -306,10 +303,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../week1-2_probability_and_markov/Week1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -320,6 +324,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -332,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../week1-2_probability_and_markov/Week1/Week1P1-conditional_probability_and_bayes_rule/" class="md-nav__link">
+      <a href="Week1P1-conditional_probability_and_bayes_rule/" class="md-nav__link">
         
   
   
@@ -355,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../week1-2_probability_and_markov/Week1/Week1P2-naive_bayes_and_gaussian_naive_bayes/" class="md-nav__link">
+      <a href="Week1P2-naive_bayes_and_gaussian_naive_bayes/" class="md-nav__link">
         
   
   
@@ -378,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../week1-2_probability_and_markov/Week1/Week1P3-joint_and_marginal_distributions/" class="md-nav__link">
+      <a href="Week1P3-joint_and_marginal_distributions/" class="md-nav__link">
         
   
   
@@ -401,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals/" class="md-nav__link">
+      <a href="Week1P4-ML_fundamentals/" class="md-nav__link">
         
   
   
@@ -429,30 +434,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Linear Algebra
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Week5_6_Linear_Algebra_for_ML/" class="md-nav__link">
         
   
   
@@ -463,57 +448,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#title-linear-algebra-for-machine-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      title: Linear Algebra for Machine Learning
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="title: Linear Algebra for Machine Learning">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#knowledge-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      Knowledge Points
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -576,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Week8_9_Neural_Networks_and_Backprop/" class="md-nav__link">
+      <a href="../../Week8_9_Neural_Networks_and_Backprop/" class="md-nav__link">
         
   
   
@@ -615,30 +549,20 @@
 
 
 
-  <h1>Linear Algebra</h1>
+  <h1>Week 1 Overview</h1>
 
-<hr />
-<h2 id="title-linear-algebra-for-machine-learning">title: Linear Algebra for Machine Learning<a class="headerlink" href="#title-linear-algebra-for-machine-learning" title="Permanent link">&para;</a></h2>
-<h4 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h4>
-<p>Linear algebra is the backbone of all modern machine-learning frameworks. Vectors and matrices represent data and parameters, while operations such as matrix multiplication power everything from linear regression to transformers.</p>
-<h4 id="knowledge-points">Knowledge Points<a class="headerlink" href="#knowledge-points" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Vectors &amp; vector operations</li>
-<li>Matrices &amp; matrix multiplication</li>
-<li>Dot product, norms, and projections</li>
-<li>Eigenvalues &amp; eigenvectors</li>
-<li>Singular Value Decomposition (SVD)</li>
-<li>Practical coding exercises with NumPy/PyTorch</li>
-</ul>
+<p># Week 1 Overview</p>
+<p>Short overview of Probability \&amp; Markov topics.</p>
+<p>- [[Week1P1-conditional_probability_and_bayes_rule|Bayes’ Rule]]</p>
+<p>- [[Week1P2-naive_bayes_and_gaussian_naive_bayes|Naive Bayes]]</p>
+<p>- [[Week1P3-joint_and_marginal_distributions|Joint \&amp; Marginal]]</p>
+<p>- [[Week1P4-ML_fundamentals|ML Fundamentals]]</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
@@ -689,10 +613,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "content.code.copy", "content.code.annotate", "content.action.edit", "content.tabs.link", "toc.integrate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "content.code.copy", "content.code.annotate", "content.action.edit", "content.tabs.link", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

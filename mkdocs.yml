@@ -57,6 +57,5 @@ nav:
           - Joint & Marginal: week1-2_probability_and_markov/Week1/Week1P3-joint_and_marginal_distributions.md
           - ML Fundamentals: week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals.md
       - Linear Algebra: Week5_6_Linear_Algebra_for_ML.md
-      - Information Theory: Entropy.md
   - Neural Networks:
       - Overview: Week8_9_Neural_Networks_and_Backprop.md

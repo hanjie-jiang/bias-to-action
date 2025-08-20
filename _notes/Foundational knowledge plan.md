@@ -27,8 +27,8 @@ title: Foundational knowledge plan
     - Implement a bigram/trigram model on a toy corpus
 - Resources:
     - The Illustrated Transformer - start with n-gram part
-    - [Happy-LLM intro chapter](./llm_learning/foundations_of_ML/week3_language_model/resources/![[Happy-LLM-v1.0.pdf]])
-    - Optional: fastaiâ€™s n-gram language model notebook
+    - [Happy-LLM intro chapter](./week3_language_model/resources/Happy-LLM-v1.0.pdf)
+    - Optional: n-gram language model notebook
 #### **Week 4: Intro to Information Theory**
 - [[Week4_Information_Theory]]
 
@@ -51,7 +51,7 @@ title: Foundational knowledge plan
     - Stanford CS224n Lecture 1
         
 
-#### **Week 5â€“6: Linear Algebra for ML**
+#### **Week 5-6: Linear Algebra for ML**
 - [[Week5_6_Linear_Algebra_for_ML]]
 
 - Topics:
@@ -97,7 +97,7 @@ title: Foundational knowledge plan
     - [Gradient Descent Visualization (YouTube)](https://www.youtube.com/watch?v=IHZwWFHWa-w)
         
 
-#### **Week 8â€“9: Neural Networks & Backpropagation**
+#### **Week 8-9: Neural Networks & Backpropagation**
 - [[Week8_9_Neural_Networks_and_Backprop]]
 
 - Topics:

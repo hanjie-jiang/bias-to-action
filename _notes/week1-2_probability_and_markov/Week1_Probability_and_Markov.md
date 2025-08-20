@@ -17,4 +17,4 @@ Through this module you will refresh key probability concepts and see how the Ma
 - [[Week1P2-naive_bayes_and_gaussian_naive_bayes|Naive Bayes]]
 - [[Week1P3-joint_and_marginal_distributions|Joint & Marginal]]
 - [[Week1P4-ML_fundamentals|ML Fundamentals]]
-- [[Markov Assumption: definition & role in NLP]] 
+- Markov Assumption: definition & role in NLP

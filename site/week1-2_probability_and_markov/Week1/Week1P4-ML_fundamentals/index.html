@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#feature-engineering" class="md-skip">
+        <a href="#resources-used" class="md-skip">
           Skip to content
         </a>
       
@@ -311,7 +311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../README.md" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -645,29 +645,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Entropy.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Information Theory
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -764,7 +741,8 @@
 
 
 
-<h1 id="feature-engineering">Feature Engineering<a class="headerlink" href="#feature-engineering" title="Permanent link">&para;</a></h1>
+<h1 id="resources-used">Resources Used<a class="headerlink" href="#resources-used" title="Permanent link">&para;</a></h1>
+<p><img alt="baimian-ml.pdf" src="../../resources/baimian-ml.pdf" /># Feature Engineering</p>
 <p>Two types of data:
 - Structured / Tabular data: Could be viewed as a data table from the relational database, which every columns has their clear definition, including <strong>numerical</strong> and <strong>categorial</strong> data types.
 - Unstructured data: Includes <strong>text, image, audio, video data</strong>, and the information that this type of data contains cannot be represented easily as a numerical value, and also they do not have clear categorical definition, furthermore, the size of these data are not identical.</p>
@@ -1351,7 +1329,7 @@ $$\mathbf{y} = \begin{bmatrix} y_1 \ y_2 \ \vdots \ y_n \end{bmatrix} = X\cdot \
 <p><span class="arithmatex">\(<span class="arithmatex">\(R^2=1-\frac{SS_\text{residuals}}{SS_\text{total}} = 1 - \frac{\sum_{i=1}^n(y_i - \hat y_i)^2}{\sum_{i=1}^n(y_i - \bar y_i)^2}\)</span>\)</span> Where <span class="arithmatex">\(SS_\text{residuals}\)</span> denotes the residual sum of squares for predictions and <span class="arithmatex">\(SS_\text{total}\)</span> denotes the total sum of squares from actual values. A higher R-squared value / closer to 1 indicates a good model fit.</p>
 <div class="highlight"><pre><span></span><code>import numpy as np
 # given data
-housing_data = np.array([[1800, 3], [2400, 4], [1416, 2], [3000, 5]])
+housing_data = np.array(\[\[1800, 3\], \[2400, 4\],\[1416, 2\], \[3000, 5\]\])
 prices = np.array([350000, 475000, 230000, 640000])
 
 # adding 1s to our matrix
