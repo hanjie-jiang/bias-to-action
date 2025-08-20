@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "41d5aa9c4d8ecdf9",
+        "id": "2455571afe004eac",
         "type": "split",
         "children": [
           {
@@ -28,11 +28,11 @@
             ]
           },
           {
-            "id": "aa6afb53123f6c6b",
+            "id": "b07bae901d8fb87e",
             "type": "tabs",
             "children": [
               {
-                "id": "f85ac71af1c283b7",
+                "id": "af142ccf0ec88be7",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -105,7 +105,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#multiclass-classification",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -126,7 +126,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -232,7 +233,7 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "f85ac71af1c283b7",
+  "active": "af142ccf0ec88be7",
   "lastOpenFiles": [
     "_notes/week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals.md",
     "_notes/week1-2_probability_and_markov/resources/gini_index_1.png",

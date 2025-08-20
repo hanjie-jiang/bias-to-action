@@ -491,8 +491,8 @@ Compare to **unregularized** OLS:
 $$w_{\text{OLS}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2}$$
 L2 adds $\lambda$ to the denominator and **shrinks $w$ toward 0**.
 ###### Why L2 decrease variance and increase bias?
+L2 regularization constrains how large the parameters can get. Constraining parameters makes the fitted function smoother/less wiggly, so predictions don’t swing wildly when the training sample changes—this cuts variance. The tradeoff is that the constrained model can’t perfectly adapt to the true signal, so estimates are pulled toward zero (or toward simpler shapes), which introduces bias.
 ###### Tiny Numeric Example
-
 Data: $x=[0,1,2,3]$, $y=[0,1,2,60]$ (last point is an outlier)
 - $\sum x_i^2 = 14, \sum x_i y_i = 185$
 Weights:
@@ -793,3 +793,11 @@ $$\text{Total Gini Impurity} = \text{weighted avg of Gini for the leaves} = (\fr
 ### Information Gain
 #### Max Information Gain
 For a sample set D, there are K categories, the empirical entropy for this set D can be expressed as $H(D) = -\sum_{k=1}^K \frac{|C_k|}{D}\log_2\frac{C_k}{D}$.
+
+# Unsupervised Learnings
+We may encounter problems such that providing the machine a tons of feature data and looking for the machine to learn the pattern or structure from the data, for example the video platforms would like to categorize the users from their activities for different recommendation strategies, or looking for relationship between whether the video playing smooth or not vs their relationship with user unsubscribe. These problems are called "unsupervised learnings", which does not like the supervised learnings where we expect to see outputs or predictions. The unsupervised learning inputs does not contain label information, instead it needs to dig into the internal data relationship from the algorithm model. **There are two main categories of the unsupervised learnings: data clustering or feature variable correlation (using correlation analysis for relationships between variables)**. 
+## K-means Clustering
+#clustering #unsupervised-learning #classification
+Algorithms such as SVM, logistic regression, decision trees are more for the categorization, i.e. based on the known labelled samples, classifiers are training so that it could apply the same logic on unlabeled samples. Unlike the classification problems, clustering is directly categorize the samples without any previously known labelling. 
+
+Classification belongs to supervised learning whereas clustering is a type of unsupervised learning algorithm. K-means clustering, as one type of the most basic and fundamental clustering algorithm, has the main idea of iteratively finding the way of cutting the space into K clusters, so that the loss function is the lowest. The loss function can be defined as the squared error of distance of each sample from their clustered center
