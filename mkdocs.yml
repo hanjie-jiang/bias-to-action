@@ -1,4 +1,5 @@
 site_name: Machine Learning Notes
+site_url: https://hanjie-jiang.github.io/ml-learning-notes/
 docs_dir: _notes
 
 extra_css:
@@ -23,8 +24,7 @@ theme:
 
 plugins:
   - search
-  - roamlinks:
-      wiki_link_extension: .md
+  - roamlinks
 
 markdown_extensions:
   - admonition

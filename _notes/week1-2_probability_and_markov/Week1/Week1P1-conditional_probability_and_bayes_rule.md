@@ -10,7 +10,7 @@ title: Conditional Probability & Bayes Rule
 - [StatQuest: Bayes' Rule](https://www.youtube.com/watch?v=9wCnvr7Xw4E)
 - [3Blue1Brown: Bayes theorem, the geometry of changing beliefs](https://www.youtube.com/watch?v=HZGCoVF3YvM)
 
-![](../resources/conditional_probability.png =100x)
+![Conditional Probability](../resources/conditional_probability.png)
 
 |                         |        Loves Candy        |    Does not Love Candy    |         Row Total         |
 | ----------------------- | :-----------------------: | :-----------------------: | :-----------------------: |

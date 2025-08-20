@@ -1,9 +1,6 @@
 ---
 title: ML Fundamentals from textbook
 ---
-### Resources
-[[[[百面机器学习.pdf]]]]
-
 # Feature Engineering
 
 Two types of data:
@@ -15,11 +12,11 @@ Two types of data:
 ###### Why does one need to do normalization on numerical features?
 
 In order to eliminate the magnitude impact between features, we should always do normalization to the features that we use, i.e. to uniformly normalize all the features to a similar range, so that it could **help compare between different metrics**. There are two different types of normalization that people most commonly use:
-- *min-max scaling*: It linearly changes the original data so that the data could be projected to [0, 1] range so that it is an equal ratio transformation of the original data:
+- *min-max scaling*: It linearly changes the original data so that the data could be projected to \[0, 1\] range so that it is an equal ratio transformation of the original data:
 $$X_{\text{norm}} = \frac{X-X_{\text{min}}}{X_{\text{max}-X_{\text{min}}}}$$
 - *Z-Score normalization*: It would project the original data to a mean of 0 and variance = 1 distribution. Specifically, assume that the original feature has mean $\mu$ and variance $\sigma$ , then the normalization equation would be defined as:
 $$Z = \frac{x-\mu}{\sigma}$$ 
-Using stochastic gradient descent (SGD) as an example, when two numerical features, $x_1$ of range [0,10] and $x_2$ of range [0,3], then when the $x_1$ and $x_2$ are not normalized, the ![[Screenshot 2025-08-05 at 8.22.11 PM.png]] gradient descent would not be as efficient as when one does the normalization of the features. However, feature normalization is not always working. In real life, <span style="background-color: #FEE9E7"> whenever a model utilizes SGD, it is suggested to use the normalization, including linear regression, logistic regression, support vector machine, neural networks, whereas decision tress it does not help. </span> As for decision tree models, the node split usually is determined by the data and how much [[^1]information gain ratio](https://en.wikipedia.org/wiki/Information_gain_ratio) that data contains about X. This information gain ratio is not impacted by whether the feature has been normalized, rather it would not change the information gain of the specific feature X.
+Using stochastic gradient descent (SGD) as an example, when two numerical features, $x_1$ of range \[0,10\] and $x_2$ of range \[0,3\], then when the $x_1$ and $x_2$ are not normalized, the ![[Screenshot 2025-08-05 at 8.22.11 PM.png]] gradient descent would not be as efficient as when one does the normalization of the features. However, feature normalization is not always working. In real life, <span style="background-color: #FEE9E7"> whenever a model utilizes SGD, it is suggested to use the normalization, including linear regression, logistic regression, support vector machine, neural networks, whereas decision tress it does not help. </span> As for decision tree models, the node split usually is determined by the data and how much [[^1]information gain ratio](https://en.wikipedia.org/wiki/Information_gain_ratio) that data contains about X. This information gain ratio is not impacted by whether the feature has been normalized, rather it would not change the information gain of the specific feature X.
 
 [^1]: need to work on the definition of this and learn more about information theory
 
@@ -30,7 +27,7 @@ Categorical features include male / female, blood type (A,B,AB,O) and etc, which
 
 One would need to encode the features to a higher dimensional vector to represent them in the model.
 - **ordinal encoding**: usually used to treat those data that has ordinal sequence, for example when scoring we have high > middle > low, then the ordinal encoder would help to describe this type of sequence via giving it a numerical ID. For example, we could represent high as 3, middle as 2 and low as 1 in this case, which helps retain the high to low relationship.
-- **one-hot encoding**: usually used to treat features that do not have ordinal relationships, for example, for blood type, one could directly use the [1,0,0,0], [0,1,0,0], [0,0,1,0] and [0,0,0,1] to represent the different types. Note:
+- **one-hot encoding**: usually used to treat features that do not have ordinal relationships, for example, for blood type, one could directly use the \[1,0,0,0\], \[0,1,0,0\], \[0,0,1,0\] and \[0,0,0,1\] to represent the different types. Note:
 	- use of sparse vector for saving space
 	- high-dimensional features can be difficult in following scenarios: 1) K-nearest neighbors, the distance between two high-dimensional vectors can be hard to measure, 2) logistic regression, the parameters can increase with higher dimensions, thus causing overfitting problems and 3) only some of the dimensions could be helpful when doing clustering or predictions, so one could think to reduce dimensions with feature selections.
 - **binary encoding**: using binary to do a hash mapping on the original category ID, this can help save space when comparing with the one-hot encoding as it is usually of fewer dimensions.
@@ -371,7 +368,7 @@ We have touched on the P-R curve for evaluating classification or sort algorithm
 
 ##### Use of cosine distance
 #cosine-similarity #cosine-distance #euclidean-distance
-How to evaluate the distance between samples can also define the optimization target and training method. In ML problems, we usually take the features to be of vector form, so when analyzing the two feature vector similarity, we could use cosine similarity. The cosine similarity can range from -1 to 1, where when two vectors are exactly the same, the cosine similarity becomes 1. Hence, when looking at distances, 1-cosine similarity becomes the cosine distance. Overall, the cosine distance is [0,2] and the same two vectors their cosine distance becomes 0.
+How to evaluate the distance between samples can also define the optimization target and training method. In ML problems, we usually take the features to be of vector form, so when analyzing the two feature vector similarity, we could use cosine similarity. The cosine similarity can range from -1 to 1, where when two vectors are exactly the same, the cosine similarity becomes 1. Hence, when looking at distances, 1-cosine similarity becomes the cosine distance. Overall, the cosine distance is \[0,2\] and the same two vectors their cosine distance becomes 0.
 
 ###### Definition of Euclidean Distance & Cosine Distance
 
@@ -590,7 +587,7 @@ $$R^2=1-\frac{SS_\text{residuals}}{SS_\text{total}} = 1 - \frac{\sum_{i=1}^n(y_i
 ```
 import numpy as np
 # given data
-housing_data = np.array([[1800, 3], [2400, 4], [1416, 2], [3000, 5]])
+housing_data = np.array([[1800, 3], [2400, 4],[1416, 2], [3000, 5]])
 prices = np.array([350000, 475000, 230000, 640000])
 
 # adding 1s to our matrix
