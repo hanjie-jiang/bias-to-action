@@ -9,6 +9,14 @@
          <lastmod>2025-08-20</lastmod>
     </url>
     <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/Linear_Algebra_for_ML/</loc>
+         <lastmod>2025-08-20</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/Neural_Networks_and_Backprop/</loc>
+         <lastmod>2025-08-20</lastmod>
+    </url>
+    <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/Week10_Integration_and_Project/</loc>
          <lastmod>2025-08-20</lastmod>
     </url>
@@ -17,43 +25,35 @@
          <lastmod>2025-08-20</lastmod>
     </url>
     <url>
-         <loc>https://hanjie-jiang.github.io/ml-learning-notes/Week5_6_Linear_Algebra_for_ML/</loc>
-         <lastmod>2025-08-20</lastmod>
-    </url>
-    <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/Week7_Calculus_and_Gradient_Descent/</loc>
          <lastmod>2025-08-20</lastmod>
     </url>
     <url>
-         <loc>https://hanjie-jiang.github.io/ml-learning-notes/Week8_9_Neural_Networks_and_Backprop/</loc>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/language_model/Ngram_Language_Modeling/</loc>
          <lastmod>2025-08-20</lastmod>
     </url>
     <url>
-         <loc>https://hanjie-jiang.github.io/ml-learning-notes/week1-2_probability_and_markov/Week1_Probability_and_Markov/</loc>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/ML_fundamentals/</loc>
          <lastmod>2025-08-20</lastmod>
     </url>
     <url>
-         <loc>https://hanjie-jiang.github.io/ml-learning-notes/week1-2_probability_and_markov/Week1/</loc>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/probability_and_markov/Probability_and_Markov_Overview/</loc>
          <lastmod>2025-08-20</lastmod>
     </url>
     <url>
-         <loc>https://hanjie-jiang.github.io/ml-learning-notes/week1-2_probability_and_markov/Week1/Week1P1-conditional_probability_and_bayes_rule/</loc>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/probability_and_markov/probability_and_markov_sections/</loc>
          <lastmod>2025-08-20</lastmod>
     </url>
     <url>
-         <loc>https://hanjie-jiang.github.io/ml-learning-notes/week1-2_probability_and_markov/Week1/Week1P2-naive_bayes_and_gaussian_naive_bayes/</loc>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/probability_and_markov/probability_and_markov_sections/conditional_probability_and_bayes_rule/</loc>
          <lastmod>2025-08-20</lastmod>
     </url>
     <url>
-         <loc>https://hanjie-jiang.github.io/ml-learning-notes/week1-2_probability_and_markov/Week1/Week1P3-joint_and_marginal_distributions/</loc>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions/</loc>
          <lastmod>2025-08-20</lastmod>
     </url>
     <url>
-         <loc>https://hanjie-jiang.github.io/ml-learning-notes/week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals/</loc>
-         <lastmod>2025-08-20</lastmod>
-    </url>
-    <url>
-         <loc>https://hanjie-jiang.github.io/ml-learning-notes/week3_language_model/Week3_Ngram_Language_Modeling/</loc>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes/</loc>
          <lastmod>2025-08-20</lastmod>
     </url>
 </urlset>

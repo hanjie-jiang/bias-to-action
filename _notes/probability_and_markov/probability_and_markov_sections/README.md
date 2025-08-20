@@ -12,5 +12,3 @@ Short overview of Probability \& Markov topics.
 
 \- \[\[Week1P3-joint\_and\_marginal\_distributions|Joint \& Marginal]]
 
-\- \[\[Week1P4-ML\_fundamentals|ML Fundamentals]]
-

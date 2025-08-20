@@ -50,12 +50,13 @@ extra_javascript:
 nav:
   - Home: index.md
   - Foundations:
+      - ML Fundamentals: ml_fundamentals/ML_fundamentals.md
       - Probability & Markov:
-          - Week 1 Overview: week1-2_probability_and_markov/Week1/README.md
-          - Bayes’ Rule: week1-2_probability_and_markov/Week1/Week1P1-conditional_probability_and_bayes_rule.md
-          - Naive Bayes: week1-2_probability_and_markov/Week1/Week1P2-naive_bayes_and_gaussian_naive_bayes.md
-          - Joint & Marginal: week1-2_probability_and_markov/Week1/Week1P3-joint_and_marginal_distributions.md
-          - ML Fundamentals: week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals.md
-      - Linear Algebra: Week5_6_Linear_Algebra_for_ML.md
+          - Overview: probability_and_markov/Probability_and_Markov_Overview.md
+          - Bayes’ Rule: probability_and_markov/probability_and_markov_sections/conditional_probability_and_bayes_rule.md
+          - Naive Bayes: probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes.md
+          - Joint & Marginal: probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions.md
+  - Linear Algebra: Linear_Algebra_for_ML.md
+  - Language Model: language_model/Ngram_Language_Modeling.md
   - Neural Networks:
-      - Overview: Week8_9_Neural_Networks_and_Backprop.md
+      - Overview: Neural_Networks_and_Backprop.md

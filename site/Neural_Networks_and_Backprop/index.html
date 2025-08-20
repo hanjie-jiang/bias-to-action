@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/Week5_6_Linear_Algebra_for_ML/">
+        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/Neural_Networks_and_Backprop/">
       
       
-        <link rel="prev" href="../week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals/">
+        <link rel="prev" href="../language_model/Ngram_Language_Modeling/">
       
-      
-        <link rel="next" href="../Week8_9_Neural_Networks_and_Backprop/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Week5_6_Linear_Algebra_for_ML - Machine Learning Notes</title>
+        <title>Week8_9_Neural_Networks_and_Backprop - Machine Learning Notes</title>
       
     
     
@@ -66,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#title-linear-algebra-for-machine-learning" class="md-skip">
+        <a href="#title-neural-networks-backpropagation" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Week5_6_Linear_Algebra_for_ML
+              Week8_9_Neural_Networks_and_Backprop
             
           </span>
         </div>
@@ -221,8 +219,6 @@
       
   
   
-    
-  
   
   
     
@@ -235,11 +231,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -255,12 +251,35 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Foundations
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml_fundamentals/ML_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ML Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -279,10 +298,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   
@@ -295,8 +314,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Probability & Markov
           </label>
@@ -309,12 +328,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../week1-2_probability_and_markov/Week1/" class="md-nav__link">
+      <a href="../probability_and_markov/Probability_and_Markov_Overview/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Week 1 Overview
+    Overview
     
   </span>
   
@@ -332,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../week1-2_probability_and_markov/Week1/Week1P1-conditional_probability_and_bayes_rule/" class="md-nav__link">
+      <a href="../probability_and_markov/probability_and_markov_sections/conditional_probability_and_bayes_rule/" class="md-nav__link">
         
   
   
@@ -355,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../week1-2_probability_and_markov/Week1/Week1P2-naive_bayes_and_gaussian_naive_bayes/" class="md-nav__link">
+      <a href="../probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes/" class="md-nav__link">
         
   
   
@@ -378,35 +397,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../week1-2_probability_and_markov/Week1/Week1P3-joint_and_marginal_distributions/" class="md-nav__link">
+      <a href="../probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Joint & Marginal
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    ML Fundamentals
     
   </span>
   
@@ -424,6 +420,102 @@
   
 
               
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linear_Algebra_for_ML/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linear Algebra
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language_model/Ngram_Language_Modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Language Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Neural Networks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Neural Networks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -444,7 +536,7 @@
   
   
   <span class="md-ellipsis">
-    Linear Algebra
+    Overview
     
   </span>
   
@@ -457,7 +549,7 @@
   
   
   <span class="md-ellipsis">
-    Linear Algebra
+    Overview
     
   </span>
   
@@ -478,13 +570,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#title-linear-algebra-for-machine-learning" class="md-nav__link">
+  <a href="#title-neural-networks-backpropagation" class="md-nav__link">
     <span class="md-ellipsis">
-      title: Linear Algebra for Machine Learning
+      title: Neural Networks &amp; Backpropagation
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="title: Linear Algebra for Machine Learning">
+    <nav class="md-nav" aria-label="title: Neural Networks &amp; Backpropagation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -526,79 +618,6 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Neural Networks
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Neural Networks
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Week8_9_Neural_Networks_and_Backprop/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -615,20 +634,19 @@
 
 
 
-  <h1>Linear Algebra</h1>
+  <h1>Overview</h1>
 
 <hr />
-<h2 id="title-linear-algebra-for-machine-learning">title: Linear Algebra for Machine Learning<a class="headerlink" href="#title-linear-algebra-for-machine-learning" title="Permanent link">&para;</a></h2>
+<h2 id="title-neural-networks-backpropagation">title: Neural Networks &amp; Backpropagation<a class="headerlink" href="#title-neural-networks-backpropagation" title="Permanent link">&para;</a></h2>
 <h4 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h4>
-<p>Linear algebra is the backbone of all modern machine-learning frameworks. Vectors and matrices represent data and parameters, while operations such as matrix multiplication power everything from linear regression to transformers.</p>
+<p>Neural networks approximate complex nonlinear functions by stacking layers of linear transformations and nonlinear activations. Backpropagation efficiently computes gradients for training, enabling deep learning breakthroughs.</p>
 <h4 id="knowledge-points">Knowledge Points<a class="headerlink" href="#knowledge-points" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Vectors &amp; vector operations</li>
-<li>Matrices &amp; matrix multiplication</li>
-<li>Dot product, norms, and projections</li>
-<li>Eigenvalues &amp; eigenvectors</li>
-<li>Singular Value Decomposition (SVD)</li>
-<li>Practical coding exercises with NumPy/PyTorch</li>
+<li>Structure of a feed-forward neural network</li>
+<li>Activation functions: ReLU, softmax</li>
+<li>Backpropagation algorithm</li>
+<li>Implementing a simple NN from scratch (e.g., MNIST/XOR)</li>
+<li>Deriving gradient of softmax + cross-entropy</li>
 </ul>
 
 

@@ -8,25 +8,25 @@
       
       
       
-        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/week1-2_probability_and_markov/Week1/Week1P2-naive_bayes_and_gaussian_naive_bayes/">
+        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/language_model/Ngram_Language_Modeling/">
       
       
-        <link rel="prev" href="../Week1P1-conditional_probability_and_bayes_rule/">
+        <link rel="prev" href="../../Linear_Algebra_for_ML/">
       
       
-        <link rel="next" href="../Week1P3-joint_and_marginal_distributions/">
+        <link rel="next" href="../../Neural_Networks_and_Backprop/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
     
     
       
-        <title>Week1P2 - Naive Bayes & Gaussian Naive Bayes - Machine Learning Notes</title>
+        <title>Week3_Ngram_Language_Modeling - Machine Learning Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
       
       
 
@@ -45,9 +45,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/styles/layout.css">
+      <link rel="stylesheet" href="../../assets/styles/layout.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#title-naive-bayes-gaussian-naive-bayes" class="md-skip">
+        <a href="#n-gram-models-language-modeling" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Week1P2 - Naive Bayes & Gaussian Naive Bayes
+              Week3_Ngram_Language_Modeling
             
           </span>
         </div>
@@ -184,7 +184,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -202,7 +202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -221,8 +221,6 @@
       
   
   
-    
-  
   
   
     
@@ -235,11 +233,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -255,7 +253,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Foundations
@@ -266,7 +264,28 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/ML_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ML Fundamentals
     
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
   
   
   
@@ -277,14 +296,14 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   
@@ -297,8 +316,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Probability & Markov
           </label>
@@ -311,12 +330,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../probability_and_markov/Probability_and_Markov_Overview/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Week 1 Overview
+    Overview
     
   </span>
   
@@ -334,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Week1P1-conditional_probability_and_bayes_rule/" class="md-nav__link">
+      <a href="../../probability_and_markov/probability_and_markov_sections/conditional_probability_and_bayes_rule/" class="md-nav__link">
         
   
   
@@ -354,6 +373,89 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Naive Bayes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Joint & Marginal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linear_Algebra_for_ML/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linear Algebra
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -369,7 +471,7 @@
   
   
   <span class="md-ellipsis">
-    Naive Bayes
+    Language Model
     
   </span>
   
@@ -382,7 +484,7 @@
   
   
   <span class="md-ellipsis">
-    Naive Bayes
+    Language Model
     
   </span>
   
@@ -403,102 +505,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#title-naive-bayes-gaussian-naive-bayes" class="md-nav__link">
+  <a href="#n-gram-models-language-modeling" class="md-nav__link">
     <span class="md-ellipsis">
-      title: Naive Bayes &amp; Gaussian Naive Bayes
+      N-gram Models &amp; Language Modeling
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="N-gram Models &amp; Language Modeling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Knowledge Points
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
     </ul>
   
 </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Week1P3-joint_and_marginal_distributions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Joint & Marginal
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Week1P4-ML_fundamentals/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    ML Fundamentals
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Week5_6_Linear_Algebra_for_ML/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Linear Algebra
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -524,10 +565,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -540,8 +581,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Neural Networks
           </label>
@@ -554,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Week8_9_Neural_Networks_and_Backprop/" class="md-nav__link">
+      <a href="../../Neural_Networks_and_Backprop/" class="md-nav__link">
         
   
   
@@ -593,14 +634,20 @@
 
 
 
-  <h1>Naive Bayes</h1>
+  <h1>Language Model</h1>
 
-<hr />
-<h2 id="title-naive-bayes-gaussian-naive-bayes">title: Naive Bayes &amp; Gaussian Naive Bayes<a class="headerlink" href="#title-naive-bayes-gaussian-naive-bayes" title="Permanent link">&para;</a></h2>
-<p><strong>Resources</strong>
-- <a href="https://www.youtube.com/watch?v=_IgyaD7vOOA">StatQuest: Conditional Probability (YouTube)</a>
-- <a href="https://www.youtube.com/watch?v=9wCnvr7Xw4E">StatQuest: Bayes' Rule</a>
-- <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM">3Blue1Brown: Bayes theorem, the geometry of changing beliefs</a></p>
+<h3 id="n-gram-models-language-modeling">N-gram Models &amp; Language Modeling<a class="headerlink" href="#n-gram-models-language-modeling" title="Permanent link">&para;</a></h3>
+<h4 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h4>
+<p>N-gram language models are the classical approach to predicting words based on fixed-length context. They remain a great entry point for understanding how language modeling works, how to evaluate models with perplexity, and why data sparsity motivates neural approaches.</p>
+<h4 id="knowledge-points">Knowledge Points<a class="headerlink" href="#knowledge-points" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Textual Descriptive Models</li>
+<li>What is an n-gram?</li>
+<li>Building and training an n-gram language model</li>
+<li>Perplexity: definition &amp; interpretation</li>
+<li>Limitations of n-gram models (data sparsity, context window)</li>
+<li>Implementing bigram or trigram models on a toy corpus</li>
+</ul>
 
 
 
@@ -660,10 +707,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "content.code.copy", "content.code.annotate", "content.action.edit", "content.tabs.link", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "content.code.copy", "content.code.annotate", "content.action.edit", "content.tabs.link", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

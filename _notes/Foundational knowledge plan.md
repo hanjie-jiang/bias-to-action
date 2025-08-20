@@ -2,12 +2,12 @@
 title: Foundational knowledge plan
 ---
 #### **Week 1-2: Probability Foundations + Markov Assumption**
-- [[Week1_Probability_and_Markov]]
+- [[Probability_and_Markov_Overview]]
 - Topics:
-    - [[Week1P1-conditional_probability_and_bayes_rule]]
-    - [[Week1P2-naive_bayes_and_gaussian_naive_bayes]]
-    - [[Week1P3-joint_and_marginal_distributions]]
-    - [[Week1P4-ML_fundamentals]]
+    - [[conditional_probability_and_bayes_rule]]
+    - [[naive_bayes_and_gaussian_naive_bayes]]
+    - [[joint_and_marginal_distributions]]
+    - [[ML_fundamentals]]
     - Markov Assumption: what it is and why it matters in NLP
 - Resources:
     - [StatQuest: Conditional Probability (YouTube)](https://www.youtube.com/watch?v=_IgyaD7vOOA)
@@ -18,7 +18,7 @@ title: Foundational knowledge plan
     - [Khan Academy - Probability & Statistics](https://www.khanacademy.org/math/statistics-probability)
     - â€œSpeech and Language Processingâ€ by Jurafsky & Martin â€” Ch. 3 (Markov models)
 #### **Week 3: N-gram Models & Language Modeling**
-- [[Week3_Ngram_Language_Modeling]]
+- [[Ngram_Language_Modeling]]
 - Topics:
     - What is an n-gram?
     - How n-gram language models work
@@ -27,7 +27,7 @@ title: Foundational knowledge plan
     - Implement a bigram/trigram model on a toy corpus
 - Resources:
     - The Illustrated Transformer - start with n-gram part
-    - [Happy-LLM intro chapter](./week3_language_model/resources/Happy-LLM-v1.0.pdf)
+    - [Happy-LLM intro chapter](language_model/resources/Happy-LLM-v1.0.pdf)
     - Optional: n-gram language model notebook
 #### **Week 4: Intro to Information Theory**
 - [[Week4_Information_Theory]]
@@ -52,7 +52,7 @@ title: Foundational knowledge plan
         
 
 #### **Week 5-6: Linear Algebra for ML**
-- [[Week5_6_Linear_Algebra_for_ML]]
+- [[Linear_Algebra_for_ML]]
 
 - Topics:
     
@@ -98,7 +98,7 @@ title: Foundational knowledge plan
         
 
 #### **Week 8-9: Neural Networks & Backpropagation**
-- [[Week8_9_Neural_Networks_and_Backprop]]
+- [[Neural_Networks_and_Backprop]]
 
 - Topics:
     

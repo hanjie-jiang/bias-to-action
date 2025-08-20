@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/week1-2_probability_and_markov/Week1_Probability_and_Markov/">
+        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/probability_and_markov/Probability_and_Markov_Overview/">
       
       
+        <link rel="prev" href="../../ml_fundamentals/ML_fundamentals/">
+      
+      
+        <link rel="next" href="../probability_and_markov_sections/conditional_probability_and_bayes_rule/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -217,8 +221,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -229,11 +235,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -249,7 +255,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Foundations
@@ -262,53 +268,13 @@
   
   
   
-    
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Probability & Markov
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_1">
-            <span class="md-nav__icon md-icon"></span>
-            Probability & Markov
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../Week1/" class="md-nav__link">
+      <a href="../../ml_fundamentals/ML_fundamentals/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Week 1 Overview
+    ML Fundamentals
     
   </span>
   
@@ -323,10 +289,161 @@
                 
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Probability & Markov
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Probability & Markov
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#title-probability-markov" class="md-nav__link">
+    <span class="md-ellipsis">
+      title: Probability &amp; Markov
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="title: Probability &amp; Markov">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#probability-foundations-markov-assumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      Probability Foundations &amp; Markov Assumption
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Probability Foundations &amp; Markov Assumption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Knowledge Points
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
-      <a href="../Week1/Week1P1-conditional_probability_and_bayes_rule/" class="md-nav__link">
+      <a href="../probability_and_markov_sections/conditional_probability_and_bayes_rule/" class="md-nav__link">
         
   
   
@@ -349,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Week1/Week1P2-naive_bayes_and_gaussian_naive_bayes/" class="md-nav__link">
+      <a href="../probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes/" class="md-nav__link">
         
   
   
@@ -372,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Week1/Week1P3-joint_and_marginal_distributions/" class="md-nav__link">
+      <a href="../probability_and_markov_sections/joint_and_marginal_distributions/" class="md-nav__link">
         
   
   
@@ -388,24 +505,9 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Week1/Week1P4-ML_fundamentals/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    ML Fundamentals
-    
-  </span>
-  
-
-      </a>
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -417,16 +519,15 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
   
     <li class="md-nav__item">
-      <a href="../../Week5_6_Linear_Algebra_for_ML/" class="md-nav__link">
+      <a href="../../Linear_Algebra_for_ML/" class="md-nav__link">
         
   
   
@@ -440,11 +541,25 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
+    
       
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language_model/Ngram_Language_Modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Language Model
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -469,10 +584,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -485,8 +600,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Neural Networks
           </label>
@@ -499,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Week8_9_Neural_Networks_and_Backprop/" class="md-nav__link">
+      <a href="../../Neural_Networks_and_Backprop/" class="md-nav__link">
         
   
   
@@ -538,7 +653,7 @@
 
 
 
-  <h1>Week1_Probability_and_Markov</h1>
+  <h1>Overview</h1>
 
 <hr />
 <h2 id="title-probability-markov">title: Probability &amp; Markov<a class="headerlink" href="#title-probability-markov" title="Permanent link">&para;</a></h2>
@@ -548,10 +663,10 @@
 <p>Through this module you will refresh key probability concepts and see how the Markov assumption enables tractable modeling of text sequences.</p>
 <h4 id="knowledge-points">Knowledge Points<a class="headerlink" href="#knowledge-points" title="Permanent link">&para;</a></h4>
 <ul>
-<li><a href="../Week1/Week1P1-conditional_probability_and_bayes_rule/">Conditional Probability &amp; Bayes' Rule</a></li>
-<li><a href="../Week1/Week1P2-naive_bayes_and_gaussian_naive_bayes/">Naive Bayes</a></li>
-<li><a href="../Week1/Week1P3-joint_and_marginal_distributions/">Joint &amp; Marginal</a></li>
-<li><a href="../Week1/Week1P4-ML_fundamentals/">ML Fundamentals</a></li>
+<li><a href="../probability_and_markov_sections/conditional_probability_and_bayes_rule/">Conditional Probability &amp; Bayes' Rule</a></li>
+<li><a href="../probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes/">Naive Bayes</a></li>
+<li><a href="../probability_and_markov_sections/joint_and_marginal_distributions/">Joint &amp; Marginal</a></li>
+<li><a href="../../ml_fundamentals/ML_fundamentals/">ML Fundamentals</a></li>
 <li>Markov Assumption: definition &amp; role in NLP</li>
 </ul>
 

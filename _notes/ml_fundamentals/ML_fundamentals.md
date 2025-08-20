@@ -1,9 +1,9 @@
 ---
-title: ML Fundamentals from textbook
+title: ML Fundamentals
 ---
 # Resources Used
 
-![baimian-ml.pdf](<../resources/baimian-ml.pdf>)# Feature Engineering
+![baimian-ml.pdf](<resources/baimian-ml.pdf>)# Feature Engineering
 
 Two types of data:
 - Structured / Tabular data: Could be viewed as a data table from the relational database, which every columns has their clear definition, including **numerical** and **categorial** data types.
@@ -18,7 +18,7 @@ In order to eliminate the magnitude impact between features, we should always do
 $$X_{\text{norm}} = \frac{X-X_{\text{min}}}{X_{\text{max}-X_{\text{min}}}}$$
 - *Z-Score normalization*: It would project the original data to a mean of 0 and variance = 1 distribution. Specifically, assume that the original feature has mean $\mu$ and variance $\sigma$ , then the normalization equation would be defined as:
 $$Z = \frac{x-\mu}{\sigma}$$ 
-Using stochastic gradient descent (SGD) as an example, when two numerical features, $x_1$ of range \[0,10\] and $x_2$ of range \[0,3\], then when the $x_1$ and $x_2$ are not normalized, the ![[Screenshot 2025-08-05 at 8.22.11 PM.png]] gradient descent would not be as efficient as when one does the normalization of the features. However, feature normalization is not always working. In real life, <span style="background-color: #FEE9E7"> whenever a model utilizes SGD, it is suggested to use the normalization, including linear regression, logistic regression, support vector machine, neural networks, whereas decision tress it does not help. </span> As for decision tree models, the node split usually is determined by the data and how much [[^1]information gain ratio](https://en.wikipedia.org/wiki/Information_gain_ratio) that data contains about X. This information gain ratio is not impacted by whether the feature has been normalized, rather it would not change the information gain of the specific feature X.
+Using stochastic gradient descent (SGD) as an example, when two numerical features, $x_1$ of range \[0,10\] and $x_2$ of range \[0,3\], then when the $x_1$ and $x_2$ are not normalized, the ![Screenshot](<resources/Screenshot 2025-08-05 at 8.22.11 PM.png>) gradient descent would not be as efficient as when one does the normalization of the features. However, feature normalization is not always working. In real life, <span style="background-color: #FEE9E7"> whenever a model utilizes SGD, it is suggested to use the normalization, including linear regression, logistic regression, support vector machine, neural networks, whereas decision tress it does not help. </span> As for decision tree models, the node split usually is determined by the data and how much [[^1]information gain ratio](https://en.wikipedia.org/wiki/Information_gain_ratio) that data contains about X. This information gain ratio is not impacted by whether the feature has been normalized, rather it would not change the information gain of the specific feature X.
 
 [^1]: need to work on the definition of this and learn more about information theory
 
@@ -46,7 +46,7 @@ Using logistic regression as an example, when a data set contains feature vector
 
 We have understood how to use dimension reduction to reduce the number of parameters that the model needs to learn given a feature cross of two high-dimensional features. <span style="background-color: #FEE9E7"> But in reality, we are facing a variety of high-dimensional features. So a single feature crosses of all the different pairs would induce 1) too many parameters and 2) overfitting issues. </span>
 ###### How to effectively select the feature combinations?
-We introduce a feature cross selection based on decision tree models. Taking CTR prediction as an example, assume that the input includes age, gender, user type (free vs paid), searched item type (skincare vs foods), etc. We could thus make a decision tree from the original input and their labels. ![[Screenshot 2025-08-05 at 9.30.27 PM.png]] We could then view the feature crosses from the tree, that contains four different type of pairs:
+We introduce a feature cross selection based on decision tree models. Taking CTR prediction as an example, assume that the input includes age, gender, user type (free vs paid), searched item type (skincare vs foods), etc. We could thus make a decision tree from the original input and their labels. ![Screenshot](<resources/Screenshot 2025-08-05 at 9.30.27 PM.png>) We could then view the feature crosses from the tree, that contains four different type of pairs:
 1. age + gender
 2. age + searched item type
 3. paid user + search item type
@@ -54,7 +54,7 @@ We introduce a feature cross selection based on decision tree models. Taking CTR
 How to best construct the decision trees? One can use the [Gradient Boosting Decision Treeï¼ŒGBDT](https://medium.com/@ruchi.awasthi63/gradient-boosted-decision-tree-clearly-explained-bd1d8c7d9923) or use[ the link](https://neptune.ai/blog/gradient-boosted-decision-trees-guide) to get a better idea of the algorithm. The idea behind is that whenever before constructing a decision tree, we first calculate the error from the true value and iteratively construct the tree from the error.
 
 ## Textual Descriptive Models
-Related Content: [[Week3_Ngram_Language_Modeling]]
+Related Content: [[Ngram_Language_Modeling]]
 
 Text is a category of unstructured data. How to work with textual data has always been one of the most important research directions.
 
@@ -120,8 +120,7 @@ When doing model evaluation, the classification / sort / regression problems see
 The accuracy only measures the number of correct labels divided by the number of total labels. This can potentially lead to a issue **when the number of labels are limited in the dataset**. When negative samples composed 99% of the data, if every label is a negative one, we still get 99% accuracy. So, if we use more effective mean accuracy that quantifies the mean accuracy under each category, it would be a better metrics to work with.
 ##### Precision & Recall and their balance
 ###### Concept of Precision & Recall
-Now we need to introduce the concept of precision and recall. #precision
-#recall #F1score
+Now we need to introduce the concept of precision and recall. 
 Precision cares about the correctness of positive predictions, whereas recall cares about coverage of actual positives.  <span style="background-color: #FEE9E7">Precision and recall trade off via the decision threshold.</span> In a binary classification problem:
 $$\text{Precision} = \frac{N_{\text{true positive}}}{N_{\text{true positive}} + N_{\text{false positive}}} = \frac{N_{\text{true positive}}}{N_{\text{positive predictions}}} $$
 
@@ -172,7 +171,7 @@ def mean_precision_at_k(ground_truth_sets, ranked_lists, k):
 Hence, in general, when people evaluate the goodness of a sort algorithm, they also look at the P-R curve, where in this curve, the x-axis corresponds to recall rate whereas the y-axis corresponds to precision rate. 
 
 ###### Use of P-R Curve for model evaluation and threshold choice
-![[p-r_curve.png]]
+![p-r_curve](<resources/p-r_curve.png>)
 Each data point on the curve corresponds to a precision-recall combination at a certain threshold for True samples of choice, for example 0.95 / 0.9, etc. The closer to the origin (0,0) point, the bigger the threshold is.
 
 ###### How to pick the threshold in practice
@@ -182,7 +181,6 @@ Each data point on the curve corresponds to a precision-recall combination at a 
 Also report **AUPRC** to compare models independent of a single threshold (higher is better, especially with class imbalance).
 ##### Root-mean Squared Errors (RMSE)
 ###### Definition of Root-mean squared error
-#root-mean-squared-error #rmse 
 
 $$ RMSE = \sqrt{\frac{\sum_{i=1}^{n}{(y_i - \hat y_i)^2}}{n}} $$
 
@@ -195,14 +193,12 @@ Root-mean squared error has long been used as the metric for evaluating the regr
 **How to solve:** 1) When we think these outliers are noises, then we need to filter them out at the early stage when doing data cleaning, 2) If we do not think they are noises, then we need to further improve the prediction capability of our algorithm so that we could somehow model the formation of these outliers. and 3) We could also use a better metric for the model evaluation. There are indeed better evaluation metrics that are of better robustness than RMSE, for example, Mean Absolute Percentage Error (MAPE):
 
 ###### Definition of Mean Absolute Percentage Error
-#mean-absolute-percentage-error #mape 
 
 $$MAPE = \sum_{i=1}^n{|\frac{(y_i - \hat y_i)}{y_i}|\cdot\frac{100}{n}}$$
 
 When comparing with RMSE, MAPE normalizes the error rate of each data point to mitigate the outlier impact from the absolute error.
 
 ##### Expanding on the regression evaluation metrics
-#smape #regression-metrics
 ###### Quick definitions
 
 Let $y$ be the true value and $\hat y$â€‹ the prediction.    
@@ -255,7 +251,6 @@ $$\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}$$
 Overall, one should always report a pair / set of MECE metrics to evaluate their algorithms to better understand & discover the problems in the model, to better solve cases in real business settings.
 
 ##### ROC Curves
-#roc-curve #auc
 Binary classifiers are the mostly used and applied classifier in the ML industry. There are a lot of different metrics that one could use for evaluate the binary classifiers, including precision, recall, F1 score and P-R curve. But these metrics are only reflecting one aspect of the model. Hence, ROC curves can be of really good use. 
 
 ###### What is a ROC curve
@@ -369,7 +364,6 @@ We have touched on the P-R curve for evaluating classification or sort algorithm
 - If capacity-limited: **Precision@k** (and expected volume flagged)
 
 ##### Use of cosine distance
-#cosine-similarity #cosine-distance #euclidean-distance
 How to evaluate the distance between samples can also define the optimization target and training method. In ML problems, we usually take the features to be of vector form, so when analyzing the two feature vector similarity, we could use cosine similarity. The cosine similarity can range from -1 to 1, where when two vectors are exactly the same, the cosine similarity becomes 1. Hence, when looking at distances, 1-cosine similarity becomes the cosine distance. Overall, the cosine distance is \[0,2\] and the same two vectors their cosine distance becomes 0.
 
 ###### Definition of Euclidean Distance & Cosine Distance
@@ -417,7 +411,6 @@ When measuring user A/B preference, we focus more on relative difference, hence 
 No, it is not strictly defined as it satisfies the Non-negativity & identity (strictness), symmetry but does not satisfy the triangle inequality. A use case of this question is that when reading the word vector of `comedy` and `funny` and also `happy` and `funny`, their cosine distance is < 0.3, whereas the distance between `comedy`and `happy` is 0.7. 
 
 ## Model Evaluation Methods
-#holdout #cross-validation #bootstrap
 In ML algorithm design, we usually split the samples into training and test data set, where the training set is used to training the model and the test set is used to evaluate the model. In sample split and model evaluation process, we could use different sampling or evaluation methods. 
 
 ##### In model evaluation, what are the main evaluation methods, what are their pros and cons?
@@ -437,7 +430,6 @@ In ML algorithm design, we usually split the samples into training and test data
 As $n$ gets large, about **36.8%** of items are not in the set (never selected) and **63.2%** appear at least once. This is the source of the bootstrap terminology
 
 ## Hyperparameter tuning
-#hyperparameter-tuning 
 For a lot of algorithm engineers, hyperparameter tuning can be really of headache, as there is no other way other than empirically tune the parameters to a reasonable range, while it is really important for the algorithm to be effective.
 
 ##### What are some of the common ways of hyperparameter tuning?
@@ -446,7 +438,6 @@ For a lot of algorithm engineers, hyperparameter tuning can be really of headach
 - **Bayesian optimization**: Model config ->score to pick promising next trials. Unlike random/grid search **do not learn** from past trials, BO **uses what you have learned so far** to place the next (expensive) trial where it is most likely to pay off.
 
 ## Overfit and Underfit
-#overfit #underfit
 This section tells how one could efficiently recognize overfit and underfit scenarios and do model improvements based on what has been identified. 
 
 ##### What is overfit and what is underfit?
@@ -465,7 +456,6 @@ This section tells how one could efficiently recognize overfit and underfit scen
 	- decrease regularization parameters. 
 
 ## L2 / L1 Regularization
-#l2-regularization #l1-regularization #l2 #l1
 ###### Setup
 Model (no intercept for simplicity):
 
@@ -536,7 +526,6 @@ for lmbda in [10, 100]:
 # Classical Algorithms
 
 ## Linear Regression
-#linear-regression
 There are two central provinces in the world of regression: simple linear regression and multiple linear regression. 
 
 ### Formula of Simple Linear Regression
@@ -565,7 +554,6 @@ print(f"Model: y = {c} + {m}*x")  # Output: Model: y= 2.2 + 0.6*x
 ```
 
 ### Formula of Multiple Linear Regression
-#normal-equation #r2-score
 For simple linear regression formula, we have $y=\beta_0 + \beta_1x$, for multiple linear regression, we add multiple independent variables $x_1, x_2, ... , x_m$. Suppose we had n data points, each with m features, then X would be like: $$\mathbf{X}=\begin{bmatrix}  
 1 & x_{1,1} & x_{1,2} & ... & x_{1,m} \\  
 1 & x_{2,1} & x_{2,2} & ... & x_{2,m} \\
@@ -622,7 +610,6 @@ print("R^2:", r2)
 
 
 ### Gradient Descent
-#gradient-descent #learning-rate
 **Gradient descent** is an iterative optimization algorithm for minimizing a function, usually a loss function, quantifying the disparity between predicted and actual results. The goal of gradient descent is to find the parameters that minimize the value of the loss function.
 
 Gradient descent derives its name from its working mechanism: taking _descents_ along the _gradient_. It operates in several iterative steps as follows:
@@ -674,7 +661,6 @@ def gradient_descent(X, y, theta, alpha, threshold=0.01):
 [[https://www.youtube.com/watch?v=efR1C6CvhmE&ab_channel=StatQuestwithJoshStarmer|StatQuest Part1 SVM Main Idea]]
 [[https://www.youtube.com/watch?v=Toet3EiSFcM&ab_channel=StatQuestwithJoshStarmer|StatQuest Part2 The Polynomial Kernel]]
 ##### Main Idea behind SVM
-#svm #max-margin-classifier
 - **Soft Margin Classifier (Support Vector Classifier)**
 	When data are 3-dimensional, the **Support Vector Classifier is a 2-dimensional plane in a 3-dimensional space**. In mathematical world, a plane is a "flat affine 2-dimensional subspace (hyperplane)".
 	
@@ -683,14 +669,13 @@ def gradient_descent(X, y, theta, alpha, threshold=0.01):
 	In order to make the mathematics possible, SVM use something called kernel functions to systematically find support vector classifiers in higher dimensions.
 - **Kernel Functions**
 	When d = 1, the polynomial kernel computes the relationships between each pair of observations in 1-dimension, and these relationships are used to find a support vector classifier. In summary, the polynomial kernel systematically increases dimensions by setting d, the degree of the polynomial. 
-	- **Polynomial Kernel** #polynomial-kernel
+	- **Polynomial Kernel**
 		$(a\times b + r)^d$ is the polynomial kernel format, where d sets the dimension of the kernel. Using $(a\times b + \frac{1}{2})^2$ as an example: $$(a\times b + \frac{1}{2})^2 = (a\times b + \frac{1}{2})(a\times b + \frac{1}{2}) = ab + a^2b^2+\frac{1}{4} = (a,a^2,\frac{1}{2})\cdot (b,b^2,\frac{1}{2})$$
 		where $(a,a^2,\frac{1}{2})$ and $(b,b^2,\frac{1}{2})$ are the coordinates of the data points x-y-z dimensions. $r$ and $d$ are determined via cross validation. Once we determines the parameters, then we plug in all the pairs of data points and do the math to get the high-dimensional relationships.
-	- **Radial Function Kernel** #rbf #radial-kernel
+	- **Radial Function Kernel** 
 		Radial function kernel finds support vector classifiers in infinite dimensions but in one / two dimensional data, it behaves like weighted nearest neighborhood model.
 		The equation looks like this $e^{-\gamma(a-b)^2}$ where $a$ and $b$ are the x-axis coordinates of two different data points. $\gamma$ is the parameter that determines how much influence the pair of data points have on each other.
 ## Logistic Regression
-#logistic-regression #linear-regression #multilabel-classification  #softmax #binomial-distribution #normal-distribution #maximum-likelihood-estimation
 Logistic regression are the most widely used and most fundamental model that one could use in the ML industry. One should always understand the deduction of logistic regression and application of it, as it is used in medical diagnosis, credit evaluation, email junk categorization, etc. 
 
 ### Formulation behind Logistic Regression
@@ -755,7 +740,6 @@ def predict(X, theta, threshold=0.5):
 The main difference between a binomial distribution and a normal distribution lies in the type of data they describe: ==binomial distributions deal with discrete data from a fixed number of trials, while normal distributions describe continuous data that tends to cluster around a mean==. Binomial distributions are characterized by a fixed number of trials, each with two possible outcomes (success or failure), while normal distributions are continuous, symmetric, and have a bell-shaped curve.
 
 ## Decision Tree
-#decision-tree #ensemble-methods #information-theory #tree-based-data-strucutre #optimizaton-theory #gini-index
 Decision trees are often used in marketing or biomedical industries as the tree-based structure is similar to sales or diagnosis use cases. Hence, when using decision tree as key component of the ensemble method, one could get random forest or gradient boosted decision tree models, etc. Fully grown decision tree model has its characters of being direct and easy-to-explain, hence it would be also important as the ensemble method section prerequisites. Overall, the formulation of decision tree involves 1) feature selection, 2) tree construction and 3) tree pruning. 
 ### Structuring a decision tree
 A decision tree starts at a node, called root, which breaks down into branches. Each branch then further splits into more branches, building a hierarchical network. The final branches with no more splits are referred to as leaf nodes.
@@ -797,7 +781,6 @@ For a sample set D, there are K categories, the empirical entropy for this set D
 # Unsupervised Learnings
 We may encounter problems such that providing the machine a tons of feature data and looking for the machine to learn the pattern or structure from the data, for example the video platforms would like to categorize the users from their activities for different recommendation strategies, or looking for relationship between whether the video playing smooth or not vs their relationship with user unsubscribe. These problems are called "unsupervised learnings", which does not like the supervised learnings where we expect to see outputs or predictions. The unsupervised learning inputs does not contain label information, instead it needs to dig into the internal data relationship from the algorithm model. **There are two main categories of the unsupervised learnings: data clustering or feature variable correlation (using correlation analysis for relationships between variables)**. 
 ## K-means Clustering
-#clustering #unsupervised-learning #classification
 Algorithms such as SVM, logistic regression, decision trees are more for the categorization, i.e. based on the known labelled samples, classifiers are training so that it could apply the same logic on unlabeled samples. Unlike the classification problems, clustering is directly categorize the samples without any previously known labelling. 
 
 Classification belongs to supervised learning whereas clustering is a type of unsupervised learning algorithm. K-means clustering, as one type of the most basic and fundamental clustering algorithm, has the main idea of iteratively finding the way of cutting the space into K clusters, so that the loss function is the lowest. The loss function can be defined as the squared error of distance of each sample from their clustered center
