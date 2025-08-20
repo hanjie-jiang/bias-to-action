@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "4bff1301e8d779a1",
+        "id": "41d5aa9c4d8ecdf9",
         "type": "split",
         "children": [
           {
@@ -28,11 +28,11 @@
             ]
           },
           {
-            "id": "1e8d9ab59d81fb9c",
+            "id": "aa6afb53123f6c6b",
             "type": "tabs",
             "children": [
               {
-                "id": "e054e425efdfb2fd",
+                "id": "f85ac71af1c283b7",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -216,7 +216,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -231,11 +232,17 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "e054e425efdfb2fd",
+  "active": "f85ac71af1c283b7",
   "lastOpenFiles": [
-    "_notes/assets/styles/layout.css",
     "_notes/week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals.md",
+    "_notes/week1-2_probability_and_markov/resources/gini_index_1.png",
+    "_notes/week1-2_probability_and_markov/resources/Screenshot 2025-08-20 135322.png",
+    "_notes/week1-2_probability_and_markov/resources/gini_index_2.png",
+    "_notes/week1-2_probability_and_markov/resources/Screenshot 2025-08-20 134615.png",
+    "_notes/week1-2_probability_and_markov/resources/Screenshot 2025-08-20 134509.png",
+    "Screenshot 2025-08-20 134509.png",
     "_notes/Foundational knowledge plan.md",
+    "_notes/assets/styles/layout.css",
     "_notes/assets/images",
     "_notes/week1-2_probability_and_markov/Week1_Probability_and_Markov.md",
     "_notes/week1-2_probability_and_markov/resources/百面机器学习.pdf",
@@ -258,7 +265,6 @@
     "_notes/week1-2_probability_and_markov/Week1/Week1P2 - Naive Bayes & Gaussian Naive Bayes.md",
     "_notes/week1-2_probability_and_markov/Week1/Week1P1 - Conditional Probability & Bayes Rule.md",
     "requirements.txt",
-    "mkdocs.yml",
     "ç™¾é¢æœºå™¨å­¦ä¹ ç®—æ³•å·¥ç¨‹å¸ˆå¸¦ä½ åŽ»é¢è¯•.pdf.md",
     "_notes/Week10_Integration_and_Project.md",
     "_notes/Week8_9_Neural_Networks_and_Backprop.md",
@@ -272,10 +278,6 @@
     "_notes/week3_language_model/Week3_Ngram_Language_Modeling.md",
     "index.md",
     "README.md",
-    "foundations_of_ML/week1-2_probability_and_markov/Week1P4 - ML Fundamentals.md",
-    "foundations_of_ML/week1-2_probability_and_markov/resources/p-r_curve.png",
-    "foundations_of_ML/week1-2_probability_and_markov/resources/Screenshot 2025-08-05 at 9.30.27 PM.png",
-    "foundations_of_ML/week1-2_probability_and_markov/resources/Screenshot 2025-08-05 at 8.22.11 PM.png",
-    "foundations_of_ML/week1-2_probability_and_markov/resources/conditional_probability.png"
+    "foundations_of_ML/week1-2_probability_and_markov/Week1P4 - ML Fundamentals.md"
   ]
 }

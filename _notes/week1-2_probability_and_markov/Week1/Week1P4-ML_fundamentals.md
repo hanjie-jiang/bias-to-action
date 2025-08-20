@@ -130,6 +130,27 @@ $$\text{Recall} = \frac{N_{\text{true positive}}}{N_{\text{true positive}} + N_{
 The F1 score is their harmonic mean:
 $$\text{F1} = \frac{2(\text{Precision})(\text{Recall})}{\text{Precision} + \text{Recall}} = \frac{2N_{\text{true positive}}}{2N_{\text{true positive}}+N_{\text{false positive}}+N_{\text{false negative}}} $$
 this value ranges from 0 to 1 and penalizes imbalance, thus when either precision or recall is low, F1 drops sharply. <span style="background-color: #FEE9E7"> F1 should be used when false positives and false negatives matter about equally, especially with imbalanced classes. </span>
+
+#### Confusion Matrix Implementation
+```
+import numpy as np
+
+true_labels = np.array([0, 0, 1, 1, 0, 1, 0, 1, 1, 1])
+predicted_labels = np.array([0, 1, 0, 1, 0, 1, 1, 1, 1, 0])
+
+TP = np.sum((predicted_labels == 1) & (true_labels == 1))
+TN = np.sum((predicted_labels == 0) & (true_labels == 0))
+FP = np.sum((predicted_labels == 1) & (true_labels == 0))
+FN = np.sum((predicted_labels == 0) & (true_labels == 1))
+
+print("Confusion Matrix:\n TP: ", TP, "\tFP: ", FP, "\n FN: ", FN, "\tTN: ", TN)
+
+'''Output:
+Confusion Matrix:
+ TP:  4 	FP:  2 
+ FN:  2 	TN:  2
+'''
+```
 ###### Precision & Recall in Ranking / retrieval variants
 ```
 def precision_at_k(ground_truth_set, ranked_list, k):
@@ -208,12 +229,12 @@ $$\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}$$
     - Scale-dependent hard to compare across series with different scales.
 - **MAPE**
     - Intuitive (%).
-    - Undefined at y=0; huge when y â‰ˆ 0.
+    - Undefined at y=0; huge when y ~ 0.
     - Can favor **under-forecasting** for small y.
 - **sMAPE**
     - Handles zeros better; bounded.        
-    - Still quirky near zero and not a true â€œcostâ€ for optimization.
-    - Different papers/tools use slightly different variantsâ€”state your formula.
+    - Still quirky near zero and not a true solution for optimization.
+    - Different papers/tools use slightly different variants
 ###### Other basic metrics you should know
 - **MAE**: Robust to outliers vs RMSE; easy to explain (units).
 ###### Simple decision guide
@@ -223,7 +244,7 @@ $$\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}$$
     - Use **RMSE** (or set a business-weighted loss).
 3. **Need % interpretability across series?**
     - Use **sMAPE**, or **MASE** (if comparing to a baseline).
-4. **Care about relative ratios (under/over by Ã—%)?**
+4. **Care about relative ratios?**
     - Use **RMSLE/MSLE** (with positive targets).
 5. **Mixed scales or many series?**
     - **WAPE** or **MASE** are safe, comparable choices.
@@ -265,136 +286,76 @@ From this example, we could then plot out the true positive rate (TPR) as the x-
 - Now draw the ROC curve from origin, whenever seeing a positive sample to draw a vertical line segment of +1 increment on y-axis, whenever seeing a negative sample then we draw a horizontal line segment along the x-axis until we reach the final sample with curve ending at (1,1).
 
 ```
-import numpy as np
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
+from numpy import random
 
-def roc_curve_from_scores(y_true, y_score):
-    y_true = np.asarray(y_true).astype(int)
-    y_score = np.asarray(y_score).astype(float)
+truth_labels = [1 if random.rand() > 0.6 else 0 for _ in range(500)]
+# we generate some random predictions that would normally be obtained from the model
+# If a predicted probability is higher than the threshold, it is considered to be a positive outcome 
+predicted_probs = [max(0, min(1, random.normal(loc=label, scale=0.3))) for label in truth_labels]
 
-    order = np.argsort(-y_score)        # sort by score desc
-    y_true = y_true[order]
+def roc_curve(truth_labels, predicted_probs):
+    thresholds = [0.1 * i for i in range(11)]
+    tprs, fprs = [], []
+    for threshold in thresholds:
+        tp = fp = tn = fn = 0  # initialize confusion matrix counts
+        # for each prediction
+        for i in range(len(truth_labels)):
+            # calculate confusion matrix counts
+            if predicted_probs[i] >= threshold:
+                if truth_labels[i] == 1:
+                    tp += 1
+                else:
+                    fp += 1
+            else:
+                if truth_labels[i] == 1:
+                    fn += 1
+                else:
+                    tn += 1
+        # track the TPR and FPR for this threshold
+        tprs.append(tp / (tp + fn))  # True Positive Rate (TPR)
+        fprs.append(fp / (tn + fp))  # False Positive Rate (FPR)
+    return tprs, fprs
 
-    P = y_true.sum()
-    N = len(y_true) - P
-    # cumulative TP/FP as we lower the threshold
-    tps = np.cumsum(y_true)
-    fps = np.cumsum(1 - y_true)
 
-    # rates; guard against division by zero
-    tpr = tps / (P if P > 0 else 1)
-    fpr = fps / (N if N > 0 else 1)
-
-    # include the origin (0,0)
-    tpr = np.r_[0.0, tpr]
-    fpr = np.r_[0.0, fpr]
-    return fpr, tpr
-
-def auc_trapezoid(x, y):
-    return np.trapz(y, x)
-
-# --- Example usage (replace y_true/y_score with your data) ---
-rng = np.random.default_rng(0)
-y_true  = rng.integers(0, 2, size=1000)
-# make scores vaguely correlated with y_true
-y_score = 0.2*rng.random(1000) + 0.6*y_true + 0.2*rng.random(1000)
-
-fpr, tpr = roc_curve_from_scores(y_true, y_score)
-roc_auc = auc_trapezoid(fpr, tpr)
-
-plt.figure()
-plt.plot(fpr, tpr, label=f"AUC = {roc_auc:.3f}")
-plt.plot([0, 1], [0, 1], linestyle="--", label="Chance")
-plt.xlabel("False Positive Rate (FPR)")
-plt.ylabel("True Positive Rate (TPR / Recall)")
-plt.title("ROC Curve")
-plt.legend()
+tprs, fprs = roc_curve(truth_labels, predicted_probs)
+plt.plot(fprs, tprs, marker='.')
 plt.show()
-
 ```
 
 ###### How to calculate the AUC (area under curve)?
 As simple as it could be, AUC is the area under the ROC curve, which can quantitatively reflect the model performance based on ROC curve. It is simple to calculate AUC along RUC x-axis. Due to that ROC curve tends to be above y=x, AUC values are usually between 0.5-1. The bigger the AUC is, the better the classifier is as the more likely that the classifier put the true positive samples at the front. 
 
 ```
-# Re-render the ROC curve example and save a downloadable image.
-import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
+def compute_aucroc(tprs, fprs):
+    aucroc = 0
+    for i in range(1, len(tprs)):
+        aucroc += 0.5 * abs(fprs[i] - fprs[i - 1]) * (tprs[i] + tprs[i - 1])
+    return aucroc
 
-# Example ROC points (FPR on x-axis, TPR on y-axis), sorted by FPR
-fpr = np.array([0.0, 0.1, 0.3, 0.6, 1.0])
-tpr = np.array([0.0, 0.4, 0.7, 0.85, 1.0])
-
-# AUC via trapezoidal rule
-auc_value = np.trapz(tpr, fpr)
-
-# Compute per-segment trapezoid areas
-x_left = fpr[:-1]
-x_right = fpr[1:]
-y_left = tpr[:-1]
-y_right = tpr[1:]
-width = x_right - x_left
-avg_height = (y_left + y_right) / 2.0
-area = width * avg_height
-
-seg_df = pd.DataFrame({
-    "x_left (FPR_i)": x_left,
-    "x_right (FPR_{i+1})": x_right,
-    "y_left (TPR_i)": y_left,
-    "y_right (TPR_{i+1})": y_right,
-    "width = Î”x": width,
-    "avg_height = (y_i + y_{i+1})/2": avg_height,
-    "trapezoid_area = width * avg_height": area
-}).round(4)
-
-# Plot the ROC curve and shade trapezoids
-plt.figure(figsize=(6, 5))
-plt.plot(fpr, tpr, marker='o', label=f"ROC curve (AUC = {auc_value:.3f})")
-plt.plot([0, 1], [0, 1], linestyle="--", label="Chance")
-for i in range(len(fpr) - 1):
-    x_pair = [fpr[i], fpr[i+1]]
-    y_pair = [tpr[i], tpr[i+1]]
-    plt.fill_between(x_pair, [0, 0], y_pair, alpha=0.2)
-
-plt.xlabel("False Positive Rate (FPR)")
-plt.ylabel("True Positive Rate (TPR / Recall)")
-plt.title("ROC Curve with Trapezoids (AUC via Trapezoidal Rule)")
-plt.legend(loc="lower right")
-plt.grid(True, linestyle=":")
-plt.tight_layout()
-
-# Save a copy to disk so the user can download it
-plot_path = "/mnt/data/roc_trapezoids.png"
-plt.savefig(plot_path, dpi=160)
-plt.show()
-
-from caas_jupyter_tools import display_dataframe_to_user
-display_dataframe_to_user("Per-segment trapezoid areas (sum equals AUC)", seg_df)
-
-print(f"AUC (trapezoidal) = {auc_value:.4f}")
-print(f"Sum of trapezoid areas = {area.sum():.4f}")
+aucroc = compute_aucroc(tprs, fprs)
+print(f"The AUC-ROC value is: {aucroc}")  # The AUC-ROC value is: 0.9827272125066242
 ```
 
 We have touched on the P-R curve for evaluating classification or sort algorithms. Comparing with P-R curve, there is one important character of ROC curve, which is that when positive / negative sample distribution change significant, the ROC curve shape could stay rather consistently whereas the P-R curve shape would be changing. This makes the ROC curve to mitigate the interference from diverse test sets and could more objectively evaluate the algorithm. In reality, when positive counts are much less than the negative counts, when switching dataset the data can be of big change, so a stable and robust evaluation would be important. Hence, usually ROC can be used in more variety of scenarios and could be utilized in sort / recommendation / ads. 
 
 ##### What each curve shows
 - **ROC**: y = True Positive Rate (recall), x = False Positive Rate.  
-    _â€œHow well do I separate positives from negatives overall?â€_    
-    _"If I take the items my model flags as positive, how many are actually positive?â€
+    _"How well do I separate positives from negatives overall?"_
+    _"If I take the items my model flags as positive, how many are actually positive?
 - **PR**: y = Precision, x = Recall.  
-    _â€œWhen I go after positives, how clean are my catches?â€_
-    _â€œAs I move the threshold, how well do I trade off catching positives vs accidentally flagging negatives?â€_
+    _"When I go after positives, how clean are my catches?"_
+    _"As I move the threshold, how well do I trade off catching positives vs accidentally flagging negatives?"
 ##### When to use which
-- **Use PR (Precisionâ€“Recall) when positives are rare or review capacity is limited.**  
-    Examples: fraud (â‰¤1%), disease screening, anomaly detection, search/retrieval, human-in-the-loop queues.  
-    Why: PR focuses on the _quality of retrieved positives_. Baseline matters: random **AUPRC â‰ˆ prevalence** (e.g., 1% positives â†’ random AUPRC = 0.01).
+- **Use PR (Precision & Recall) when positives are rare or review capacity is limited.**  
+    Examples: fraud, disease screening, anomaly detection, search/retrieval, human-in-the-loop queues.  
+    Why: PR focuses on the _quality of retrieved positives_. Baseline matters: random **AUPRC prevalence** (e.g., 1% positives random AUPRC = 0.01).
 - **Use ROC when classes are roughly balanced or you care about both error types evenly.**  
     Examples: many general classifiers, spam vs ham with moderate prevalence, A/B classifiers in balanced datasets.  
     Why: ROC is insensitive to class imbalance and summarizes ranking quality across thresholds. Random **AUC-ROC = 0.5**.
 ##### Intuition about imbalance
-- With 1,000,000 negatives and 1,000 positives, an FPR of **0.5%** looks tiny on ROC, but itâ€™s **5,000 false alarms**â€”precision will be poor.  
-    PR makes this visible; ROC can look deceptively â€œgreat.â€
+- With 1,000,000 negatives and 1,000 positives, an FPR of **0.5%** looks tiny on ROC, but it's **5,000 false alarms** precision will be poor.  
+    PR makes this visible; ROC can look deceptively great.
 ##### How to choose in practice
 - **Rare positives or ops-constrained?** Prefer **PR** (and report Precision/Recall at your operating threshold or **Precision@k**).
 - **Balanced costs/distribution?** **ROC** is fine (and stable).
@@ -467,14 +428,14 @@ In ML algorithm design, we usually split the samples into training and test data
 - **Bootstrap**: 
 	- Make a **fake test set** by randomly picking the same number of rows from your real test set **with replacement** (so rows can repeat and some are left out).
 		- Suppose the test set has **n rows**.
-		- Pick **n indices at random WITH replacement** from `0..n-1`. (Duplicates allowed; some rows wonâ€™t be picked.)
+		- Pick **n indices at random WITH replacement** from `0..n-1`. (Duplicates allowed; some rows won't be picked.)
 		- Those picked rows form one **fake test set**. 
-	- On that fake set, compute your metric (accuracy, F1, AUC, RMSEâ€”whatever you care about).
-	- Repeat steps 1â€“2 a lot (like **1,000 times**).
+	- On that fake set, compute your metric (accuracy, F1, AUC, RMSE whatever you care about).
+	- Repeat steps 1-2 a lot (like **1,000 times**).
 	- Now you have 1,000 metric values.
 	    - The **average** is your central estimate.
 	    - The **middle 95% range** (ignore the lowest 2.5% and highest 2.5%) is your **95% confidence interval**.
-As $n$ gets large, about **36.8%** of items are â€œout-of-bagâ€ (never selected) and **63.2%** appear at least once. This is the source of the â€œ.632â€ bootstrap terminology
+As $n$ gets large, about **36.8%** of items are not in the set (never selected) and **63.2%** appear at least once. This is the source of the bootstrap terminology
 
 ## Hyperparameter tuning
 #hyperparameter-tuning 
@@ -483,7 +444,7 @@ For a lot of algorithm engineers, hyperparameter tuning can be really of headach
 ##### What are some of the common ways of hyperparameter tuning?
 - **grid search**: Exhaustive on a small, **low-dimensional** space. Deterministic but expensive; scales poorly. In reality, it tend to be used as a bigger search space and larger step size to find the possible range of optimal results, then to shrink the search space and find more accurate optimal solution.
 - **random search**: Sample hyperparams at random (often **log-uniform** for learning rates). Much better than grid when only a few dims matter but cannot guarantee for a optimal solution.
-- **Bayesian optimization**: Model â€œconfig â†’ scoreâ€ to pick promising next trials. Unlike random/grid search **donâ€™t learn** from past trials, BO **uses what youâ€™ve learned so far** to place the next (expensive) trial where itâ€™s most likely to pay off.
+- **Bayesian optimization**: Model config ->score to pick promising next trials. Unlike random/grid search **do not learn** from past trials, BO **uses what you have learned so far** to place the next (expensive) trial where it is most likely to pay off.
 
 ## Overfit and Underfit
 #overfit #underfit
@@ -528,8 +489,8 @@ Rearrange:
 $$w\big(\sum_i x_i^2 + \lambda\big) = \sum_i x_i y_i \quad\Rightarrow\quad \boxed{\,w_{\text{ridge}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2 + \lambda}\,}$$
 Compare to **unregularized** OLS:
 $$w_{\text{OLS}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2}$$
-L2 adds$\lambda$ to the denominator â‡’ **shrinks $w$ toward 0**.
-
+L2 adds $\lambda$ to the denominator and **shrinks $w$ toward 0**.
+###### Why L2 decrease variance and increase bias?
 ###### Tiny Numeric Example
 
 Data: $x=[0,1,2,3]$, $y=[0,1,2,60]$ (last point is an outlier)
@@ -566,7 +527,7 @@ def ridge_weight(lmbda):
 
 print("w_OLS        =", Sxy / Sxx)
 for lmbda in [10, 100]:
-    print(f"w_ridge(Î»={lmbda}) =", ridge_weight(lmbda))
+    print(f"w_ridge", ridge_weight(lmbda))
 ```
 
 **Notes**
@@ -729,20 +690,106 @@ def gradient_descent(X, y, theta, alpha, threshold=0.01):
 		Radial function kernel finds support vector classifiers in infinite dimensions but in one / two dimensional data, it behaves like weighted nearest neighborhood model.
 		The equation looks like this $e^{-\gamma(a-b)^2}$ where $a$ and $b$ are the x-axis coordinates of two different data points. $\gamma$ is the parameter that determines how much influence the pair of data points have on each other.
 ## Logistic Regression
-Logistic regression are the most widely used and most fundamental model that one could use in the ML industry. One should always understand the deduction of logistic regression and application of it, as it is used in medical diagnosis, credit evaluation, email junk categorization, etc. 
-### What is the difference between logistic regression and linear regression?
 #logistic-regression #linear-regression #multilabel-classification  #softmax #binomial-distribution #normal-distribution #maximum-likelihood-estimation
+Logistic regression are the most widely used and most fundamental model that one could use in the ML industry. One should always understand the deduction of logistic regression and application of it, as it is used in medical diagnosis, credit evaluation, email junk categorization, etc. 
+
+### Formulation behind Logistic Regression
+Logistic Regression calculates a raw model output, then transforms it using the sigmoid function, mapping it to a range between 0 and 1, thus making it a probability. The sigmoid function can be defined as $S(x) = \frac{1}{1+e^{-x}}$. This can thus be implemented as:
+
+```
+def sigmoid(z):
+	return 1 / (1+np.exp(-z))
+```
+
+The mathematical form of logistic regression can be expressed as follows:
+$$P(Y=1|x) = \frac{1}{1+e^{-(\beta_0+\beta_1x)}}$$
+where $P(Y=1|x)$ is the probability of event $Y=1$ given $x$, $\beta_0$ and $\beta_1$ are parameters of the model, $x$ is the input variable and $\beta_0+\beta_1x$ is the linear combination of parameters and features. 
+
+_Log-Likelihood_ in Logistic Regression plays a similar role to the _Least Squares method_ in Linear Regression. A maximum likelihood estimation method estimates parameters that maximize the likelihood of making the observations we collected. In Logistic Regression, we seek to maximize the log-likelihood.
+
+The cost function for a single training instance in logistic regression can be expressed as $-[y\log{(\hat p)+(1-y)\log{(1-\hat p)}}]$ where $\hat p$ denotes the predicted probability.
+
+```
+def cost_function(h, y): # h = sigmoid(z) where z = X @ theta
+	return (-y * np.log(h) - (1 - y) * np.log(1 - h)).mean()
+
+def logistic_regression(X, y, num_iterations, learning_rate): 
+	# Add intercept to X 
+	intercept = np.ones((X.shape[0], 1)) 
+	X = np.concatenate((intercept, X), axis=1) 
+	
+	# Weights initialization 
+	theta = np.zeros(X.shape[1]) 
+	for i in range(num_iterations): 
+		z = np.dot(X, theta) 
+		h = sigmoid(z) 
+		gradient = np.dot(X.T, (h - y)) / y.size 
+		theta -= learning_rate * gradient 
+		
+		z = np.dot(X, theta) 
+		h = sigmoid(z) 
+		loss = cost_function(h, y) 
+
+		if i % 10000 == 0:
+			print(f'Loss: {loss}\t') 
+	
+	return theta
+	
+def predict_prob(X, theta):
+    # Add intercept to X
+    intercept = np.ones((X.shape[0], 1))
+    X = np.concatenate((intercept, X), axis=1)
+    return sigmoid(np.dot(X, theta))
+
+def predict(X, theta, threshold=0.5):
+    return predict_prob(X, theta) >= threshold
+```
+### What is the difference between logistic regression and linear regression?
 - **logistic regression is used for categorization whereas linear regression is used for regression problems**. This is the most significant difference between the two. In logistic regression, when given x and hyperparameter $\theta$, we could get the expectation value of the $y$ values to predict the categorization of the values. On the other hand, in linear regression, one is solving $y' = \theta^Tx$ , which is the approximate of the real relationship of $y = \theta^Tx+\epsilon$ where $\epsilon$ corresponds to the system error.
 - The actual logistic regression equation can be formulated via $\log{\frac{p}{1-p}}=\theta^Tx$, where $p=P(y=1|x)$ , corresponding to given x the probability of y being positive. **Thus the most important difference between logistic regression and linear regression would be that the logistic regression $y$s are discretized whereas the linear regression $y$s are continuous.** When $x$ and $\theta$ are given, logistic regression can also be seen as generalized linear models where $y$ follows the binary distribution, whereas  when using least-squares for linear regression we view $y$ follows the normal distribution. 
 
 ### What is the same between logistic regression and linear regression?
 - They both used maximum likelihood estimation for modeling the training data. 
 - They both could use gradient descent for getting the hyperparameters, and it is also a common strategy that all the supervised learning methods use.
-
-### What approaches do logistic regression take for multi-label classification problems? What are some use cases for this type of problems?
-
-
 #### Note for binomial distribution vs normal distribution
-The main difference between a binomial distribution and a normal distribution lies in the type of data they describe: ==binomial distributions deal with discrete data from a fixed number of trials, while normal distributions describe continuous data that tends to cluster around a mean==. Binomial distributions are characterized by a fixed number of trials, each with two possible outcomes (success or failure), while normal distributions are continuous, symmetric, and have a bell-shaped curve
+The main difference between a binomial distribution and a normal distribution lies in the type of data they describe: ==binomial distributions deal with discrete data from a fixed number of trials, while normal distributions describe continuous data that tends to cluster around a mean==. Binomial distributions are characterized by a fixed number of trials, each with two possible outcomes (success or failure), while normal distributions are continuous, symmetric, and have a bell-shaped curve.
 
+## Decision Tree
+#decision-tree #ensemble-methods #information-theory #tree-based-data-strucutre #optimizaton-theory #gini-index
+Decision trees are often used in marketing or biomedical industries as the tree-based structure is similar to sales or diagnosis use cases. Hence, when using decision tree as key component of the ensemble method, one could get random forest or gradient boosted decision tree models, etc. Fully grown decision tree model has its characters of being direct and easy-to-explain, hence it would be also important as the ensemble method section prerequisites. Overall, the formulation of decision tree involves 1) feature selection, 2) tree construction and 3) tree pruning. 
+### Structuring a decision tree
+A decision tree starts at a node, called root, which breaks down into branches. Each branch then further splits into more branches, building a hierarchical network. The final branches with no more splits are referred to as leaf nodes.
 
+### Understanding Gini Index
+_**Note**_: A more clear explanation can be found in videos:
+- [[https://www.youtube.com/watch?v=_L39rN6gz7Y&t=18s|StatQuest: Decision and Classification Trees, Clearly Explained!!!]]
+- [[https://www.youtube.com/watch?v=wpNl-JwwplA|StatQuest: Decision Trees, Part 2 - Feature Selection and Missing Data]]
+- [[https://www.youtube.com/watch?v=D0efHEJsfHo|StatQuest: How to Prune Regression Trees, Clearly Explained!!!]]
+A Gini Index endeavors to quantify the disorder within these groups. A greater Gini Index score signifies more disorder. The formula of Gini Index can be represented as $G = 1-\sum_{i=1}^n p_i^2$ where $G$ is the Gini index or coefficient, $p_i$ is the proportion of individuals in the $i$th group, and the sum is taken over $n$ groups. Gini index is used to describe the data purity, which has similar concept with information entropy. 
+$$\text{Gini}(D) = 1 - \sum_{k=1}^n(\frac{C_k}{D})^2$$
+$$\text{Gini}(D|A) = \sum_{i=1}^n\frac{|D_i|}{|D|}\text{Gini}(D_i)$$
+Now let's use an example to better understand how to compute Gini index:
+
+|     | Loves Popcorn | Loves Soda | Age | like movie |
+| --- | ------------- | ---------- | --- | ---------- |
+| A   | Y             | Y          | 7   | N          |
+| B   | Y             | N          | 12  | N          |
+| C   | N             | Y          | 18  | Y          |
+| D   | N             | Y          | 35  | Y          |
+| E   | Y             | Y          | 38  | Y          |
+| F   | Y             | N          | 50  | N          |
+| G   | N             | N          | 83  | N          |
+
+|                                 Loves Popcorn                                 |                                  Loves Soda                                   |
+| :---------------------------------------------------------------------------: | :---------------------------------------------------------------------------: |
+| <img src="../resources/gini_index_1.png" alt="drawing" style="width:350px;"/> | <img src="../resources/gini_index_2.png" alt="drawing" style="width:350px;"/> |
+All the three leaves except for the fourth one are called impure leaves, where the fourth one is called a pure leaf node. As both leaf nodes from `loves Popcorn` are impure but there is only one node from `Loves Soda` being impure, it means that the `Loves Soda` does a better job predicting who will and will not the movie. 
+
+$$\text{Gini Impurity for a leaf} = 1 - (\text{the probability of "Yes"}) ^ 2 - (\text{the probability of "No"}) ^ 2$$
+$$\text{Gini Impurity (Loves Movie | Loves Popcorn)} = 1 - (\frac{1}{1+3})^2 - (\frac{3}{1+3})^2 = 0.375$$
+$$\text{Gini Impurity (Loves Movie | Hates Popcorn)} = 1 - (\frac{2}{1+2})^2 - (\frac{1}{1+2})^2 = 0.444$$
+$$\text{Total Gini Impurity} = \text{weighted avg of Gini for the leaves} = (\frac{1+3}{1+3+2+1})\cdot(0.375)+\frac{3}{4+3}(0.444)$$
+
+### Information Gain
+#### Max Information Gain
+For a sample set D, there are K categories, the empirical entropy for this set D can be expressed as $H(D) = -\sum_{k=1}^K \frac{|C_k|}{D}\log_2\frac{C_k}{D}$.

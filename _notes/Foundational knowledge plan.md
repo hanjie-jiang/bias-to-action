@@ -1,12 +1,13 @@
 ---
 title: Foundational knowledge plan
 ---
-#### **Week 1â€“2: Probability Foundations + Markov Assumption**
+#### **Week 1-2: Probability Foundations + Markov Assumption**
 - [[Week1_Probability_and_Markov]]
 - Topics:
-    - [[Week1P1 - Conditional Probability & Bayesâ€™ Rule]]
-    - [[Week1P2 - Naive Bayes & Gaussian Naive Bayes]]
-    - [[Week1P3 - Joint & Marginal Distributions]]
+    - [[Week1P1-conditional_probability_and_bayes_rule]]
+    - [[Week1P2-naive_bayes_and_gaussian_naive_bayes]]
+    - [[Week1P3-joint_and_marginal_distributions]]
+    - [[Week1P4-ML_fundamentals]]
     - Markov Assumption: what it is and why it matters in NLP
 - Resources:
     - [StatQuest: Conditional Probability (YouTube)](https://www.youtube.com/watch?v=_IgyaD7vOOA)
