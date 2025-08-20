@@ -30,7 +30,7 @@ title: Foundational knowledge plan
     - [Happy-LLM intro chapter](language_model/resources/Happy-LLM-v1.0.pdf)
     - Optional: n-gram language model notebook
 #### **Week 4: Intro to Information Theory**
-- [[Week4_Information_Theory]]
+- [[Information_Theory]]
 
 - Topics:
     
@@ -74,7 +74,7 @@ title: Foundational knowledge plan
         
 
 #### **Week 7: Calculus + Gradient Descent**
-- [[Week7_Calculus_and_Gradient_Descent]]
+- [[Calculus_and_Gradient_Descent]]
 
 - Topics:
     
@@ -122,7 +122,7 @@ title: Foundational knowledge plan
         
 
 #### **Week 10: Integration and Project**
-- [[Week10_Integration_and_Project]]
+- [[Integration_and_Project]]
 
 - Goal:
     

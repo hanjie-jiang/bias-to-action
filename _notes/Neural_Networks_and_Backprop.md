@@ -1,5 +1,5 @@
 ---
-title: Week8_9_Neural_Networks_and_Backprop
+title: Neural_Networks_and_Backprop
 ---
 ---
 title: Neural Networks & Backpropagation

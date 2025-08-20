@@ -1,5 +1,5 @@
 ---
-title: Week4_Information_Theory
+title: Information_Theory
 ---
 ---
 title: Introduction to Information Theory

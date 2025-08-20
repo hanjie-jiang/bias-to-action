@@ -1,5 +1,5 @@
 ---
-title: Week5_6_Linear_Algebra_for_ML
+title: Linear_Algebra_for_ML
 ---
 ---
 title: Linear Algebra for Machine Learning

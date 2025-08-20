@@ -455,6 +455,11 @@ This section tells how one could efficiently recognize overfit and underfit scen
 	- increase the complexity of model. 
 	- decrease regularization parameters. 
 
+## Early Stoppings
+- Early stopping watches **validation** loss/metric and halts training when it stops improving, and is a **stopping rule** driven by the **validation metric’s change**, not a pre-fixed iteration count
+- It **reduces overfitting** (lower variance) by not letting the model memorize noise; acts like **implicit L2** regularization.
+Train while checking performance on a validation set. Whenever the validation score improves, remember those weights. If it doesn’t improve for a while (patience), stop and roll back to the best checkpoint. This caps model complexity at the point where it generalized best, preventing the later epochs from fitting noise
+
 ## L2 / L1 Regularization
 ###### Setup
 Model (no intercept for simplicity):
@@ -736,6 +741,33 @@ def predict(X, theta, threshold=0.5):
 ### What is the same between logistic regression and linear regression?
 - They both used maximum likelihood estimation for modeling the training data. 
 - They both could use gradient descent for getting the hyperparameters, and it is also a common strategy that all the supervised learning methods use.
+### The general logic behind regression
+
+```
+Inputs: X (N×d), y (N,), model ∈ {"linear","logistic"}
+Hyperparams: eta (lr), lambda (L2), max_iters, tol, patience
+Prep:
+  Xb = concat([ones(N,1), X])        # add bias column
+  w = zeros(d+1)                     # includes bias at index 0
+  mask = [0, 1, 1, ..., 1]           # no L2 on bias
+
+For t in 1..max_iters:
+  z = Xb @ w
+  if model == "linear":
+      pred = z
+      loss_data = (1/(2N)) * sum((pred - y)^2)
+  else:  # logistic
+      pred = sigmoid(z)              # clip to [eps, 1-eps] for stability
+      loss_data = -(1/N) * sum(y*log(pred) + (1-y)*log(1-pred))
+
+  loss = loss_data + lambda * sum((w*mask)^2)
+  grad = (1/N) * (Xb.T @ (pred - y)) + 2*lambda*(w*mask)
+  w = w - eta * grad
+  if norm(grad) < tol or early_stopping_on_val(loss): break
+
+Return w
+
+```
 #### Note for binomial distribution vs normal distribution
 The main difference between a binomial distribution and a normal distribution lies in the type of data they describe: ==binomial distributions deal with discrete data from a fixed number of trials, while normal distributions describe continuous data that tends to cluster around a mean==. Binomial distributions are characterized by a fixed number of trials, each with two possible outcomes (success or failure), while normal distributions are continuous, symmetric, and have a bell-shaped curve.
 
@@ -766,7 +798,7 @@ Now let's use an example to better understand how to compute Gini index:
 
 |                                 Loves Popcorn                                 |                                  Loves Soda                                   |
 | :---------------------------------------------------------------------------: | :---------------------------------------------------------------------------: |
-| <img src="../resources/gini_index_1.png" alt="drawing" style="width:350px;"/> | <img src="../resources/gini_index_2.png" alt="drawing" style="width:350px;"/> |
+| <img src="../resources/gini_index_1.png" alt="drawing" style="width:250px;"/> | <img src="../resources/gini_index_2.png" alt="drawing" style="width:250px;"/> |
 All the three leaves except for the fourth one are called impure leaves, where the fourth one is called a pure leaf node. As both leaf nodes from `loves Popcorn` are impure but there is only one node from `Loves Soda` being impure, it means that the `Loves Soda` does a better job predicting who will and will not the movie. 
 
 $$\text{Gini Impurity for a leaf} = 1 - (\text{the probability of "Yes"}) ^ 2 - (\text{the probability of "No"}) ^ 2$$
@@ -780,7 +812,21 @@ For a sample set D, there are K categories, the empirical entropy for this set D
 
 # Unsupervised Learnings
 We may encounter problems such that providing the machine a tons of feature data and looking for the machine to learn the pattern or structure from the data, for example the video platforms would like to categorize the users from their activities for different recommendation strategies, or looking for relationship between whether the video playing smooth or not vs their relationship with user unsubscribe. These problems are called "unsupervised learnings", which does not like the supervised learnings where we expect to see outputs or predictions. The unsupervised learning inputs does not contain label information, instead it needs to dig into the internal data relationship from the algorithm model. **There are two main categories of the unsupervised learnings: data clustering or feature variable correlation (using correlation analysis for relationships between variables)**. 
+
+## K-Nearest Neighbors (k-NN) Algorithm
+
 ## K-means Clustering
 Algorithms such as SVM, logistic regression, decision trees are more for the categorization, i.e. based on the known labelled samples, classifiers are training so that it could apply the same logic on unlabeled samples. Unlike the classification problems, clustering is directly categorize the samples without any previously known labelling. 
 
-Classification belongs to supervised learning whereas clustering is a type of unsupervised learning algorithm. K-means clustering, as one type of the most basic and fundamental clustering algorithm, has the main idea of iteratively finding the way of cutting the space into K clusters, so that the loss function is the lowest. The loss function can be defined as the squared error of distance of each sample from their clustered center
+Classification belongs to supervised learning whereas clustering is a type of unsupervised learning algorithm. K-means clustering, as one type of the most basic and fundamental clustering algorithm, has the main idea of iteratively finding the way of cutting the space into K clusters, so that the loss function is the lowest. The loss function can be defined as the sum of squared error distance of each sample from their clustered centers:
+$$J(c,\mu) = \sum_{i=1}^M ||x_i - \mu_{c_i}||^2$$ where $x_i$ represents the samples, $c_i$ represents the cluster that $x_i$ belongs to, $mu_{c_i}$ corresponds to the center of the cluster that $x_i$'s located in and $M$ is the total number of samples.
+
+
+### K-means clustering algorithm in steps
+The goal of K-means clustering is to categorize the dataset of interest into K-clusters, and also provides the cluster center corresponding to each data points:
+1. data engineering and cleaning: normalization and outlier removal.
+2. randomly pick K-cluster centers, labelled as $\mu_1^{(0)}, \mu_2^{(0)}, ..., \mu_K^{(0)}$ 
+3. define the loss function to be $J(c,\mu) = \min_{\mu} \min_{c} \sum_{i=1}^M ||x_i - \mu_{c_i}||^2$ 
+4. iterate through the process below by t times, where t denotes the number of iterations:
+	1. for every sample $x_i$, categorize it to the cluster that has shortest distance $$c_i^{(t)} \leftarrow {\arg\min}_k ||x_i - \mu_k^{(t)}||^2$$
+	2. for every cluster k, recalculate the center: $$\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2$$

@@ -1,5 +1,5 @@
 ---
-title: Week10_Integration_and_Project
+title: Integration_and_Project
 ---
 ---
 title: Integration & Mini-Project

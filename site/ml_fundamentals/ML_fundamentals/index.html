@@ -1234,6 +1234,12 @@ As <span class="arithmatex">\(n\)</span> gets large, about <strong>36.8%</strong
 </ul>
 </li>
 </ul>
+<h2 id="early-stoppings">Early Stoppings<a class="headerlink" href="#early-stoppings" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Early stopping watches <strong>validation</strong> loss/metric and halts training when it stops improving, and is a <strong>stopping rule</strong> driven by the <strong>validation metric’s change</strong>, not a pre-fixed iteration count</li>
+<li>It <strong>reduces overfitting</strong> (lower variance) by not letting the model memorize noise; acts like <strong>implicit L2</strong> regularization.
+Train while checking performance on a validation set. Whenever the validation score improves, remember those weights. If it doesn’t improve for a while (patience), stop and roll back to the best checkpoint. This caps model complexity at the point where it generalized best, preventing the later epochs from fitting noise</li>
+</ul>
 <h2 id="l2-l1-regularization">L2 / L1 Regularization<a class="headerlink" href="#l2-l1-regularization" title="Permanent link">&para;</a></h2>
 <h6 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h6>
 <p>Model (no intercept for simplicity):</p>
@@ -1482,6 +1488,30 @@ def predict(X, theta, threshold=0.5):
 <li>They both used maximum likelihood estimation for modeling the training data. </li>
 <li>They both could use gradient descent for getting the hyperparameters, and it is also a common strategy that all the supervised learning methods use.</li>
 </ul>
+<h3 id="the-general-logic-behind-regression">The general logic behind regression<a class="headerlink" href="#the-general-logic-behind-regression" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Inputs: X (N×d), y (N,), model ∈ {&quot;linear&quot;,&quot;logistic&quot;}
+Hyperparams: eta (lr), lambda (L2), max_iters, tol, patience
+Prep:
+  Xb = concat([ones(N,1), X])        # add bias column
+  w = zeros(d+1)                     # includes bias at index 0
+  mask = [0, 1, 1, ..., 1]           # no L2 on bias
+
+For t in 1..max_iters:
+  z = Xb @ w
+  if model == &quot;linear&quot;:
+      pred = z
+      loss_data = (1/(2N)) * sum((pred - y)^2)
+  else:  # logistic
+      pred = sigmoid(z)              # clip to [eps, 1-eps] for stability
+      loss_data = -(1/N) * sum(y*log(pred) + (1-y)*log(1-pred))
+
+  loss = loss_data + lambda * sum((w*mask)^2)
+  grad = (1/N) * (Xb.T @ (pred - y)) + 2*lambda*(w*mask)
+  w = w - eta * grad
+  if norm(grad) &lt; tol or early_stopping_on_val(loss): break
+
+Return w
+</code></pre></div>
 <h4 id="note-for-binomial-distribution-vs-normal-distribution">Note for binomial distribution vs normal distribution<a class="headerlink" href="#note-for-binomial-distribution-vs-normal-distribution" title="Permanent link">&para;</a></h4>
 <p>The main difference between a binomial distribution and a normal distribution lies in the type of data they describe: ==binomial distributions deal with discrete data from a fixed number of trials, while normal distributions describe continuous data that tends to cluster around a mean==. Binomial distributions are characterized by a fixed number of trials, each with two possible outcomes (success or failure), while normal distributions are continuous, symmetric, and have a bell-shaped curve.</p>
 <h2 id="decision-tree">Decision Tree<a class="headerlink" href="#decision-tree" title="Permanent link">&para;</a></h2>
@@ -1568,8 +1598,8 @@ Now let's use an example to better understand how to compute Gini index:</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><img src="../resources/gini_index_1.png" alt="drawing" style="width:350px;"/></td>
-<td style="text-align: center;"><img src="../resources/gini_index_2.png" alt="drawing" style="width:350px;"/></td>
+<td style="text-align: center;"><img src="../resources/gini_index_1.png" alt="drawing" style="width:250px;"/></td>
+<td style="text-align: center;"><img src="../resources/gini_index_2.png" alt="drawing" style="width:250px;"/></td>
 </tr>
 <tr>
 <td style="text-align: center;">All the three leaves except for the fourth one are called impure leaves, where the fourth one is called a pure leaf node. As both leaf nodes from <code>loves Popcorn</code> are impure but there is only one node from <code>Loves Soda</code> being impure, it means that the <code>Loves Soda</code> does a better job predicting who will and will not the movie.</td>
@@ -1586,9 +1616,19 @@ $$\text{Total Gini Impurity} = \text{weighted avg of Gini for the leaves} = (\fr
 <p>For a sample set D, there are K categories, the empirical entropy for this set D can be expressed as <span class="arithmatex">\(H(D) = -\sum_{k=1}^K \frac{|C_k|}{D}\log_2\frac{C_k}{D}\)</span>.</p>
 <h1 id="unsupervised-learnings">Unsupervised Learnings<a class="headerlink" href="#unsupervised-learnings" title="Permanent link">&para;</a></h1>
 <p>We may encounter problems such that providing the machine a tons of feature data and looking for the machine to learn the pattern or structure from the data, for example the video platforms would like to categorize the users from their activities for different recommendation strategies, or looking for relationship between whether the video playing smooth or not vs their relationship with user unsubscribe. These problems are called "unsupervised learnings", which does not like the supervised learnings where we expect to see outputs or predictions. The unsupervised learning inputs does not contain label information, instead it needs to dig into the internal data relationship from the algorithm model. <strong>There are two main categories of the unsupervised learnings: data clustering or feature variable correlation (using correlation analysis for relationships between variables)</strong>. </p>
+<h2 id="k-nearest-neighbors-k-nn-algorithm">K-Nearest Neighbors (k-NN) Algorithm<a class="headerlink" href="#k-nearest-neighbors-k-nn-algorithm" title="Permanent link">&para;</a></h2>
 <h2 id="k-means-clustering">K-means Clustering<a class="headerlink" href="#k-means-clustering" title="Permanent link">&para;</a></h2>
 <p>Algorithms such as SVM, logistic regression, decision trees are more for the categorization, i.e. based on the known labelled samples, classifiers are training so that it could apply the same logic on unlabeled samples. Unlike the classification problems, clustering is directly categorize the samples without any previously known labelling. </p>
-<p>Classification belongs to supervised learning whereas clustering is a type of unsupervised learning algorithm. K-means clustering, as one type of the most basic and fundamental clustering algorithm, has the main idea of iteratively finding the way of cutting the space into K clusters, so that the loss function is the lowest. The loss function can be defined as the squared error of distance of each sample from their clustered center</p>
+<p>Classification belongs to supervised learning whereas clustering is a type of unsupervised learning algorithm. K-means clustering, as one type of the most basic and fundamental clustering algorithm, has the main idea of iteratively finding the way of cutting the space into K clusters, so that the loss function is the lowest. The loss function can be defined as the sum of squared error distance of each sample from their clustered centers:
+<span class="arithmatex">\(<span class="arithmatex">\(J(c,\mu) = \sum_{i=1}^M ||x_i - \mu_{c_i}||^2\)</span>\)</span> where <span class="arithmatex">\(x_i\)</span> represents the samples, <span class="arithmatex">\(c_i\)</span> represents the cluster that <span class="arithmatex">\(x_i\)</span> belongs to, <span class="arithmatex">\(mu_{c_i}\)</span> corresponds to the center of the cluster that <span class="arithmatex">\(x_i\)</span>'s located in and <span class="arithmatex">\(M\)</span> is the total number of samples.</p>
+<h3 id="k-means-clustering-algorithm-in-steps">K-means clustering algorithm in steps<a class="headerlink" href="#k-means-clustering-algorithm-in-steps" title="Permanent link">&para;</a></h3>
+<p>The goal of K-means clustering is to categorize the dataset of interest into K-clusters, and also provides the cluster center corresponding to each data points:
+1. data engineering and cleaning: normalization and outlier removal.
+2. randomly pick K-cluster centers, labelled as <span class="arithmatex">\(\mu_1^{(0)}, \mu_2^{(0)}, ..., \mu_K^{(0)}\)</span> 
+3. define the loss function to be <span class="arithmatex">\(J(c,\mu) = \min_{\mu} \min_{c} \sum_{i=1}^M ||x_i - \mu_{c_i}||^2\)</span> 
+4. iterate through the process below by t times, where t denotes the number of iterations:
+    1. for every sample <span class="arithmatex">\(x_i\)</span>, categorize it to the cluster that has shortest distance <span class="arithmatex">\(<span class="arithmatex">\(c_i^{(t)} \leftarrow {\arg\min}_k ||x_i - \mu_k^{(t)}||^2\)</span>\)</span>
+    2. for every cluster k, recalculate the center: <span class="arithmatex">\(<span class="arithmatex">\(\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2\)</span>\)</span></p>
 <div class="footnote">
 <hr />
 <ol>
@@ -1664,7 +1704,7 @@ $$\text{Total Gini Impurity} = \text{weighted avg of Gini for the leaves} = (\fr
     
       <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       

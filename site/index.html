@@ -168,7 +168,7 @@
               
                 
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -588,6 +588,7 @@
 .hero .subtitle { font-size: 1.125rem; opacity: .8; margin: 0 0 1.25rem 0; }
 .hero__actions .md-button { margin: .25rem .4rem; }
 
+/* Card grid */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -616,28 +617,20 @@
   <div class="hero__content">
     <h1>Machine Learning Notes</h1>
     <p class="subtitle">Curated notes on probability, foundations, and neural networks.</p>
+
+    <!-- Use Markdown links with Material button classes for clean URLs -->
     <p class="hero__actions">
-      <a href="week1-2_probability_and_markov\Week1\Week1P1-conditional_probability_and_bayes_rule.md" class="md-button md-button--primary">Bayes’ Rule</a>
-      <a href="week1-2_probability_and_markov\Week1\Week1P2-naive_bayes_and_gaussian_naive_bayes.md" class="md-button">Naive Bayes</a>
-      <a href="week1-2_probability_and_markov\Week1\Week1P3-joint_and_marginal_distributions.md" class="md-button">Joint & Marginal</a>
-      <a href="week1-2_probability_and_markov\Week1\Week1P4-ML_fundamentals.md" class="md-button">ML Fundamentals</a>
+      [ML Fundamentals](ml_fundamentals/ML_fundamentals.md){ .md-button .md-button--primary }
+      [Probability & Markov](probability_and_markov/Probability_and_Markov_Overview.md){ .md-button } 
+      [Language Model](language_model/Ngram_Language_Modeling.md){ .md-button }
     </p>
   </div>
 </div>
 
 <section class="cards">
-  <a class="card" href="Entropy.md">
-    <h3>Information Theory</h3>
-    <p>Entropy, cross-entropy, KL divergence.</p>
-  </a>
-  <a class="card" href="Week8_9_Neural_Networks_and_Backprop.md">
-    <h3>Neural Networks</h3>
-    <p>Backpropagation, activations, training tips.</p>
-  </a>
-  <a class="card" href="Week5_6_Linear_Algebra_for_ML.md">
-    <h3>Linear Algebra</h3>
-    <p>Vectors, matrices, SVD, and more.</p>
-  </a>
+  [<span><h3>Information Theory</h3><p>Entropy, cross-entropy, KL divergence.</p></span>](.\Information_Theory.md){ .card }
+  [<span><h3>Neural Networks</h3><p>Backpropagation, activations, training tips.</p></span>](.\Neural_Networks_and_Backprop.md){ .card }
+  [<span><h3>Linear Algebra</h3><p>Vectors, matrices, SVD, and more.</p></span>](.\Linear_Algebra_for_ML.md){ .card }
 </section>
 
 
@@ -705,7 +698,7 @@
     
       <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
