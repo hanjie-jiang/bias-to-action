@@ -1,0 +1,14 @@
+/* Wider responsive layout for MkDocs Material (site-wide) */
+:root {
+  /* Adjust these values as you like */
+  --page-width: clamp(800px, 92vw, 1200px);
+}
+
+.md-grid {
+  max-width: var(--page-width);
+}
+
+/* Optional: give extra headroom on ultra-wide screens */
+@media (min-width: 1600px) {
+  .md-grid { max-width: 1400px; }
+}

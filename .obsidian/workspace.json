@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "6b2c38e96b68447f",
+        "id": "4bff1301e8d779a1",
         "type": "split",
         "children": [
           {
@@ -28,11 +28,11 @@
             ]
           },
           {
-            "id": "25d30c2db93781ad",
+            "id": "1e8d9ab59d81fb9c",
             "type": "tabs",
             "children": [
               {
-                "id": "e11a14234336e97c",
+                "id": "e054e425efdfb2fd",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -231,9 +231,11 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "e11a14234336e97c",
+  "active": "e054e425efdfb2fd",
   "lastOpenFiles": [
+    "_notes/assets/styles/layout.css",
     "_notes/week1-2_probability_and_markov/Week1/Week1P4-ML_fundamentals.md",
+    "_notes/Foundational knowledge plan.md",
     "_notes/assets/images",
     "_notes/week1-2_probability_and_markov/Week1_Probability_and_Markov.md",
     "_notes/week1-2_probability_and_markov/resources/百面机器学习.pdf",
@@ -268,7 +270,6 @@
     "_notes/week1-2_probability_and_markov/resources/p-r_curve.png",
     "_notes/week1-2_probability_and_markov/resources/conditional_probability.png",
     "_notes/week3_language_model/Week3_Ngram_Language_Modeling.md",
-    "_notes/Foundational knowledge plan.md",
     "index.md",
     "README.md",
     "foundations_of_ML/week1-2_probability_and_markov/Week1P4 - ML Fundamentals.md",

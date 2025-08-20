@@ -1,6 +1,9 @@
 site_name: Machine Learning Notes
 docs_dir: _notes
 
+extra_css:
+  - assets/styles/layout.css
+
 theme:
   name: material
   font:

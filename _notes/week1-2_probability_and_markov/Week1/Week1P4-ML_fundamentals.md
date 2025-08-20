@@ -633,8 +633,9 @@ housing_data = np.array([[1800, 3], [2400, 4], [1416, 2], [3000, 5]])
 prices = np.array([350000, 475000, 230000, 640000])
 
 # adding 1s to our matrix
-ones = np.ones(shape=(len(housing_data), 1))
-X = np.append(ones, housing_data, axis=1)
+# ones = np.ones(shape=(len(housing_data), 1))
+# X = np.append(ones, housing_data, axis=1)
+X = np.c_[np.ones((len(housing_data),1)),X] # add bias parameter to X
 
 # calculating coefficients
 coefficients = np.linalg.inv(X.T @ X) @ X.T @ prices
@@ -660,8 +661,52 @@ print("R^2:", r2)
 ```
 
 ### Gradient Descent
-#gradient-descent
+#gradient-descent #learning-rate
 **Gradient descent** is an iterative optimization algorithm for minimizing a function, usually a loss function, quantifying the disparity between predicted and actual results. The goal of gradient descent is to find the parameters that minimize the value of the loss function.
+
+Gradient descent derives its name from its working mechanism: taking _descents_ along the _gradient_. It operates in several iterative steps as follows:
+
+1. Choose random values for initial parameters.
+2. Calculate the cost (the difference between actual and predicted value).
+3. Compute the gradient (the steepest slope of the function around that point).
+4. Update the parameters using the gradient.
+5. Repeat steps 2 to 4 until we reach an acceptable error rate or exhaust the maximum iterations.
+
+A vital component of gradient descent is the learning rate, which determines the size of the descent towards the optimum solution.
+
+The first step is to calculate the cost function, which takes the form of $$J(X, y, \theta) = \frac{1}{m}\sum_{i=1}^m(X\cdot \theta - y_i)^2$$ where J is the cost, X is the data, y is the actual values and $\theta$ is the parameters, $m$ is the length of $y$. It is calculating the mean square error. 
+
+```
+import numpy as np
+
+def cost(X, y, theta):
+	m = len(y)
+	predictions = X @ theta
+	cost = (1/m) * np.sum((predictions - y) ** 2)
+	return cost
+```
+
+The second step is to compute the gradient descent function, which will be updated in the iterative loop:
+$$\theta:=\theta-\alpha\frac{1}{m}X^T\cdot(X\cdot \theta - y)$$ Here $\alpha$ is the learning rate, which determines the size of steps in the descent and $X^T$ is the transpose of data, which should have been multiplied by 2 but as we take the derivative of the mean squared error we could also consider it to be included as part of the learning rate $\alpha$. 
+
+```
+def gradient_descent(X, y, theta, alpha, threshold=0.01):
+    m = len(y)
+    cost_history = []
+    prev_cost = float('inf')
+    iterations = 0
+    while True:
+        prediction = X.dot(theta)
+        theta = theta - (alpha / m) * X.T.dot(prediction - y)
+        cost = (1/(2*m)) * np.sum((prediction - y) ** 2)
+        cost_history.append(cost)
+        if abs(prev_cost - cost) < threshold:
+            break
+        prev_cost = cost
+        iterations += 1
+    return theta, cost_history, iterations
+```
+
 ## Support Vector Machine (SVM)
 
 ##### Additional Resources

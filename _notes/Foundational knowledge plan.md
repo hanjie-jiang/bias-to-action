@@ -1,4 +1,4 @@
-﻿---
+---
 title: Foundational knowledge plan
 ---
 #### **Week 1â€“2: Probability Foundations + Markov Assumption**
