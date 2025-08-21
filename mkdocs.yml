@@ -58,4 +58,5 @@ nav:
   - Linear Algebra: Linear_Algebra_for_ML.md
   - Language Model: language_model/Ngram_Language_Modeling.md
   - Neural Networks:
-      - Overview: Neural_Networks_and_Backprop.md
+      - Overview: neural_networks_and_deep_learning/Neural_Networks_and_Deep_Learning_Overview.md
+      - Perceptron Algorithm: neural_networks_and_deep_learning/neural_networks_sections/Introduction_to_Perceptron_Algorithm.md

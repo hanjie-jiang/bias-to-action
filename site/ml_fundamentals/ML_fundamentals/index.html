@@ -1530,12 +1530,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Neural_Networks_and_Backprop/" class="md-nav__link">
+      <a href="../../neural_networks_and_deep_learning/Neural_Networks_and_Deep_Learning_Overview/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../neural_networks_and_deep_learning/neural_networks_sections/Introduction_to_Perceptron_Algorithm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Perceptron Algorithm
     
   </span>
   
@@ -2337,7 +2360,7 @@ def predict(X, theta, threshold=0.5):
 </ul>
 <h4 id="the-general-logic-behind-regression">The general logic behind regression<a class="headerlink" href="#the-general-logic-behind-regression" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>Inputs: X (N×d), y (N,), model ∈ {&quot;linear&quot;,&quot;logistic&quot;}
-Hyperparams: eta (lr), lambda (L2), max_iters, tol, patience
+Hyperparams: learning_rate (lr), lambda (L2), max_iters, tol, patience
 Prep:
   Xb = concat([ones(N,1), X])        # add bias column
   w = zeros(d+1)                     # includes bias at index 0
@@ -2354,7 +2377,7 @@ For t in 1..max_iters:
 
   loss = loss_data + lambda * sum((w*mask)^2)
   grad = (1/N) * (Xb.T @ (pred - y)) + 2*lambda*(w*mask)
-  w = w - eta * grad
+  w = w - learning_rate * grad
   if norm(grad) &lt; tol or early_stopping_on_val(loss): break
 
 Return w
@@ -2534,7 +2557,32 @@ print(class_label)
 3. define the loss function to be <span class="arithmatex"><span class="MathJax_Preview">J(c,\mu) = \min_{\mu} \min_{c} \sum_{i=1}^M ||x_i - \mu_{c_i}||^2</span><script type="math/tex">J(c,\mu) = \min_{\mu} \min_{c} \sum_{i=1}^M ||x_i - \mu_{c_i}||^2</script></span> 
 4. iterate through the process below by t times, where t denotes the number of iterations:
     1. for every sample <span class="arithmatex"><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span>, categorize it to the cluster that has shortest distance <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">c_i^{(t)} \leftarrow {\arg\min}_k ||x_i - \mu_k^{(t)}||^2</span><script type="math/tex">c_i^{(t)} \leftarrow {\arg\min}_k ||x_i - \mu_k^{(t)}||^2</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">c_i^{(t)} \leftarrow {\arg\min}_k ||x_i - \mu_k^{(t)}||^2</span><script type="math/tex">c_i^{(t)} \leftarrow {\arg\min}_k ||x_i - \mu_k^{(t)}||^2</script></span></script></span>
-    2. for every cluster k, recalculate the center: <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2</span><script type="math/tex">\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2</span><script type="math/tex">\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2</script></span></script></span></p>
+    2. for every cluster k, recalculate the center: <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2</span><script type="math/tex">\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2</span><script type="math/tex">\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2</script></span></script></span>
+<div class="highlight"><pre><span></span><code># k-Means algorithm
+def k_means(data, centers, k):
+    while True:
+        clusters = [[] for _ in range(k)] 
+
+        # Assign data points to the closest center
+        for point in data:
+            distances = [distance(point, center) for center in centers]
+            index = distances.index(min(distances)) 
+            clusters[index].append(point)
+
+        # Update centers to be the mean of points in a cluster
+        new_centers = []
+        for cluster in clusters:
+            center = (sum([point[0] for point in cluster])/len(cluster), 
+                      sum([point[1] for point in cluster])/len(cluster)) 
+            new_centers.append(center)
+
+        # Break loop if centers don&#39;t change significantly
+        if max([distance(new, old) for new, old in zip(new_centers, centers)]) &lt; 0.0001:
+            break
+        else:
+            centers = new_centers
+    return clusters, centers
+</code></pre></div></p>
 <div class="footnote">
 <hr />
 <ol>

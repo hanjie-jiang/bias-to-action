@@ -740,7 +740,7 @@ def predict(X, theta, threshold=0.5):
 
 ```
 Inputs: X (N×d), y (N,), model ∈ {"linear","logistic"}
-Hyperparams: eta (lr), lambda (L2), max_iters, tol, patience
+Hyperparams: learning_rate (lr), lambda (L2), max_iters, tol, patience
 Prep:
   Xb = concat([ones(N,1), X])        # add bias column
   w = zeros(d+1)                     # includes bias at index 0
@@ -757,7 +757,7 @@ For t in 1..max_iters:
 
   loss = loss_data + lambda * sum((w*mask)^2)
   grad = (1/N) * (Xb.T @ (pred - y)) + 2*lambda*(w*mask)
-  w = w - eta * grad
+  w = w - learning_rate * grad
   if norm(grad) < tol or early_stopping_on_val(loss): break
 
 Return w
