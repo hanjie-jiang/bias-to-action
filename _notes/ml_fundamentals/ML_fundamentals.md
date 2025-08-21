@@ -829,6 +829,46 @@ point2 = (4, 6) # The coordinates of the second point
 print(euclidean_distance(point1, point2)) # 5.0
 ```
 
+### Actual KNN Algorithm
+
+```
+from collections import Counter
+import numpy as np
+
+def k_nearest_neighbors(data, query, k, distance_fn):
+    neighbor_distances_and_indices = []
+    # Compute distance from each training data point
+    for idx, label in enumerate(data):
+        distance = distance_fn(label[0], query)
+    neighbor_distances_and_indices.append((distance, idx))
+    # Sort array by distance
+    sorted_neighbor_distances_and_indices = sorted(neighbor_distances_and_indices)
+    # Select k closest data points
+    k_nearest_distances_and_indices = sorted_neighbor_distances_and_indices[:k]
+    # Obtain class labels for those k data points
+    k_nearest_labels = [data[i][1] for distance, i in k_nearest_distances_and_indices]
+    # Majority vote
+    most_common = Counter(k_nearest_labels).most_common(1)
+    return most_common[0][0] # Return the label of the class that receives the majority vote
+
+def distance_fn(point1, point2):
+    distance = sum((p - q) ** 2 for p, q in zip(point1, point2))
+    return np.sqrt(distance)
+
+data = [
+    ((2, 3), 0),
+    ((5, 4), 0),
+    ((9, 6), 1),
+    ((4, 7), 0),
+    ((8, 1), 1),
+    ((7, 2), 1)
+]
+query = (7,6)
+k=2
+
+class_label = k_nearest_neighbors(data, query, k, distance_fn)
+print(class_label)
+```
 ### K-means Clustering
 Algorithms such as SVM, logistic regression, decision trees are more for the categorization, i.e. based on the known labelled samples, classifiers are training so that it could apply the same logic on unlabeled samples. Unlike the classification problems, clustering is directly categorize the samples without any previously known labelling. 
 

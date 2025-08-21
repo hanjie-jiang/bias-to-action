@@ -24,6 +24,7 @@ hide:
 .hero .subtitle { font-size: 1.125rem; opacity: .8; margin-bottom: 1.25rem; }
 .hero__actions .md-button { margin: .25rem .4rem; }
 
+/* Card grid */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -61,7 +62,7 @@ hide:
 </div>
 
 <section class="cards">
-  [<span><h3>Information Theory</h3><p>Entropy, cross‑entropy and KL divergence.</p></span>](Information_Theory.md){ .card }
+  [<span><h3>Information Theory</h3><p>Entropy, cross-entropy and KL divergence.</p></span>](Information_Theory.md){ .card }
   [<span><h3>Neural Networks</h3><p>Backpropagation, activations, training tips.</p></span>](Neural_Networks_and_Backprop.md){ .card }
   [<span><h3>Linear Algebra</h3><p>Vectors, matrices, SVD and more.</p></span>](Linear_Algebra_for_ML.md){ .card }
 </section>

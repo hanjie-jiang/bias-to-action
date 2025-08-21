@@ -69,8 +69,48 @@
                   "icon": "terminal",
                   "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
                 }
+              },
+              {
+                "id": "dc2ad5c9e2047590",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "terminal:terminal",
+                  "state": {
+                    "terminal:terminal": {
+                      "cwd": "C:\\Users\\Hanjie\\Documents\\obsidian",
+                      "focus": false,
+                      "profile": {
+                        "args": [],
+                        "executable": "C:\\Windows\\System32\\cmd.exe",
+                        "name": "",
+                        "platforms": {
+                          "win32": true
+                        },
+                        "pythonExecutable": "python3",
+                        "restoreHistory": false,
+                        "rightClickAction": "copyPaste",
+                        "successExitCodes": [
+                          "0",
+                          "SIGINT",
+                          "SIGTERM"
+                        ],
+                        "terminalOptions": {
+                          "documentOverride": null
+                        },
+                        "type": "integrated",
+                        "useWin32Conhost": true
+                      },
+                      "serial": null
+                    }
+                  },
+                  "pinned": true,
+                  "icon": "terminal",
+                  "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
+                }
               }
-            ]
+            ],
+            "currentTab": 1
           }
         ],
         "direction": "horizontal"
@@ -193,12 +233,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "_notes/ml_fundamentals/ML_fundamentals.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of ML_fundamentals"
             }
           },
           {
@@ -231,7 +272,7 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "4472e69140e10474",
+  "active": "731190164876a8f7",
   "lastOpenFiles": [
     "_notes/ml_fundamentals/ML_fundamentals.md",
     "_notes/Foundational knowledge plan.md",
