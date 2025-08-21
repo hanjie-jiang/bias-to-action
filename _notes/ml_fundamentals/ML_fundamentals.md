@@ -814,6 +814,24 @@ For a sample set D, there are K categories, the empirical entropy for this set D
 We may encounter problems such that providing the machine a tons of feature data and looking for the machine to learn the pattern or structure from the data, for example the video platforms would like to categorize the users from their activities for different recommendation strategies, or looking for relationship between whether the video playing smooth or not vs their relationship with user unsubscribe. These problems are called "unsupervised learnings", which does not like the supervised learnings where we expect to see outputs or predictions. The unsupervised learning inputs does not contain label information, instead it needs to dig into the internal data relationship from the algorithm model. **There are two main categories of the unsupervised learnings: data clustering or feature variable correlation (using correlation analysis for relationships between variables)**. 
 
 ## K-Nearest Neighbors (k-NN) Algorithm
+The kNN algorithm works on a basic principle: a data point is likely to be in the same category as the data points it is closest to. Note that choosing 'k' significantly impacts our model. A low 'k' might capture more noise in the data, whereas a high 'k' is computationally expensive.
+
+### Euclidean Distance Calculation
+In k-NN, classification is determined by weighing the distance between data points. Euclidean distance is a frequently used metric that calculates the shortest straight-line distance $\sqrt{(x_1-x_2)^2 + (y_1 - y_2)^2}$ between two data points $(x_1, y_1)$ and $(x_2, y_2)$ in a Euclidean space. 
+
+```
+import math
+
+# The 'euclidean_distance' function computes the Euclidean distance between two points
+def euclidean_distance(point1, point2):
+    squares = [(p - q) ** 2 for p, q in zip(point1, point2)] # Calculate squared distance for each dimension
+    return math.sqrt(sum(squares)) # Return the square root of the sum of squares
+
+# Test it
+point1 = (1, 2) # The coordinates of the first point
+point2 = (4, 6) # The coordinates of the second point
+print(euclidean_distance(point1, point2)) # 5.0
+```
 
 ## K-means Clustering
 Algorithms such as SVM, logistic regression, decision trees are more for the categorization, i.e. based on the known labelled samples, classifiers are training so that it could apply the same logic on unlabeled samples. Unlike the classification problems, clustering is directly categorize the samples without any previously known labelling. 

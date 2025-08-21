@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "dd3eaa688a6a8fe8",
+        "id": "2fb0db5eae174b61",
         "type": "split",
         "children": [
           {
@@ -28,11 +28,11 @@
             ]
           },
           {
-            "id": "2d0d4c6e79489195",
+            "id": "6a426b8607ac0892",
             "type": "tabs",
             "children": [
               {
-                "id": "b756ec75696fc815",
+                "id": "cb255f393bcebdaa",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -232,7 +232,7 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "b756ec75696fc815",
+  "active": "cb255f393bcebdaa",
   "lastOpenFiles": [
     "_notes/ml_fundamentals/ML_fundamentals.md",
     "_notes/Foundational knowledge plan.md",

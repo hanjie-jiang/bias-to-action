@@ -38,8 +38,7 @@ markdown_extensions:
   - pymdownx.betterem
   - pymdownx.tilde
   - pymdownx.tasklist
-  - pymdownx.arithmatex:
-      generic: true
+  - pymdownx.arithmatex
   - toc:
       permalink: true
 
