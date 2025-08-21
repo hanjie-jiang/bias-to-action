@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "0710fee3aeffb3c6",
+        "id": "e7bd2aa9b2d20de6",
         "type": "split",
         "children": [
           {
@@ -28,50 +28,11 @@
             ]
           },
           {
-            "id": "4b78db4bf2b11049",
+            "id": "03c9564bcbe2b075",
             "type": "tabs",
             "children": [
               {
-                "id": "4472e69140e10474",
-                "type": "leaf",
-                "pinned": true,
-                "state": {
-                  "type": "terminal:terminal",
-                  "state": {
-                    "terminal:terminal": {
-                      "cwd": "C:\\Users\\Hanjie\\Documents\\obsidian",
-                      "focus": false,
-                      "profile": {
-                        "args": [],
-                        "executable": "C:\\Windows\\System32\\cmd.exe",
-                        "name": "",
-                        "platforms": {
-                          "win32": true
-                        },
-                        "pythonExecutable": "python3",
-                        "restoreHistory": false,
-                        "rightClickAction": "copyPaste",
-                        "successExitCodes": [
-                          "0",
-                          "SIGINT",
-                          "SIGTERM"
-                        ],
-                        "terminalOptions": {
-                          "documentOverride": null
-                        },
-                        "type": "integrated",
-                        "useWin32Conhost": true
-                      },
-                      "serial": null
-                    }
-                  },
-                  "pinned": true,
-                  "icon": "terminal",
-                  "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
-                }
-              },
-              {
-                "id": "dc2ad5c9e2047590",
+                "id": "af07f0c7e556a628",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -109,8 +70,7 @@
                   "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
                 }
               }
-            ],
-            "currentTab": 1
+            ]
           }
         ],
         "direction": "horizontal"
@@ -233,13 +193,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_notes/ml_fundamentals/ML_fundamentals.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ML_fundamentals"
+              "title": "Outline"
             }
           },
           {
@@ -257,7 +216,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -272,10 +232,10 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "731190164876a8f7",
+  "active": "af07f0c7e556a628",
   "lastOpenFiles": [
     "_notes/ml_fundamentals/ML_fundamentals.md",
-    "_notes/Foundational knowledge plan.md",
+    "_notes/probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes.md",
     "site/search/search_index.json",
     "site/search",
     "site/probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes/index.html",
@@ -288,11 +248,12 @@
     "site/probability_and_markov/probability_and_markov_sections",
     "site/assets/images/favicon.png",
     "site/probability_and_markov/resources/conditional_probability.png",
-    "site/ml_fundamentals/resources/gini_index_2.png",
     "site/ml_fundamentals/resources/p-r_curve.png",
+    "site/ml_fundamentals/resources/gini_index_2.png",
+    "site/ml_fundamentals/resources/gini_index_1.png",
     "site/ml_fundamentals/resources/Screenshot 2025-08-05 at 9.30.27 PM.png",
     "site/ml_fundamentals/resources/Screenshot 2025-08-05 at 8.22.11 PM.png",
-    "site/ml_fundamentals/resources/gini_index_1.png",
+    "_notes/Foundational knowledge plan.md",
     "_notes/Information_Theory.md",
     "_notes/Neural_Networks_and_Backprop.md",
     "_notes/Linear_Algebra_for_ML.md",
@@ -305,7 +266,6 @@
     "site/probability_and_markov/ressources/conditional_probability.png",
     "_notes/ml_fundamentals/resources/Screenshot 2025-08-05 at 9.30.27 PM.png",
     "_notes/ml_fundamentals/resources/Screenshot 2025-08-05 at 8.22.11 PM.png",
-    "_notes/probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes.md",
     "_notes/probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions.md",
     "_notes/index.md",
     "Implementing bigram/trigram models on a toy corpus.md",

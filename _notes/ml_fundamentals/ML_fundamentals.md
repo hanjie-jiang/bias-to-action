@@ -812,7 +812,7 @@ We may encounter problems such that providing the machine a tons of feature data
 ### K-Nearest Neighbors (k-NN) Algorithm
 The kNN algorithm works on a basic principle: a data point is likely to be in the same category as the data points it is closest to. Note that choosing 'k' significantly impacts our model. A low 'k' might capture more noise in the data, whereas a high 'k' is computationally expensive.
 
-#### Euclidean Distance Calculation
+### Euclidean Distance Calculation
 In k-NN, classification is determined by weighing the distance between data points. Euclidean distance is a frequently used metric that calculates the shortest straight-line distance $\sqrt{(x_1-x_2)^2 + (y_1 - y_2)^2}$ between two data points $(x_1, y_1)$ and $(x_2, y_2)$ in a Euclidean space. 
 
 ```
@@ -839,7 +839,7 @@ def k_nearest_neighbors(data, query, k, distance_fn):
     neighbor_distances_and_indices = []
     # Compute distance from each training data point
     for idx, label in enumerate(data):
-        distance = distance_fn(label[0], query)
+        distance = euclidean_distance(label[0], query)
     neighbor_distances_and_indices.append((distance, idx))
     # Sort array by distance
     sorted_neighbor_distances_and_indices = sorted(neighbor_distances_and_indices)
@@ -851,9 +851,12 @@ def k_nearest_neighbors(data, query, k, distance_fn):
     most_common = Counter(k_nearest_labels).most_common(1)
     return most_common[0][0] # Return the label of the class that receives the majority vote
 
-def distance_fn(point1, point2):
+def euclidean_distance(point1, point2):
     distance = sum((p - q) ** 2 for p, q in zip(point1, point2))
     return np.sqrt(distance)
+    
+def mannhattan_distance(point1, point2):
+    return np.sum(np.abs(p - q) for p, q in zip(point1, point2))
 
 data = [
     ((2, 3), 0),
@@ -884,3 +887,29 @@ The goal of K-means clustering is to categorize the dataset of interest into K-c
 4. iterate through the process below by t times, where t denotes the number of iterations:
 	1. for every sample $x_i$, categorize it to the cluster that has shortest distance $$c_i^{(t)} \leftarrow {\arg\min}_k ||x_i - \mu_k^{(t)}||^2$$
 	2. for every cluster k, recalculate the center: $$\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2$$
+```
+# k-Means algorithm
+def k_means(data, centers, k):
+    while True:
+        clusters = [[] for _ in range(k)] 
+
+        # Assign data points to the closest center
+        for point in data:
+            distances = [distance(point, center) for center in centers]
+            index = distances.index(min(distances)) 
+            clusters[index].append(point)
+
+        # Update centers to be the mean of points in a cluster
+        new_centers = []
+        for cluster in clusters:
+            center = (sum([point[0] for point in cluster])/len(cluster), 
+                      sum([point[1] for point in cluster])/len(cluster)) 
+            new_centers.append(center)
+
+        # Break loop if centers don't change significantly
+        if max([distance(new, old) for new, old in zip(new_centers, centers)]) < 0.0001:
+            break
+        else:
+            centers = new_centers
+    return clusters, centers
+```

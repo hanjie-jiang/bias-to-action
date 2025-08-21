@@ -22,9 +22,9 @@ hide:
 .hero__content { max-width: 900px; margin: 0 auto; }
 .hero h1 { margin: 0 0 .5rem; font-size: clamp(2rem, 4vw, 3rem); }
 .hero .subtitle { font-size: 1.125rem; opacity: .8; margin-bottom: 1.25rem; }
-.hero__actions .md-button { margin: .25rem .4rem; }
+.hero__actions a { margin: .25rem .4rem; }
 
-/* Card grid */
+/* Cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -47,6 +47,11 @@ hide:
   border-color: rgba(0,0,0,.12);
 }
 .card h3 { margin: 4px 0 6px; font-size: 1.05rem; }
+
+/* Use Material's button look without Markdown helpers */
+.md-button { display: inline-block; padding: .5rem .9rem; border-radius: .5rem; border: 1px solid rgba(0,0,0,.12); }
+.md-button--primary { background: var(--md-primary-fg-color, #6200ee); color: #fff; border-color: transparent; }
+.md-button:hover { filter: brightness(0.98); }
 </style>
 
 <div class="hero">
@@ -54,15 +59,24 @@ hide:
     <h1>Machine Learning Notes</h1>
     <p class="subtitle">Curated notes on probability, foundations, and neural networks.</p>
     <p class="hero__actions">
-      [ML Fundamentals](ml_fundamentals/ML_fundamentals.md){ .md-button .md-button--primary }
-      [Probability & Markov](probability_and_markov/Probability_and_Markov_Overview.md){ .md-button }
-      [Language Model](language_model/Ngram_Language_Modeling.md){ .md-button }
+      <a class="md-button md-button--primary" href="/ml-learning-notes/ml_fundamentals/ML_fundamentals/">ML Fundamentals</a>
+      <a class="md-button" href="/ml-learning-notes/probability_and_markov/Probability_and_Markov_Overview/">Probability &amp; Markov</a>
+      <a class="md-button" href="/ml-learning-notes/language_model/Ngram_Language_Modeling/">Language Model</a>
     </p>
   </div>
 </div>
 
 <section class="cards">
-  [<span><h3>Information Theory</h3><p>Entropy, cross-entropy and KL divergence.</p></span>](Information_Theory.md){ .card }
-  [<span><h3>Neural Networks</h3><p>Backpropagation, activations, training tips.</p></span>](Neural_Networks_and_Backprop.md){ .card }
-  [<span><h3>Linear Algebra</h3><p>Vectors, matrices, SVD and more.</p></span>](Linear_Algebra_for_ML.md){ .card }
+  <a class="card" href="/ml-learning-notes/Information_Theory/">
+    <h3>Information Theory</h3>
+    <p>Entropy, cross-entropy and KL divergence.</p>
+  </a>
+  <a class="card" href="/ml-learning-notes/Neural_Networks_and_Backprop/">
+    <h3>Neural Networks</h3>
+    <p>Backpropagation, activations, training tips.</p>
+  </a>
+  <a class="card" href="/ml-learning-notes/Linear_Algebra_for_ML/">
+    <h3>Linear Algebra</h3>
+    <p>Vectors, matrices, SVD and more.</p>
+  </a>
 </section>
