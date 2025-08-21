@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "2fb0db5eae174b61",
+        "id": "0710fee3aeffb3c6",
         "type": "split",
         "children": [
           {
@@ -28,11 +28,11 @@
             ]
           },
           {
-            "id": "6a426b8607ac0892",
+            "id": "4b78db4bf2b11049",
             "type": "tabs",
             "children": [
               {
-                "id": "cb255f393bcebdaa",
+                "id": "4472e69140e10474",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -216,8 +216,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -232,7 +231,7 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "cb255f393bcebdaa",
+  "active": "4472e69140e10474",
   "lastOpenFiles": [
     "_notes/ml_fundamentals/ML_fundamentals.md",
     "_notes/Foundational knowledge plan.md",

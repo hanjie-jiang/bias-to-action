@@ -1,17 +1,15 @@
 ---
 title: ML Fundamentals
 ---
-# Resources Used
-
-![baimian-ml.pdf](<resources/baimian-ml.pdf>)# Feature Engineering
+## Feature Engineering
 
 Two types of data:
 - Structured / Tabular data: Could be viewed as a data table from the relational database, which every columns has their clear definition, including **numerical** and **categorial** data types.
 - Unstructured data: Includes **text, image, audio, video data**, and the information that this type of data contains cannot be represented easily as a numerical value, and also they do not have clear categorical definition, furthermore, the size of these data are not identical.
 
-## Normalization of Features
+### Normalization of Features
 
-###### Why does one need to do normalization on numerical features?
+#### Why does one need to do normalization on numerical features?
 
 In order to eliminate the magnitude impact between features, we should always do normalization to the features that we use, i.e. to uniformly normalize all the features to a similar range, so that it could **help compare between different metrics**. There are two different types of normalization that people most commonly use:
 - *min-max scaling*: It linearly changes the original data so that the data could be projected to \[0, 1\] range so that it is an equal ratio transformation of the original data:
@@ -22,7 +20,7 @@ Using stochastic gradient descent (SGD) as an example, when two numerical featur
 
 [^1]: need to work on the definition of this and learn more about information theory
 
-## Categorical Features
+### Categorical Features
 Categorical features include male / female, blood type (A,B,AB,O) and etc, which can only select values from a finite set of choices. Categorical features original input are mostly strings. Despite that **decision trees and some other numbers of models can directly take in the strings, for logistic regression or SVM models, the categorical features need to be translated to numerical form** so that they could properly work.
 
 ###### How to do feature engineering on categorical features?
@@ -34,9 +32,9 @@ One would need to encode the features to a higher dimensional vector to represen
 	- high-dimensional features can be difficult in following scenarios: 1) K-nearest neighbors, the distance between two high-dimensional vectors can be hard to measure, 2) logistic regression, the parameters can increase with higher dimensions, thus causing overfitting problems and 3) only some of the dimensions could be helpful when doing clustering or predictions, so one could think to reduce dimensions with feature selections.
 - **binary encoding**: using binary to do a hash mapping on the original category ID, this can help save space when comparing with the one-hot encoding as it is usually of fewer dimensions.
 
-## High Dimensional Feature Crosses
+### High Dimensional Feature Crosses
 
-###### What are feature crosses? And how to deal with high-dimensional feature crosses?
+#### What are feature crosses? And how to deal with high-dimensional feature crosses?
 
 Using single features to combine them together via dot-product or inner-product, one can get a combination of two features to help represent nonlinear relationships.
 
@@ -45,7 +43,7 @@ Using logistic regression as an example, when a data set contains feature vector
 [^2]: Please read through the recommendation system based on matrix vectorization to get a better idea on how recommenders are built based on SVD and matrices
 
 We have understood how to use dimension reduction to reduce the number of parameters that the model needs to learn given a feature cross of two high-dimensional features. <span style="background-color: #FEE9E7"> But in reality, we are facing a variety of high-dimensional features. So a single feature crosses of all the different pairs would induce 1) too many parameters and 2) overfitting issues. </span>
-###### How to effectively select the feature combinations?
+#### How to effectively select the feature combinations?
 We introduce a feature cross selection based on decision tree models. Taking CTR prediction as an example, assume that the input includes age, gender, user type (free vs paid), searched item type (skincare vs foods), etc. We could thus make a decision tree from the original input and their labels. ![Screenshot](<resources/Screenshot 2025-08-05 at 9.30.27 PM.png>) We could then view the feature crosses from the tree, that contains four different type of pairs:
 1. age + gender
 2. age + searched item type
@@ -53,12 +51,12 @@ We introduce a feature cross selection based on decision tree models. Taking CTR
 4. paid user + age
 How to best construct the decision trees? One can use the [Gradient Boosting Decision Treeï¼ŒGBDT](https://medium.com/@ruchi.awasthi63/gradient-boosted-decision-tree-clearly-explained-bd1d8c7d9923) or use[ the link](https://neptune.ai/blog/gradient-boosted-decision-trees-guide) to get a better idea of the algorithm. The idea behind is that whenever before constructing a decision tree, we first calculate the error from the true value and iteratively construct the tree from the error.
 
-## Textual Descriptive Models
+### Textual Descriptive Models
 Related Content: [[Ngram_Language_Modeling]]
 
 Text is a category of unstructured data. How to work with textual data has always been one of the most important research directions.
 
-###### What are some of the textual descriptive models what pros and cons each have?
+#### What are some of the textual descriptive models what pros and cons each have?
 - Bag of words: Consider each article as a bag of words, ignoring the sequence of how each word appears. Specifically, it separates the entire paragraph of texts at word unit and represent each paragraph as a long vector. Each dimension in the vector is a word, and the weight represents how important the word is in the original article. 
 - TF-IDF (Term Frequency-Inverse Document Frequency): Is often used to calculate the weight of the words, $\text{TF-IDF}(t,d)=\text{TF}(t,d) \times \text{IDF}(t)$ , where $\text{TF}(t,d)$ represents the frequency of word t in document d, whereas $\text{IDF}(t)$ is the reverse document frequency to measure word t's importance in grammar, corresponds to equation $$\text{IDF}(t) = log^{\frac{\text{total article}}{\text{total article that contains word} t +1}}$$ the general meaning behind is that if a word appears so in various articles, then it means that it is a commonly used word, hence it would not contribute much in differentiating the specific meaning behind each articles, hence it should be penalized when weighting.
 - N-gram: when "natural language processing" being separated into 3 words as word unit, the meaning of this phrase is totally different from it is now, hence usually we could add n words as a feature unit into the vector to form the N-gram model. 
@@ -66,12 +64,12 @@ Text is a category of unstructured data. How to work with textual data has alway
 - Word Embedding: word embedding is a family of word vector models, the main idea is to project each word to a low-dimensional space (K = 50 -300 dimensions) using a dense vector. Each dimension in K-dimension would be viewed as a implicit topic. 
 <span style="background-color: #FEE9E7">In general, in shallow learning models (traditional ML models), a good feature engineering step can help extremely good performance. Deep learning on the other hand, could help us with an automated feature engineering way via hidden layers. Hence, it makes sense for the deep learning model to beat the shallow learning model in general. Recurrent neural network and convolutional neural network are both good at capture the characteristics of the text while lowering the number of parameters that the model needs to learn, which can expedite the speed of training and also lower the risk of overfitting. </span>
 
-## Word2Vec
+### Word2Vec
 One of the most common word embedding models, it is actually a shallow neural network. It can be of two different types of structures: 
 1. Continuous Bag of Words
 2. Skip-gram
 
-###### How does word2vec work? what is the difference between word2vec and LDA (Latent Dirichlet allocation)
+#### How does word2vec work? what is the difference between word2vec and LDA (Latent Dirichlet allocation)
 - Continuous Bag of Words
 	- Goal is to use contextual words that predict the probability of the current word to appear.
 	- Structure: 
@@ -85,15 +83,13 @@ One of the most common word embedding models, it is actually a shallow neural ne
 		- projection/hidden layer
 		- output layer: w(t-2), w(t-1), ..., w(t+1), w(t+2) using softmax
 
-## Image Data not sufficient - Cold Start
+### Image Data not sufficient - Cold Start
 When doing machine learning modeling, one very big problem that everyone may face would be not sufficient training data. 
 
-###### What would you do if the training data is not sufficient? How to mitigate this issue?
-#transfer-learning #generative-adversial-network #image-processing #over-sampling 
+#### What would you do if the training data is not sufficient? How to mitigate this issue?
 Information that a model can provide include 1) information from training and 2) heuristic information that people provide from model formation (including design / learn / deduct). When training data not enough, it means that the model lacks information from training data, but need more a priori. a priori can be effective on models, including certain internal structure of the model, assumption or constraints. a priori can also be applied to datasets, for example using certain assumption to change / tune or expand the training data so it contains more effective information, which can facilitate model training and learning.
 
-##### Overfitting
-#overfitting
+### Overfitting
 One big problem that comes **from not enough data is overfitting**, which is that the model performs well on training set but the evaluation / prediction set is not good. The treatment can come from two different categories:
 - methods based on models that decrease the risk of overfitting
 	- simplify model - downgrade from non-linear to linear model
@@ -113,13 +109,13 @@ One big problem that comes **from not enough data is overfitting**, which is tha
 		- using pre-trained general model from big dataset, we could fine-tune specifically using the small datasets
 
 
-# Model Evaluation
-## Evaluation metrics and their limitations
+## Model Evaluation
+### Evaluation metrics and their limitations
 When doing model evaluation, the classification / sort / regression problems seems to always use different metrics for evaluation. 
-##### Accuracy and its limitations
+#### Accuracy and its limitations
 The accuracy only measures the number of correct labels divided by the number of total labels. This can potentially lead to a issue **when the number of labels are limited in the dataset**. When negative samples composed 99% of the data, if every label is a negative one, we still get 99% accuracy. So, if we use more effective mean accuracy that quantifies the mean accuracy under each category, it would be a better metrics to work with.
-##### Precision & Recall and their balance
-###### Concept of Precision & Recall
+#### Precision & Recall and their balance
+##### Concept of Precision & Recall
 Now we need to introduce the concept of precision and recall. 
 Precision cares about the correctness of positive predictions, whereas recall cares about coverage of actual positives.  <span style="background-color: #FEE9E7">Precision and recall trade off via the decision threshold.</span> In a binary classification problem:
 $$\text{Precision} = \frac{N_{\text{true positive}}}{N_{\text{true positive}} + N_{\text{false positive}}} = \frac{N_{\text{true positive}}}{N_{\text{positive predictions}}} $$
@@ -129,7 +125,7 @@ The F1 score is their harmonic mean:
 $$\text{F1} = \frac{2(\text{Precision})(\text{Recall})}{\text{Precision} + \text{Recall}} = \frac{2N_{\text{true positive}}}{2N_{\text{true positive}}+N_{\text{false positive}}+N_{\text{false negative}}} $$
 this value ranges from 0 to 1 and penalizes imbalance, thus when either precision or recall is low, F1 drops sharply. <span style="background-color: #FEE9E7"> F1 should be used when false positives and false negatives matter about equally, especially with imbalanced classes. </span>
 
-#### Confusion Matrix Implementation
+##### Confusion Matrix Implementation
 ```
 import numpy as np
 
@@ -149,7 +145,7 @@ Confusion Matrix:
  FN:  2 	TN:  2
 '''
 ```
-###### Precision & Recall in Ranking / retrieval variants
+##### Precision & Recall in Ranking / retrieval variants
 ```
 def precision_at_k(ground_truth_set, ranked_list, k):
     return len(set(ranked_list[:k]) & ground_truth_set) / k
@@ -170,17 +166,16 @@ def mean_precision_at_k(ground_truth_sets, ranked_lists, k):
 
 Hence, in general, when people evaluate the goodness of a sort algorithm, they also look at the P-R curve, where in this curve, the x-axis corresponds to recall rate whereas the y-axis corresponds to precision rate. 
 
-###### Use of P-R Curve for model evaluation and threshold choice
+##### Use of P-R Curve for model evaluation and threshold choice
 ![p-r_curve](<resources/p-r_curve.png>)
 Each data point on the curve corresponds to a precision-recall combination at a certain threshold for True samples of choice, for example 0.95 / 0.9, etc. The closer to the origin (0,0) point, the bigger the threshold is.
 
-###### How to pick the threshold in practice
+##### How to pick the threshold in practice
 - **Capacity-constrained:** If reviewers can handle 300 cases/day, pick the smallest threshold that yields â‰ˆ300 flags/day; report the resulting (Precision, Recall).
 - **Recall target:** If policy demands **â‰¥95% recall**, choose the lowest threshold achieving that, then report precision (and expected review load).
 - **Cost-based:** Minimize $\text{Cost}_{\text{false positives}}\cdot{\text{False Positives}}+\text{Cost}_{\text{false negatives}}\cdot{\text{False Negatives}}$ over thresholds.
 Also report **AUPRC** to compare models independent of a single threshold (higher is better, especially with class imbalance).
-##### Root-mean Squared Errors (RMSE)
-###### Definition of Root-mean squared error
+#### Root-mean Squared Errors (RMSE)
 
 $$ RMSE = \sqrt{\frac{\sum_{i=1}^{n}{(y_i - \hat y_i)^2}}{n}} $$
 
@@ -192,19 +187,19 @@ Root-mean squared error has long been used as the metric for evaluating the regr
 
 **How to solve:** 1) When we think these outliers are noises, then we need to filter them out at the early stage when doing data cleaning, 2) If we do not think they are noises, then we need to further improve the prediction capability of our algorithm so that we could somehow model the formation of these outliers. and 3) We could also use a better metric for the model evaluation. There are indeed better evaluation metrics that are of better robustness than RMSE, for example, Mean Absolute Percentage Error (MAPE):
 
-###### Definition of Mean Absolute Percentage Error
+#### Mean Absolute Percentage Error
 
 $$MAPE = \sum_{i=1}^n{|\frac{(y_i - \hat y_i)}{y_i}|\cdot\frac{100}{n}}$$
 
 When comparing with RMSE, MAPE normalizes the error rate of each data point to mitigate the outlier impact from the absolute error.
 
-##### Expanding on the regression evaluation metrics
-###### Quick definitions
+#### Expanding on the regression evaluation metrics
+##### Quick definitions
 
 Let $y$ be the true value and $\hat y$â€‹ the prediction.    
 **sMAPE** (common form): 
 $$\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}$$
-###### When to use which
+##### When to use which
 - **Use RMSE** when:
     - Big errors are much worse than small ones (squared penalty).
     - The target never hits zero/near-zero and units are meaningful (e.g., dollars, Â°C).
@@ -217,7 +212,7 @@ $$\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}$$
     - You want a percentage-like metric that is **less explosive near zero** than MAPE.
     - You have occasional zeros or tiny values.
     - You accept that sMAPE has its own quirks (bounded but not perfectly symmetric in practice).
-###### Strengths & gotchas (TL;DR)
+##### Strengths & gotchas (TL;DR)
 - **RMSE**
     - Sensitive to large mistakes (good if that matches cost).
     - Outlier-heavy data can dominate the score.
@@ -230,9 +225,9 @@ $$\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}$$
     - Handles zeros better; bounded.        
     - Still quirky near zero and not a true solution for optimization.
     - Different papers/tools use slightly different variants
-###### Other basic metrics you should know
+##### Other basic metrics you should know
 - **MAE**: Robust to outliers vs RMSE; easy to explain (units).
-###### Simple decision guide
+##### Simple decision guide
 1. **Zeros or tiny targets?**
     - Avoid plain MAPE. Prefer **sMAPE**
 2. **Large errors are very costly?**
@@ -243,17 +238,17 @@ $$\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}$$
     - Use **RMSLE/MSLE** (with positive targets).
 5. **Mixed scales or many series?**
     - **WAPE** or **MASE** are safe, comparable choices.
-###### Practical tips
+##### Practical tips
 - If you must report a % and have zeros, say: We use sMAPE (formula shown) instead of MAPE to handle zeros; we also report WAPE for scale-free comparability.
 - Always **state the exact formula** you use (especially for sMAPE) to avoid confusion.
 - <span style="color:#FF6961">Consider reporting two metrics: one business-facing (% like WAPE/sMAPE) + one technical (MAE/RMSE).</span>
 
 Overall, one should always report a pair / set of MECE metrics to evaluate their algorithms to better understand & discover the problems in the model, to better solve cases in real business settings.
 
-##### ROC Curves
+#### ROC Curves
 Binary classifiers are the mostly used and applied classifier in the ML industry. There are a lot of different metrics that one could use for evaluate the binary classifiers, including precision, recall, F1 score and P-R curve. But these metrics are only reflecting one aspect of the model. Hence, ROC curves can be of really good use. 
 
-###### What is a ROC curve
+##### What is a ROC curve
 ROC curves are called receiver Operating Characteristic Curves, which established from the military field and are often used in the medical industry as well. This curve's x-axis is the false positive rate, whereas the y-axis is the true-positive rate. 
 
 $$\text{False Positive Rate} = \frac{\text{False Positive}}{\text{Negative}}$$
@@ -262,7 +257,7 @@ $$\text{True Positive Rate} = \frac{\text{True Positive}}{\text{Positive}}$$
 
 $$\text{False Positive Rate} = \frac{\text{False Positive}}{\text{Negative}} = \frac{1}{7}$$
 $$\text{True Positive Rate} = \frac{\text{True Positive}}{\text{Positive}}=\frac{2}{3}$$
-###### How to draw a ROC curve
+##### How to draw a ROC curve
 - What is needed
 	- True labels $y \in \{0,1\}$
 	- A **score** for the positive class per item (probability or decision score).  
@@ -317,7 +312,7 @@ plt.plot(fprs, tprs, marker='.')
 plt.show()
 ```
 
-###### How to calculate the AUC (area under curve)?
+##### How to calculate the AUC (area under curve)?
 As simple as it could be, AUC is the area under the ROC curve, which can quantitatively reflect the model performance based on ROC curve. It is simple to calculate AUC along RUC x-axis. Due to that ROC curve tends to be above y=x, AUC values are usually between 0.5-1. The bigger the AUC is, the better the classifier is as the more likely that the classifier put the true positive samples at the front. 
 
 ```
@@ -363,10 +358,10 @@ We have touched on the P-R curve for evaluating classification or sort algorithm
 - **(Precision, Recall)** (or $F_\beta$) at the **chosen threshold**
 - If capacity-limited: **Precision@k** (and expected volume flagged)
 
-##### Use of cosine distance
+#### Use of cosine distance
 How to evaluate the distance between samples can also define the optimization target and training method. In ML problems, we usually take the features to be of vector form, so when analyzing the two feature vector similarity, we could use cosine similarity. The cosine similarity can range from -1 to 1, where when two vectors are exactly the same, the cosine similarity becomes 1. Hence, when looking at distances, 1-cosine similarity becomes the cosine distance. Overall, the cosine distance is \[0,2\] and the same two vectors their cosine distance becomes 0.
 
-###### Definition of Euclidean Distance & Cosine Distance
+##### Definition of Euclidean Distance & Cosine Distance
 
 **Euclidean Distance**
 For vectors $x,y\in\mathbb{R}^d$:
@@ -395,7 +390,7 @@ $$\|A-B\|=\sqrt{2(1-cos(A,B))}$$
     - Use **Euclidean** when magnitude matters (e.g., real spatial distances, continuous features with meaningful scales).
     - Use **Cosine** when orientation matters more than length (e.g., text/image embeddings, TF-IDF vectors).
 
-###### When to use cosine similarity but not Euclidean distance?
+##### When to use cosine similarity but not Euclidean distance?
 For two vectors A and B, when their cosine similarity are being defined as $cos(A,B)=\frac{A\cdot B}{\|A\|_2 \|B\|_2}$ , i.e. the cosine of angle between two vectors, we thus measure the angular distance between them, rather than the absolute magnitude, with the range being [-1,1]. When a pair of text being very different in length, but with similar content, if using Euclidean distance, one can think their distance being pretty big whereas when using cosine similarity, the angle between the two can be rather small, hence giving high similarity. In text, visual, video, image industries, when the objective has high dimensions, cosine can still retain its character of [-1,1] whereas the Euclidean distance number can be really big. 
 
 <span style="color:#FF6961">Overall, Euclidean distance measures the absolute difference between numbers whereas the cosine distance measures the directional relative difference. </span> 
@@ -407,13 +402,13 @@ It is obvious that the cosine distance between the two can be really big whereas
 
 When measuring user A/B preference, we focus more on relative difference, hence we should be using the cosine distance whereas when we are analyzing user login frequency or activity, we should be using Euclidean distance instead as the cosine distance would think two users of vector (1,10) and (10,100) are more similar to each other.
 
-###### Is cosine distance a strictly defined distance?
+##### Is cosine distance a strictly defined distance?
 No, it is not strictly defined as it satisfies the Non-negativity & identity (strictness), symmetry but does not satisfy the triangle inequality. A use case of this question is that when reading the word vector of `comedy` and `funny` and also `happy` and `funny`, their cosine distance is < 0.3, whereas the distance between `comedy`and `happy` is 0.7. 
 
-## Model Evaluation Methods
+### Model Evaluation Methods
 In ML algorithm design, we usually split the samples into training and test data set, where the training set is used to training the model and the test set is used to evaluate the model. In sample split and model evaluation process, we could use different sampling or evaluation methods. 
 
-##### In model evaluation, what are the main evaluation methods, what are their pros and cons?
+#### In model evaluation, what are the main evaluation methods, what are their pros and cons?
 
 - **Holdout evaluation**: Holdout evaluation is the easiest way as it randomly split the original sample set into training and evaluation. For example, for a clickthrough rate prediction algorithm, we split the samples into 70 - 30%. We use the 70% data for model training and the 30% for evaluation, including ROC curve, accuracy calculation and recall rate metric evaluation. This has significant downside: the calculated final evaluation metric is highly correlated with the original data split. In order to eliminate this randomness, researchers started to use the "cross validation" idea.
 - **cross-validation**: k-fold cross validation would always split the data set into k different sets that are of same counts. The method goes through all the k sample sets and always use the current subset as the evaluation set whereas the other ones are training set. usually we use k = 10.
@@ -429,7 +424,7 @@ In ML algorithm design, we usually split the samples into training and test data
 	    - The **middle 95% range** (ignore the lowest 2.5% and highest 2.5%) is your **95% confidence interval**.
 As $n$ gets large, about **36.8%** of items are not in the set (never selected) and **63.2%** appear at least once. This is the source of the bootstrap terminology
 
-## Hyperparameter tuning
+### Hyperparameter tuning
 For a lot of algorithm engineers, hyperparameter tuning can be really of headache, as there is no other way other than empirically tune the parameters to a reasonable range, while it is really important for the algorithm to be effective.
 
 ##### What are some of the common ways of hyperparameter tuning?
@@ -437,7 +432,7 @@ For a lot of algorithm engineers, hyperparameter tuning can be really of headach
 - **random search**: Sample hyperparams at random (often **log-uniform** for learning rates). Much better than grid when only a few dims matter but cannot guarantee for a optimal solution.
 - **Bayesian optimization**: Model config ->score to pick promising next trials. Unlike random/grid search **do not learn** from past trials, BO **uses what you have learned so far** to place the next (expensive) trial where it is most likely to pay off.
 
-## Overfit and Underfit
+### Overfit and Underfit
 This section tells how one could efficiently recognize overfit and underfit scenarios and do model improvements based on what has been identified. 
 
 ##### What is overfit and what is underfit?
@@ -455,13 +450,13 @@ This section tells how one could efficiently recognize overfit and underfit scen
 	- increase the complexity of model. 
 	- decrease regularization parameters. 
 
-## Early Stoppings
+### Early Stoppings
 - Early stopping watches **validation** loss/metric and halts training when it stops improving, and is a **stopping rule** driven by the **validation metric’s change**, not a pre-fixed iteration count
 - It **reduces overfitting** (lower variance) by not letting the model memorize noise; acts like **implicit L2** regularization.
 Train while checking performance on a validation set. Whenever the validation score improves, remember those weights. If it doesn’t improve for a while (patience), stop and roll back to the best checkpoint. This caps model complexity at the point where it generalized best, preventing the later epochs from fitting noise
 
-## L2 / L1 Regularization
-###### Setup
+### L2 / L1 Regularization
+#### Setup
 Model (no intercept for simplicity):
 
 $$\hat y_i = w\,x_i$$
@@ -473,7 +468,7 @@ $$\sum_i (y_i - w x_i)^2$$
 $$\underbrace{\sum_i (y_i - w x_i)^2}_{\text{fit the data}} \;+\; \underbrace{\lambda\, w^2}_{\text{penalize big weights}}$$
 - $\lambda>0$ controls the strength of the penalty (larger $\lambda$ stronger shrinkage).
 - In practice, we usually **don't penalize the bias/intercept**.
-###### How L2 Penalizes the Parameter
+#### How L2 Penalizes the Parameter
 
 Take derivative w.r.t. $w$ and set to 0:
 
@@ -484,9 +479,9 @@ $$w\big(\sum_i x_i^2 + \lambda\big) = \sum_i x_i y_i \quad\Rightarrow\quad \boxe
 Compare to **unregularized** OLS:
 $$w_{\text{OLS}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2}$$
 L2 adds $\lambda$ to the denominator and **shrinks $w$ toward 0**.
-###### Why L2 decrease variance and increase bias?
+#### Why L2 decrease variance and increase bias?
 L2 regularization constrains how large the parameters can get. Constraining parameters makes the fitted function smoother/less wiggly, so predictions don’t swing wildly when the training sample changes—this cuts variance. The tradeoff is that the constrained model can’t perfectly adapt to the true signal, so estimates are pulled toward zero (or toward simpler shapes), which introduces bias.
-###### Tiny Numeric Example
+#### Tiny Numeric Example
 Data: $x=[0,1,2,3]$, $y=[0,1,2,60]$ (last point is an outlier)
 - $\sum x_i^2 = 14, \sum x_i y_i = 185$
 Weights:
@@ -495,17 +490,17 @@ Weights:
 - **L2, $\lambda=100$:** $185/(14+100) = 185/114 \approx 1.623$
 As $\lambda$ grows, $w$ is **pulled toward 0**, limiting the impact of the outlier.
 
-###### Gradient-Descent View (Weight Decay)
+#### Gradient-Descent View (Weight Decay)
 With learning rate $\eta$:
 $$w_{\text{new}} = w_{\text{old}} - \eta\Big(\underbrace{-2\sum_i x_i(y_i - w_{\text{old}} x_i)}_{\text{data gradient}} \;+\; \underbrace{2\lambda w_{\text{old}}}_{\text{L2 shrink}}\Big)$$
 
 The $+2\lambda w$ term is the **shrinkage** that steadily decays weights.
-###### Multi-Feature Form (for reference)
+#### Multi-Feature Form (for reference)
 
 For features $X\in \mathbb{R}^{n\times d}$, target $\mathbf{y}$:
 
 $$\mathbf{w}_{\text{ridge}} = (X^\top X + \lambda I)^{-1} X^\top \mathbf{y}$$
-###### Copy-Paste Python
+#### Copy-Paste Python
 
 ```
 import numpy as np
@@ -528,12 +523,12 @@ for lmbda in [10, 100]:
 - Standardize features before using L2/L1 (esp. linear/logistic).
 - Tune $\lambda$ via cross-validation.
 - Do **not** penalize the bias term.
-# Classical Algorithms
+## Classical Algorithms
 
-## Linear Regression
+### Linear Regression
 There are two central provinces in the world of regression: simple linear regression and multiple linear regression. 
 
-### Formula of Simple Linear Regression
+#### Formula of Simple Linear Regression
 The formula of linear regression can be represented as $$y=c+m\cdot x$$
 The formula revolves around minimizing residuals. Imagine residuals as the distance between the actual and predicted values of the dependent variable $y$:
 $$m = \frac{\sum_{i=1}^N{(x_i-\bar x)(y_i-\bar y)}}{\sum_{i=1}^N(x_i-\bar x)^2}$$
@@ -558,7 +553,7 @@ c = mean_y - m * mean_x
 print(f"Model: y = {c} + {m}*x")  # Output: Model: y= 2.2 + 0.6*x
 ```
 
-### Formula of Multiple Linear Regression
+#### Formula of Multiple Linear Regression
 For simple linear regression formula, we have $y=\beta_0 + \beta_1x$, for multiple linear regression, we add multiple independent variables $x_1, x_2, ... , x_m$. Suppose we had n data points, each with m features, then X would be like: $$\mathbf{X}=\begin{bmatrix}  
 1 & x_{1,1} & x_{1,2} & ... & x_{1,m} \\  
 1 & x_{2,1} & x_{2,2} & ... & x_{2,m} \\
@@ -575,8 +570,8 @@ $$\mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} = X\cdo
 \vdots & \vdots & \vdots & \ddots & \vdots \\
 1 & x_{n,1} & x_{n,2} & ... & x_{n,m} \\
 \end{bmatrix} \begin{bmatrix} \beta_0 \\ \beta_1 \\ \vdots \\ \beta_m \end{bmatrix} $$
-### Linear Regression Model Evaluation
-#### coefficient of determination ($R^2$ score)
+#### Linear Regression Model Evaluation
+##### coefficient of determination ($R^2$ score)
 $$R^2=1-\frac{SS_\text{residuals}}{SS_\text{total}} = 1 - \frac{\sum_{i=1}^n(y_i - \hat y_i)^2}{\sum_{i=1}^n(y_i - \bar y_i)^2}$$ Where $SS_\text{residuals}$ denotes the residual sum of squares for predictions and $SS_\text{total}$ denotes the total sum of squares from actual values. A higher R-squared value / closer to 1 indicates a good model fit.
 
 ```text
@@ -614,7 +609,7 @@ print("R^2:", r2)
 ```
 
 
-### Gradient Descent
+#### Gradient Descent
 **Gradient descent** is an iterative optimization algorithm for minimizing a function, usually a loss function, quantifying the disparity between predicted and actual results. The goal of gradient descent is to find the parameters that minimize the value of the loss function.
 
 Gradient descent derives its name from its working mechanism: taking _descents_ along the _gradient_. It operates in several iterative steps as follows:
@@ -660,12 +655,12 @@ def gradient_descent(X, y, theta, alpha, threshold=0.01):
     return theta, cost_history, iterations
 ```
 
-## Support Vector Machine (SVM)
+### Support Vector Machine (SVM)
 
-##### Additional Resources
+#### Additional Resources
 [[https://www.youtube.com/watch?v=efR1C6CvhmE&ab_channel=StatQuestwithJoshStarmer|StatQuest Part1 SVM Main Idea]]
 [[https://www.youtube.com/watch?v=Toet3EiSFcM&ab_channel=StatQuestwithJoshStarmer|StatQuest Part2 The Polynomial Kernel]]
-##### Main Idea behind SVM
+#### Main Idea behind SVM
 - **Soft Margin Classifier (Support Vector Classifier)**
 	When data are 3-dimensional, the **Support Vector Classifier is a 2-dimensional plane in a 3-dimensional space**. In mathematical world, a plane is a "flat affine 2-dimensional subspace (hyperplane)".
 	
@@ -680,10 +675,10 @@ def gradient_descent(X, y, theta, alpha, threshold=0.01):
 	- **Radial Function Kernel** 
 		Radial function kernel finds support vector classifiers in infinite dimensions but in one / two dimensional data, it behaves like weighted nearest neighborhood model.
 		The equation looks like this $e^{-\gamma(a-b)^2}$ where $a$ and $b$ are the x-axis coordinates of two different data points. $\gamma$ is the parameter that determines how much influence the pair of data points have on each other.
-## Logistic Regression
+### Logistic Regression
 Logistic regression are the most widely used and most fundamental model that one could use in the ML industry. One should always understand the deduction of logistic regression and application of it, as it is used in medical diagnosis, credit evaluation, email junk categorization, etc. 
 
-### Formulation behind Logistic Regression
+#### Formulation behind Logistic Regression
 Logistic Regression calculates a raw model output, then transforms it using the sigmoid function, mapping it to a range between 0 and 1, thus making it a probability. The sigmoid function can be defined as $S(x) = \frac{1}{1+e^{-x}}$. This can thus be implemented as:
 
 ```
@@ -734,14 +729,14 @@ def predict_prob(X, theta):
 def predict(X, theta, threshold=0.5):
     return predict_prob(X, theta) >= threshold
 ```
-### What is the difference between logistic regression and linear regression?
+#### What is the difference between logistic regression and linear regression?
 - **logistic regression is used for categorization whereas linear regression is used for regression problems**. This is the most significant difference between the two. In logistic regression, when given x and hyperparameter $\theta$, we could get the expectation value of the $y$ values to predict the categorization of the values. On the other hand, in linear regression, one is solving $y' = \theta^Tx$ , which is the approximate of the real relationship of $y = \theta^Tx+\epsilon$ where $\epsilon$ corresponds to the system error.
 - The actual logistic regression equation can be formulated via $\log{\frac{p}{1-p}}=\theta^Tx$, where $p=P(y=1|x)$ , corresponding to given x the probability of y being positive. **Thus the most important difference between logistic regression and linear regression would be that the logistic regression $y$s are discretized whereas the linear regression $y$s are continuous.** When $x$ and $\theta$ are given, logistic regression can also be seen as generalized linear models where $y$ follows the binary distribution, whereas  when using least-squares for linear regression we view $y$ follows the normal distribution. 
 
-### What is the same between logistic regression and linear regression?
+#### What is the same between logistic regression and linear regression?
 - They both used maximum likelihood estimation for modeling the training data. 
 - They both could use gradient descent for getting the hyperparameters, and it is also a common strategy that all the supervised learning methods use.
-### The general logic behind regression
+#### The general logic behind regression
 
 ```
 Inputs: X (N×d), y (N,), model ∈ {"linear","logistic"}
@@ -771,12 +766,12 @@ Return w
 #### Note for binomial distribution vs normal distribution
 The main difference between a binomial distribution and a normal distribution lies in the type of data they describe: ==binomial distributions deal with discrete data from a fixed number of trials, while normal distributions describe continuous data that tends to cluster around a mean==. Binomial distributions are characterized by a fixed number of trials, each with two possible outcomes (success or failure), while normal distributions are continuous, symmetric, and have a bell-shaped curve.
 
-## Decision Tree
+### Decision Tree
 Decision trees are often used in marketing or biomedical industries as the tree-based structure is similar to sales or diagnosis use cases. Hence, when using decision tree as key component of the ensemble method, one could get random forest or gradient boosted decision tree models, etc. Fully grown decision tree model has its characters of being direct and easy-to-explain, hence it would be also important as the ensemble method section prerequisites. Overall, the formulation of decision tree involves 1) feature selection, 2) tree construction and 3) tree pruning. 
-### Structuring a decision tree
+#### Structuring a decision tree
 A decision tree starts at a node, called root, which breaks down into branches. Each branch then further splits into more branches, building a hierarchical network. The final branches with no more splits are referred to as leaf nodes.
 
-### Understanding Gini Index
+#### Understanding Gini Index
 _**Note**_: A more clear explanation can be found in videos:
 - [[https://www.youtube.com/watch?v=_L39rN6gz7Y&t=18s|StatQuest: Decision and Classification Trees, Clearly Explained!!!]]
 - [[https://www.youtube.com/watch?v=wpNl-JwwplA|StatQuest: Decision Trees, Part 2 - Feature Selection and Missing Data]]
@@ -796,9 +791,10 @@ Now let's use an example to better understand how to compute Gini index:
 | F   | Y             | N          | 50  | N          |
 | G   | N             | N          | 83  | N          |
 
-|                                 Loves Popcorn                                 |                                  Loves Soda                                   |
-| :---------------------------------------------------------------------------: | :---------------------------------------------------------------------------: |
-| <img src="../resources/gini_index_1.png" alt="drawing" style="width:250px;"/> | <img src="../resources/gini_index_2.png" alt="drawing" style="width:250px;"/> |
+|                               Loves Popcorn                                |                                 Loves Soda                                 |
+| :------------------------------------------------------------------------: | :------------------------------------------------------------------------: |
+| <img src="resources/gini_index_1.png" alt="drawing" style="width:200px;"/> | <img src="resources/gini_index_2.png" alt="drawing" style="width:200px;"/> |
+
 All the three leaves except for the fourth one are called impure leaves, where the fourth one is called a pure leaf node. As both leaf nodes from `loves Popcorn` are impure but there is only one node from `Loves Soda` being impure, it means that the `Loves Soda` does a better job predicting who will and will not the movie. 
 
 $$\text{Gini Impurity for a leaf} = 1 - (\text{the probability of "Yes"}) ^ 2 - (\text{the probability of "No"}) ^ 2$$
@@ -806,17 +802,17 @@ $$\text{Gini Impurity (Loves Movie | Loves Popcorn)} = 1 - (\frac{1}{1+3})^2 - (
 $$\text{Gini Impurity (Loves Movie | Hates Popcorn)} = 1 - (\frac{2}{1+2})^2 - (\frac{1}{1+2})^2 = 0.444$$
 $$\text{Total Gini Impurity} = \text{weighted avg of Gini for the leaves} = (\frac{1+3}{1+3+2+1})\cdot(0.375)+\frac{3}{4+3}(0.444)$$
 
-### Information Gain
-#### Max Information Gain
+#### Information Gain
+##### Max Information Gain
 For a sample set D, there are K categories, the empirical entropy for this set D can be expressed as $H(D) = -\sum_{k=1}^K \frac{|C_k|}{D}\log_2\frac{C_k}{D}$.
 
-# Unsupervised Learnings
+## Unsupervised Learnings
 We may encounter problems such that providing the machine a tons of feature data and looking for the machine to learn the pattern or structure from the data, for example the video platforms would like to categorize the users from their activities for different recommendation strategies, or looking for relationship between whether the video playing smooth or not vs their relationship with user unsubscribe. These problems are called "unsupervised learnings", which does not like the supervised learnings where we expect to see outputs or predictions. The unsupervised learning inputs does not contain label information, instead it needs to dig into the internal data relationship from the algorithm model. **There are two main categories of the unsupervised learnings: data clustering or feature variable correlation (using correlation analysis for relationships between variables)**. 
 
-## K-Nearest Neighbors (k-NN) Algorithm
+### K-Nearest Neighbors (k-NN) Algorithm
 The kNN algorithm works on a basic principle: a data point is likely to be in the same category as the data points it is closest to. Note that choosing 'k' significantly impacts our model. A low 'k' might capture more noise in the data, whereas a high 'k' is computationally expensive.
 
-### Euclidean Distance Calculation
+#### Euclidean Distance Calculation
 In k-NN, classification is determined by weighing the distance between data points. Euclidean distance is a frequently used metric that calculates the shortest straight-line distance $\sqrt{(x_1-x_2)^2 + (y_1 - y_2)^2}$ between two data points $(x_1, y_1)$ and $(x_2, y_2)$ in a Euclidean space. 
 
 ```
@@ -833,14 +829,14 @@ point2 = (4, 6) # The coordinates of the second point
 print(euclidean_distance(point1, point2)) # 5.0
 ```
 
-## K-means Clustering
+### K-means Clustering
 Algorithms such as SVM, logistic regression, decision trees are more for the categorization, i.e. based on the known labelled samples, classifiers are training so that it could apply the same logic on unlabeled samples. Unlike the classification problems, clustering is directly categorize the samples without any previously known labelling. 
 
 Classification belongs to supervised learning whereas clustering is a type of unsupervised learning algorithm. K-means clustering, as one type of the most basic and fundamental clustering algorithm, has the main idea of iteratively finding the way of cutting the space into K clusters, so that the loss function is the lowest. The loss function can be defined as the sum of squared error distance of each sample from their clustered centers:
 $$J(c,\mu) = \sum_{i=1}^M ||x_i - \mu_{c_i}||^2$$ where $x_i$ represents the samples, $c_i$ represents the cluster that $x_i$ belongs to, $mu_{c_i}$ corresponds to the center of the cluster that $x_i$'s located in and $M$ is the total number of samples.
 
 
-### K-means clustering algorithm in steps
+#### K-means clustering algorithm in steps
 The goal of K-means clustering is to categorize the dataset of interest into K-clusters, and also provides the cluster center corresponding to each data points:
 1. data engineering and cleaning: normalization and outlier removal.
 2. randomly pick K-cluster centers, labelled as $\mu_1^{(0)}, \mu_2^{(0)}, ..., \mu_K^{(0)}$ 
