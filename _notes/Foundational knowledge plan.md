@@ -18,7 +18,7 @@ The [[ML_fundamentals|ML fundamentals]] section introduces model evaluation, cla
 	- [StatQuest: Naive Bayes](https://www.youtube.com/watch?v=O2L2Uv9pdDA)
     - [StatQuest: Gaussian Naive Bayes](https://www.youtube.com/watch?v=H3EjCKtlVog)
     - [Khan Academy - Probability & Statistics](https://www.khanacademy.org/math/statistics-probability)
-    - â€œSpeech and Language Processingâ€ by Jurafsky & Martin â€” Ch. 3 (Markov models)
+    - Speech and Language Processing by Jurafsky & Martin Ch. 3 (Markov models)
 #### **Week 3: N-gram Models & Language Modeling**
 - [[Ngram_Language_Modeling]]
 - Topics:

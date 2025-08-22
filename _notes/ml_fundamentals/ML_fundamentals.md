@@ -802,6 +802,41 @@ $$\text{Gini Impurity (Loves Movie | Loves Popcorn)} = 1 - (\frac{1}{1+3})^2 - (
 $$\text{Gini Impurity (Loves Movie | Hates Popcorn)} = 1 - (\frac{2}{1+2})^2 - (\frac{1}{1+2})^2 = 0.444$$
 $$\text{Total Gini Impurity} = \text{weighted avg of Gini for the leaves} = (\frac{1+3}{1+3+2+1})\cdot(0.375)+\frac{3}{4+3}(0.444)$$
 
+#### Implementation of decision tree splits
+
+```
+groups = [
+    \[\['Red'], ['Blue'], ['Red'\]\],
+    \[\['Blue'], ['Red'], ['Blue'], ['Blue'\]\],
+]
+classes = ['Red', 'Blue']
+
+n_instances = float(sum([len(group) for group in groups]))
+
+def gini_index(groups, classes):
+    n_instances = float(sum([len(group) for group in groups]))
+    gini = 0.0
+    for group in groups:
+        size = len(group)
+        if size == 0:
+            continue
+        score = 0.0
+        for class_val in classes:
+            p = [row[-1] for row in group].count(class_val) / size
+            score += p * p gini # summed probabilities, 1 - score = gini impurity
+        gini += (1.0 - score) * (size / n_instances)
+    return gini
+    
+def test_split(index, value, dataset):
+    left, right = list(), list()
+    for row in dataset:
+        if row[index] < value:
+            left.append(row)
+        else:
+            right.append(row)
+    return left, right
+```
+
 #### Information Gain
 ##### Max Information Gain
 For a sample set D, there are K categories, the empirical entropy for this set D can be expressed as $H(D) = -\sum_{k=1}^K \frac{|C_k|}{D}\log_2\frac{C_k}{D}$.

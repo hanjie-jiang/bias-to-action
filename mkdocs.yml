@@ -4,6 +4,7 @@ docs_dir: _notes
 
 extra_css:
   - assets/styles/layout.css
+  - assets/styles/hero.css
 
 theme:
   name: material
@@ -48,6 +49,8 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - Engineering and Data Structure: 
+      - Frequently used: engineering_and_data_structure/Engineering_and_Data_Structure_Questions.md
   - Foundations:
       - ML Fundamentals: ml_fundamentals/ML_fundamentals.md
       - Probability & Markov:

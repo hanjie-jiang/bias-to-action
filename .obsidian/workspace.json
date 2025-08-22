@@ -4,76 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "0ad8b5fc2c904670",
-        "type": "split",
+        "id": "f068bf85b093298e",
+        "type": "tabs",
         "children": [
           {
-            "id": "f068bf85b093298e",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "731190164876a8f7",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "_notes/Foundational knowledge plan.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "Foundational knowledge plan"
-                }
-              }
-            ]
+            "id": "731190164876a8f7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_notes/Foundational knowledge plan.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Foundational knowledge plan"
+            }
           },
           {
-            "id": "5160dc98b455160a",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "51b928d53f817ea1",
-                "type": "leaf",
-                "pinned": true,
-                "state": {
-                  "type": "terminal:terminal",
-                  "state": {
-                    "terminal:terminal": {
-                      "cwd": "C:\\Users\\Hanjie\\Documents\\obsidian",
-                      "focus": false,
-                      "profile": {
-                        "args": [],
-                        "executable": "C:\\Windows\\System32\\cmd.exe",
-                        "name": "",
-                        "platforms": {
-                          "win32": true
-                        },
-                        "pythonExecutable": "python3",
-                        "restoreHistory": false,
-                        "rightClickAction": "copyPaste",
-                        "successExitCodes": [
-                          "0",
-                          "SIGINT",
-                          "SIGTERM"
-                        ],
-                        "terminalOptions": {
-                          "documentOverride": null
-                        },
-                        "type": "integrated",
-                        "useWin32Conhost": true
-                      },
-                      "serial": null
-                    }
-                  },
-                  "pinned": true,
-                  "icon": "terminal",
-                  "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
-                }
-              }
-            ]
+            "id": "ef405ffda0e8ce35",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_notes/engineering_and_data_structure/Engineering_and_Data_Structure_Questions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Engineering_and_Data_Structure_Questions"
+            }
           }
         ],
-        "direction": "horizontal"
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -105,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "p-r",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -192,12 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "_notes/engineering_and_data_structure/Engineering_and_Data_Structure_Questions.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Engineering_and_Data_Structure_Questions"
             }
           },
           {
@@ -231,19 +195,20 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "51b928d53f817ea1",
+  "active": "ef405ffda0e8ce35",
   "lastOpenFiles": [
-    "site/assets/stylesheets/palette.06af60db.min.css",
+    "site/engineering_and_data_structure/Engineering_and_Data_Structure_Questions/index.html",
+    "site/engineering_and_data_structure/Engineering_and_Data_Structure_Questions",
+    "site/sitemap.xml",
+    "_notes/ml_fundamentals/ML_fundamentals.md",
     "site/assets/stylesheets/palette.06af60db.min.css.map",
+    "site/assets/stylesheets/palette.06af60db.min.css",
     "site/assets/stylesheets/main.7e37652d.min.css.map",
     "site/assets/stylesheets/main.7e37652d.min.css",
     "site/assets/stylesheets",
     "site/search/search_index.json",
     "site/search",
     "site/probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes/index.html",
-    "site/probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes",
-    "site/probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions/index.html",
-    "site/probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions",
     "site/assets/images/favicon.png",
     "site/probability_and_markov/resources/conditional_probability.png",
     "site/ml_fundamentals/resources/Screenshot 2025-08-05 at 9.30.27 PM.png",
@@ -251,11 +216,12 @@
     "site/ml_fundamentals/resources/p-r_curve.png",
     "site/ml_fundamentals/resources/gini_index_2.png",
     "site/ml_fundamentals/resources/gini_index_1.png",
+    "_notes/engineering_and_data_structure/Engineering_and_Data_Structure_Questions.md",
     "_notes/Foundational knowledge plan.md",
-    "_notes/neural_networks_and_deep_learning/Neural_Networks_and_Deep_Learning_Overview.md",
-    "_notes/neural_networks_and_deep_learning/neural_networks_sections/Introduction_to_Perceptron_Algorithm.md",
-    "_notes/ml_fundamentals/ML_fundamentals.md",
+    "README.md",
     "_notes/probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes.md",
+    "_notes/neural_networks_and_deep_learning/neural_networks_sections/Introduction_to_Perceptron_Algorithm.md",
+    "_notes/neural_networks_and_deep_learning/Neural_Networks_and_Deep_Learning_Overview.md",
     "_notes/Information_Theory.md",
     "_notes/Linear_Algebra_for_ML.md",
     "_notes/Integration_and_Project.md",
@@ -276,8 +242,6 @@
     "_notes/week1-2_probability_and_markov/Week1/Week1P3 - Joint and Marginal Distributions.md",
     "_notes/week1-2_probability_and_markov/Week1/Week1P2 - Naive Bayes and Gaussian Naive Bayes.md",
     "_notes/week1-2_probability_and_markov/Week1/Week1P1 - Conditional Probability and Bayes Rule.md",
-    "_notes/week1-2_probability_and_markov/Week1/Week1P3 - Joint & Marginal Distributions.md",
-    "_notes/week1-2_probability_and_markov/Week1/Week1P2 - Naive Bayes & Gaussian Naive Bayes.md",
-    "_notes/week1-2_probability_and_markov/Week1/Week1P1 - Conditional Probability & Bayes Rule.md"
+    "_notes/week1-2_probability_and_markov/Week1/Week1P3 - Joint & Marginal Distributions.md"
   ]
 }
