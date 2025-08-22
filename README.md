@@ -9,3 +9,4 @@ All the materials can also be found readable at GitPage URL (https://hanjie-jian
 #### version 2025-08-22
 - added in the engineering and data structure related pages for future reference when coding
 - refactored the front page design and made sure that the pastel hero looks ok
+- fixed the math equations not showing properly but in raw format
