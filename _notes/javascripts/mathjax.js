@@ -1,14 +1,11 @@
 window.MathJax = {
-  options: {
-    // Only typeset elements with class="arithmatex"
-    ignoreHtmlClass: ".*",            // ignore everything
-    processHtmlClass: "arithmatex"    // except these
-  },
   tex: {
-    inlineMath: [["$", "$"], ["\\(", "\\)"]],
-    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
-    processEscapes: true,
-    tags: "ams"
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
   }
 };
 
