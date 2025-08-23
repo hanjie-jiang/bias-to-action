@@ -365,6 +365,66 @@
   display: none !important;
 }
 
+/* Force content lists to show bullets */
+.md-content ul:not(.hero-dropdown ul),
+.md-content ol:not(.hero-dropdown ol) {
+  list-style-type: disc !important;
+  list-style: disc !important;
+  padding-left: 2rem !important;
+}
+
+.md-content ul li:not(.hero-dropdown li),
+.md-content ol li:not(.hero-dropdown li) {
+  list-style-type: disc !important;
+  list-style: disc !important;
+  display: list-item !important;
+}
+
+/* Most specific override for content */
+.md-typeset .md-content ul:not(.hero-dropdown ul),
+.md-typeset .md-content ol:not(.hero-dropdown ol) {
+  list-style-type: disc !important;
+  list-style: disc !important;
+  padding-left: 2rem !important;
+}
+
+.md-typeset .md-content ul li:not(.hero-dropdown li),
+.md-typeset .md-content ol li:not(.hero-dropdown li) {
+  list-style-type: disc !important;
+  list-style: disc !important;
+  display: list-item !important;
+}
+
+/* Ultra-specific override for all content lists */
+.md-content ul,
+.md-content ol {
+  list-style-type: disc !important;
+  list-style: disc !important;
+  padding-left: 2rem !important;
+}
+
+.md-content ul li,
+.md-content ol li {
+  list-style-type: disc !important;
+  list-style: disc !important;
+  display: list-item !important;
+}
+
+/* Force all lists to show bullets except hero dropdown */
+* ul:not(.hero-dropdown ul),
+* ol:not(.hero-dropdown ol) {
+  list-style-type: disc !important;
+  list-style: disc !important;
+  padding-left: 2rem !important;
+}
+
+* ul li:not(.hero-dropdown li),
+* ol li:not(.hero-dropdown li) {
+  list-style-type: disc !important;
+  list-style: disc !important;
+  display: list-item !important;
+}
+
 /* Clean blockquotes */
 .md-content blockquote {
   background: var(--background-light);

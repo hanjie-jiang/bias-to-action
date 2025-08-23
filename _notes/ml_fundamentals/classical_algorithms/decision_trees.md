@@ -53,8 +53,8 @@ $$\text{Total Gini Impurity} = \text{weighted avg of Gini for the leaves} = (\fr
 
 ```python
 groups = [
-    [['Red'], ['Blue'], ['Red']],
-    [['Blue'], ['Red'], ['Blue'], ['Blue']],
+    \[\[['Red'], ['Blue'], ['Red']\],
+    \[\[['Blue'], ['Red'], ['Blue'], ['Blue']\],
 ]
 classes = ['Red', 'Blue']
 

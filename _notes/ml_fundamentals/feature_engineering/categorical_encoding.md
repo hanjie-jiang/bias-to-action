@@ -32,14 +32,14 @@ Categorical features include data like male/female, blood type (A,B,AB,O), and o
 from sklearn.preprocessing import OrdinalEncoder
 
 # Example data
-categories = [['high'], ['low'], ['middle'], ['high'], ['low']]
+categories = \[\[['high'], ['low'], ['middle'], ['high'], ['low']\]
 
 # Create encoder
-encoder = OrdinalEncoder(categories=[['low', 'middle', 'high']])
+encoder = OrdinalEncoder(categories=\[\[['low', 'middle', 'high']\]\])
 
 # Fit and transform
 encoded = encoder.fit_transform(categories)
-print(encoded)  # [[2], [0], [1], [2], [0]]
+print(encoded)  # \[\[[2], [0], [1], [2], [0]\]
 ```
 
 ### 2. **One-Hot Encoding**

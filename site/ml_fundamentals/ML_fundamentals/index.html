@@ -11,10 +11,6 @@
         <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/ML_fundamentals/">
       
       
-        <link rel="prev" href="../../engineering_and_data_structure/Engineering_and_Data_Structure_Questions/">
-      
-      
-        <link rel="next" href="../../probability_and_markov/Probability_and_Markov_Overview/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -296,8 +292,6 @@
       
   
   
-    
-  
   
   
     
@@ -310,11 +304,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -330,7 +324,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Foundations
@@ -341,18 +335,24 @@
                 
   
   
+  
+  
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
+    
+    
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
           
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -361,1012 +361,603 @@
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            ML Fundamentals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ML_Fundamentals_Overview/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    ML Fundamentals
+    Overview
     
   </span>
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+              
+            
+              
+                
   
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
+    
+    
+    
       
-        <li class="md-nav__item">
-  <a href="#feature-engineering" class="md-nav__link">
-    <span class="md-ellipsis">
-      Feature Engineering
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Feature Engineering">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#normalization-of-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Normalization of Features
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Normalization of Features">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-does-one-need-to-do-normalization-on-numerical-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why does one need to do normalization on numerical features?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#categorical-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Categorical Features
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Categorical Features">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-do-feature-engineering-on-categorical-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to do feature engineering on categorical features?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#high-dimensional-feature-crosses" class="md-nav__link">
-    <span class="md-ellipsis">
-      High Dimensional Feature Crosses
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="High Dimensional Feature Crosses">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-are-feature-crosses-and-how-to-deal-with-high-dimensional-feature-crosses" class="md-nav__link">
-    <span class="md-ellipsis">
-      What are feature crosses? And how to deal with high-dimensional feature crosses?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to-effectively-select-the-feature-combinations" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to effectively select the feature combinations?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#textual-descriptive-models" class="md-nav__link">
-    <span class="md-ellipsis">
-      Textual Descriptive Models
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Textual Descriptive Models">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-are-some-of-the-textual-descriptive-models-what-pros-and-cons-each-have" class="md-nav__link">
-    <span class="md-ellipsis">
-      What are some of the textual descriptive models what pros and cons each have?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#word2vec" class="md-nav__link">
-    <span class="md-ellipsis">
-      Word2Vec
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Word2Vec">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-does-word2vec-work-what-is-the-difference-between-word2vec-and-lda-latent-dirichlet-allocation" class="md-nav__link">
-    <span class="md-ellipsis">
-      How does word2vec work? what is the difference between word2vec and LDA (Latent Dirichlet allocation)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#image-data-not-sufficient-cold-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      Image Data not sufficient - Cold Start
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Image Data not sufficient - Cold Start">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-would-you-do-if-the-training-data-is-not-sufficient-how-to-mitigate-this-issue" class="md-nav__link">
-    <span class="md-ellipsis">
-      What would you do if the training data is not sufficient? How to mitigate this issue?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#overfitting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overfitting
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-        <li class="md-nav__item">
-  <a href="#model-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model Evaluation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Model Evaluation">
-      <ul class="md-nav__list">
         
-          <li class="md-nav__item">
-  <a href="#evaluation-metrics-and-their-limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Evaluation metrics and their limitations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Evaluation metrics and their limitations">
-      <ul class="md-nav__list">
         
-          <li class="md-nav__item">
-  <a href="#accuracy-and-its-limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Accuracy and its limitations
-    </span>
-  </a>
-  
-</li>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
         
-          <li class="md-nav__item">
-  <a href="#precision-recall-and-their-balance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Precision &amp; Recall and their balance
-    </span>
-  </a>
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
   
-    <nav class="md-nav" aria-label="Precision &amp; Recall and their balance">
-      <ul class="md-nav__list">
+  
+  <span class="md-ellipsis">
+    Feature Engineering
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          <li class="md-nav__item">
-  <a href="#concept-of-precision-recall" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept of Precision &amp; Recall
-    </span>
-  </a>
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feature Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
-</li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_engineering/data_types_and_normalization/" class="md-nav__link">
         
-          <li class="md-nav__item">
-  <a href="#confusion-matrix-implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Confusion Matrix Implementation
-    </span>
-  </a>
   
-</li>
+  
+  <span class="md-ellipsis">
+    Data Types & Normalization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_engineering/categorical_encoding/" class="md-nav__link">
         
-          <li class="md-nav__item">
-  <a href="#precision-recall-in-ranking-retrieval-variants" class="md-nav__link">
-    <span class="md-ellipsis">
-      Precision &amp; Recall in Ranking / retrieval variants
-    </span>
-  </a>
   
-</li>
+  
+  <span class="md-ellipsis">
+    Categorical Encoding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_engineering/feature_crosses/" class="md-nav__link">
         
-          <li class="md-nav__item">
-  <a href="#use-of-p-r-curve-for-model-evaluation-and-threshold-choice" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use of P-R Curve for model evaluation and threshold choice
-    </span>
-  </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to-pick-the-threshold-in-practice" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to pick the threshold in practice
-    </span>
-  </a>
   
-</li>
-        
-      </ul>
-    </nav>
+  <span class="md-ellipsis">
+    Feature Crosses
+    
+  </span>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#root-mean-squared-errors-rmse" class="md-nav__link">
-    <span class="md-ellipsis">
-      Root-mean Squared Errors (RMSE)
-    </span>
-  </a>
+
+      </a>
+    </li>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mean-absolute-percentage-error" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mean Absolute Percentage Error
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#expanding-on-the-regression-evaluation-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Expanding on the regression evaluation metrics
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Expanding on the regression evaluation metrics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#quick-definitions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quick definitions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-which" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to use which
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#strengths-gotchas-tldr" class="md-nav__link">
-    <span class="md-ellipsis">
-      Strengths &amp; gotchas (TL;DR)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-basic-metrics-you-should-know" class="md-nav__link">
-    <span class="md-ellipsis">
-      Other basic metrics you should know
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#simple-decision-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      Simple decision guide
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#practical-tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      Practical tips
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roc-curves" class="md-nav__link">
-    <span class="md-ellipsis">
-      ROC Curves
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ROC Curves">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-a-roc-curve" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is a ROC curve
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to-draw-a-roc-curve" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to draw a ROC curve
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to-calculate-the-auc-area-under-curve" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to calculate the AUC (area under curve)?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-each-curve-shows" class="md-nav__link">
-    <span class="md-ellipsis">
-      What each curve shows
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-which_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to use which
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#intuition-about-imbalance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Intuition about imbalance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to-choose-in-practice" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to choose in practice
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reading-the-curves" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reading the curves
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-to-report-good-default" class="md-nav__link">
-    <span class="md-ellipsis">
-      What to report (good default)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#use-of-cosine-distance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use of cosine distance
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Use of cosine distance">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definition-of-euclidean-distance-cosine-distance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Definition of Euclidean Distance &amp; Cosine Distance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-cosine-similarity-but-not-euclidean-distance" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to use cosine similarity but not Euclidean distance?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#is-cosine-distance-a-strictly-defined-distance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Is cosine distance a strictly defined distance?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#model-evaluation-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model Evaluation Methods
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Model Evaluation Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#in-model-evaluation-what-are-the-main-evaluation-methods-what-are-their-pros-and-cons" class="md-nav__link">
-    <span class="md-ellipsis">
-      In model evaluation, what are the main evaluation methods, what are their pros and cons?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hyperparameter-tuning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hyperparameter tuning
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Hyperparameter tuning">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-are-some-of-the-common-ways-of-hyperparameter-tuning" class="md-nav__link">
-    <span class="md-ellipsis">
-      What are some of the common ways of hyperparameter tuning?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#overfit-and-underfit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overfit and Underfit
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Overfit and Underfit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-overfit-and-what-is-underfit" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is overfit and what is underfit?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-are-some-ways-to-mitigate-the-overfit-and-underfit" class="md-nav__link">
-    <span class="md-ellipsis">
-      What are some ways to mitigate the overfit and underfit?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#early-stoppings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Early Stoppings
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#l2-l1-regularization" class="md-nav__link">
-    <span class="md-ellipsis">
-      L2 / L1 Regularization
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="L2 / L1 Regularization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Setup
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-l2-penalizes-the-parameter" class="md-nav__link">
-    <span class="md-ellipsis">
-      How L2 Penalizes the Parameter
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-l2-decrease-variance-and-increase-bias" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why L2 decrease variance and increase bias?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tiny-numeric-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tiny Numeric Example
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gradient-descent-view-weight-decay" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gradient-Descent View (Weight Decay)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multi-feature-form-for-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multi-Feature Form (for reference)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#copy-paste-python" class="md-nav__link">
-    <span class="md-ellipsis">
-      Copy-Paste Python
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
+
+              
+            
+          </ul>
+        </nav>
       
-        <li class="md-nav__item">
-  <a href="#classical-algorithms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Classical Algorithms
-    </span>
-  </a>
+    </li>
   
-    <nav class="md-nav" aria-label="Classical Algorithms">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linear-regression" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linear Regression
-    </span>
-  </a>
+
+              
+            
+              
+                
   
-    <nav class="md-nav" aria-label="Linear Regression">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#formula-of-simple-linear-regression" class="md-nav__link">
-    <span class="md-ellipsis">
-      Formula of Simple Linear Regression
-    </span>
-  </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#formula-of-multiple-linear-regression" class="md-nav__link">
-    <span class="md-ellipsis">
-      Formula of Multiple Linear Regression
-    </span>
-  </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linear-regression-model-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linear Regression Model Evaluation
-    </span>
-  </a>
   
-    <nav class="md-nav" aria-label="Linear Regression Model Evaluation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#coefficient-of-determination-r2r2-score" class="md-nav__link">
-    <span class="md-ellipsis">
-      coefficient of determination (R^2R^2 score)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gradient-descent" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gradient Descent
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#support-vector-machine-svm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Support Vector Machine (SVM)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Support Vector Machine (SVM)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#additional-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Additional Resources
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#main-idea-behind-svm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Main Idea behind SVM
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logistic-regression" class="md-nav__link">
-    <span class="md-ellipsis">
-      Logistic Regression
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Logistic Regression">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#formulation-behind-logistic-regression" class="md-nav__link">
-    <span class="md-ellipsis">
-      Formulation behind Logistic Regression
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-is-the-difference-between-logistic-regression-and-linear-regression" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is the difference between logistic regression and linear regression?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-is-the-same-between-logistic-regression-and-linear-regression" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is the same between logistic regression and linear regression?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-general-logic-behind-regression" class="md-nav__link">
-    <span class="md-ellipsis">
-      The general logic behind regression
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#note-for-binomial-distribution-vs-normal-distribution" class="md-nav__link">
-    <span class="md-ellipsis">
-      Note for binomial distribution vs normal distribution
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#decision-tree" class="md-nav__link">
-    <span class="md-ellipsis">
-      Decision Tree
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Decision Tree">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#structuring-a-decision-tree" class="md-nav__link">
-    <span class="md-ellipsis">
-      Structuring a decision tree
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#understanding-gini-index" class="md-nav__link">
-    <span class="md-ellipsis">
-      Understanding Gini Index
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#implementation-of-decision-tree-splits" class="md-nav__link">
-    <span class="md-ellipsis">
-      Implementation of decision tree splits
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#information-gain" class="md-nav__link">
-    <span class="md-ellipsis">
-      Information Gain
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Information Gain">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#max-information-gain" class="md-nav__link">
-    <span class="md-ellipsis">
-      Max Information Gain
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
+    
+    
+    
+    
       
-        <li class="md-nav__item">
-  <a href="#unsupervised-learnings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Unsupervised Learnings
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Unsupervised Learnings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#k-nearest-neighbors-k-nn-algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      K-Nearest Neighbors (k-NN) Algorithm
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#euclidean-distance-calculation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Euclidean Distance Calculation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#actual-knn-algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actual KNN Algorithm
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#k-means-clustering" class="md-nav__link">
-    <span class="md-ellipsis">
-      K-means Clustering
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="K-means Clustering">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#k-means-clustering-algorithm-in-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      K-means clustering algorithm in steps
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-    </ul>
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+            
   
-</nav>
+  
+  <span class="md-ellipsis">
+    Model Evaluation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Model Evaluation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model_evaluation/evaluation_methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation Methods
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model_evaluation/metrics_and_validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metrics & Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model_evaluation/hyperparameter_tuning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hyperparameter Tuning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4" id="__nav_3_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Regularization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Regularization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regularization/overfitting_underfitting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overfitting & Underfitting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regularization/l1_l2_regularization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L1/L2 Regularization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regularization/early_stopping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Early Stopping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_5" id="__nav_3_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Classical Algorithms
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Classical Algorithms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classical_algorithms/linear_regression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linear Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classical_algorithms/logistic_regression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Logistic Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classical_algorithms/decision_trees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Decision Trees
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_6" id="__nav_3_1_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Unsupervised Learning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            Unsupervised Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupervised_learning/k_nearest_neighbors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K-Nearest Neighbors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsupervised_learning/k_means_clustering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K-Means Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1686,10 +1277,10 @@
 <h4 id="why-does-one-need-to-do-normalization-on-numerical-features">Why does one need to do normalization on numerical features?<a class="headerlink" href="#why-does-one-need-to-do-normalization-on-numerical-features" title="Permanent link">&para;</a></h4>
 <p>In order to eliminate the magnitude impact between features, we should always do normalization to the features that we use, i.e. to uniformly normalize all the features to a similar range, so that it could <strong>help compare between different metrics</strong>. There are two different types of normalization that people most commonly use:
 - <em>min-max scaling</em>: It linearly changes the original data so that the data could be projected to [0, 1] range so that it is an equal ratio transformation of the original data:
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">X_{\text{norm}} = \frac{X-X_{\text{min}}}{X_{\text{max}-X_{\text{min}}}}</span><script type="math/tex">X_{\text{norm}} = \frac{X-X_{\text{min}}}{X_{\text{max}-X_{\text{min}}}}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">X_{\text{norm}} = \frac{X-X_{\text{min}}}{X_{\text{max}-X_{\text{min}}}}</span><script type="math/tex">X_{\text{norm}} = \frac{X-X_{\text{min}}}{X_{\text{max}-X_{\text{min}}}}</script></span></script></span>
-- <em>Z-Score normalization</em>: It would project the original data to a mean of 0 and variance = 1 distribution. Specifically, assume that the original feature has mean <span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> and variance <span class="arithmatex"><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span> , then the normalization equation would be defined as:
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">Z = \frac{x-\mu}{\sigma}</span><script type="math/tex">Z = \frac{x-\mu}{\sigma}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">Z = \frac{x-\mu}{\sigma}</span><script type="math/tex">Z = \frac{x-\mu}{\sigma}</script></span></script></span> 
-Using stochastic gradient descent (SGD) as an example, when two numerical features, <span class="arithmatex"><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span> of range [0,10] and <span class="arithmatex"><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span> of range [0,3], then when the <span class="arithmatex"><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span> and <span class="arithmatex"><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span> are not normalized, the <img alt="Screenshot" src="../resources/Screenshot%202025-08-05%20at%208.22.11%20PM.png" /> gradient descent would not be as efficient as when one does the normalization of the features. However, feature normalization is not always working. In real life, <span style="background-color: #FEE9E7"> whenever a model utilizes SGD, it is suggested to use the normalization, including linear regression, logistic regression, support vector machine, neural networks, whereas decision tress it does not help. </span> As for decision tree models, the node split usually is determined by the data and how much <a href="https://en.wikipedia.org/wiki/Information_gain_ratio"><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>information gain ratio</a> that data contains about X. This information gain ratio is not impacted by whether the feature has been normalized, rather it would not change the information gain of the specific feature X.</p>
+<span class="arithmatex">\(<span class="arithmatex">\(X_{\text{norm}} = \frac{X-X_{\text{min}}}{X_{\text{max}-X_{\text{min}}}}\)</span>\)</span>
+- <em>Z-Score normalization</em>: It would project the original data to a mean of 0 and variance = 1 distribution. Specifically, assume that the original feature has mean <span class="arithmatex">\(\mu\)</span> and variance <span class="arithmatex">\(\sigma\)</span> , then the normalization equation would be defined as:
+<span class="arithmatex">\(<span class="arithmatex">\(Z = \frac{x-\mu}{\sigma}\)</span>\)</span> 
+Using stochastic gradient descent (SGD) as an example, when two numerical features, <span class="arithmatex">\(x_1\)</span> of range [0,10] and <span class="arithmatex">\(x_2\)</span> of range [0,3], then when the <span class="arithmatex">\(x_1\)</span> and <span class="arithmatex">\(x_2\)</span> are not normalized, the <img alt="Screenshot" src="../resources/Screenshot%202025-08-05%20at%208.22.11%20PM.png" /> gradient descent would not be as efficient as when one does the normalization of the features. However, feature normalization is not always working. In real life, <span style="background-color: #FEE9E7"> whenever a model utilizes SGD, it is suggested to use the normalization, including linear regression, logistic regression, support vector machine, neural networks, whereas decision tress it does not help. </span> As for decision tree models, the node split usually is determined by the data and how much <a href="https://en.wikipedia.org/wiki/Information_gain_ratio"><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>information gain ratio</a> that data contains about X. This information gain ratio is not impacted by whether the feature has been normalized, rather it would not change the information gain of the specific feature X.</p>
 <h3 id="categorical-features">Categorical Features<a class="headerlink" href="#categorical-features" title="Permanent link">&para;</a></h3>
 <p>Categorical features include male / female, blood type (A,B,AB,O) and etc, which can only select values from a finite set of choices. Categorical features original input are mostly strings. Despite that <strong>decision trees and some other numbers of models can directly take in the strings, for logistic regression or SVM models, the categorical features need to be translated to numerical form</strong> so that they could properly work.</p>
 <h6 id="how-to-do-feature-engineering-on-categorical-features">How to do feature engineering on categorical features?<a class="headerlink" href="#how-to-do-feature-engineering-on-categorical-features" title="Permanent link">&para;</a></h6>
@@ -1702,7 +1293,7 @@ Using stochastic gradient descent (SGD) as an example, when two numerical featur
 <h3 id="high-dimensional-feature-crosses">High Dimensional Feature Crosses<a class="headerlink" href="#high-dimensional-feature-crosses" title="Permanent link">&para;</a></h3>
 <h4 id="what-are-feature-crosses-and-how-to-deal-with-high-dimensional-feature-crosses">What are feature crosses? And how to deal with high-dimensional feature crosses?<a class="headerlink" href="#what-are-feature-crosses-and-how-to-deal-with-high-dimensional-feature-crosses" title="Permanent link">&para;</a></h4>
 <p>Using single features to combine them together via dot-product or inner-product, one can get a combination of two features to help represent nonlinear relationships.</p>
-<p>Using logistic regression as an example, when a data set contains feature vector <span class="arithmatex"><span class="MathJax_Preview">X=(x_1, x_2, ..., x_k)</span><script type="math/tex">X=(x_1, x_2, ..., x_k)</script></span> then one would have <span class="arithmatex"><span class="MathJax_Preview">Y = \text{sigmoid}(\sum_i \sum_j w_{ij} &lt;x_i, x_j&gt;)</span><script type="math/tex">Y = \text{sigmoid}(\sum_i \sum_j w_{ij} <x_i, x_j>)</script></span> . <span class="arithmatex"><span class="MathJax_Preview">w_{ij}</span><script type="math/tex">w_{ij}</script></span> is of dimension <span class="arithmatex"><span class="MathJax_Preview">n_{x_i}\cdot n_{x_j}</span><script type="math/tex">n_{x_i}\cdot n_{x_j}</script></span> . But when <span class="arithmatex"><span class="MathJax_Preview">n_{x_i} \times n_{x_j}</span><script type="math/tex">n_{x_i} \times n_{x_j}</script></span> is huge, especially in use cases of website customers and number of goods, this can be really huge dimension. So **one way to get around this is to use a k-dimensional low-dimension vector (k &lt;&lt; m, k &lt;&lt; n). Now,  <span class="arithmatex"><span class="MathJax_Preview">w_{ij} = x_i' \cdot x_j'</span><script type="math/tex">w_{ij} = x_i' \cdot x_j'</script></span> and now the number of parameters one needs to tune is <span class="arithmatex"><span class="MathJax_Preview">m\times k + n \times k</span><script type="math/tex">m\times k + n \times k</script></span> . This can also be viewed as the <a href="https://lumingdong.cn/recommendation-algorithm-based-on-matrix-decomposition.html"><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>matrix vectorization</a>, that has been widely used in the recommendation systems. **</p>
+<p>Using logistic regression as an example, when a data set contains feature vector <span class="arithmatex">\(X=(x_1, x_2, ..., x_k)\)</span> then one would have <span class="arithmatex">\(Y = \text{sigmoid}(\sum_i \sum_j w_{ij} \langle x_i, x_j \rangle)\)</span> . <span class="arithmatex">\(w_{ij}\)</span> is of dimension <span class="arithmatex">\(n_{x_i} \cdot n_{x_j}\)</span> . But when <span class="arithmatex">\(n_{x_i} \times n_{x_j}\)</span> is huge, especially in use cases of website customers and number of goods, this can be really huge dimension. So **one way to get around this is to use a k-dimensional low-dimension vector (k &lt;&lt; m, k &lt;&lt; n). Now,  <span class="arithmatex">\(w_{ij} = x_i' \cdot x_j'\)</span> and now the number of parameters one needs to tune is <span class="arithmatex">\(m \times k + n \times k\)</span> . This can also be viewed as the <a href="https://lumingdong.cn/recommendation-algorithm-based-on-matrix-decomposition.html"><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>matrix vectorization</a>, that has been widely used in the recommendation systems. **</p>
 <p>We have understood how to use dimension reduction to reduce the number of parameters that the model needs to learn given a feature cross of two high-dimensional features. <span style="background-color: #FEE9E7"> But in reality, we are facing a variety of high-dimensional features. So a single feature crosses of all the different pairs would induce 1) too many parameters and 2) overfitting issues. </span></p>
 <h4 id="how-to-effectively-select-the-feature-combinations">How to effectively select the feature combinations?<a class="headerlink" href="#how-to-effectively-select-the-feature-combinations" title="Permanent link">&para;</a></h4>
 <p>We introduce a feature cross selection based on decision tree models. Taking CTR prediction as an example, assume that the input includes age, gender, user type (free vs paid), searched item type (skincare vs foods), etc. We could thus make a decision tree from the original input and their labels. <img alt="Screenshot" src="../resources/Screenshot%202025-08-05%20at%209.30.27%20PM.png" /> We could then view the feature crosses from the tree, that contains four different type of pairs:
@@ -1717,7 +1308,7 @@ How to best construct the decision trees? One can use the <a href="https://mediu
 <h4 id="what-are-some-of-the-textual-descriptive-models-what-pros-and-cons-each-have">What are some of the textual descriptive models what pros and cons each have?<a class="headerlink" href="#what-are-some-of-the-textual-descriptive-models-what-pros-and-cons-each-have" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Bag of words: Consider each article as a bag of words, ignoring the sequence of how each word appears. Specifically, it separates the entire paragraph of texts at word unit and represent each paragraph as a long vector. Each dimension in the vector is a word, and the weight represents how important the word is in the original article. </li>
-<li>TF-IDF (Term Frequency-Inverse Document Frequency): Is often used to calculate the weight of the words, <span class="arithmatex"><span class="MathJax_Preview">\text{TF-IDF}(t,d)=\text{TF}(t,d) \times \text{IDF}(t)</span><script type="math/tex">\text{TF-IDF}(t,d)=\text{TF}(t,d) \times \text{IDF}(t)</script></span> , where <span class="arithmatex"><span class="MathJax_Preview">\text{TF}(t,d)</span><script type="math/tex">\text{TF}(t,d)</script></span> represents the frequency of word t in document d, whereas <span class="arithmatex"><span class="MathJax_Preview">\text{IDF}(t)</span><script type="math/tex">\text{IDF}(t)</script></span> is the reverse document frequency to measure word t's importance in grammar, corresponds to equation <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\text{IDF}(t) = log^{\frac{\text{total article}}{\text{total article that contains word} t +1}}</span><script type="math/tex">\text{IDF}(t) = log^{\frac{\text{total article}}{\text{total article that contains word} t +1}}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\text{IDF}(t) = log^{\frac{\text{total article}}{\text{total article that contains word} t +1}}</span><script type="math/tex">\text{IDF}(t) = log^{\frac{\text{total article}}{\text{total article that contains word} t +1}}</script></span></script></span> the general meaning behind is that if a word appears so in various articles, then it means that it is a commonly used word, hence it would not contribute much in differentiating the specific meaning behind each articles, hence it should be penalized when weighting.</li>
+<li>TF-IDF (Term Frequency-Inverse Document Frequency): Is often used to calculate the weight of the words, <span class="arithmatex">\(\text{TF-IDF}(t,d)=\text{TF}(t,d) \times \text{IDF}(t)\)</span> , where <span class="arithmatex">\(\text{TF}(t,d)\)</span> represents the frequency of word t in document d, whereas <span class="arithmatex">\(\text{IDF}(t)\)</span> is the reverse document frequency to measure word t's importance in grammar, corresponds to equation <span class="arithmatex">\(<span class="arithmatex">\(\text{IDF}(t) = log^{\frac{\text{total article}}{\text{total article that contains word} t +1}}\)</span>\)</span> the general meaning behind is that if a word appears so in various articles, then it means that it is a commonly used word, hence it would not contribute much in differentiating the specific meaning behind each articles, hence it should be penalized when weighting.</li>
 <li>N-gram: when "natural language processing" being separated into 3 words as word unit, the meaning of this phrase is totally different from it is now, hence usually we could add n words as a feature unit into the vector to form the N-gram model. </li>
 <li>Topic Model</li>
 <li>Word Embedding: word embedding is a family of word vector models, the main idea is to project each word to a low-dimensional space (K = 50 -300 dimensions) using a dense vector. Each dimension in K-dimension would be viewed as a implicit topic. 
@@ -1814,8 +1405,8 @@ def mean_precision_at_k(ground_truth_sets, ranked_lists, k):
     # ground_truth_sets and ranked_lists are aligned lists
     return sum(precision_at_k(g, r, k) for g, r in zip(ground_truth_sets, ranked_lists)) / len(ground_truth_sets)
 </code></pre></div>
-- <strong>Precision@k</strong> for <strong>one</strong> case <span class="arithmatex"><span class="MathJax_Preview">q</span><script type="math/tex">q</script></span> (one list).
-- <strong>Mean Precision@k</strong> average of those values over <strong>all</strong> cases <span class="arithmatex"><span class="MathJax_Preview">q \in Q</span><script type="math/tex">q \in Q</script></span>.</p>
+- <strong>Precision@k</strong> for <strong>one</strong> case <span class="arithmatex">\(q\)</span> (one list).
+- <strong>Mean Precision@k</strong> average of those values over <strong>all</strong> cases <span class="arithmatex">\(q \in Q\)</span>.</p>
 <p><strong>Example</strong>: when dealing with video vague search functionality, it seems that the search ranking model can return the top 5 precision pretty high, however, the user in reality still cannot find the videos they want, especially those unpopular ones. Where does this problem coming from?</p>
 <p><strong>Root cause analysis</strong>: Coming back to the example above, the top 5 precision being really high, meaning that the model can get the true positive results on a pretty good level with a certain set of positive predictions; however, when it comes down to cases where users would like to find not so popular videos, the precision of ranks can be rather no so useful as the user is looking for not so well-defined labels, hence the good precision of popular videos would not be helpful for this case as <span style="background-color: #FEE9E7">model is not providing all the relevant videos to the user and this is a problem of not so good recall rate. </span> Let's say for the top 5 results, the precision@5 to be 100%, meaning that the correctness of the positive results is pretty higher, however, the recall@5 can still be 5%, meaning that only predicted 5 true positives although there are 100 actual positives involved. When doing model evaluation, it means that we should be focusing on both precision and recall, and also using different top N values for observations. </p>
 <p>Hence, in general, when people evaluate the goodness of a sort algorithm, they also look at the P-R curve, where in this curve, the x-axis corresponds to recall rate whereas the y-axis corresponds to precision rate. </p>
@@ -1826,29 +1417,23 @@ Each data point on the curve corresponds to a precision-recall combination at a 
 <ul>
 <li><strong>Capacity-constrained:</strong> If reviewers can handle 300 cases/day, pick the smallest threshold that yields â‰ˆ300 flags/day; report the resulting (Precision, Recall).</li>
 <li><strong>Recall target:</strong> If policy demands <strong>â‰¥95% recall</strong>, choose the lowest threshold achieving that, then report precision (and expected review load).</li>
-<li><strong>Cost-based:</strong> Minimize <span class="arithmatex"><span class="MathJax_Preview">\text{Cost}_{\text{false positives}}\cdot{\text{False Positives}}+\text{Cost}_{\text{false negatives}}\cdot{\text{False Negatives}}</span><script type="math/tex">\text{Cost}_{\text{false positives}}\cdot{\text{False Positives}}+\text{Cost}_{\text{false negatives}}\cdot{\text{False Negatives}}</script></span> over thresholds.
+<li><strong>Cost-based:</strong> Minimize <span class="arithmatex">\(\text{Cost}_{\text{false positives}}\cdot{\text{False Positives}}+\text{Cost}_{\text{false negatives}}\cdot{\text{False Negatives}}\)</span> over thresholds.
 Also report <strong>AUPRC</strong> to compare models independent of a single threshold (higher is better, especially with class imbalance).</li>
 </ul>
 <h4 id="root-mean-squared-errors-rmse">Root-mean Squared Errors (RMSE)<a class="headerlink" href="#root-mean-squared-errors-rmse" title="Permanent link">&para;</a></h4>
-<div class="arithmatex">
-<div class="MathJax_Preview"> RMSE = \sqrt{\frac{\sum_{i=1}^{n}{(y_i - \hat y_i)^2}}{n}} </div>
-<script type="math/tex; mode=display"> RMSE = \sqrt{\frac{\sum_{i=1}^{n}{(y_i - \hat y_i)^2}}{n}} </script>
-</div>
+<div class="arithmatex">\[ RMSE = \sqrt{\frac{\sum_{i=1}^{n}{(y_i - \hat y_i)^2}}{n}} \]</div>
 <p>Root-mean squared error has long been used as the metric for evaluating the regression model.</p>
 <p><strong>Example</strong>: as a streaming company, one would say that prediction of traffic for each series can be really important when it comes down to ads bidding and user expansion. One would like to use a regression model to predict the traffic trend of a certain series, but whatever regression model that one uses, the RMSE metric ends up being really high. But, in reality, the model 95% of the time predict error is less than 1%, with really good prediction results. What might be the reason of this extraordinarily good results?</p>
 <p><strong>Root cause analysis</strong>: From what the example, says there are two possible ways for the RMSE to be ineffective: 1) n being really small hence at this moment, the calculated error cannot be measurable anymore, 2) all the errors between actual value and predicted value are over- / under-predicting that the summation at the end being really high, however, in reality it is not the case and <span style="color: #FF6961">3) one outlier being really off when comparing with other data points, it is contaminating the RMSE to be really big. </span> Coming back to the question, as 95% of the time to model has really good prediction error hence it means the other 5% of the time the model can be really off with big outliers and it could happen when a series with small traffic / newly come-out / newly accoladed could produce this big error.</p>
 <p><strong>How to solve:</strong> 1) When we think these outliers are noises, then we need to filter them out at the early stage when doing data cleaning, 2) If we do not think they are noises, then we need to further improve the prediction capability of our algorithm so that we could somehow model the formation of these outliers. and 3) We could also use a better metric for the model evaluation. There are indeed better evaluation metrics that are of better robustness than RMSE, for example, Mean Absolute Percentage Error (MAPE):</p>
 <h4 id="mean-absolute-percentage-error">Mean Absolute Percentage Error<a class="headerlink" href="#mean-absolute-percentage-error" title="Permanent link">&para;</a></h4>
-<div class="arithmatex">
-<div class="MathJax_Preview">MAPE = \sum_{i=1}^n{|\frac{(y_i - \hat y_i)}{y_i}|\cdot\frac{100}{n}}</div>
-<script type="math/tex; mode=display">MAPE = \sum_{i=1}^n{|\frac{(y_i - \hat y_i)}{y_i}|\cdot\frac{100}{n}}</script>
-</div>
+<div class="arithmatex">\[MAPE = \sum_{i=1}^n{|\frac{(y_i - \hat y_i)}{y_i}|\cdot\frac{100}{n}}\]</div>
 <p>When comparing with RMSE, MAPE normalizes the error rate of each data point to mitigate the outlier impact from the absolute error.</p>
 <h4 id="expanding-on-the-regression-evaluation-metrics">Expanding on the regression evaluation metrics<a class="headerlink" href="#expanding-on-the-regression-evaluation-metrics" title="Permanent link">&para;</a></h4>
 <h5 id="quick-definitions">Quick definitions<a class="headerlink" href="#quick-definitions" title="Permanent link">&para;</a></h5>
-<p>Let <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> be the true value and <span class="arithmatex"><span class="MathJax_Preview">\hat y</span><script type="math/tex">\hat y</script></span>â€‹ the prediction.  <br />
+<p>Let <span class="arithmatex">\(y\)</span> be the true value and <span class="arithmatex">\(\hat y\)</span>â€‹ the prediction.  <br />
 <strong>sMAPE</strong> (common form): 
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}</span><script type="math/tex">\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}</span><script type="math/tex">\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}</script></span></script></span></p>
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{100}{n}\sum\frac{2|y-\hat y|}{|y|+|\hat y|}\)</span>\)</span></p>
 <h5 id="when-to-use-which">When to use which<a class="headerlink" href="#when-to-use-which" title="Permanent link">&para;</a></h5>
 <ul>
 <li><strong>Use RMSE</strong> when:<ul>
@@ -1860,7 +1445,7 @@ Also report <strong>AUPRC</strong> to compare models independent of a single thr
 <li><strong>Use MAPE</strong> when:<ul>
 <li>Stakeholders want an average <strong>percentage</strong> error that is easy to read.</li>
 <li>True values are <strong>strictly positive and not near zero</strong> (e.g., revenue, demand &gt; 0).</li>
-<li>You're okay that over-forecasts and under-forecasts are weighted differently (MAPE tends to penalize under-forecasting less when <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> is small).</li>
+<li>You're okay that over-forecasts and under-forecasts are weighted differently (MAPE tends to penalize under-forecasting less when <span class="arithmatex">\(y\)</span> is small).</li>
 </ul>
 </li>
 <li><strong>Use sMAPE</strong> when:<ul>
@@ -1929,19 +1514,15 @@ Also report <strong>AUPRC</strong> to compare models independent of a single thr
 <p>Binary classifiers are the mostly used and applied classifier in the ML industry. There are a lot of different metrics that one could use for evaluate the binary classifiers, including precision, recall, F1 score and P-R curve. But these metrics are only reflecting one aspect of the model. Hence, ROC curves can be of really good use. </p>
 <h5 id="what-is-a-roc-curve">What is a ROC curve<a class="headerlink" href="#what-is-a-roc-curve" title="Permanent link">&para;</a></h5>
 <p>ROC curves are called receiver Operating Characteristic Curves, which established from the military field and are often used in the medical industry as well. This curve's x-axis is the false positive rate, whereas the y-axis is the true-positive rate. </p>
-<p><span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\text{False Positive Rate} = \frac{\text{False Positive}}{\text{Negative}}</span><script type="math/tex">\text{False Positive Rate} = \frac{\text{False Positive}}{\text{Negative}}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\text{False Positive Rate} = \frac{\text{False Positive}}{\text{Negative}}</span><script type="math/tex">\text{False Positive Rate} = \frac{\text{False Positive}}{\text{Negative}}</script></span></script></span>
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\text{True Positive Rate} = \frac{\text{True Positive}}{\text{Positive}}</span><script type="math/tex">\text{True Positive Rate} = \frac{\text{True Positive}}{\text{Positive}}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\text{True Positive Rate} = \frac{\text{True Positive}}{\text{Positive}}</span><script type="math/tex">\text{True Positive Rate} = \frac{\text{True Positive}}{\text{Positive}}</script></span></script></span>
+<p><span class="arithmatex">\(<span class="arithmatex">\(\text{False Positive Rate} = \frac{\text{False Positive}}{\text{Negative}}\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\text{True Positive Rate} = \frac{\text{True Positive}}{\text{Positive}}\)</span>\)</span>
 <strong>Example</strong>: There are 10 patients, where in there are 3 positive cancer patients, and the rest are negative patients. The hospital decides to do diagnosis on these customers and figured that 2 are true positive cancer patients. In this case:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\text{False Positive Rate} = \frac{\text{False Positive}}{\text{Negative}} = \frac{1}{7}$$
-$$\text{True Positive Rate} = \frac{\text{True Positive}}{\text{Positive}}=\frac{2}{3}</div>
-<script type="math/tex; mode=display">\text{False Positive Rate} = \frac{\text{False Positive}}{\text{Negative}} = \frac{1}{7}$$
-$$\text{True Positive Rate} = \frac{\text{True Positive}}{\text{Positive}}=\frac{2}{3}</script>
-</div>
+<div class="arithmatex">\[\text{False Positive Rate} = \frac{\text{False Positive}}{\text{Negative}} = \frac{1}{7}$$
+$$\text{True Positive Rate} = \frac{\text{True Positive}}{\text{Positive}}=\frac{2}{3}\]</div>
 <h5 id="how-to-draw-a-roc-curve">How to draw a ROC curve<a class="headerlink" href="#how-to-draw-a-roc-curve" title="Permanent link">&para;</a></h5>
 <ul>
 <li>What is needed<ul>
-<li>True labels <span class="arithmatex"><span class="MathJax_Preview">y \in \{0,1\}</span><script type="math/tex">y \in \{0,1\}</script></span></li>
+<li>True labels <span class="arithmatex">\(y \in \{0,1\}\)</span></li>
 <li>A <strong>score</strong> for the positive class per item (probability or decision score).  </li>
 </ul>
 </li>
@@ -2064,43 +1645,37 @@ print(f&quot;The AUC-ROC value is: {aucroc}&quot;)  # The AUC-ROC value is: 0.98
 <h5 id="what-to-report-good-default">What to report (good default)<a class="headerlink" href="#what-to-report-good-default" title="Permanent link">&para;</a></h5>
 <ul>
 <li><strong>AUPRC + AUC-ROC</strong> (global picture)</li>
-<li><strong>(Precision, Recall)</strong> (or <span class="arithmatex"><span class="MathJax_Preview">F_\beta</span><script type="math/tex">F_\beta</script></span>) at the <strong>chosen threshold</strong></li>
+<li><strong>(Precision, Recall)</strong> (or <span class="arithmatex">\(F_\beta\)</span>) at the <strong>chosen threshold</strong></li>
 <li>If capacity-limited: <strong>Precision@k</strong> (and expected volume flagged)</li>
 </ul>
 <h4 id="use-of-cosine-distance">Use of cosine distance<a class="headerlink" href="#use-of-cosine-distance" title="Permanent link">&para;</a></h4>
 <p>How to evaluate the distance between samples can also define the optimization target and training method. In ML problems, we usually take the features to be of vector form, so when analyzing the two feature vector similarity, we could use cosine similarity. The cosine similarity can range from -1 to 1, where when two vectors are exactly the same, the cosine similarity becomes 1. Hence, when looking at distances, 1-cosine similarity becomes the cosine distance. Overall, the cosine distance is [0,2] and the same two vectors their cosine distance becomes 0.</p>
 <h5 id="definition-of-euclidean-distance-cosine-distance">Definition of Euclidean Distance &amp; Cosine Distance<a class="headerlink" href="#definition-of-euclidean-distance-cosine-distance" title="Permanent link">&para;</a></h5>
 <p><strong>Euclidean Distance</strong>
-For vectors <span class="arithmatex"><span class="MathJax_Preview">x,y\in\mathbb{R}^d</span><script type="math/tex">x,y\in\mathbb{R}^d</script></span>:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">d_{\text{Euc}}(x,y)=\sqrt{\sum_{i=1}^{d}(x_i-y_i)^2} \in [0,\infty) </div>
-<script type="math/tex; mode=display">d_{\text{Euc}}(x,y)=\sqrt{\sum_{i=1}^{d}(x_i-y_i)^2} \in [0,\infty) </script>
-</div>
+For vectors <span class="arithmatex">\(x,y\in\mathbb{R}^d\)</span>:</p>
+<div class="arithmatex">\[d_{\text{Euc}}(x,y)=\sqrt{\sum_{i=1}^{d}(x_i-y_i)^2} \in [0,\infty) \]</div>
 <ul>
 <li><strong>What it measures:</strong> straight-line (L2) distance in space.</li>
 <li><strong>Sensitive to scale/magnitude:</strong> doubling a vector doubles distances.</li>
-<li><strong>Squared form:</strong> sometimes use <span class="arithmatex"><span class="MathJax_Preview">\|x-y\|^2</span><script type="math/tex">\|x-y\|^2</script></span> (no square root) for speed/convexity.~</li>
+<li><strong>Squared form:</strong> sometimes use <span class="arithmatex">\(\|x-y\|^2\)</span> (no square root) for speed/convexity.~</li>
 </ul>
 <p><strong>Cosine Distance</strong>
 Start with cosine <strong>similarity</strong>:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\text{cos\_sim}(x,y)=\frac{x\cdot y}{\|x\|\,\|y\|}\in[-1,1]</div>
-<script type="math/tex; mode=display">\text{cos\_sim}(x,y)=\frac{x\cdot y}{\|x\|\,\|y\|}\in[-1,1]</script>
-</div>
+<div class="arithmatex">\[\text{cos\_sim}(x,y)=\frac{x\cdot y}{\|x\|\,\|y\|}\in[-1,1]\]</div>
 <p>Cosine <strong>distance</strong> (common definition):
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">d_{\text{cos}}(x,y)=1-\text{cos\_sim}(x,y)\in[0,2]</span><script type="math/tex">d_{\text{cos}}(x,y)=1-\text{cos\_sim}(x,y)\in[0,2]</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">d_{\text{cos}}(x,y)=1-\text{cos\_sim}(x,y)\in[0,2]</span><script type="math/tex">d_{\text{cos}}(x,y)=1-\text{cos\_sim}(x,y)\in[0,2]</script></span></script></span></p>
+<span class="arithmatex">\(<span class="arithmatex">\(d_{\text{cos}}(x,y)=1-\text{cos\_sim}(x,y)\in[0,2]\)</span>\)</span></p>
 <ul>
 <li><strong>What it measures:</strong> difference in <strong>direction</strong> (angle) only.</li>
 <li><strong>Scale-invariant:</strong> multiplying a vector by a positive constant doesnâ€™t change it.</li>
 </ul>
 <p>Overall, on unit vectors, Euclidean and cosine distances are monotonic transforms.
 Also, on a unit circle, one would see:
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\|A-B\|=\sqrt{2(1-cos(A,B))}</span><script type="math/tex">\|A-B\|=\sqrt{2(1-cos(A,B))}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\|A-B\|=\sqrt{2(1-cos(A,B))}</span><script type="math/tex">\|A-B\|=\sqrt{2(1-cos(A,B))}</script></span></script></span>
+<span class="arithmatex">\(<span class="arithmatex">\(\|A-B\|=\sqrt{2(1-cos(A,B))}\)</span>\)</span>
 - <strong>When to use which</strong>
     - Use <strong>Euclidean</strong> when magnitude matters (e.g., real spatial distances, continuous features with meaningful scales).
     - Use <strong>Cosine</strong> when orientation matters more than length (e.g., text/image embeddings, TF-IDF vectors).</p>
 <h5 id="when-to-use-cosine-similarity-but-not-euclidean-distance">When to use cosine similarity but not Euclidean distance?<a class="headerlink" href="#when-to-use-cosine-similarity-but-not-euclidean-distance" title="Permanent link">&para;</a></h5>
-<p>For two vectors A and B, when their cosine similarity are being defined as <span class="arithmatex"><span class="MathJax_Preview">cos(A,B)=\frac{A\cdot B}{\|A\|_2 \|B\|_2}</span><script type="math/tex">cos(A,B)=\frac{A\cdot B}{\|A\|_2 \|B\|_2}</script></span> , i.e. the cosine of angle between two vectors, we thus measure the angular distance between them, rather than the absolute magnitude, with the range being [-1,1]. When a pair of text being very different in length, but with similar content, if using Euclidean distance, one can think their distance being pretty big whereas when using cosine similarity, the angle between the two can be rather small, hence giving high similarity. In text, visual, video, image industries, when the objective has high dimensions, cosine can still retain its character of [-1,1] whereas the Euclidean distance number can be really big. </p>
+<p>For two vectors A and B, when their cosine similarity are being defined as <span class="arithmatex">\(cos(A,B)=\frac{A\cdot B}{\|A\|_2 \|B\|_2}\)</span> , i.e. the cosine of angle between two vectors, we thus measure the angular distance between them, rather than the absolute magnitude, with the range being [-1,1]. When a pair of text being very different in length, but with similar content, if using Euclidean distance, one can think their distance being pretty big whereas when using cosine similarity, the angle between the two can be rather small, hence giving high similarity. In text, visual, video, image industries, when the objective has high dimensions, cosine can still retain its character of [-1,1] whereas the Euclidean distance number can be really big. </p>
 <p><span style="color:#FF6961">Overall, Euclidean distance measures the absolute difference between numbers whereas the cosine distance measures the directional relative difference. </span> </p>
 <p>Taking an example of measuring user behavior of watching two different TV series:
     - user A's watch vector = (0,1)
@@ -2127,7 +1702,7 @@ It is obvious that the cosine distance between the two can be really big whereas
 <li>Now you have 1,000 metric values.<ul>
 <li>The <strong>average</strong> is your central estimate.</li>
 <li>The <strong>middle 95% range</strong> (ignore the lowest 2.5% and highest 2.5%) is your <strong>95% confidence interval</strong>.
-As <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> gets large, about <strong>36.8%</strong> of items are not in the set (never selected) and <strong>63.2%</strong> appear at least once. This is the source of the bootstrap terminology</li>
+As <span class="arithmatex">\(n\)</span> gets large, about <strong>36.8%</strong> of items are not in the set (never selected) and <strong>63.2%</strong> appear at least once. This is the source of the bootstrap terminology</li>
 </ul>
 </li>
 </ul>
@@ -2173,47 +1748,38 @@ Train while checking performance on a validation set. Whenever the validation sc
 <h3 id="l2-l1-regularization">L2 / L1 Regularization<a class="headerlink" href="#l2-l1-regularization" title="Permanent link">&para;</a></h3>
 <h4 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h4>
 <p>Model (no intercept for simplicity):</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\hat y_i = w\,x_i</div>
-<script type="math/tex; mode=display">\hat y_i = w\,x_i</script>
-</div>
+<div class="arithmatex">\[\hat y_i = w\,x_i\]</div>
 <p><strong>Data loss</strong> (sum of squared errors):</p>
-<p><span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\sum_i (y_i - w x_i)^2</span><script type="math/tex">\sum_i (y_i - w x_i)^2</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\sum_i (y_i - w x_i)^2</span><script type="math/tex">\sum_i (y_i - w x_i)^2</script></span></script></span>
+<p><span class="arithmatex">\(<span class="arithmatex">\(\sum_i (y_i - w x_i)^2\)</span>\)</span>
 <strong>L2-regularized loss</strong> (ridge):
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\underbrace{\sum_i (y_i - w x_i)^2}_{\text{fit the data}} \;+\; \underbrace{\lambda\, w^2}_{\text{penalize big weights}}</span><script type="math/tex">\underbrace{\sum_i (y_i - w x_i)^2}_{\text{fit the data}} \;+\; \underbrace{\lambda\, w^2}_{\text{penalize big weights}}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\underbrace{\sum_i (y_i - w x_i)^2}_{\text{fit the data}} \;+\; \underbrace{\lambda\, w^2}_{\text{penalize big weights}}</span><script type="math/tex">\underbrace{\sum_i (y_i - w x_i)^2}_{\text{fit the data}} \;+\; \underbrace{\lambda\, w^2}_{\text{penalize big weights}}</script></span></script></span>
-- <span class="arithmatex"><span class="MathJax_Preview">\lambda&gt;0</span><script type="math/tex">\lambda>0</script></span> controls the strength of the penalty (larger <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> stronger shrinkage).
+<span class="arithmatex">\(<span class="arithmatex">\(\underbrace{\sum_i (y_i - w x_i)^2}_{\text{fit the data}} \;+\; \underbrace{\lambda\, w^2}_{\text{penalize big weights}}\)</span>\)</span>
+- <span class="arithmatex">\(\lambda&gt;0\)</span> controls the strength of the penalty (larger <span class="arithmatex">\(\lambda\)</span> stronger shrinkage).
 - In practice, we usually <strong>don't penalize the bias/intercept</strong>.</p>
 <h4 id="how-l2-penalizes-the-parameter">How L2 Penalizes the Parameter<a class="headerlink" href="#how-l2-penalizes-the-parameter" title="Permanent link">&para;</a></h4>
-<p>Take derivative w.r.t. <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> and set to 0:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\frac{\partial}{\partial w}\Big[\sum_i (y_i - w x_i)^2 + \lambda w^2\Big] = -2\sum_i x_i(y_i - w x_i) + 2\lambda w = 0</div>
-<script type="math/tex; mode=display">\frac{\partial}{\partial w}\Big[\sum_i (y_i - w x_i)^2 + \lambda w^2\Big] = -2\sum_i x_i(y_i - w x_i) + 2\lambda w = 0</script>
-</div>
+<p>Take derivative w.r.t. <span class="arithmatex">\(w\)</span> and set to 0:</p>
+<div class="arithmatex">\[\frac{\partial}{\partial w}\Big[\sum_i (y_i - w x_i)^2 + \lambda w^2\Big] = -2\sum_i x_i(y_i - w x_i) + 2\lambda w = 0\]</div>
 <p>Rearrange:
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">w\big(\sum_i x_i^2 + \lambda\big) = \sum_i x_i y_i \quad\Rightarrow\quad \boxed{\,w_{\text{ridge}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2 + \lambda}\,}</span><script type="math/tex">w\big(\sum_i x_i^2 + \lambda\big) = \sum_i x_i y_i \quad\Rightarrow\quad \boxed{\,w_{\text{ridge}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2 + \lambda}\,}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">w\big(\sum_i x_i^2 + \lambda\big) = \sum_i x_i y_i \quad\Rightarrow\quad \boxed{\,w_{\text{ridge}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2 + \lambda}\,}</span><script type="math/tex">w\big(\sum_i x_i^2 + \lambda\big) = \sum_i x_i y_i \quad\Rightarrow\quad \boxed{\,w_{\text{ridge}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2 + \lambda}\,}</script></span></script></span>
+<span class="arithmatex">\(<span class="arithmatex">\(w\big(\sum_i x_i^2 + \lambda\big) = \sum_i x_i y_i \quad\Rightarrow\quad \boxed{\,w_{\text{ridge}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2 + \lambda}\,}\)</span>\)</span>
 Compare to <strong>unregularized</strong> OLS:
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">w_{\text{OLS}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2}</span><script type="math/tex">w_{\text{OLS}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">w_{\text{OLS}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2}</span><script type="math/tex">w_{\text{OLS}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2}</script></span></script></span>
-L2 adds <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> to the denominator and <strong>shrinks <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> toward 0</strong>.</p>
+<span class="arithmatex">\(<span class="arithmatex">\(w_{\text{OLS}} = \dfrac{\sum_i x_i y_i}{\sum_i x_i^2}\)</span>\)</span>
+L2 adds <span class="arithmatex">\(\lambda\)</span> to the denominator and <strong>shrinks <span class="arithmatex">\(w\)</span> toward 0</strong>.</p>
 <h4 id="why-l2-decrease-variance-and-increase-bias">Why L2 decrease variance and increase bias?<a class="headerlink" href="#why-l2-decrease-variance-and-increase-bias" title="Permanent link">&para;</a></h4>
 <p>L2 regularization constrains how large the parameters can get. Constraining parameters makes the fitted function smoother/less wiggly, so predictions don’t swing wildly when the training sample changes—this cuts variance. The tradeoff is that the constrained model can’t perfectly adapt to the true signal, so estimates are pulled toward zero (or toward simpler shapes), which introduces bias.</p>
 <h4 id="tiny-numeric-example">Tiny Numeric Example<a class="headerlink" href="#tiny-numeric-example" title="Permanent link">&para;</a></h4>
-<p>Data: <span class="arithmatex"><span class="MathJax_Preview">x=[0,1,2,3]</span><script type="math/tex">x=[0,1,2,3]</script></span>, <span class="arithmatex"><span class="MathJax_Preview">y=[0,1,2,60]</span><script type="math/tex">y=[0,1,2,60]</script></span> (last point is an outlier)
-- <span class="arithmatex"><span class="MathJax_Preview">\sum x_i^2 = 14, \sum x_i y_i = 185</span><script type="math/tex">\sum x_i^2 = 14, \sum x_i y_i = 185</script></span>
+<p>Data: <span class="arithmatex">\(x=[0,1,2,3]\)</span>, <span class="arithmatex">\(y=[0,1,2,60]\)</span> (last point is an outlier)
+- <span class="arithmatex">\(\sum x_i^2 = 14, \sum x_i y_i = 185\)</span>
 Weights:
-- <strong>OLS (no L2):</strong> <span class="arithmatex"><span class="MathJax_Preview">185/14 \approx 13.214</span><script type="math/tex">185/14 \approx 13.214</script></span>
-- <strong>L2, <span class="arithmatex"><span class="MathJax_Preview">\lambda=10</span><script type="math/tex">\lambda=10</script></span>:</strong> <span class="arithmatex"><span class="MathJax_Preview">185/(14+10) = 185/24 \approx 7.708185</span><script type="math/tex">185/(14+10) = 185/24 \approx 7.708185</script></span>
-- <strong>L2, <span class="arithmatex"><span class="MathJax_Preview">\lambda=100</span><script type="math/tex">\lambda=100</script></span>:</strong> <span class="arithmatex"><span class="MathJax_Preview">185/(14+100) = 185/114 \approx 1.623</span><script type="math/tex">185/(14+100) = 185/114 \approx 1.623</script></span>
-As <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> grows, <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> is <strong>pulled toward 0</strong>, limiting the impact of the outlier.</p>
+- <strong>OLS (no L2):</strong> <span class="arithmatex">\(185/14 \approx 13.214\)</span>
+- <strong>L2, <span class="arithmatex">\(\lambda=10\)</span>:</strong> <span class="arithmatex">\(185/(14+10) = 185/24 \approx 7.708185\)</span>
+- <strong>L2, <span class="arithmatex">\(\lambda=100\)</span>:</strong> <span class="arithmatex">\(185/(14+100) = 185/114 \approx 1.623\)</span>
+As <span class="arithmatex">\(\lambda\)</span> grows, <span class="arithmatex">\(w\)</span> is <strong>pulled toward 0</strong>, limiting the impact of the outlier.</p>
 <h4 id="gradient-descent-view-weight-decay">Gradient-Descent View (Weight Decay)<a class="headerlink" href="#gradient-descent-view-weight-decay" title="Permanent link">&para;</a></h4>
-<p>With learning rate <span class="arithmatex"><span class="MathJax_Preview">\eta</span><script type="math/tex">\eta</script></span>:
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">w_{\text{new}} = w_{\text{old}} - \eta\Big(\underbrace{-2\sum_i x_i(y_i - w_{\text{old}} x_i)}_{\text{data gradient}} \;+\; \underbrace{2\lambda w_{\text{old}}}_{\text{L2 shrink}}\Big)</span><script type="math/tex">w_{\text{new}} = w_{\text{old}} - \eta\Big(\underbrace{-2\sum_i x_i(y_i - w_{\text{old}} x_i)}_{\text{data gradient}} \;+\; \underbrace{2\lambda w_{\text{old}}}_{\text{L2 shrink}}\Big)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">w_{\text{new}} = w_{\text{old}} - \eta\Big(\underbrace{-2\sum_i x_i(y_i - w_{\text{old}} x_i)}_{\text{data gradient}} \;+\; \underbrace{2\lambda w_{\text{old}}}_{\text{L2 shrink}}\Big)</span><script type="math/tex">w_{\text{new}} = w_{\text{old}} - \eta\Big(\underbrace{-2\sum_i x_i(y_i - w_{\text{old}} x_i)}_{\text{data gradient}} \;+\; \underbrace{2\lambda w_{\text{old}}}_{\text{L2 shrink}}\Big)</script></span></script></span></p>
-<p>The <span class="arithmatex"><span class="MathJax_Preview">+2\lambda w</span><script type="math/tex">+2\lambda w</script></span> term is the <strong>shrinkage</strong> that steadily decays weights.</p>
+<p>With learning rate <span class="arithmatex">\(\eta\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(w_{\text{new}} = w_{\text{old}} - \eta\Big(\underbrace{-2\sum_i x_i(y_i - w_{\text{old}} x_i)}_{\text{data gradient}} \;+\; \underbrace{2\lambda w_{\text{old}}}_{\text{L2 shrink}}\Big)\)</span>\)</span></p>
+<p>The <span class="arithmatex">\(+2\lambda w\)</span> term is the <strong>shrinkage</strong> that steadily decays weights.</p>
 <h4 id="multi-feature-form-for-reference">Multi-Feature Form (for reference)<a class="headerlink" href="#multi-feature-form-for-reference" title="Permanent link">&para;</a></h4>
-<p>For features <span class="arithmatex"><span class="MathJax_Preview">X\in \mathbb{R}^{n\times d}</span><script type="math/tex">X\in \mathbb{R}^{n\times d}</script></span>, target <span class="arithmatex"><span class="MathJax_Preview">\mathbf{y}</span><script type="math/tex">\mathbf{y}</script></span>:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\mathbf{w}_{\text{ridge}} = (X^\top X + \lambda I)^{-1} X^\top \mathbf{y}</div>
-<script type="math/tex; mode=display">\mathbf{w}_{\text{ridge}} = (X^\top X + \lambda I)^{-1} X^\top \mathbf{y}</script>
-</div>
+<p>For features <span class="arithmatex">\(X\in \mathbb{R}^{n\times d}\)</span>, target <span class="arithmatex">\(\mathbf{y}\)</span>:</p>
+<div class="arithmatex">\[\mathbf{w}_{\text{ridge}} = (X^\top X + \lambda I)^{-1} X^\top \mathbf{y}\]</div>
 <h4 id="copy-paste-python">Copy-Paste Python<a class="headerlink" href="#copy-paste-python" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>import numpy as np
 
@@ -2232,16 +1798,16 @@ for lmbda in [10, 100]:
 </code></pre></div>
 <p><strong>Notes</strong>
 - Standardize features before using L2/L1 (esp. linear/logistic).
-- Tune <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> via cross-validation.
+- Tune <span class="arithmatex">\(\lambda\)</span> via cross-validation.
 - Do <strong>not</strong> penalize the bias term.</p>
 <h2 id="classical-algorithms">Classical Algorithms<a class="headerlink" href="#classical-algorithms" title="Permanent link">&para;</a></h2>
 <h3 id="linear-regression">Linear Regression<a class="headerlink" href="#linear-regression" title="Permanent link">&para;</a></h3>
 <p>There are two central provinces in the world of regression: simple linear regression and multiple linear regression. </p>
 <h4 id="formula-of-simple-linear-regression">Formula of Simple Linear Regression<a class="headerlink" href="#formula-of-simple-linear-regression" title="Permanent link">&para;</a></h4>
-<p>The formula of linear regression can be represented as <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">y=c+m\cdot x</span><script type="math/tex">y=c+m\cdot x</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">y=c+m\cdot x</span><script type="math/tex">y=c+m\cdot x</script></span></script></span>
-The formula revolves around minimizing residuals. Imagine residuals as the distance between the actual and predicted values of the dependent variable <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>:
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">m = \frac{\sum_{i=1}^N{(x_i-\bar x)(y_i-\bar y)}}{\sum_{i=1}^N(x_i-\bar x)^2}</span><script type="math/tex">m = \frac{\sum_{i=1}^N{(x_i-\bar x)(y_i-\bar y)}}{\sum_{i=1}^N(x_i-\bar x)^2}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">m = \frac{\sum_{i=1}^N{(x_i-\bar x)(y_i-\bar y)}}{\sum_{i=1}^N(x_i-\bar x)^2}</span><script type="math/tex">m = \frac{\sum_{i=1}^N{(x_i-\bar x)(y_i-\bar y)}}{\sum_{i=1}^N(x_i-\bar x)^2}</script></span></script></span>
-and the constant corresponds to <span class="arithmatex"><span class="MathJax_Preview">c=\bar y - m \cdot\bar x</span><script type="math/tex">c=\bar y - m \cdot\bar x</script></span>. </p>
+<p>The formula of linear regression can be represented as <span class="arithmatex">\(<span class="arithmatex">\(y=c+m\cdot x\)</span>\)</span>
+The formula revolves around minimizing residuals. Imagine residuals as the distance between the actual and predicted values of the dependent variable <span class="arithmatex">\(y\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(m = \frac{\sum_{i=1}^N{(x_i-\bar x)(y_i-\bar y)}}{\sum_{i=1}^N(x_i-\bar x)^2}\)</span>\)</span>
+and the constant corresponds to <span class="arithmatex">\(c=\bar y - m \cdot\bar x\)</span>. </p>
 <div class="highlight"><pre><span></span><code>import numpy as np
 
 # Step 1: Get the data set
@@ -2260,31 +1826,16 @@ c = mean_y - m * mean_x
 print(f&quot;Model: y = {c} + {m}*x&quot;)  # Output: Model: y= 2.2 + 0.6*x
 </code></pre></div>
 <h4 id="formula-of-multiple-linear-regression">Formula of Multiple Linear Regression<a class="headerlink" href="#formula-of-multiple-linear-regression" title="Permanent link">&para;</a></h4>
-<p>For simple linear regression formula, we have <span class="arithmatex"><span class="MathJax_Preview">y=\beta_0 + \beta_1x</span><script type="math/tex">y=\beta_0 + \beta_1x</script></span>, for multiple linear regression, we add multiple independent variables <span class="arithmatex"><span class="MathJax_Preview">x_1, x_2, ... , x_m</span><script type="math/tex">x_1, x_2, ... , x_m</script></span>. Suppose we had n data points, each with m features, then X would be like: <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\mathbf{X}=\begin{bmatrix}  
+<p>For simple linear regression formula, we have <span class="arithmatex">\(y=\beta_0 + \beta_1x\)</span>, for multiple linear regression, we add multiple independent variables <span class="arithmatex">\(x_1, x_2, ... , x_m\)</span>. Suppose we had n data points, each with m features, then X would be like: <span class="arithmatex">\(<span class="arithmatex">\(\mathbf{X}=\begin{bmatrix}  
 1 &amp; x_{1,1} &amp; x_{1,2} &amp; ... &amp; x_{1,m} \\  
 1 &amp; x_{2,1} &amp; x_{2,2} &amp; ... &amp; x_{2,m} \\
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 1 &amp; x_{n,1} &amp; x_{n,2} &amp; ... &amp; x_{n,m} \\
-\end{bmatrix} \in \mathbb{R^{n\times (m+1)}}, \mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} \in \mathbb{R^{n\times 1}}, \mathbf{\beta} = \begin{bmatrix} \beta_0 \\ \beta_1 \\ \vdots \\ \beta_m \end{bmatrix} \in  \mathbb{R^{(m+1)\times 1}}</span><script type="math/tex">\mathbf{X}=\begin{bmatrix}  
-1 & x_{1,1} & x_{1,2} & ... & x_{1,m} \\  
-1 & x_{2,1} & x_{2,2} & ... & x_{2,m} \\
-\vdots & \vdots & \vdots & \ddots & \vdots \\
-1 & x_{n,1} & x_{n,2} & ... & x_{n,m} \\
-\end{bmatrix} \in \mathbb{R^{n\times (m+1)}}, \mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} \in \mathbb{R^{n\times 1}}, \mathbf{\beta} = \begin{bmatrix} \beta_0 \\ \beta_1 \\ \vdots \\ \beta_m \end{bmatrix} \in  \mathbb{R^{(m+1)\times 1}}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\mathbf{X}=\begin{bmatrix}  
-1 &amp; x_{1,1} &amp; x_{1,2} &amp; ... &amp; x_{1,m} \\  
-1 &amp; x_{2,1} &amp; x_{2,2} &amp; ... &amp; x_{2,m} \\
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-1 &amp; x_{n,1} &amp; x_{n,2} &amp; ... &amp; x_{n,m} \\
-\end{bmatrix} \in \mathbb{R^{n\times (m+1)}}, \mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} \in \mathbb{R^{n\times 1}}, \mathbf{\beta} = \begin{bmatrix} \beta_0 \\ \beta_1 \\ \vdots \\ \beta_m \end{bmatrix} \in  \mathbb{R^{(m+1)\times 1}}</span><script type="math/tex">\mathbf{X}=\begin{bmatrix}  
-1 & x_{1,1} & x_{1,2} & ... & x_{1,m} \\  
-1 & x_{2,1} & x_{2,2} & ... & x_{2,m} \\
-\vdots & \vdots & \vdots & \ddots & \vdots \\
-1 & x_{n,1} & x_{n,2} & ... & x_{n,m} \\
-\end{bmatrix} \in \mathbb{R^{n\times (m+1)}}, \mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} \in \mathbb{R^{n\times 1}}, \mathbf{\beta} = \begin{bmatrix} \beta_0 \\ \beta_1 \\ \vdots \\ \beta_m \end{bmatrix} \in  \mathbb{R^{(m+1)\times 1}}</script></span></script></span> Each row represents the m features for a single data point. The first column with <span class="arithmatex"><span class="MathJax_Preview">\mathbf{1}</span><script type="math/tex">\mathbf{1}</script></span>s are the bias / intercept of each equation. The normal equation would be of form
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\beta = (X^T X)^{-1}X^Ty</span><script type="math/tex">\beta = (X^T X)^{-1}X^Ty</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\beta = (X^T X)^{-1}X^Ty</span><script type="math/tex">\beta = (X^T X)^{-1}X^Ty</script></span></script></span>
-The predicted <span class="arithmatex"><span class="MathJax_Preview">\hat y</span><script type="math/tex">\hat y</script></span> values can be represented as
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\hat y = (1 \cdot \beta_0)+(\beta_1 \cdot x_1) + (\beta_2 \cdot x_2) + \dots + (\beta_m \cdot x_m)</span><script type="math/tex">\hat y = (1 \cdot \beta_0)+(\beta_1 \cdot x_1) + (\beta_2 \cdot x_2) + \dots + (\beta_m \cdot x_m)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\hat y = (1 \cdot \beta_0)+(\beta_1 \cdot x_1) + (\beta_2 \cdot x_2) + \dots + (\beta_m \cdot x_m)</span><script type="math/tex">\hat y = (1 \cdot \beta_0)+(\beta_1 \cdot x_1) + (\beta_2 \cdot x_2) + \dots + (\beta_m \cdot x_m)</script></span></script></span>
-To calculate all the predictions at once, we take the dot product of <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> and <span class="arithmatex"><span class="MathJax_Preview">\beta</span><script type="math/tex">\beta</script></span>:
+\end{bmatrix} \in \mathbb{R^{n\times (m+1)}}, \mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} \in \mathbb{R^{n\times 1}}, \mathbf{\beta} = \begin{bmatrix} \beta_0 \\ \beta_1 \\ \vdots \\ \beta_m \end{bmatrix} \in  \mathbb{R^{(m+1)\times 1}}\)</span>\)</span> Each row represents the m features for a single data point. The first column with <span class="arithmatex">\(\mathbf{1}\)</span>s are the bias / intercept of each equation. The normal equation would be of form
+<span class="arithmatex">\(<span class="arithmatex">\(\beta = (X^T X)^{-1}X^Ty\)</span>\)</span>
+The predicted <span class="arithmatex">\(\hat y\)</span> values can be represented as
+<span class="arithmatex">\(<span class="arithmatex">\(\hat y = (1 \cdot \beta_0)+(\beta_1 \cdot x_1) + (\beta_2 \cdot x_2) + \dots + (\beta_m \cdot x_m)\)</span>\)</span>
+To calculate all the predictions at once, we take the dot product of <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(\beta\)</span>:
 $$\mathbf{y} = \begin{bmatrix} y_1 \ y_2 \ \vdots \ y_n \end{bmatrix} = X\cdot \beta =\begin{bmatrix}<br />
 1 &amp; x_{1,1} &amp; x_{1,2} &amp; ... &amp; x_{1,m} \<br />
 1 &amp; x_{2,1} &amp; x_{2,2} &amp; ... &amp; x_{2,m} \
@@ -2292,8 +1843,8 @@ $$\mathbf{y} = \begin{bmatrix} y_1 \ y_2 \ \vdots \ y_n \end{bmatrix} = X\cdot \
 1 &amp; x_{n,1} &amp; x_{n,2} &amp; ... &amp; x_{n,m} \
 \end{bmatrix} \begin{bmatrix} \beta_0 \ \beta_1 \ \vdots \ \beta_m \end{bmatrix} $$</p>
 <h4 id="linear-regression-model-evaluation">Linear Regression Model Evaluation<a class="headerlink" href="#linear-regression-model-evaluation" title="Permanent link">&para;</a></h4>
-<h5 id="coefficient-of-determination-r2r2-score">coefficient of determination (<span class="arithmatex"><span class="MathJax_Preview">R^2</span><script type="math/tex">R^2</script></span> score)<a class="headerlink" href="#coefficient-of-determination-r2r2-score" title="Permanent link">&para;</a></h5>
-<p><span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">R^2=1-\frac{SS_\text{residuals}}{SS_\text{total}} = 1 - \frac{\sum_{i=1}^n(y_i - \hat y_i)^2}{\sum_{i=1}^n(y_i - \bar y_i)^2}</span><script type="math/tex">R^2=1-\frac{SS_\text{residuals}}{SS_\text{total}} = 1 - \frac{\sum_{i=1}^n(y_i - \hat y_i)^2}{\sum_{i=1}^n(y_i - \bar y_i)^2}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">R^2=1-\frac{SS_\text{residuals}}{SS_\text{total}} = 1 - \frac{\sum_{i=1}^n(y_i - \hat y_i)^2}{\sum_{i=1}^n(y_i - \bar y_i)^2}</span><script type="math/tex">R^2=1-\frac{SS_\text{residuals}}{SS_\text{total}} = 1 - \frac{\sum_{i=1}^n(y_i - \hat y_i)^2}{\sum_{i=1}^n(y_i - \bar y_i)^2}</script></span></script></span> Where <span class="arithmatex"><span class="MathJax_Preview">SS_\text{residuals}</span><script type="math/tex">SS_\text{residuals}</script></span> denotes the residual sum of squares for predictions and <span class="arithmatex"><span class="MathJax_Preview">SS_\text{total}</span><script type="math/tex">SS_\text{total}</script></span> denotes the total sum of squares from actual values. A higher R-squared value / closer to 1 indicates a good model fit.</p>
+<h5 id="coefficient-of-determination-r2-score">coefficient of determination (<span class="arithmatex">\(R^2\)</span> score)<a class="headerlink" href="#coefficient-of-determination-r2-score" title="Permanent link">&para;</a></h5>
+<p><span class="arithmatex">\(<span class="arithmatex">\(R^2=1-\frac{SS_\text{residuals}}{SS_\text{total}} = 1 - \frac{\sum_{i=1}^n(y_i - \hat y_i)^2}{\sum_{i=1}^n(y_i - \bar y_i)^2}\)</span>\)</span> Where <span class="arithmatex">\(SS_\text{residuals}\)</span> denotes the residual sum of squares for predictions and <span class="arithmatex">\(SS_\text{total}\)</span> denotes the total sum of squares from actual values. A higher R-squared value / closer to 1 indicates a good model fit.</p>
 <div class="highlight"><pre><span></span><code>import numpy as np
 # given data
 housing_data = np.array(\[\[1800, 3\], \[2400, 4\],\[1416, 2\], \[3000, 5\]\])
@@ -2337,7 +1888,7 @@ print(&quot;R^2:&quot;, r2)
 <li>Repeat steps 2 to 4 until we reach an acceptable error rate or exhaust the maximum iterations.</li>
 </ol>
 <p>A vital component of gradient descent is the learning rate, which determines the size of the descent towards the optimum solution.</p>
-<p>The first step is to calculate the cost function, which takes the form of <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">J(X, y, \theta) = \frac{1}{m}\sum_{i=1}^m(X\cdot \theta - y_i)^2</span><script type="math/tex">J(X, y, \theta) = \frac{1}{m}\sum_{i=1}^m(X\cdot \theta - y_i)^2</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">J(X, y, \theta) = \frac{1}{m}\sum_{i=1}^m(X\cdot \theta - y_i)^2</span><script type="math/tex">J(X, y, \theta) = \frac{1}{m}\sum_{i=1}^m(X\cdot \theta - y_i)^2</script></span></script></span> where J is the cost, X is the data, y is the actual values and <span class="arithmatex"><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span> is the parameters, <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> is the length of <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>. It is calculating the mean square error. </p>
+<p>The first step is to calculate the cost function, which takes the form of <span class="arithmatex">\(<span class="arithmatex">\(J(X, y, \theta) = \frac{1}{m}\sum_{i=1}^m(X\cdot \theta - y_i)^2\)</span>\)</span> where J is the cost, X is the data, y is the actual values and <span class="arithmatex">\(\theta\)</span> is the parameters, <span class="arithmatex">\(m\)</span> is the length of <span class="arithmatex">\(y\)</span>. It is calculating the mean square error. </p>
 <div class="highlight"><pre><span></span><code>import numpy as np
 
 def cost(X, y, theta):
@@ -2347,7 +1898,7 @@ def cost(X, y, theta):
     return cost
 </code></pre></div>
 <p>The second step is to compute the gradient descent function, which will be updated in the iterative loop:
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\theta:=\theta-\alpha\frac{1}{m}X^T\cdot(X\cdot \theta - y)</span><script type="math/tex">\theta:=\theta-\alpha\frac{1}{m}X^T\cdot(X\cdot \theta - y)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\theta:=\theta-\alpha\frac{1}{m}X^T\cdot(X\cdot \theta - y)</span><script type="math/tex">\theta:=\theta-\alpha\frac{1}{m}X^T\cdot(X\cdot \theta - y)</script></span></script></span> Here <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> is the learning rate, which determines the size of steps in the descent and <span class="arithmatex"><span class="MathJax_Preview">X^T</span><script type="math/tex">X^T</script></span> is the transpose of data, which should have been multiplied by 2 but as we take the derivative of the mean squared error we could also consider it to be included as part of the learning rate <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>. </p>
+<span class="arithmatex">\(<span class="arithmatex">\(\theta:=\theta-\alpha\frac{1}{m}X^T\cdot(X\cdot \theta - y)\)</span>\)</span> Here <span class="arithmatex">\(\alpha\)</span> is the learning rate, which determines the size of steps in the descent and <span class="arithmatex">\(X^T\)</span> is the transpose of data, which should have been multiplied by 2 but as we take the derivative of the mean squared error we could also consider it to be included as part of the learning rate <span class="arithmatex">\(\alpha\)</span>. </p>
 <div class="highlight"><pre><span></span><code>def gradient_descent(X, y, theta, alpha, threshold=0.01):
     m = len(y)
     cost_history = []
@@ -2379,25 +1930,25 @@ In order to make the mathematics possible, SVM use something called kernel funct
 - <strong>Kernel Functions</strong>
 When d = 1, the polynomial kernel computes the relationships between each pair of observations in 1-dimension, and these relationships are used to find a support vector classifier. In summary, the polynomial kernel systematically increases dimensions by setting d, the degree of the polynomial. 
 - <strong>Polynomial Kernel</strong>
-    <span class="arithmatex"><span class="MathJax_Preview">(a\times b + r)^d</span><script type="math/tex">(a\times b + r)^d</script></span> is the polynomial kernel format, where d sets the dimension of the kernel. Using <span class="arithmatex"><span class="MathJax_Preview">(a\times b + \frac{1}{2})^2</span><script type="math/tex">(a\times b + \frac{1}{2})^2</script></span> as an example: <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">(a\times b + \frac{1}{2})^2 = (a\times b + \frac{1}{2})(a\times b + \frac{1}{2}) = ab + a^2b^2+\frac{1}{4} = (a,a^2,\frac{1}{2})\cdot (b,b^2,\frac{1}{2})</span><script type="math/tex">(a\times b + \frac{1}{2})^2 = (a\times b + \frac{1}{2})(a\times b + \frac{1}{2}) = ab + a^2b^2+\frac{1}{4} = (a,a^2,\frac{1}{2})\cdot (b,b^2,\frac{1}{2})</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">(a\times b + \frac{1}{2})^2 = (a\times b + \frac{1}{2})(a\times b + \frac{1}{2}) = ab + a^2b^2+\frac{1}{4} = (a,a^2,\frac{1}{2})\cdot (b,b^2,\frac{1}{2})</span><script type="math/tex">(a\times b + \frac{1}{2})^2 = (a\times b + \frac{1}{2})(a\times b + \frac{1}{2}) = ab + a^2b^2+\frac{1}{4} = (a,a^2,\frac{1}{2})\cdot (b,b^2,\frac{1}{2})</script></span></script></span>
-    where <span class="arithmatex"><span class="MathJax_Preview">(a,a^2,\frac{1}{2})</span><script type="math/tex">(a,a^2,\frac{1}{2})</script></span> and <span class="arithmatex"><span class="MathJax_Preview">(b,b^2,\frac{1}{2})</span><script type="math/tex">(b,b^2,\frac{1}{2})</script></span> are the coordinates of the data points x-y-z dimensions. <span class="arithmatex"><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> and <span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> are determined via cross validation. Once we determines the parameters, then we plug in all the pairs of data points and do the math to get the high-dimensional relationships.
+    <span class="arithmatex">\((a\times b + r)^d\)</span> is the polynomial kernel format, where d sets the dimension of the kernel. Using <span class="arithmatex">\((a\times b + \frac{1}{2})^2\)</span> as an example: <span class="arithmatex">\(<span class="arithmatex">\((a\times b + \frac{1}{2})^2 = (a\times b + \frac{1}{2})(a\times b + \frac{1}{2}) = ab + a^2b^2+\frac{1}{4} = (a,a^2,\frac{1}{2})\cdot (b,b^2,\frac{1}{2})\)</span>\)</span>
+    where <span class="arithmatex">\((a,a^2,\frac{1}{2})\)</span> and <span class="arithmatex">\((b,b^2,\frac{1}{2})\)</span> are the coordinates of the data points x-y-z dimensions. <span class="arithmatex">\(r\)</span> and <span class="arithmatex">\(d\)</span> are determined via cross validation. Once we determines the parameters, then we plug in all the pairs of data points and do the math to get the high-dimensional relationships.
 - <strong>Radial Function Kernel</strong> 
     Radial function kernel finds support vector classifiers in infinite dimensions but in one / two dimensional data, it behaves like weighted nearest neighborhood model.
-    The equation looks like this <span class="arithmatex"><span class="MathJax_Preview">e^{-\gamma(a-b)^2}</span><script type="math/tex">e^{-\gamma(a-b)^2}</script></span> where <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> and <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> are the x-axis coordinates of two different data points. <span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span> is the parameter that determines how much influence the pair of data points have on each other.</p>
+    The equation looks like this <span class="arithmatex">\(e^{-\gamma(a-b)^2}\)</span> where <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> are the x-axis coordinates of two different data points. <span class="arithmatex">\(\gamma\)</span> is the parameter that determines how much influence the pair of data points have on each other.</p>
 <h3 id="logistic-regression">Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permanent link">&para;</a></h3>
 <p>Logistic regression are the most widely used and most fundamental model that one could use in the ML industry. One should always understand the deduction of logistic regression and application of it, as it is used in medical diagnosis, credit evaluation, email junk categorization, etc. </p>
 </li>
 </ul>
 <h4 id="formulation-behind-logistic-regression">Formulation behind Logistic Regression<a class="headerlink" href="#formulation-behind-logistic-regression" title="Permanent link">&para;</a></h4>
-<p>Logistic Regression calculates a raw model output, then transforms it using the sigmoid function, mapping it to a range between 0 and 1, thus making it a probability. The sigmoid function can be defined as <span class="arithmatex"><span class="MathJax_Preview">S(x) = \frac{1}{1+e^{-x}}</span><script type="math/tex">S(x) = \frac{1}{1+e^{-x}}</script></span>. This can thus be implemented as:</p>
+<p>Logistic Regression calculates a raw model output, then transforms it using the sigmoid function, mapping it to a range between 0 and 1, thus making it a probability. The sigmoid function can be defined as <span class="arithmatex">\(S(x) = \frac{1}{1+e^{-x}}\)</span>. This can thus be implemented as:</p>
 <div class="highlight"><pre><span></span><code>def sigmoid(z):
     return 1 / (1+np.exp(-z))
 </code></pre></div>
 <p>The mathematical form of logistic regression can be expressed as follows:
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">P(Y=1|x) = \frac{1}{1+e^{-(\beta_0+\beta_1x)}}</span><script type="math/tex">P(Y=1|x) = \frac{1}{1+e^{-(\beta_0+\beta_1x)}}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">P(Y=1|x) = \frac{1}{1+e^{-(\beta_0+\beta_1x)}}</span><script type="math/tex">P(Y=1|x) = \frac{1}{1+e^{-(\beta_0+\beta_1x)}}</script></span></script></span>
-where <span class="arithmatex"><span class="MathJax_Preview">P(Y=1|x)</span><script type="math/tex">P(Y=1|x)</script></span> is the probability of event <span class="arithmatex"><span class="MathJax_Preview">Y=1</span><script type="math/tex">Y=1</script></span> given <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>, <span class="arithmatex"><span class="MathJax_Preview">\beta_0</span><script type="math/tex">\beta_0</script></span> and <span class="arithmatex"><span class="MathJax_Preview">\beta_1</span><script type="math/tex">\beta_1</script></span> are parameters of the model, <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> is the input variable and <span class="arithmatex"><span class="MathJax_Preview">\beta_0+\beta_1x</span><script type="math/tex">\beta_0+\beta_1x</script></span> is the linear combination of parameters and features. </p>
+<span class="arithmatex">\(<span class="arithmatex">\(P(Y=1|x) = \frac{1}{1+e^{-(\beta_0+\beta_1x)}}\)</span>\)</span>
+where <span class="arithmatex">\(P(Y=1|x)\)</span> is the probability of event <span class="arithmatex">\(Y=1\)</span> given <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(\beta_0\)</span> and <span class="arithmatex">\(\beta_1\)</span> are parameters of the model, <span class="arithmatex">\(x\)</span> is the input variable and <span class="arithmatex">\(\beta_0+\beta_1x\)</span> is the linear combination of parameters and features. </p>
 <p><em>Log-Likelihood</em> in Logistic Regression plays a similar role to the <em>Least Squares method</em> in Linear Regression. A maximum likelihood estimation method estimates parameters that maximize the likelihood of making the observations we collected. In Logistic Regression, we seek to maximize the log-likelihood.</p>
-<p>The cost function for a single training instance in logistic regression can be expressed as <span class="arithmatex"><span class="MathJax_Preview">-[y\log{(\hat p)+(1-y)\log{(1-\hat p)}}]</span><script type="math/tex">-[y\log{(\hat p)+(1-y)\log{(1-\hat p)}}]</script></span> where <span class="arithmatex"><span class="MathJax_Preview">\hat p</span><script type="math/tex">\hat p</script></span> denotes the predicted probability.</p>
+<p>The cost function for a single training instance in logistic regression can be expressed as <span class="arithmatex">\(-[y\log{(\hat p)+(1-y)\log{(1-\hat p)}}]\)</span> where <span class="arithmatex">\(\hat p\)</span> denotes the predicted probability.</p>
 <div class="highlight"><pre><span></span><code>def cost_function(h, y): # h = sigmoid(z) where z = X @ theta
     return (-y * np.log(h) - (1 - y) * np.log(1 - h)).mean()
 
@@ -2434,8 +1985,8 @@ def predict(X, theta, threshold=0.5):
 </code></pre></div>
 <h4 id="what-is-the-difference-between-logistic-regression-and-linear-regression">What is the difference between logistic regression and linear regression?<a class="headerlink" href="#what-is-the-difference-between-logistic-regression-and-linear-regression" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>logistic regression is used for categorization whereas linear regression is used for regression problems</strong>. This is the most significant difference between the two. In logistic regression, when given x and hyperparameter <span class="arithmatex"><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>, we could get the expectation value of the <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> values to predict the categorization of the values. On the other hand, in linear regression, one is solving <span class="arithmatex"><span class="MathJax_Preview">y' = \theta^Tx</span><script type="math/tex">y' = \theta^Tx</script></span> , which is the approximate of the real relationship of <span class="arithmatex"><span class="MathJax_Preview">y = \theta^Tx+\epsilon</span><script type="math/tex">y = \theta^Tx+\epsilon</script></span> where <span class="arithmatex"><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span> corresponds to the system error.</li>
-<li>The actual logistic regression equation can be formulated via <span class="arithmatex"><span class="MathJax_Preview">\log{\frac{p}{1-p}}=\theta^Tx</span><script type="math/tex">\log{\frac{p}{1-p}}=\theta^Tx</script></span>, where <span class="arithmatex"><span class="MathJax_Preview">p=P(y=1|x)</span><script type="math/tex">p=P(y=1|x)</script></span> , corresponding to given x the probability of y being positive. <strong>Thus the most important difference between logistic regression and linear regression would be that the logistic regression <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>s are discretized whereas the linear regression <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>s are continuous.</strong> When <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> and <span class="arithmatex"><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span> are given, logistic regression can also be seen as generalized linear models where <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> follows the binary distribution, whereas  when using least-squares for linear regression we view <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> follows the normal distribution. </li>
+<li><strong>logistic regression is used for categorization whereas linear regression is used for regression problems</strong>. This is the most significant difference between the two. In logistic regression, when given x and hyperparameter <span class="arithmatex">\(\theta\)</span>, we could get the expectation value of the <span class="arithmatex">\(y\)</span> values to predict the categorization of the values. On the other hand, in linear regression, one is solving <span class="arithmatex">\(y' = \theta^Tx\)</span> , which is the approximate of the real relationship of <span class="arithmatex">\(y = \theta^Tx+\epsilon\)</span> where <span class="arithmatex">\(\epsilon\)</span> corresponds to the system error.</li>
+<li>The actual logistic regression equation can be formulated via <span class="arithmatex">\(\log{\frac{p}{1-p}}=\theta^Tx\)</span>, where <span class="arithmatex">\(p=P(y=1|x)\)</span> , corresponding to given x the probability of y being positive. <strong>Thus the most important difference between logistic regression and linear regression would be that the logistic regression <span class="arithmatex">\(y\)</span>s are discretized whereas the linear regression <span class="arithmatex">\(y\)</span>s are continuous.</strong> When <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(\theta\)</span> are given, logistic regression can also be seen as generalized linear models where <span class="arithmatex">\(y\)</span> follows the binary distribution, whereas  when using least-squares for linear regression we view <span class="arithmatex">\(y\)</span> follows the normal distribution. </li>
 </ul>
 <h4 id="what-is-the-same-between-logistic-regression-and-linear-regression">What is the same between logistic regression and linear regression?<a class="headerlink" href="#what-is-the-same-between-logistic-regression-and-linear-regression" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2477,9 +2028,9 @@ Return w
 - <a href="https://www.youtube.com/watch?v=_L39rN6gz7Y&amp;t=18s">StatQuest: Decision and Classification Trees, Clearly Explained!!!</a>
 - <a href="https://www.youtube.com/watch?v=wpNl-JwwplA">StatQuest: Decision Trees, Part 2 - Feature Selection and Missing Data</a>
 - <a href="https://www.youtube.com/watch?v=D0efHEJsfHo">StatQuest: How to Prune Regression Trees, Clearly Explained!!!</a>
-A Gini Index endeavors to quantify the disorder within these groups. A greater Gini Index score signifies more disorder. The formula of Gini Index can be represented as <span class="arithmatex"><span class="MathJax_Preview">G = 1-\sum_{i=1}^n p_i^2</span><script type="math/tex">G = 1-\sum_{i=1}^n p_i^2</script></span> where <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> is the Gini index or coefficient, <span class="arithmatex"><span class="MathJax_Preview">p_i</span><script type="math/tex">p_i</script></span> is the proportion of individuals in the <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>th group, and the sum is taken over <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> groups. Gini index is used to describe the data purity, which has similar concept with information entropy. 
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\text{Gini}(D) = 1 - \sum_{k=1}^n(\frac{C_k}{D})^2</span><script type="math/tex">\text{Gini}(D) = 1 - \sum_{k=1}^n(\frac{C_k}{D})^2</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\text{Gini}(D) = 1 - \sum_{k=1}^n(\frac{C_k}{D})^2</span><script type="math/tex">\text{Gini}(D) = 1 - \sum_{k=1}^n(\frac{C_k}{D})^2</script></span></script></span>
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\text{Gini}(D|A) = \sum_{i=1}^n\frac{|D_i|}{|D|}\text{Gini}(D_i)</span><script type="math/tex">\text{Gini}(D|A) = \sum_{i=1}^n\frac{|D_i|}{|D|}\text{Gini}(D_i)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\text{Gini}(D|A) = \sum_{i=1}^n\frac{|D_i|}{|D|}\text{Gini}(D_i)</span><script type="math/tex">\text{Gini}(D|A) = \sum_{i=1}^n\frac{|D_i|}{|D|}\text{Gini}(D_i)</script></span></script></span>
+A Gini Index endeavors to quantify the disorder within these groups. A greater Gini Index score signifies more disorder. The formula of Gini Index can be represented as <span class="arithmatex">\(G = 1-\sum_{i=1}^n p_i^2\)</span> where <span class="arithmatex">\(G\)</span> is the Gini index or coefficient, <span class="arithmatex">\(p_i\)</span> is the proportion of individuals in the <span class="arithmatex">\(i\)</span>th group, and the sum is taken over <span class="arithmatex">\(n\)</span> groups. Gini index is used to describe the data purity, which has similar concept with information entropy. 
+<span class="arithmatex">\(<span class="arithmatex">\(\text{Gini}(D) = 1 - \sum_{k=1}^n(\frac{C_k}{D})^2\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\text{Gini}(D|A) = \sum_{i=1}^n\frac{|D_i|}{|D|}\text{Gini}(D_i)\)</span>\)</span>
 Now let's use an example to better understand how to compute Gini index:</p>
 <table>
 <thead>
@@ -2558,16 +2109,10 @@ Now let's use an example to better understand how to compute Gini index:</p>
 </tbody>
 </table>
 <p>All the three leaves except for the fourth one are called impure leaves, where the fourth one is called a pure leaf node. As both leaf nodes from <code>loves Popcorn</code> are impure but there is only one node from <code>Loves Soda</code> being impure, it means that the <code>Loves Soda</code> does a better job predicting who will and will not the movie. </p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\text{Gini Impurity for a leaf} = 1 - (\text{the probability of "Yes"}) ^ 2 - (\text{the probability of "No"}) ^ 2$$
-$$\text{Gini Impurity (Loves Movie | Loves Popcorn)} = 1 - (\frac{1}{1+3})^2 - (\frac{3}{1+3})^2 = 0.375$$
-$$\text{Gini Impurity (Loves Movie | Hates Popcorn)} = 1 - (\frac{2}{1+2})^2 - (\frac{1}{1+2})^2 = 0.444$$
-$$\text{Total Gini Impurity} = \text{weighted avg of Gini for the leaves} = (\frac{1+3}{1+3+2+1})\cdot(0.375)+\frac{3}{4+3}(0.444)</div>
-<script type="math/tex; mode=display">\text{Gini Impurity for a leaf} = 1 - (\text{the probability of "Yes"}) ^ 2 - (\text{the probability of "No"}) ^ 2$$
-$$\text{Gini Impurity (Loves Movie | Loves Popcorn)} = 1 - (\frac{1}{1+3})^2 - (\frac{3}{1+3})^2 = 0.375$$
-$$\text{Gini Impurity (Loves Movie | Hates Popcorn)} = 1 - (\frac{2}{1+2})^2 - (\frac{1}{1+2})^2 = 0.444$$
-$$\text{Total Gini Impurity} = \text{weighted avg of Gini for the leaves} = (\frac{1+3}{1+3+2+1})\cdot(0.375)+\frac{3}{4+3}(0.444)</script>
-</div>
+<div class="arithmatex">\[\text{Gini Impurity for a leaf} = 1 - (\text{the probability of "Yes"}) ^ 2 - (\text{the probability of "No"}) ^ 2\]</div>
+<div class="arithmatex">\[\text{Gini Impurity (Loves Movie | Loves Popcorn)} = 1 - (\frac{1}{1+3})^2 - (\frac{3}{1+3})^2 = 0.375\]</div>
+<div class="arithmatex">\[\text{Gini Impurity (Loves Movie | Hates Popcorn)} = 1 - (\frac{2}{1+2})^2 - (\frac{1}{1+2})^2 = 0.444\]</div>
+<div class="arithmatex">\[\text{Total Gini Impurity} = \text{weighted avg of Gini for the leaves} = (\frac{1+3}{1+3+2+1})\cdot(0.375)+\frac{3}{4+3}(0.444)\]</div>
 <h4 id="implementation-of-decision-tree-splits">Implementation of decision tree splits<a class="headerlink" href="#implementation-of-decision-tree-splits" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>groups = [
     \[\[&#39;Red&#39;], [&#39;Blue&#39;], [&#39;Red&#39;\]\],
@@ -2602,13 +2147,13 @@ def test_split(index, value, dataset):
 </code></pre></div>
 <h4 id="information-gain">Information Gain<a class="headerlink" href="#information-gain" title="Permanent link">&para;</a></h4>
 <h5 id="max-information-gain">Max Information Gain<a class="headerlink" href="#max-information-gain" title="Permanent link">&para;</a></h5>
-<p>For a sample set D, there are K categories, the empirical entropy for this set D can be expressed as <span class="arithmatex"><span class="MathJax_Preview">H(D) = -\sum_{k=1}^K \frac{|C_k|}{D}\log_2\frac{C_k}{D}</span><script type="math/tex">H(D) = -\sum_{k=1}^K \frac{|C_k|}{D}\log_2\frac{C_k}{D}</script></span>.</p>
+<p>For a sample set D, there are K categories, the empirical entropy for this set D can be expressed as <span class="arithmatex">\(H(D) = -\sum_{k=1}^K \frac{|C_k|}{D}\log_2\frac{C_k}{D}\)</span>.</p>
 <h2 id="unsupervised-learnings">Unsupervised Learnings<a class="headerlink" href="#unsupervised-learnings" title="Permanent link">&para;</a></h2>
 <p>We may encounter problems such that providing the machine a tons of feature data and looking for the machine to learn the pattern or structure from the data, for example the video platforms would like to categorize the users from their activities for different recommendation strategies, or looking for relationship between whether the video playing smooth or not vs their relationship with user unsubscribe. These problems are called "unsupervised learnings", which does not like the supervised learnings where we expect to see outputs or predictions. The unsupervised learning inputs does not contain label information, instead it needs to dig into the internal data relationship from the algorithm model. <strong>There are two main categories of the unsupervised learnings: data clustering or feature variable correlation (using correlation analysis for relationships between variables)</strong>. </p>
 <h3 id="k-nearest-neighbors-k-nn-algorithm">K-Nearest Neighbors (k-NN) Algorithm<a class="headerlink" href="#k-nearest-neighbors-k-nn-algorithm" title="Permanent link">&para;</a></h3>
 <p>The kNN algorithm works on a basic principle: a data point is likely to be in the same category as the data points it is closest to. Note that choosing 'k' significantly impacts our model. A low 'k' might capture more noise in the data, whereas a high 'k' is computationally expensive.</p>
 <h3 id="euclidean-distance-calculation">Euclidean Distance Calculation<a class="headerlink" href="#euclidean-distance-calculation" title="Permanent link">&para;</a></h3>
-<p>In k-NN, classification is determined by weighing the distance between data points. Euclidean distance is a frequently used metric that calculates the shortest straight-line distance <span class="arithmatex"><span class="MathJax_Preview">\sqrt{(x_1-x_2)^2 + (y_1 - y_2)^2}</span><script type="math/tex">\sqrt{(x_1-x_2)^2 + (y_1 - y_2)^2}</script></span> between two data points <span class="arithmatex"><span class="MathJax_Preview">(x_1, y_1)</span><script type="math/tex">(x_1, y_1)</script></span> and <span class="arithmatex"><span class="MathJax_Preview">(x_2, y_2)</span><script type="math/tex">(x_2, y_2)</script></span> in a Euclidean space. </p>
+<p>In k-NN, classification is determined by weighing the distance between data points. Euclidean distance is a frequently used metric that calculates the shortest straight-line distance <span class="arithmatex">\(\sqrt{(x_1-x_2)^2 + (y_1 - y_2)^2}\)</span> between two data points <span class="arithmatex">\((x_1, y_1)\)</span> and <span class="arithmatex">\((x_2, y_2)\)</span> in a Euclidean space. </p>
 <div class="highlight"><pre><span></span><code>import math
 
 # The &#39;euclidean_distance&#39; function computes the Euclidean distance between two points
@@ -2665,15 +2210,15 @@ print(class_label)
 <h3 id="k-means-clustering">K-means Clustering<a class="headerlink" href="#k-means-clustering" title="Permanent link">&para;</a></h3>
 <p>Algorithms such as SVM, logistic regression, decision trees are more for the categorization, i.e. based on the known labelled samples, classifiers are training so that it could apply the same logic on unlabeled samples. Unlike the classification problems, clustering is directly categorize the samples without any previously known labelling. </p>
 <p>Classification belongs to supervised learning whereas clustering is a type of unsupervised learning algorithm. K-means clustering, as one type of the most basic and fundamental clustering algorithm, has the main idea of iteratively finding the way of cutting the space into K clusters, so that the loss function is the lowest. The loss function can be defined as the sum of squared error distance of each sample from their clustered centers:
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">J(c,\mu) = \sum_{i=1}^M ||x_i - \mu_{c_i}||^2</span><script type="math/tex">J(c,\mu) = \sum_{i=1}^M ||x_i - \mu_{c_i}||^2</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">J(c,\mu) = \sum_{i=1}^M ||x_i - \mu_{c_i}||^2</span><script type="math/tex">J(c,\mu) = \sum_{i=1}^M ||x_i - \mu_{c_i}||^2</script></span></script></span> where <span class="arithmatex"><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span> represents the samples, <span class="arithmatex"><span class="MathJax_Preview">c_i</span><script type="math/tex">c_i</script></span> represents the cluster that <span class="arithmatex"><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span> belongs to, <span class="arithmatex"><span class="MathJax_Preview">mu_{c_i}</span><script type="math/tex">mu_{c_i}</script></span> corresponds to the center of the cluster that <span class="arithmatex"><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span>'s located in and <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> is the total number of samples.</p>
+<span class="arithmatex">\(<span class="arithmatex">\(J(c,\mu) = \sum_{i=1}^M ||x_i - \mu_{c_i}||^2\)</span>\)</span> where <span class="arithmatex">\(x_i\)</span> represents the samples, <span class="arithmatex">\(c_i\)</span> represents the cluster that <span class="arithmatex">\(x_i\)</span> belongs to, <span class="arithmatex">\(mu_{c_i}\)</span> corresponds to the center of the cluster that <span class="arithmatex">\(x_i\)</span>'s located in and <span class="arithmatex">\(M\)</span> is the total number of samples.</p>
 <h4 id="k-means-clustering-algorithm-in-steps">K-means clustering algorithm in steps<a class="headerlink" href="#k-means-clustering-algorithm-in-steps" title="Permanent link">&para;</a></h4>
 <p>The goal of K-means clustering is to categorize the dataset of interest into K-clusters, and also provides the cluster center corresponding to each data points:
 1. data engineering and cleaning: normalization and outlier removal.
-2. randomly pick K-cluster centers, labelled as <span class="arithmatex"><span class="MathJax_Preview">\mu_1^{(0)}, \mu_2^{(0)}, ..., \mu_K^{(0)}</span><script type="math/tex">\mu_1^{(0)}, \mu_2^{(0)}, ..., \mu_K^{(0)}</script></span> 
-3. define the loss function to be <span class="arithmatex"><span class="MathJax_Preview">J(c,\mu) = \min_{\mu} \min_{c} \sum_{i=1}^M ||x_i - \mu_{c_i}||^2</span><script type="math/tex">J(c,\mu) = \min_{\mu} \min_{c} \sum_{i=1}^M ||x_i - \mu_{c_i}||^2</script></span> 
+2. randomly pick K-cluster centers, labelled as <span class="arithmatex">\(\mu_1^{(0)}, \mu_2^{(0)}, ..., \mu_K^{(0)}\)</span> 
+3. define the loss function to be <span class="arithmatex">\(J(c,\mu) = \min_{\mu} \min_{c} \sum_{i=1}^M ||x_i - \mu_{c_i}||^2\)</span> 
 4. iterate through the process below by t times, where t denotes the number of iterations:
-    1. for every sample <span class="arithmatex"><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span>, categorize it to the cluster that has shortest distance <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">c_i^{(t)} \leftarrow {\arg\min}_k ||x_i - \mu_k^{(t)}||^2</span><script type="math/tex">c_i^{(t)} \leftarrow {\arg\min}_k ||x_i - \mu_k^{(t)}||^2</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">c_i^{(t)} \leftarrow {\arg\min}_k ||x_i - \mu_k^{(t)}||^2</span><script type="math/tex">c_i^{(t)} \leftarrow {\arg\min}_k ||x_i - \mu_k^{(t)}||^2</script></span></script></span>
-    2. for every cluster k, recalculate the center: <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2</span><script type="math/tex">\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2</span><script type="math/tex">\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2</script></span></script></span>
+    1. for every sample <span class="arithmatex">\(x_i\)</span>, categorize it to the cluster that has shortest distance <span class="arithmatex">\(<span class="arithmatex">\(c_i^{(t)} \leftarrow {\arg\min}_k ||x_i - \mu_k^{(t)}||^2\)</span>\)</span>
+    2. for every cluster k, recalculate the center: <span class="arithmatex">\(<span class="arithmatex">\(\mu_k^{(t+1)}\leftarrow {\arg\min}_\mu \sum_{i:c_i^{(t)}=k} ||x_i - \mu||^2\)</span>\)</span>
 <div class="highlight"><pre><span></span><code># k-Means algorithm
 def k_means(data, centers, k):
     while True:
@@ -2774,7 +2319,11 @@ def k_means(data, centers, k):
     
       <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
         <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="../../javascripts/floating-nav.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       

@@ -74,7 +74,7 @@ Where $SS_\text{residuals}$ denotes the residual sum of squares for predictions 
 ```python
 import numpy as np
 # given data
-housing_data = np.array([[1800, 3], [2400, 4],[1416, 2], [3000, 5]])
+housing_data = np.array(\[\[[1800, 3], [2400, 4], [1416, 2], [3000, 5]\])
 prices = np.array([350000, 475000, 230000, 640000])
 
 # adding 1s to our matrix

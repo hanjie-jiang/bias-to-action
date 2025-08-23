@@ -76,7 +76,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
 # Sample data
-data = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+data = np.array(\[\[[1, 2, 3], [4, 5, 6], [7, 8, 9]\])
 
 # Min-Max Scaling
 minmax_scaler = MinMaxScaler()

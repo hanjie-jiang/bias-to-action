@@ -2,66 +2,126 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/Calculus_and_Gradient_Descent/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/Foundational%20knowledge%20plan/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/Information_Theory/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/Integration_and_Project/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/Linear_Algebra_for_ML/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Engineering_and_Data_Structure_Questions/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/language_model/Ngram_Language_Modeling/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/ML_Fundamentals_Overview/</loc>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/ML_fundamentals/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/classical_algorithms/decision_trees/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/classical_algorithms/linear_regression/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/classical_algorithms/logistic_regression/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/feature_engineering/categorical_encoding/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/feature_engineering/data_types_and_normalization/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/feature_engineering/feature_crosses/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/model_evaluation/evaluation_methods/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/model_evaluation/hyperparameter_tuning/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/model_evaluation/metrics_and_validation/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/regularization/early_stopping/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/regularization/l1_l2_regularization/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/regularization/overfitting_underfitting/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/unsupervised_learning/k_means_clustering/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/unsupervised_learning/k_nearest_neighbors/</loc>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/neural_networks_and_deep_learning/Neural_Networks_and_Deep_Learning_Overview/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/neural_networks_and_deep_learning/neural_networks_sections/Introduction_to_Perceptron_Algorithm/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/probability_and_markov/Probability_and_Markov_Overview/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/probability_and_markov/probability_and_markov_sections/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/probability_and_markov/probability_and_markov_sections/conditional_probability_and_bayes_rule/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes/</loc>
-         <lastmod>2025-08-22</lastmod>
+         <lastmod>2025-08-23</lastmod>
     </url>
 </urlset>
