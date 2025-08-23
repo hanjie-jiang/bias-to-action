@@ -10,3 +10,5 @@ All the materials can also be found readable at GitPage URL (https://hanjie-jian
 - added in the engineering and data structure related pages for future reference when coding
 - refactored the front page design and made sure that the pastel hero looks ok
 - fixed the math equations not showing properly but in raw format
+- restructured the ML fundamentals section to be more organized and readable
+- upgraded the front page to have hover over drop-down menu
