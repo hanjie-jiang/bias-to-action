@@ -5,10 +5,6 @@
          <lastmod>2025-08-23</lastmod>
     </url>
     <url>
-         <loc>https://hanjie-jiang.github.io/ml-learning-notes/Calculus_and_Gradient_Descent/</loc>
-         <lastmod>2025-08-23</lastmod>
-    </url>
-    <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/Foundational%20knowledge%20plan/</loc>
          <lastmod>2025-08-23</lastmod>
     </url>
@@ -21,11 +17,71 @@
          <lastmod>2025-08-23</lastmod>
     </url>
     <url>
-         <loc>https://hanjie-jiang.github.io/ml-learning-notes/Linear_Algebra_for_ML/</loc>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/calculus_and_linear_algebra/Calculus_and_Gradient_Descent/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/calculus_and_linear_algebra/Linear_Algebra_for_ML/</loc>
          <lastmod>2025-08-23</lastmod>
     </url>
     <url>
          <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Engineering_and_Data_Structure_Questions/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Data_Structures/Python_Dictionaries/Dictionaries_Overview/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Data_Structures/Python_Dictionaries/Dictionary_Operations/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Data_Structures/Python_Sets/Set_Operations/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Data_Structures/Python_Sets/Sets_Overview/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Overview/Engineering_and_Data_Structure_Overview/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Array_Intersection/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Non_Repeating_Elements/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Unique_Elements/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Problem_Solving/String_Problems/String_Operations/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Problem_Solving/String_Problems/Unique_Strings/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Resources/Common_Patterns/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Resources/Interview_Strategies/</loc>
+         <lastmod>2025-08-23</lastmod>
+    </url>
+    <url>
+         <loc>https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Resources/Time_Complexity_Guide/</loc>
          <lastmod>2025-08-23</lastmod>
     </url>
     <url>

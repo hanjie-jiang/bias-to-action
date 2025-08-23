@@ -52,9 +52,37 @@ extra_javascript:
 
 nav:
   - Home: index.md
-  - Engineering and Data Structure: 
-      - Frequently used: engineering_and_data_structure/Engineering_and_Data_Structure_Questions.md
-  - Foundations:
+  - Engineering and Data Structure:
+      - Overview: engineering_and_data_structure/Overview/Engineering_and_Data_Structure_Overview.md
+      - Data Structures:
+          - Python Sets:
+              - Sets Overview: engineering_and_data_structure/Data_Structures/Python_Sets/Sets_Overview.md
+              - Set Operations: engineering_and_data_structure/Data_Structures/Python_Sets/Set_Operations.md
+          - Python Dictionaries:
+              - Dictionaries Overview: engineering_and_data_structure/Data_Structures/Python_Dictionaries/Dictionaries_Overview.md
+              - Dictionary Operations: engineering_and_data_structure/Data_Structures/Python_Dictionaries/Dictionary_Operations.md
+      - Problem Solving:
+          - Set & Dictionary Problems:
+              - Array Intersection: engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Array_Intersection.md
+              - Non-Repeating Elements: engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Non_Repeating_Elements.md
+              - Unique Elements: engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Unique_Elements.md
+              - Anagram Pairs: engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs.md
+          - String Problems:
+              - Unique Strings: engineering_and_data_structure/Problem_Solving/String_Problems/Unique_Strings.md
+              - String Operations: engineering_and_data_structure/Problem_Solving/String_Problems/String_Operations.md
+      - Resources:
+          - Common Patterns: engineering_and_data_structure/Resources/Common_Patterns.md
+          - Time Complexity Guide: engineering_and_data_structure/Resources/Time_Complexity_Guide.md
+          - Interview Strategies: engineering_and_data_structure/Resources/Interview_Strategies.md
+  - ML Foundations and Algorithms:
+      - Probability & Markov:
+          - Overview: probability_and_markov/Probability_and_Markov_Overview.md
+          - Bayes’ Rule: probability_and_markov/probability_and_markov_sections/conditional_probability_and_bayes_rule.md
+          - Naive Bayes: probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes.md
+          - Joint & Marginal: probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions.md
+      - Linear Algebra:
+           - Linear Algebra for ML: calculus_and_linear_algebra/Linear_Algebra_for_ML.md
+           - Calculus and Gradient Descent: calculus_and_linear_algebra/Calculus_and_Gradient_Descent.md
       - ML Fundamentals:
           - Overview: ml_fundamentals/ML_Fundamentals_Overview.md
           - Feature Engineering:
@@ -76,12 +104,6 @@ nav:
           - Unsupervised Learning:
               - K-Nearest Neighbors: ml_fundamentals/unsupervised_learning/k_nearest_neighbors.md
               - K-Means Clustering: ml_fundamentals/unsupervised_learning/k_means_clustering.md
-      - Probability & Markov:
-          - Overview: probability_and_markov/Probability_and_Markov_Overview.md
-          - Bayes’ Rule: probability_and_markov/probability_and_markov_sections/conditional_probability_and_bayes_rule.md
-          - Naive Bayes: probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes.md
-          - Joint & Marginal: probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions.md
-  - Linear Algebra: Linear_Algebra_for_ML.md
   - Language Model: language_model/Ngram_Language_Modeling.md
   - Neural Networks:
       - Overview: neural_networks_and_deep_learning/Neural_Networks_and_Deep_Learning_Overview.md

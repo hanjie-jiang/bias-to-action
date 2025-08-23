@@ -197,6 +197,7 @@
   },
   "active": "ef405ffda0e8ce35",
   "lastOpenFiles": [
+    "_notes/engineering_and_data_structure/Engineering_and_Data_Structure_Questions.md",
     "site/assets/stylesheets/main.7e37652d.min.css",
     "site/assets/javascripts/workers/search.973d3a69.min.js.map",
     "site/assets/javascripts/workers/search.973d3a69.min.js",
@@ -208,7 +209,6 @@
     "site/ml_fundamentals/unsupervised_learning/k_nearest_neighbors/index.html",
     "site/ml_fundamentals/unsupervised_learning/k_means_clustering/index.html",
     "site/ml_fundamentals/unsupervised_learning/k_nearest_neighbors",
-    "site/ml_fundamentals/unsupervised_learning/k_means_clustering",
     "site/ml_fundamentals/model_evaluation/resources/Screenshot 2025-08-05 at 9.30.27 PM.png",
     "site/ml_fundamentals/model_evaluation/resources/Screenshot 2025-08-05 at 8.22.11 PM.png",
     "site/ml_fundamentals/model_evaluation/resources/p-r_curve.png",
@@ -234,7 +234,6 @@
     "_notes/ml_fundamentals/feature_engineering/data_types_and_normalization.md",
     "_notes/ml_fundamentals/ML_Fundamentals_Overview.md",
     "_notes/ml_fundamentals/ML_fundamentals.md",
-    "_notes/engineering_and_data_structure/Engineering_and_Data_Structure_Questions.md",
     "_notes/Foundational knowledge plan.md",
     "README.md",
     "_notes/probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes.md",
