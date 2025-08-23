@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_notes/engineering_and_data_structure/Engineering_and_Data_Structure_Questions.md",
+                "file": "_notes/engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Engineering_and_Data_Structure_Questions"
+              "title": "Anagram_Pairs"
             }
           }
         ],
@@ -197,6 +197,7 @@
   },
   "active": "ef405ffda0e8ce35",
   "lastOpenFiles": [
+    "_notes/engineering_and_data_structure/Overview/Engineering_and_Data_Structure_Overview.md",
     "_notes/engineering_and_data_structure/Engineering_and_Data_Structure_Questions.md",
     "site/assets/stylesheets/main.7e37652d.min.css",
     "site/assets/javascripts/workers/search.973d3a69.min.js.map",
