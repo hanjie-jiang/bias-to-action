@@ -1,8 +1,5 @@
 ---
-title: Week1P1 - Conditional Probability & BayesΓÇÖ Rule
----
----
-title: Conditional Probability & Bayes Rule
+title:  Conditional Probability & Bayes Rule
 ---
 
 **Resources**
@@ -17,10 +14,12 @@ title: Conditional Probability & Bayes Rule
 | **Loves Soda**          |   2<br>$p=\frac{2}{14}$   |   5<br>$p=\frac{5}{14}$   | 2+5=7<br>$p=\frac{7}{14}$ |
 | **Does not Loves Soda** |   4<br>$p=\frac{4}{14}$   |   3<br>$p=\frac{3}{14}$   | 4+3=7<br>$p=\frac{7}{14}$ |
 | Column total            | 2+4=6<br>$p=\frac{6}{14}$ | 5+3=8<br>$p=\frac{8}{14}$ |                           |
-##### Probabilities
+
+## Probabilities
 $p(\text{loves candy and soda}) =\frac{2}{14}=0.14$
 $p(\text{does not love candy but love soda}) =\frac{5}{14}=0.36$
-##### Conditional probabilities
+
+## Conditional probabilities
 - probability of someone loving candy and soda given that we know they love soda: $p(\text{loves candy and soda}\vert\text{loves soda}) =\frac{2}{2+5}=0.29$
 - probability of someone does not love candy, given that we know they love soda: $p(\text{does not love candy but love soda}\vert\text{loves soda}) =\frac{5}{2+5}=0.71$
 Dividing the numerator and denominator by the total number of people 14, the equation above becomes:
@@ -29,7 +28,8 @@ To generalize:
 $$p(\text{something will happen}\vert\text{we know})=\frac{p(\text{something will happen})}{p(\text{we know})}$$
 
 <span style="background-color: #FEE9E7">So the conditional probability is the probability that something will happen scaled by whatever knowledge we already have about the event</span>
-##### Bayesâ€™ Theorem
+
+## Bayes Theorem
 $$p(\text{something will happen}\vert\text{we know})=\frac{p(\text{something will happen})}{p(\text{we know})}$$
 
 Taking the conditional probabilities from the section above, we can calculate:

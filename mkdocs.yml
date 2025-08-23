@@ -47,6 +47,7 @@ markdown_extensions:
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/mathjax.js
+  - javascripts/floating-nav.js
   - https://unpkg.com/mermaid@10/dist/mermaid.min.js
 
 nav:
@@ -54,7 +55,27 @@ nav:
   - Engineering and Data Structure: 
       - Frequently used: engineering_and_data_structure/Engineering_and_Data_Structure_Questions.md
   - Foundations:
-      - ML Fundamentals: ml_fundamentals/ML_fundamentals.md
+      - ML Fundamentals:
+          - Overview: ml_fundamentals/ML_Fundamentals_Overview.md
+          - Feature Engineering:
+              - Data Types & Normalization: ml_fundamentals/feature_engineering/data_types_and_normalization.md
+              - Categorical Encoding: ml_fundamentals/feature_engineering/categorical_encoding.md
+              - Feature Crosses: ml_fundamentals/feature_engineering/feature_crosses.md
+          - Model Evaluation:
+              - Evaluation Methods: ml_fundamentals/model_evaluation/evaluation_methods.md
+              - Metrics & Validation: ml_fundamentals/model_evaluation/metrics_and_validation.md
+              - Hyperparameter Tuning: ml_fundamentals/model_evaluation/hyperparameter_tuning.md
+          - Regularization:
+              - Overfitting & Underfitting: ml_fundamentals/regularization/overfitting_underfitting.md
+              - L1/L2 Regularization: ml_fundamentals/regularization/l1_l2_regularization.md
+              - Early Stopping: ml_fundamentals/regularization/early_stopping.md
+          - Classical Algorithms:
+              - Linear Regression: ml_fundamentals/classical_algorithms/linear_regression.md
+              - Logistic Regression: ml_fundamentals/classical_algorithms/logistic_regression.md
+              - Decision Trees: ml_fundamentals/classical_algorithms/decision_trees.md
+          - Unsupervised Learning:
+              - K-Nearest Neighbors: ml_fundamentals/unsupervised_learning/k_nearest_neighbors.md
+              - K-Means Clustering: ml_fundamentals/unsupervised_learning/k_means_clustering.md
       - Probability & Markov:
           - Overview: probability_and_markov/Probability_and_Markov_Overview.md
           - Bayes’ Rule: probability_and_markov/probability_and_markov_sections/conditional_probability_and_bayes_rule.md

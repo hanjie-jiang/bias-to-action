@@ -11,10 +11,53 @@ hide:
     <h1>Machine Learning Notes</h1>
     <p class="subtitle">Curated notes on probability, foundations, and neural networks.</p>
     <p class="hero__actions">
-      <a class="md-button md-button--primary" href="/ml-learning-notes/ml_fundamentals/ML_fundamentals/">ML Fundamentals</a>
-      <a class="md-button" href="/ml-learning-notes/probability_and_markov/Probability_and_Markov_Overview/">Probability &amp; Markov</a>
-      <a class="md-button" href="/ml-learning-notes/engineering_and_data_structure/Engineering_and_Data_Structure_Questions/">Engineering &amp; Data Structure</a>
-      <a class="md-button" href="/ml-learning-notes/language_model/Ngram_Language_Modeling/">Language Model</a>
+      <div class="hero-button-container">
+        <a class="hero-button" href="ml_fundamentals/ML_Fundamentals_Overview/">ML Fundamentals</a>
+        <div class="hero-dropdown">
+          <h4>ML Fundamentals</h4>
+          <ul>
+            <li><a href="ml_fundamentals/ML_Fundamentals_Overview/">Overview</a></li>
+            <li><a href="ml_fundamentals/feature_engineering/data_types_and_normalization/">Feature Engineering</a></li>
+            <li><a href="ml_fundamentals/model_evaluation/evaluation_methods/">Model Evaluation</a></li>
+            <li><a href="ml_fundamentals/regularization/overfitting_underfitting/">Regularization</a></li>
+            <li><a href="ml_fundamentals/classical_algorithms/linear_regression/">Classical Algorithms</a></li>
+            <li><a href="ml_fundamentals/unsupervised_learning/k_nearest_neighbors/">Unsupervised Learning</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="hero-button-container">
+        <a class="hero-button" href="probability_and_markov/Probability_and_Markov_Overview/">Probability & Markov</a>
+        <div class="hero-dropdown">
+          <h4>Probability & Markov</h4>
+          <ul>
+            <li><a href="probability_and_markov/Probability_and_Markov_Overview/">Overview</a></li>
+            <li><a href="probability_and_markov/probability_and_markov_sections/conditional_probability_and_bayes_rule/">Bayes' Rule</a></li>
+            <li><a href="probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes/">Naive Bayes</a></li>
+            <li><a href="probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions/">Joint & Marginal</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="hero-button-container">
+        <a class="hero-button" href="engineering_and_data_structure/Engineering_and_Data_Structure_Questions/">Engineering & Data Structure</a>
+        <div class="hero-dropdown">
+          <h4>Engineering & Data Structure</h4>
+          <ul>
+            <li><a href="engineering_and_data_structure/Engineering_and_Data_Structure_Questions/">Frequently Used</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="hero-button-container">
+        <a class="hero-button" href="language_model/Ngram_Language_Modeling/">Language Model</a>
+        <div class="hero-dropdown">
+          <h4>Language Models</h4>
+          <ul>
+            <li><a href="language_model/Ngram_Language_Modeling/">N-gram Language Modeling</a></li>
+          </ul>
+        </div>
+      </div>
     </p>
   </div>
 </div>
