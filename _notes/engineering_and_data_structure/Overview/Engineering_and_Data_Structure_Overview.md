@@ -9,8 +9,11 @@ Welcome to the Engineering & Data Structure section! This comprehensive guide co
 ## Learning Path
 
 ### 1. Data Structures
-- **[Python Sets](../Data_Structures/Python_Sets/Sets_Overview.md)** - Unordered collections of unique elements
-- **[Python Dictionaries](../Data_Structures/Python_Dictionaries/Dictionaries_Overview.md)** - Key-value pair data structures
+- **[Hash Tables Overview](../Data_Structures/Hash_Tables/Hash_Tables_Overview.md)** - Fundamental concepts and applications
+- **[Hash Functions & Collisions](../Data_Structures/Hash_Tables/Hash_Functions_and_Collisions.md)** - Implementation details and collision resolution
+- **[Python Dictionaries](../Data_Structures/Hash_Tables/Python_Dictionaries.md)** - Key-value pair data structures
+- **[Python Sets](../Data_Structures/Hash_Tables/Python_Sets.md)** - Unordered collections of unique elements
+- **[Hash Table Problems](../Data_Structures/Hash_Tables/Hash_Table_Problems.md)** - Common coding problems and solutions
 
 ### 2. Problem Solving
 - **[Set & Dictionary Problems](../Problem_Solving/Set_Dictionary_Problems/Array_Intersection.md)** - Set operations and dictionary applications
@@ -24,10 +27,11 @@ Welcome to the Engineering & Data Structure section! This comprehensive guide co
 ## Key Concepts Covered
 
 ### Data Structures
-- **Sets**: Unordered collections with unique elements, O(1) lookups
-- **Dictionaries**: Key-value mappings for efficient lookups and counting
-- **Set Operations**: Union, intersection, difference for data analysis
-- **Dictionary Patterns**: Counting, grouping, caching, and memoization
+- **Hash Tables**: Fundamental data structure providing O(1) average case operations
+- **Hash Functions**: Converting keys to array indices with collision resolution strategies
+- **Python Dictionaries**: Key-value mappings for efficient lookups and counting
+- **Python Sets**: Unordered collections with unique elements, O(1) lookups
+- **Hash Table Applications**: Caching, frequency counting, fast lookups, and data indexing
 
 ### Problem-Solving Patterns
 - **Set-based Solutions**: Removing duplicates, finding intersections, uniqueness
@@ -42,7 +46,7 @@ Welcome to the Engineering & Data Structure section! This comprehensive guide co
 
 ## Getting Started
 
-1. **Begin with Data Structures**: Start with Python Sets and Dictionaries to understand basic operations and characteristics
+1. **Begin with Hash Tables**: Start with the Hash Tables Overview to understand the fundamental concepts, then explore Python implementations
 2. **Practice with Problems**: Work through the problem-solving sections to see practical applications
 3. **Study Patterns**: Learn common patterns and time complexity analysis
 4. **Prepare for Interviews**: Use the interview strategies and practice problems

@@ -118,7 +118,7 @@ filtered = {k: v for k, v in person.items() if isinstance(v, str)}
 
 ## Related Topics
 
-- **[Dictionary Operations](Dictionary_Operations.md)** - Detailed dictionary methods and techniques
+- **[Dictionary Operations](Python_Dictionary_Operations.md)** - Detailed dictionary methods and techniques
 - **[Array Intersection](../../Problem_Solving/Set_Dictionary_Problems/Array_Intersection.md)** - Using dictionaries for counting
 - **[Anagram Pairs](../../Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs.md)** - Dictionary-based anagram detection
 - **[Unique Strings](../../Problem_Solving/String_Problems/Unique_Strings.md)** - Dictionary-based string problems

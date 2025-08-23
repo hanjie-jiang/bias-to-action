@@ -136,7 +136,7 @@ unique_chars = {char for char in "hello world"}  # {'h', 'e', 'l', 'o', ' ', 'w'
 
 ## Related Topics
 
-- **[Sets Overview](Sets_Overview.md)** - Basic set concepts and characteristics
+- **[Sets Overview](Python_Sets.md)** - Basic set concepts and characteristics
 - **[Array Intersection](../../Problem_Solving/Set_Dictionary_Problems/Array_Intersection.md)** - Using set intersection
 - **[Non-Repeating Elements](../../Problem_Solving/Set_Dictionary_Problems/Non_Repeating_Elements.md)** - Using sets for uniqueness
 - **[Unique Elements](../../Problem_Solving/Set_Dictionary_Problems/Unique_Elements.md)** - Using set difference operations

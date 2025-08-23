@@ -8,25 +8,25 @@
       
       
       
-        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/ml_fundamentals/regularization/early_stopping/">
+        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Dictionaries/">
       
       
-        <link rel="prev" href="../l1_l2_regularization/">
+        <link rel="prev" href="../Hash_Functions_and_Collisions/">
       
       
-        <link rel="next" href="../../classical_algorithms/linear_regression/">
+        <link rel="next" href="../Python_Dictionary_Operations/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
     
     
       
-        <title>Early Stopping - Machine Learning Notes</title>
+        <title>Python Dictionaries Overview - Machine Learning Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e37652d.min.css">
       
       
 
@@ -45,11 +45,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/styles/layout.css">
+      <link rel="stylesheet" href="../../../../assets/styles/layout.css">
     
-      <link rel="stylesheet" href="../../../assets/styles/hero.css">
+      <link rel="stylesheet" href="../../../../assets/styles/hero.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#early-stopping" class="md-skip">
+        <a href="#python-dictionaries-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../../../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Early Stopping
+              Python Dictionaries Overview
             
           </span>
         </div>
@@ -186,7 +186,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../../../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -204,7 +204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -223,8 +223,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -235,11 +237,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -255,7 +257,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Engineering and Data Structure
@@ -269,7 +271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Overview/Engineering_and_Data_Structure_Overview/" class="md-nav__link">
+      <a href="../../../Overview/Engineering_and_Data_Structure_Overview/" class="md-nav__link">
         
   
   
@@ -289,6 +291,8 @@
                 
   
   
+    
+  
   
   
     
@@ -298,11 +302,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -318,7 +322,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Data Structures
@@ -329,6 +333,8 @@
                 
   
   
+    
+  
   
   
     
@@ -338,11 +344,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
@@ -358,7 +364,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2_1">
             <span class="md-nav__icon md-icon"></span>
             Hash Tables
@@ -372,7 +378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Tables_Overview/" class="md-nav__link">
+      <a href="../Hash_Tables_Overview/" class="md-nav__link">
         
   
   
@@ -395,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Functions_and_Collisions/" class="md-nav__link">
+      <a href="../Hash_Functions_and_Collisions/" class="md-nav__link">
         
   
   
@@ -415,10 +421,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Dictionaries/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Python Dictionaries
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -429,6 +457,137 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Characteristics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-dictionaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Dictionaries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-and-modifying" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing and Modifying
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Methods
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dictionary-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dictionary Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dictionary Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merging-dictionaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merging Dictionaries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dictionary-comprehension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dictionary Comprehension
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time Complexity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Use Cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Topics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -441,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Dictionary_Operations/" class="md-nav__link">
+      <a href="../Python_Dictionary_Operations/" class="md-nav__link">
         
   
   
@@ -464,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Sets/" class="md-nav__link">
+      <a href="../Python_Sets/" class="md-nav__link">
         
   
   
@@ -487,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Set_Operations/" class="md-nav__link">
+      <a href="../Python_Set_Operations/" class="md-nav__link">
         
   
   
@@ -510,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Table_Problems/" class="md-nav__link">
+      <a href="../Hash_Table_Problems/" class="md-nav__link">
         
   
   
@@ -629,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Array_Intersection/" class="md-nav__link">
+      <a href="../../../Problem_Solving/Set_Dictionary_Problems/Array_Intersection/" class="md-nav__link">
         
   
   
@@ -652,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Non_Repeating_Elements/" class="md-nav__link">
+      <a href="../../../Problem_Solving/Set_Dictionary_Problems/Non_Repeating_Elements/" class="md-nav__link">
         
   
   
@@ -675,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Unique_Elements/" class="md-nav__link">
+      <a href="../../../Problem_Solving/Set_Dictionary_Problems/Unique_Elements/" class="md-nav__link">
         
   
   
@@ -698,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs/" class="md-nav__link">
+      <a href="../../../Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs/" class="md-nav__link">
         
   
   
@@ -769,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Problem_Solving/String_Problems/Unique_Strings/" class="md-nav__link">
+      <a href="../../../Problem_Solving/String_Problems/Unique_Strings/" class="md-nav__link">
         
   
   
@@ -792,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Problem_Solving/String_Problems/String_Operations/" class="md-nav__link">
+      <a href="../../../Problem_Solving/String_Problems/String_Operations/" class="md-nav__link">
         
   
   
@@ -871,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Resources/Common_Patterns/" class="md-nav__link">
+      <a href="../../../Resources/Common_Patterns/" class="md-nav__link">
         
   
   
@@ -894,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Resources/Time_Complexity_Guide/" class="md-nav__link">
+      <a href="../../../Resources/Time_Complexity_Guide/" class="md-nav__link">
         
   
   
@@ -917,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../engineering_and_data_structure/Resources/Interview_Strategies/" class="md-nav__link">
+      <a href="../../../Resources/Interview_Strategies/" class="md-nav__link">
         
   
   
@@ -952,8 +1111,6 @@
       
   
   
-    
-  
   
   
     
@@ -966,11 +1123,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -986,7 +1143,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             ML Foundations and Algorithms
@@ -1040,7 +1197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../probability_and_markov/Probability_and_Markov_Overview/" class="md-nav__link">
+      <a href="../../../../probability_and_markov/Probability_and_Markov_Overview/" class="md-nav__link">
         
   
   
@@ -1063,7 +1220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../probability_and_markov/probability_and_markov_sections/conditional_probability_and_bayes_rule/" class="md-nav__link">
+      <a href="../../../../probability_and_markov/probability_and_markov_sections/conditional_probability_and_bayes_rule/" class="md-nav__link">
         
   
   
@@ -1086,7 +1243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes/" class="md-nav__link">
+      <a href="../../../../probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes/" class="md-nav__link">
         
   
   
@@ -1109,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions/" class="md-nav__link">
+      <a href="../../../../probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions/" class="md-nav__link">
         
   
   
@@ -1180,7 +1337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../calculus_and_linear_algebra/Linear_Algebra_for_ML/" class="md-nav__link">
+      <a href="../../../../calculus_and_linear_algebra/Linear_Algebra_for_ML/" class="md-nav__link">
         
   
   
@@ -1203,7 +1360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../calculus_and_linear_algebra/Calculus_and_Gradient_Descent/" class="md-nav__link">
+      <a href="../../../../calculus_and_linear_algebra/Calculus_and_Gradient_Descent/" class="md-nav__link">
         
   
   
@@ -1231,8 +1388,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1242,11 +1397,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -1262,7 +1417,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             ML Fundamentals
@@ -1276,7 +1431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML_Fundamentals_Overview/" class="md-nav__link">
+      <a href="../../../../ml_fundamentals/ML_Fundamentals_Overview/" class="md-nav__link">
         
   
   
@@ -1339,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../feature_engineering/data_types_and_normalization/" class="md-nav__link">
+      <a href="../../../../ml_fundamentals/feature_engineering/data_types_and_normalization/" class="md-nav__link">
         
   
   
@@ -1362,7 +1517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../feature_engineering/categorical_encoding/" class="md-nav__link">
+      <a href="../../../../ml_fundamentals/feature_engineering/categorical_encoding/" class="md-nav__link">
         
   
   
@@ -1385,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../feature_engineering/feature_crosses/" class="md-nav__link">
+      <a href="../../../../ml_fundamentals/feature_engineering/feature_crosses/" class="md-nav__link">
         
   
   
@@ -1456,7 +1611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../model_evaluation/evaluation_methods/" class="md-nav__link">
+      <a href="../../../../ml_fundamentals/model_evaluation/evaluation_methods/" class="md-nav__link">
         
   
   
@@ -1479,7 +1634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../model_evaluation/metrics_and_validation/" class="md-nav__link">
+      <a href="../../../../ml_fundamentals/model_evaluation/metrics_and_validation/" class="md-nav__link">
         
   
   
@@ -1502,7 +1657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../model_evaluation/hyperparameter_tuning/" class="md-nav__link">
+      <a href="../../../../ml_fundamentals/model_evaluation/hyperparameter_tuning/" class="md-nav__link">
         
   
   
@@ -1530,8 +1685,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1541,11 +1694,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_4" >
         
           
           <label class="md-nav__link" for="__nav_3_3_4" id="__nav_3_3_4_label" tabindex="0">
@@ -1561,7 +1714,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3_4">
             <span class="md-nav__icon md-icon"></span>
             Regularization
@@ -1575,7 +1728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overfitting_underfitting/" class="md-nav__link">
+      <a href="../../../../ml_fundamentals/regularization/overfitting_underfitting/" class="md-nav__link">
         
   
   
@@ -1598,7 +1751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../l1_l2_regularization/" class="md-nav__link">
+      <a href="../../../../ml_fundamentals/regularization/l1_l2_regularization/" class="md-nav__link">
         
   
   
@@ -1618,32 +1771,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Early Stopping
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../ml_fundamentals/regularization/early_stopping/" class="md-nav__link">
         
   
   
@@ -1654,35 +1785,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#related-topics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Related Topics
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1743,7 +1845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../classical_algorithms/linear_regression/" class="md-nav__link">
+      <a href="../../../../ml_fundamentals/classical_algorithms/linear_regression/" class="md-nav__link">
         
   
   
@@ -1766,7 +1868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../classical_algorithms/logistic_regression/" class="md-nav__link">
+      <a href="../../../../ml_fundamentals/classical_algorithms/logistic_regression/" class="md-nav__link">
         
   
   
@@ -1789,7 +1891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../classical_algorithms/decision_trees/" class="md-nav__link">
+      <a href="../../../../ml_fundamentals/classical_algorithms/decision_trees/" class="md-nav__link">
         
   
   
@@ -1860,7 +1962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unsupervised_learning/k_nearest_neighbors/" class="md-nav__link">
+      <a href="../../../../ml_fundamentals/unsupervised_learning/k_nearest_neighbors/" class="md-nav__link">
         
   
   
@@ -1883,7 +1985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../unsupervised_learning/k_means_clustering/" class="md-nav__link">
+      <a href="../../../../ml_fundamentals/unsupervised_learning/k_means_clustering/" class="md-nav__link">
         
   
   
@@ -1929,7 +2031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../language_model/Ngram_Language_Modeling/" class="md-nav__link">
+      <a href="../../../../language_model/Ngram_Language_Modeling/" class="md-nav__link">
         
   
   
@@ -1994,7 +2096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../neural_networks_and_deep_learning/Neural_Networks_and_Deep_Learning_Overview/" class="md-nav__link">
+      <a href="../../../../neural_networks_and_deep_learning/Neural_Networks_and_Deep_Learning_Overview/" class="md-nav__link">
         
   
   
@@ -2017,7 +2119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../neural_networks_and_deep_learning/neural_networks_sections/Introduction_to_Perceptron_Algorithm/" class="md-nav__link">
+      <a href="../../../../neural_networks_and_deep_learning/neural_networks_sections/Introduction_to_Perceptron_Algorithm/" class="md-nav__link">
         
   
   
@@ -2056,17 +2158,107 @@
 
 
 
-<h1 id="early-stopping">Early Stopping<a class="headerlink" href="#early-stopping" title="Permanent link">&para;</a></h1>
+<h1 id="python-dictionaries-overview">Python Dictionaries Overview<a class="headerlink" href="#python-dictionaries-overview" title="Permanent link">&para;</a></h1>
+<p>Python dictionaries are mutable, unordered collections of key-value pairs. They provide fast O(1) average time complexity for lookups, insertions, and deletions.</p>
+<h2 id="key-characteristics">Key Characteristics<a class="headerlink" href="#key-characteristics" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Early stopping watches <strong>validation</strong> loss/metric and halts training when it stops improving, and is a <strong>stopping rule</strong> driven by the <strong>validation metric's change</strong>, not a pre-fixed iteration count</li>
-<li>It <strong>reduces overfitting</strong> (lower variance) by not letting the model memorize noise; acts like <strong>implicit L2</strong> regularization.</li>
+<li><strong>Key-Value Pairs</strong>: Each element is a key-value pair</li>
+<li><strong>Unordered</strong>: Elements are not stored in any specific order (Python 3.7+ maintains insertion order)</li>
+<li><strong>Mutable</strong>: Can add, modify, or remove key-value pairs</li>
+<li><strong>Hashable Keys</strong>: Keys must be hashable (immutable)</li>
+<li><strong>Unique Keys</strong>: No duplicate keys allowed</li>
 </ul>
-<p>Train while checking performance on a validation set. Whenever the validation score improves, remember those weights. If it doesn't improve for a while (patience), stop and roll back to the best checkpoint. This caps model complexity at the point where it generalized best, preventing the later epochs from fitting noise.</p>
+<h2 id="basic-operations">Basic Operations<a class="headerlink" href="#basic-operations" title="Permanent link">&para;</a></h2>
+<h3 id="creating-dictionaries">Creating Dictionaries<a class="headerlink" href="#creating-dictionaries" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Empty dictionary</span>
+<span class="n">empty_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># Dictionary with initial values</span>
+<span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">}</span>
+
+<span class="c1"># Using dict() constructor</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">one</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">two</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">three</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># From list of tuples</span>
+<span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="n">dict_from_pairs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="accessing-and-modifying">Accessing and Modifying<a class="headerlink" href="#accessing-and-modifying" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+
+<span class="c1"># Accessing values</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">person</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>  <span class="c1"># Raises KeyError if key doesn&#39;t exist</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Returns default value if key doesn&#39;t exist</span>
+
+<span class="c1"># Adding/Modifying</span>
+<span class="n">person</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;New York&#39;</span>  <span class="c1"># Add new key-value pair</span>
+<span class="n">person</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">31</span>  <span class="c1"># Modify existing value</span>
+
+<span class="c1"># Removing</span>
+<span class="k">del</span> <span class="n">person</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>  <span class="c1"># Raises KeyError if key doesn&#39;t exist</span>
+<span class="n">city</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;city&#39;</span><span class="p">,</span> <span class="s1">&#39;Unknown&#39;</span><span class="p">)</span>  <span class="c1"># Returns default if key doesn&#39;t exist</span>
+<span class="n">person</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>  <span class="c1"># Remove all items</span>
+</code></pre></div>
+<h2 id="common-methods">Common Methods<a class="headerlink" href="#common-methods" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">}</span>
+
+<span class="c1"># Keys, values, and items</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>  <span class="c1"># dict_keys([&#39;name&#39;, &#39;age&#39;, &#39;city&#39;])</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>  <span class="c1"># dict_values([&#39;John&#39;, 30, &#39;New York&#39;])</span>
+<span class="n">items</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>  <span class="c1"># dict_items([(&#39;name&#39;, &#39;John&#39;), (&#39;age&#39;, 30), (&#39;city&#39;, &#39;New York&#39;)])</span>
+
+<span class="c1"># Membership testing</span>
+<span class="s1">&#39;name&#39;</span> <span class="ow">in</span> <span class="n">person</span>  <span class="c1"># True</span>
+<span class="s1">&#39;phone&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">person</span>  <span class="c1"># True</span>
+
+<span class="c1"># Length</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>  <span class="c1"># 3</span>
+</code></pre></div>
+<h2 id="dictionary-operations">Dictionary Operations<a class="headerlink" href="#dictionary-operations" title="Permanent link">&para;</a></h2>
+<h3 id="merging-dictionaries">Merging Dictionaries<a class="headerlink" href="#merging-dictionaries" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+
+<span class="c1"># Using update() method</span>
+<span class="n">dict1</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dict2</span><span class="p">)</span>  <span class="c1"># Modifies dict1 in-place</span>
+
+<span class="c1"># Using | operator (Python 3.9+)</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="n">dict1</span> <span class="o">|</span> <span class="n">dict2</span>  <span class="c1"># Creates new dictionary</span>
+
+<span class="c1"># Using ** unpacking</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">dict1</span><span class="p">,</span> <span class="o">**</span><span class="n">dict2</span><span class="p">}</span>
+</code></pre></div>
+<h3 id="dictionary-comprehension">Dictionary Comprehension<a class="headerlink" href="#dictionary-comprehension" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create dictionary from list</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">squares</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">}</span>
+
+<span class="c1"># Filter dictionary</span>
+<span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">,</span> <span class="s1">&#39;phone&#39;</span><span class="p">:</span> <span class="s1">&#39;123-456&#39;</span><span class="p">}</span>
+<span class="n">filtered</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">person</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">)}</span>
+</code></pre></div>
+<h2 id="time-complexity">Time Complexity<a class="headerlink" href="#time-complexity" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Access</strong>: O(1) average case</li>
+<li><strong>Insert/Update</strong>: O(1) average case</li>
+<li><strong>Delete</strong>: O(1) average case</li>
+<li><strong>Search</strong>: O(1) average case</li>
+<li><strong>Iteration</strong>: O(n)</li>
+</ul>
+<h2 id="common-use-cases">Common Use Cases<a class="headerlink" href="#common-use-cases" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Caching/Memoization</strong>: Store computed results</li>
+<li><strong>Counting</strong>: Track frequency of elements</li>
+<li><strong>Grouping</strong>: Organize data by categories</li>
+<li><strong>Configuration</strong>: Store settings and parameters</li>
+<li><strong>JSON-like Data</strong>: Represent structured data</li>
+</ol>
 <h2 id="related-topics">Related Topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="../overfitting_underfitting/">Overfitting &amp; Underfitting</a></strong> - Why early stopping helps</li>
-<li><strong><a href="../l1_l2_regularization/">L1/L2 Regularization</a></strong> - Alternative regularization techniques</li>
-<li><strong><a href="../../model_evaluation/evaluation_methods/">Model Evaluation</a></strong> - Using validation for early stopping</li>
+<li><strong><a href="../Python_Dictionary_Operations/">Dictionary Operations</a></strong> - Detailed dictionary methods and techniques</li>
+<li><strong><a href="../../../Problem_Solving/Set_Dictionary_Problems/Array_Intersection/">Array Intersection</a></strong> - Using dictionaries for counting</li>
+<li><strong><a href="../../../Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs/">Anagram Pairs</a></strong> - Dictionary-based anagram detection</li>
+<li><strong><a href="../../../Problem_Solving/String_Problems/Unique_Strings/">Unique Strings</a></strong> - Dictionary-based string problems</li>
 </ul>
 
 
@@ -2127,16 +2319,16 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "content.code.annotate", "content.action.edit", "content.tabs.link", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "content.code.annotate", "content.action.edit", "content.tabs.link", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
-        <script src="../../../javascripts/floating-nav.js"></script>
+        <script src="../../../../javascripts/floating-nav.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       

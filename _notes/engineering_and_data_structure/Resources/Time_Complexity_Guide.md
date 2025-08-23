@@ -96,5 +96,5 @@ Big O notation describes the performance or complexity of an algorithm by showin
 
 - **[Common Patterns](Common_Patterns.md)** - Frequently used patterns and their complexities
 - **[Interview Strategies](Interview_Strategies.md)** - Tips for analyzing complexity in interviews
-- **[Set Operations](../Data_Structures/Python_Sets/Set_Operations.md)** - Set operation complexities
-- **[Dictionary Operations](../Data_Structures/Python_Dictionaries/Dictionary_Operations.md)** - Dictionary operation complexities
+- **[Set Operations](../Data_Structures/Hash_Tables/Python_Set_Operations.md)** - Set operation complexities
+- **[Dictionary Operations](../Data_Structures/Hash_Tables/Python_Dictionary_Operations.md)** - Dictionary operation complexities

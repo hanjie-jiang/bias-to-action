@@ -195,5 +195,5 @@ def range_sum(prefix, left, right):
 
 - **[Time Complexity Guide](Time_Complexity_Guide.md)** - Detailed complexity analysis
 - **[Interview Strategies](Interview_Strategies.md)** - Tips for technical interviews
-- **[Set Operations](../Data_Structures/Python_Sets/Set_Operations.md)** - Detailed set operations
-- **[Dictionary Operations](../Data_Structures/Python_Dictionaries/Dictionary_Operations.md)** - Dictionary usage patterns
+- **[Set Operations](../Data_Structures/Hash_Tables/Python_Set_Operations.md)** - Detailed set operations
+- **[Dictionary Operations](../Data_Structures/Hash_Tables/Python_Dictionary_Operations.md)** - Dictionary usage patterns

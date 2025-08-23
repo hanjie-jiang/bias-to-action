@@ -81,4 +81,4 @@ def array_intersection_counter(list1, list2):
 
 - **[Non-Repeating Elements](Non_Repeating_Elements.md)** - Finding elements that appear only once
 - **[Unique Elements](Unique_Elements.md)** - Finding elements unique to each array
-- **[Set Operations](../../Data_Structures/Python_Sets/Set_Operations.md)** - Understanding set operations in detail
+- **[Set Operations](../../Data_Structures/Hash_Tables/Python_Set_Operations.md)** - Understanding set operations in detail

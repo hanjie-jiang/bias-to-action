@@ -55,12 +55,14 @@ nav:
   - Engineering and Data Structure:
       - Overview: engineering_and_data_structure/Overview/Engineering_and_Data_Structure_Overview.md
       - Data Structures:
-          - Python Sets:
-              - Sets Overview: engineering_and_data_structure/Data_Structures/Python_Sets/Sets_Overview.md
-              - Set Operations: engineering_and_data_structure/Data_Structures/Python_Sets/Set_Operations.md
-          - Python Dictionaries:
-              - Dictionaries Overview: engineering_and_data_structure/Data_Structures/Python_Dictionaries/Dictionaries_Overview.md
-              - Dictionary Operations: engineering_and_data_structure/Data_Structures/Python_Dictionaries/Dictionary_Operations.md
+          - Hash Tables:
+              - Hash Tables Overview: engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Tables_Overview.md
+              - Hash Functions & Collisions: engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Functions_and_Collisions.md
+              - Python Dictionaries: engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Dictionaries.md
+              - Python Dictionary Operations: engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Dictionary_Operations.md
+              - Python Sets: engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Sets.md
+              - Python Set Operations: engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Set_Operations.md
+              - Hash Table Problems: engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Table_Problems.md
       - Problem Solving:
           - Set & Dictionary Problems:
               - Array Intersection: engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Array_Intersection.md

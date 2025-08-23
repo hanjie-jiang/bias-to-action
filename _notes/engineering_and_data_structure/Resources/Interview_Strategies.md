@@ -200,5 +200,5 @@ def binary_search(arr, target):
 
 - **[Time Complexity Guide](Time_Complexity_Guide.md)** - Understanding algorithm efficiency
 - **[Common Patterns](Common_Patterns.md)** - Frequently used problem-solving patterns
-- **[Set Operations](../Data_Structures/Python_Sets/Set_Operations.md)** - Set-based interview problems
-- **[Dictionary Operations](../Data_Structures/Python_Dictionaries/Dictionary_Operations.md)** - Dictionary-based interview problems
+- **[Set Operations](../Data_Structures/Hash_Tables/Python_Set_Operations.md)** - Set-based interview problems
+- **[Dictionary Operations](../Data_Structures/Hash_Tables/Python_Dictionary_Operations.md)** - Dictionary-based interview problems

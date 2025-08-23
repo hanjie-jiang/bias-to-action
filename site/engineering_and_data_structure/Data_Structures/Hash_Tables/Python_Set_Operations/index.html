@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Data_Structures/Python_Sets/Sets_Overview/">
+        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Set_Operations/">
       
       
-        <link rel="prev" href="../../../Overview/Engineering_and_Data_Structure_Overview/">
+        <link rel="prev" href="../Python_Sets/">
       
       
-        <link rel="next" href="../Set_Operations/">
+        <link rel="next" href="../Hash_Table_Problems/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Python Sets Overview - Machine Learning Notes</title>
+        <title>Set Operations - Machine Learning Notes</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python-sets-overview" class="md-skip">
+        <a href="#set-operations" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Python Sets Overview
+              Set Operations
             
           </span>
         </div>
@@ -356,7 +356,7 @@
   
   
   <span class="md-ellipsis">
-    Python Sets
+    Hash Tables
     
   </span>
   
@@ -367,9 +367,124 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2_1">
             <span class="md-nav__icon md-icon"></span>
-            Python Sets
+            Hash Tables
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hash_Tables_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hash Tables Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hash_Functions_and_Collisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hash Functions & Collisions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python_Dictionaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Dictionaries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python_Dictionary_Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Dictionary Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python_Sets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Sets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -392,7 +507,7 @@
   
   
   <span class="md-ellipsis">
-    Sets Overview
+    Python Set Operations
     
   </span>
   
@@ -405,7 +520,7 @@
   
   
   <span class="md-ellipsis">
-    Sets Overview
+    Python Set Operations
     
   </span>
   
@@ -428,32 +543,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#key-characteristics" class="md-nav__link">
+  <a href="#basic-set-methods" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Characteristics
+      Basic Set Methods
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Operations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Basic Operations">
+    <nav class="md-nav" aria-label="Basic Set Methods">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#creating-sets" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creating Sets
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#adding-elements" class="md-nav__link">
@@ -479,28 +576,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Set Operations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Set Operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#mathematical-operations" class="md-nav__link">
     <span class="md-ellipsis">
       Mathematical Operations
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Mathematical Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#union" class="md-nav__link">
+    <span class="md-ellipsis">
+      Union
+    </span>
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#membership-testing" class="md-nav__link">
+  <a href="#intersection" class="md-nav__link">
     <span class="md-ellipsis">
-      Membership Testing
+      Intersection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symmetric Difference
     </span>
   </a>
   
@@ -512,18 +627,51 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-use-cases" class="md-nav__link">
+  <a href="#set-comparison-methods" class="md-nav__link">
     <span class="md-ellipsis">
-      Common Use Cases
+      Set Comparison Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Set Comparison Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subset-and-superset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subset and Superset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disjoint-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disjoint Sets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-comprehension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Comprehension
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#time-complexity" class="md-nav__link">
+  <a href="#performance-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      Time Complexity
+      Performance Considerations
     </span>
   </a>
   
@@ -554,106 +702,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Set_Operations/" class="md-nav__link">
+      <a href="../Hash_Table_Problems/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Set Operations
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Python Dictionaries
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            Python Dictionaries
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Python_Dictionaries/Dictionaries_Overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Dictionaries Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Python_Dictionaries/Dictionary_Operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Dictionary Operations
+    Hash Table Problems
     
   </span>
   
@@ -2137,33 +2191,13 @@
 
 
 
-<h1 id="python-sets-overview">Python Sets Overview<a class="headerlink" href="#python-sets-overview" title="Permanent link">&para;</a></h1>
-<p>A set in Python is an unordered collection of unique objects, ensuring the absence of duplicate values. Furthermore, it allows us to perform several operations on such collections, <strong>such as intersection (identifying common elements), union (combining all unique elements), and difference (detecting unique items in a set).</strong></p>
-<h2 id="key-characteristics">Key Characteristics<a class="headerlink" href="#key-characteristics" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Unordered</strong>: Elements are not stored in any specific order</li>
-<li><strong>Unique</strong>: No duplicate elements allowed</li>
-<li><strong>Mutable</strong>: Can add or remove elements</li>
-<li><strong>Hashable</strong>: Elements must be hashable (immutable)</li>
-</ul>
-<h2 id="basic-operations">Basic Operations<a class="headerlink" href="#basic-operations" title="Permanent link">&para;</a></h2>
-<h3 id="creating-sets">Creating Sets<a class="headerlink" href="#creating-sets" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Empty set</span>
-<span class="n">empty_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-
-<span class="c1"># Set from list</span>
-<span class="n">numbers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-
-<span class="c1"># Set literal</span>
-<span class="n">fruits</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">}</span>
-
-<span class="c1"># Set from string (creates set of characters)</span>
-<span class="n">char_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>  <span class="c1"># {&#39;h&#39;, &#39;e&#39;, &#39;l&#39;, &#39;o&#39;}</span>
-</code></pre></div>
+<h1 id="set-operations">Set Operations<a class="headerlink" href="#set-operations" title="Permanent link">&para;</a></h1>
+<p>Detailed set operations and methods in Python.</p>
+<h2 id="basic-set-methods">Basic Set Methods<a class="headerlink" href="#basic-set-methods" title="Permanent link">&para;</a></h2>
 <h3 id="adding-elements">Adding Elements<a class="headerlink" href="#adding-elements" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">my_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="n">my_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>           <span class="c1"># Add single element</span>
-<span class="n">my_set</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="c1"># Add multiple elements</span>
+<span class="n">my_set</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="c1"># Add multiple elements from iterable</span>
 </code></pre></div>
 <h3 id="removing-elements">Removing Elements<a class="headerlink" href="#removing-elements" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">my_set</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
@@ -2172,52 +2206,97 @@
 <span class="n">popped</span> <span class="o">=</span> <span class="n">my_set</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>   <span class="c1"># Remove and return arbitrary element</span>
 <span class="n">my_set</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>          <span class="c1"># Remove all elements</span>
 </code></pre></div>
-<h2 id="set-operations">Set Operations<a class="headerlink" href="#set-operations" title="Permanent link">&para;</a></h2>
-<h3 id="mathematical-operations">Mathematical Operations<a class="headerlink" href="#mathematical-operations" title="Permanent link">&para;</a></h3>
+<h2 id="mathematical-operations">Mathematical Operations<a class="headerlink" href="#mathematical-operations" title="Permanent link">&para;</a></h2>
+<h3 id="union">Union<a class="headerlink" href="#union" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="c1"># Using | operator</span>
+<span class="n">union</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">|</span> <span class="n">set2</span>  <span class="c1"># {1, 2, 3, 4, 5}</span>
+
+<span class="c1"># Using union() method</span>
+<span class="n">union</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>  <span class="c1"># {1, 2, 3, 4, 5}</span>
+
+<span class="c1"># Union with multiple sets</span>
+<span class="n">union</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">set2</span><span class="p">,</span> <span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">})</span>  <span class="c1"># {1, 2, 3, 4, 5, 6, 7}</span>
+</code></pre></div>
+<h3 id="intersection">Intersection<a class="headerlink" href="#intersection" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
 <span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
 
-<span class="c1"># Union</span>
-<span class="n">union</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">|</span> <span class="n">set2</span>  <span class="c1"># or set1.union(set2)</span>
-<span class="c1"># Result: {1, 2, 3, 4, 5, 6}</span>
+<span class="c1"># Using &amp; operator</span>
+<span class="n">intersection</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">&amp;</span> <span class="n">set2</span>  <span class="c1"># {3, 4}</span>
 
-<span class="c1"># Intersection</span>
-<span class="n">intersection</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">&amp;</span> <span class="n">set2</span>  <span class="c1"># or set1.intersection(set2)</span>
-<span class="c1"># Result: {3, 4}</span>
-
-<span class="c1"># Difference</span>
-<span class="n">difference</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">-</span> <span class="n">set2</span>  <span class="c1"># or set1.difference(set2)</span>
-<span class="c1"># Result: {1, 2}</span>
-
-<span class="c1"># Symmetric Difference</span>
-<span class="n">symmetric_diff</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">^</span> <span class="n">set2</span>  <span class="c1"># or set1.symmetric_difference(set2)</span>
-<span class="c1"># Result: {1, 2, 5, 6}</span>
+<span class="c1"># Using intersection() method</span>
+<span class="n">intersection</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>  <span class="c1"># {3, 4}</span>
 </code></pre></div>
-<h3 id="membership-testing">Membership Testing<a class="headerlink" href="#membership-testing" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">my_set</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="ow">in</span> <span class="n">my_set</span><span class="p">)</span>      <span class="c1"># True</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">6</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">my_set</span><span class="p">)</span>  <span class="c1"># True</span>
+<h3 id="difference">Difference<a class="headerlink" href="#difference" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
+
+<span class="c1"># Using - operator</span>
+<span class="n">difference</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">-</span> <span class="n">set2</span>  <span class="c1"># {1, 2}</span>
+
+<span class="c1"># Using difference() method</span>
+<span class="n">difference</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>  <span class="c1"># {1, 2}</span>
 </code></pre></div>
-<h2 id="common-use-cases">Common Use Cases<a class="headerlink" href="#common-use-cases" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>Removing Duplicates</strong>: Convert list to set and back</li>
-<li><strong>Finding Unique Elements</strong>: Set operations for uniqueness</li>
-<li><strong>Membership Testing</strong>: Fast O(1) lookups</li>
-<li><strong>Mathematical Operations</strong>: Union, intersection, difference</li>
-</ol>
-<h2 id="time-complexity">Time Complexity<a class="headerlink" href="#time-complexity" title="Permanent link">&para;</a></h2>
+<h3 id="symmetric-difference">Symmetric Difference<a class="headerlink" href="#symmetric-difference" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
+
+<span class="c1"># Using ^ operator</span>
+<span class="n">symmetric_diff</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">^</span> <span class="n">set2</span>  <span class="c1"># {1, 2, 5, 6}</span>
+
+<span class="c1"># Using symmetric_difference() method</span>
+<span class="n">symmetric_diff</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>  <span class="c1"># {1, 2, 5, 6}</span>
+</code></pre></div>
+<h2 id="set-comparison-methods">Set Comparison Methods<a class="headerlink" href="#set-comparison-methods" title="Permanent link">&para;</a></h2>
+<h3 id="subset-and-superset">Subset and Superset<a class="headerlink" href="#subset-and-superset" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="c1"># Check if set1 is subset of set2</span>
+<span class="n">is_subset</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>  <span class="c1"># True</span>
+<span class="n">is_subset</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">&lt;=</span> <span class="n">set2</span>         <span class="c1"># True</span>
+
+<span class="c1"># Check if set2 is superset of set1</span>
+<span class="n">is_superset</span> <span class="o">=</span> <span class="n">set2</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">set1</span><span class="p">)</span>  <span class="c1"># True</span>
+<span class="n">is_superset</span> <span class="o">=</span> <span class="n">set2</span> <span class="o">&gt;=</span> <span class="n">set1</span>           <span class="c1"># True</span>
+
+<span class="c1"># Proper subset/superset (excludes equality)</span>
+<span class="n">proper_subset</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">&lt;</span> <span class="n">set2</span>      <span class="c1"># True</span>
+<span class="n">proper_superset</span> <span class="o">=</span> <span class="n">set2</span> <span class="o">&gt;</span> <span class="n">set1</span>    <span class="c1"># True</span>
+</code></pre></div>
+<h3 id="disjoint-sets">Disjoint Sets<a class="headerlink" href="#disjoint-sets" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
+<span class="n">set3</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="c1"># Check if sets have no common elements</span>
+<span class="n">is_disjoint</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="n">isdisjoint</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>  <span class="c1"># True</span>
+<span class="n">is_disjoint</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="n">isdisjoint</span><span class="p">(</span><span class="n">set3</span><span class="p">)</span>  <span class="c1"># False</span>
+</code></pre></div>
+<h2 id="set-comprehension">Set Comprehension<a class="headerlink" href="#set-comprehension" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create set from list with condition</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">even_numbers</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">}</span>  <span class="c1"># {2, 4, 6, 8, 10}</span>
+
+<span class="c1"># Create set from string (unique characters)</span>
+<span class="n">unique_chars</span> <span class="o">=</span> <span class="p">{</span><span class="n">char</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="s2">&quot;hello world&quot;</span><span class="p">}</span>  <span class="c1"># {&#39;h&#39;, &#39;e&#39;, &#39;l&#39;, &#39;o&#39;, &#39; &#39;, &#39;w&#39;, &#39;r&#39;, &#39;d&#39;}</span>
+</code></pre></div>
+<h2 id="performance-considerations">Performance Considerations<a class="headerlink" href="#performance-considerations" title="Permanent link">&para;</a></h2>
 <ul>
+<li><strong>Membership testing</strong>: O(1) average case</li>
 <li><strong>Add/Remove</strong>: O(1) average case</li>
-<li><strong>Membership</strong>: O(1) average case</li>
 <li><strong>Union/Intersection</strong>: O(len(s1) + len(s2))</li>
 <li><strong>Iteration</strong>: O(n)</li>
 </ul>
 <h2 id="related-topics">Related Topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="../Set_Operations/">Set Operations</a></strong> - Detailed set operations and methods</li>
-<li><strong><a href="../../../Problem_Solving/Set_Dictionary_Problems/Array_Intersection/">Array Intersection</a></strong> - Using sets for array intersection</li>
-<li><strong><a href="../../../Problem_Solving/Set_Dictionary_Problems/Non_Repeating_Elements/">Non-Repeating Elements</a></strong> - Finding unique elements</li>
-<li><strong><a href="../../../Problem_Solving/Set_Dictionary_Problems/Unique_Elements/">Unique Elements</a></strong> - Finding elements unique to each array</li>
+<li><strong><a href="../Python_Sets/">Sets Overview</a></strong> - Basic set concepts and characteristics</li>
+<li><strong><a href="../../../Problem_Solving/Set_Dictionary_Problems/Array_Intersection/">Array Intersection</a></strong> - Using set intersection</li>
+<li><strong><a href="../../../Problem_Solving/Set_Dictionary_Problems/Non_Repeating_Elements/">Non-Repeating Elements</a></strong> - Using sets for uniqueness</li>
+<li><strong><a href="../../../Problem_Solving/Set_Dictionary_Problems/Unique_Elements/">Unique Elements</a></strong> - Using set difference operations</li>
 </ul>
 
 

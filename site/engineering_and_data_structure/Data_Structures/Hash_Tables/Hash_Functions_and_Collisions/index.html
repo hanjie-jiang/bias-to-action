@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Data_Structures/Python_Dictionaries/Dictionaries_Overview/">
+        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Functions_and_Collisions/">
       
       
-        <link rel="prev" href="../../Python_Sets/Set_Operations/">
+        <link rel="prev" href="../Hash_Tables_Overview/">
       
       
-        <link rel="next" href="../Dictionary_Operations/">
+        <link rel="next" href="../Python_Dictionaries/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Python Dictionaries Overview - Machine Learning Notes</title>
+        <title>Hash Functions & Collisions - Machine Learning Notes</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python-dictionaries-overview" class="md-skip">
+        <a href="#hash-functions-and-collisions" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Python Dictionaries Overview
+              Hash Functions & Collisions
             
           </span>
         </div>
@@ -333,100 +333,6 @@
                 
   
   
-  
-  
-    
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Python Sets
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_1">
-            <span class="md-nav__icon md-icon"></span>
-            Python Sets
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Python_Sets/Sets_Overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Sets Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Python_Sets/Set_Operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Set Operations
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -442,15 +348,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Python Dictionaries
+    Hash Tables
     
   </span>
   
@@ -458,12 +364,35 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_1">
             <span class="md-nav__icon md-icon"></span>
-            Python Dictionaries
+            Hash Tables
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hash_Tables_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hash Tables Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -486,7 +415,7 @@
   
   
   <span class="md-ellipsis">
-    Dictionaries Overview
+    Hash Functions & Collisions
     
   </span>
   
@@ -499,7 +428,7 @@
   
   
   <span class="md-ellipsis">
-    Dictionaries Overview
+    Hash Functions & Collisions
     
   </span>
   
@@ -522,37 +451,226 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#key-characteristics" class="md-nav__link">
+  <a href="#hash-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Characteristics
+      Hash Functions
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Hash Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties-of-good-hash-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties of Good Hash Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties of Good Hash Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-deterministic" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Deterministic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-uniform-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Uniform Distribution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-fast-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Fast Computation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-avalanche-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Avalanche Effect
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-hash-function-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Hash Function Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Hash Function Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-division-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Division Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-multiplication-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Multiplication Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-string-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. String Hashing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-operations" class="md-nav__link">
+  <a href="#collisions" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Operations
+      Collisions
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Basic Operations">
+    <nav class="md-nav" aria-label="Collisions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#creating-dictionaries" class="md-nav__link">
+  <a href="#collision-resolution-strategies" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating Dictionaries
+      Collision Resolution Strategies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collision Resolution Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-separate-chaining-open-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Separate Chaining (Open Hashing)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#accessing-and-modifying" class="md-nav__link">
+  <a href="#2-open-addressing-closed-hashing" class="md-nav__link">
     <span class="md-ellipsis">
-      Accessing and Modifying
+      2. Open Addressing (Closed Hashing)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Open Addressing (Closed Hashing)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-probing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Probing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quadratic-probing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadratic Probing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Double Hashing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-factor-and-resizing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Factor and Resizing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Load Factor and Resizing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Factor (α)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Impact
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-resizing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Resizing
     </span>
   </a>
   
@@ -564,37 +682,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-methods" class="md-nav__link">
+  <a href="#pythons-hash-implementation" class="md-nav__link">
     <span class="md-ellipsis">
-      Common Methods
+      Python's Hash Implementation
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dictionary-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dictionary Operations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Dictionary Operations">
+    <nav class="md-nav" aria-label="Python&#39;s Hash Implementation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#merging-dictionaries" class="md-nav__link">
+  <a href="#python-dict" class="md-nav__link">
     <span class="md-ellipsis">
-      Merging Dictionaries
+      Python dict
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dictionary-comprehension" class="md-nav__link">
+  <a href="#python-set" class="md-nav__link">
     <span class="md-ellipsis">
-      Dictionary Comprehension
+      Python set
     </span>
   </a>
   
@@ -606,27 +715,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#time-complexity" class="md-nav__link">
+  <a href="#common-hash-function-pitfalls" class="md-nav__link">
     <span class="md-ellipsis">
-      Time Complexity
+      Common Hash Function Pitfalls
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-use-cases" class="md-nav__link">
+  <a href="#best-practices" class="md-nav__link">
     <span class="md-ellipsis">
-      Common Use Cases
+      Best Practices
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#related-topics" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Related Topics
+      Next Steps
     </span>
   </a>
   
@@ -648,12 +757,104 @@
   
   
     <li class="md-nav__item">
-      <a href="../Dictionary_Operations/" class="md-nav__link">
+      <a href="../Python_Dictionaries/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Dictionary Operations
+    Python Dictionaries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python_Dictionary_Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Dictionary Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python_Sets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Sets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python_Set_Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Set Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hash_Table_Problems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hash Table Problems
     
   </span>
   
@@ -2137,107 +2338,241 @@
 
 
 
-<h1 id="python-dictionaries-overview">Python Dictionaries Overview<a class="headerlink" href="#python-dictionaries-overview" title="Permanent link">&para;</a></h1>
-<p>Python dictionaries are mutable, unordered collections of key-value pairs. They provide fast O(1) average time complexity for lookups, insertions, and deletions.</p>
-<h2 id="key-characteristics">Key Characteristics<a class="headerlink" href="#key-characteristics" title="Permanent link">&para;</a></h2>
+<h1 id="hash-functions-and-collisions">Hash Functions and Collisions<a class="headerlink" href="#hash-functions-and-collisions" title="Permanent link">&para;</a></h1>
+<h2 id="hash-functions">Hash Functions<a class="headerlink" href="#hash-functions" title="Permanent link">&para;</a></h2>
+<p>A hash function is the heart of any hash table. It takes a key as input and produces an integer (hash code) that determines where the key-value pair should be stored in the underlying array.</p>
+<h3 id="properties-of-good-hash-functions">Properties of Good Hash Functions<a class="headerlink" href="#properties-of-good-hash-functions" title="Permanent link">&para;</a></h3>
+<h4 id="1-deterministic">1. Deterministic<a class="headerlink" href="#1-deterministic" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>Key-Value Pairs</strong>: Each element is a key-value pair</li>
-<li><strong>Unordered</strong>: Elements are not stored in any specific order (Python 3.7+ maintains insertion order)</li>
-<li><strong>Mutable</strong>: Can add, modify, or remove key-value pairs</li>
-<li><strong>Hashable Keys</strong>: Keys must be hashable (immutable)</li>
-<li><strong>Unique Keys</strong>: No duplicate keys allowed</li>
+<li>Same input always produces same output</li>
+<li>Essential for consistent lookups</li>
 </ul>
-<h2 id="basic-operations">Basic Operations<a class="headerlink" href="#basic-operations" title="Permanent link">&para;</a></h2>
-<h3 id="creating-dictionaries">Creating Dictionaries<a class="headerlink" href="#creating-dictionaries" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Empty dictionary</span>
-<span class="n">empty_dict</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="c1"># Dictionary with initial values</span>
-<span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">}</span>
-
-<span class="c1"># Using dict() constructor</span>
-<span class="n">numbers</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">one</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">two</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">three</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="c1"># From list of tuples</span>
-<span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
-<span class="n">dict_from_pairs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="accessing-and-modifying">Accessing and Modifying<a class="headerlink" href="#accessing-and-modifying" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
-
-<span class="c1"># Accessing values</span>
-<span class="n">name</span> <span class="o">=</span> <span class="n">person</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>  <span class="c1"># Raises KeyError if key doesn&#39;t exist</span>
-<span class="n">age</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Returns default value if key doesn&#39;t exist</span>
-
-<span class="c1"># Adding/Modifying</span>
-<span class="n">person</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;New York&#39;</span>  <span class="c1"># Add new key-value pair</span>
-<span class="n">person</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">31</span>  <span class="c1"># Modify existing value</span>
-
-<span class="c1"># Removing</span>
-<span class="k">del</span> <span class="n">person</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>  <span class="c1"># Raises KeyError if key doesn&#39;t exist</span>
-<span class="n">city</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;city&#39;</span><span class="p">,</span> <span class="s1">&#39;Unknown&#39;</span><span class="p">)</span>  <span class="c1"># Returns default if key doesn&#39;t exist</span>
-<span class="n">person</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>  <span class="c1"># Remove all items</span>
-</code></pre></div>
-<h2 id="common-methods">Common Methods<a class="headerlink" href="#common-methods" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">}</span>
-
-<span class="c1"># Keys, values, and items</span>
-<span class="n">keys</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>  <span class="c1"># dict_keys([&#39;name&#39;, &#39;age&#39;, &#39;city&#39;])</span>
-<span class="n">values</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>  <span class="c1"># dict_values([&#39;John&#39;, 30, &#39;New York&#39;])</span>
-<span class="n">items</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>  <span class="c1"># dict_items([(&#39;name&#39;, &#39;John&#39;), (&#39;age&#39;, 30), (&#39;city&#39;, &#39;New York&#39;)])</span>
-
-<span class="c1"># Membership testing</span>
-<span class="s1">&#39;name&#39;</span> <span class="ow">in</span> <span class="n">person</span>  <span class="c1"># True</span>
-<span class="s1">&#39;phone&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">person</span>  <span class="c1"># True</span>
-
-<span class="c1"># Length</span>
-<span class="nb">len</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>  <span class="c1"># 3</span>
-</code></pre></div>
-<h2 id="dictionary-operations">Dictionary Operations<a class="headerlink" href="#dictionary-operations" title="Permanent link">&para;</a></h2>
-<h3 id="merging-dictionaries">Merging Dictionaries<a class="headerlink" href="#merging-dictionaries" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-<span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
-
-<span class="c1"># Using update() method</span>
-<span class="n">dict1</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dict2</span><span class="p">)</span>  <span class="c1"># Modifies dict1 in-place</span>
-
-<span class="c1"># Using | operator (Python 3.9+)</span>
-<span class="n">merged</span> <span class="o">=</span> <span class="n">dict1</span> <span class="o">|</span> <span class="n">dict2</span>  <span class="c1"># Creates new dictionary</span>
-
-<span class="c1"># Using ** unpacking</span>
-<span class="n">merged</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">dict1</span><span class="p">,</span> <span class="o">**</span><span class="n">dict2</span><span class="p">}</span>
-</code></pre></div>
-<h3 id="dictionary-comprehension">Dictionary Comprehension<a class="headerlink" href="#dictionary-comprehension" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Create dictionary from list</span>
-<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">squares</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">}</span>
-
-<span class="c1"># Filter dictionary</span>
-<span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">,</span> <span class="s1">&#39;phone&#39;</span><span class="p">:</span> <span class="s1">&#39;123-456&#39;</span><span class="p">}</span>
-<span class="n">filtered</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">person</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">)}</span>
-</code></pre></div>
-<h2 id="time-complexity">Time Complexity<a class="headerlink" href="#time-complexity" title="Permanent link">&para;</a></h2>
+<h4 id="2-uniform-distribution">2. Uniform Distribution<a class="headerlink" href="#2-uniform-distribution" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>Access</strong>: O(1) average case</li>
-<li><strong>Insert/Update</strong>: O(1) average case</li>
-<li><strong>Delete</strong>: O(1) average case</li>
-<li><strong>Search</strong>: O(1) average case</li>
-<li><strong>Iteration</strong>: O(n)</li>
+<li>Keys should be spread evenly across the hash table</li>
+<li>Minimizes clustering and collisions</li>
 </ul>
-<h2 id="common-use-cases">Common Use Cases<a class="headerlink" href="#common-use-cases" title="Permanent link">&para;</a></h2>
+<h4 id="3-fast-computation">3. Fast Computation<a class="headerlink" href="#3-fast-computation" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Should be O(1) time complexity</li>
+<li>Avoid expensive operations</li>
+</ul>
+<h4 id="4-avalanche-effect">4. Avalanche Effect<a class="headerlink" href="#4-avalanche-effect" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Small changes in input cause large changes in output</li>
+<li>Helps distribute similar keys</li>
+</ul>
+<h3 id="common-hash-function-techniques">Common Hash Function Techniques<a class="headerlink" href="#common-hash-function-techniques" title="Permanent link">&para;</a></h3>
+<h4 id="1-division-method">1. Division Method<a class="headerlink" href="#1-division-method" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">hash_function</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">table_size</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">key</span> <span class="o">%</span> <span class="n">table_size</span>
+</code></pre></div>
+- Simple and fast
+- Works well with prime table sizes
+- Poor performance with certain key patterns</p>
+<h4 id="2-multiplication-method">2. Multiplication Method<a class="headerlink" href="#2-multiplication-method" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">hash_function</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">table_size</span><span class="p">):</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="mf">0.6180339887</span>  <span class="c1"># Golden ratio - 1</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">table_size</span> <span class="o">*</span> <span class="p">((</span><span class="n">key</span> <span class="o">*</span> <span class="n">A</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1</span><span class="p">))</span>
+</code></pre></div>
+- More uniform distribution
+- Table size doesn't need to be prime
+- Slightly more expensive computation</p>
+<h4 id="3-string-hashing">3. String Hashing<a class="headerlink" href="#3-string-hashing" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">hash_string</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">table_size</span><span class="p">):</span>
+    <span class="n">hash_value</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="n">hash_value</span> <span class="o">=</span> <span class="p">(</span><span class="n">hash_value</span> <span class="o">*</span> <span class="mi">31</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">))</span> <span class="o">%</span> <span class="n">table_size</span>
+    <span class="k">return</span> <span class="n">hash_value</span>
+</code></pre></div>
+- Polynomial rolling hash
+- 31 is a common multiplier (prime number)
+- Used in Java's String.hashCode()</p>
+<h2 id="collisions">Collisions<a class="headerlink" href="#collisions" title="Permanent link">&para;</a></h2>
+<p>A collision occurs when two different keys hash to the same index. Since hash tables have finite size, collisions are inevitable (pigeonhole principle).</p>
+<h3 id="collision-resolution-strategies">Collision Resolution Strategies<a class="headerlink" href="#collision-resolution-strategies" title="Permanent link">&para;</a></h3>
+<h4 id="1-separate-chaining-open-hashing">1. Separate Chaining (Open Hashing)<a class="headerlink" href="#1-separate-chaining-open-hashing" title="Permanent link">&para;</a></h4>
+<p>Store multiple key-value pairs at each array index using a secondary data structure.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">HashTableChaining</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_hash</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hash</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+        <span class="c1"># Check if key already exists</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bucket</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+                <span class="n">bucket</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>  <span class="c1"># Update existing</span>
+                <span class="k">return</span>
+
+        <span class="n">bucket</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>  <span class="c1"># Add new</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hash</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">bucket</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">v</span>
+
+        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Advantages:</strong>
+- Simple to implement
+- Never runs out of space (can always add to chain)
+- Good performance with good hash function</p>
+<p><strong>Disadvantages:</strong>
+- Extra memory overhead for pointers/lists
+- Cache performance can be poor
+- Worst case: O(n) if all keys hash to same bucket</p>
+<h4 id="2-open-addressing-closed-hashing">2. Open Addressing (Closed Hashing)<a class="headerlink" href="#2-open-addressing-closed-hashing" title="Permanent link">&para;</a></h4>
+<p>Store all key-value pairs directly in the hash table array. When collision occurs, probe for next available slot.</p>
+<h5 id="linear-probing">Linear Probing<a class="headerlink" href="#linear-probing" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">HashTableLinearProbing</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">size</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_hash</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hash</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+        <span class="c1"># Linear probing</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>  <span class="c1"># Update existing</span>
+                <span class="k">return</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+
+        <span class="c1"># Insert at empty slot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hash</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+        <span class="c1"># Linear probing for search</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+
+        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Advantages:</strong>
+- Better cache performance (data locality)
+- No extra memory for pointers
+- Simple implementation</p>
+<p><strong>Disadvantages:</strong>
+- Primary clustering (consecutive occupied slots)
+- Requires careful deletion handling
+- Performance degrades as load factor increases</p>
+<h5 id="quadratic-probing">Quadratic Probing<a class="headerlink" href="#quadratic-probing" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">quadratic_probe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hash</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">index</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_hash</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+    <span class="k">return</span> <span class="n">index</span>
+</code></pre></div>
+<p><strong>Advantages:</strong>
+- Reduces primary clustering
+- Better distribution than linear probing</p>
+<p><strong>Disadvantages:</strong>
+- Secondary clustering
+- May not probe all slots
+- More complex deletion</p>
+<h5 id="double-hashing">Double Hashing<a class="headerlink" href="#double-hashing" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">double_hash_probe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="n">hash1</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">hash2</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">-</span> <span class="p">(</span><span class="nb">hash</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="mi">7</span><span class="p">)</span>  <span class="c1"># Second hash function</span>
+
+    <span class="n">index</span> <span class="o">=</span> <span class="n">hash1</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">index</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="n">hash1</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">hash2</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+    <span class="k">return</span> <span class="n">index</span>
+</code></pre></div>
+<p><strong>Advantages:</strong>
+- Eliminates clustering
+- Good distribution with proper second hash function</p>
+<p><strong>Disadvantages:</strong>
+- More complex implementation
+- Requires two hash functions</p>
+<h2 id="load-factor-and-resizing">Load Factor and Resizing<a class="headerlink" href="#load-factor-and-resizing" title="Permanent link">&para;</a></h2>
+<h3 id="load-factor">Load Factor (α)<a class="headerlink" href="#load-factor" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>α = n / m
+where n = number of elements, m = table size
+</code></pre></div>
+<h3 id="performance-impact">Performance Impact<a class="headerlink" href="#performance-impact" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Separate Chaining</strong>: Performance degrades linearly with load factor</li>
+<li><strong>Open Addressing</strong>: Performance degrades exponentially after α &gt; 0.7</li>
+</ul>
+<h3 id="dynamic-resizing">Dynamic Resizing<a class="headerlink" href="#dynamic-resizing" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">resize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">old_keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span>
+    <span class="n">old_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="c1"># Double the size</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">*=</span> <span class="mi">2</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+
+    <span class="c1"># Rehash all existing elements</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">old_keys</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">old_keys</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">old_keys</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">old_values</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div>
+<h2 id="pythons-hash-implementation">Python's Hash Implementation<a class="headerlink" href="#pythons-hash-implementation" title="Permanent link">&para;</a></h2>
+<h3 id="python-dict">Python dict<a class="headerlink" href="#python-dict" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Uses open addressing with random probing</li>
+<li>Maintains insertion order (since Python 3.7)</li>
+<li>Automatically resizes when load factor exceeds 2/3</li>
+<li>Uses sophisticated hash functions for different types</li>
+</ul>
+<h3 id="python-set">Python set<a class="headerlink" href="#python-set" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Similar to dict but stores only keys</li>
+<li>Uses dummy values internally</li>
+<li>Same collision resolution strategy</li>
+</ul>
+<h2 id="common-hash-function-pitfalls">Common Hash Function Pitfalls<a class="headerlink" href="#common-hash-function-pitfalls" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Caching/Memoization</strong>: Store computed results</li>
-<li><strong>Counting</strong>: Track frequency of elements</li>
-<li><strong>Grouping</strong>: Organize data by categories</li>
-<li><strong>Configuration</strong>: Store settings and parameters</li>
-<li><strong>JSON-like Data</strong>: Represent structured data</li>
+<li><strong>Poor Distribution</strong>: Using simple modulo with non-prime table sizes</li>
+<li><strong>Predictable Patterns</strong>: Hash functions that don't handle similar keys well</li>
+<li><strong>Integer Overflow</strong>: Not handling large hash values properly</li>
+<li><strong>Security Issues</strong>: Hash functions vulnerable to collision attacks</li>
 </ol>
-<h2 id="related-topics">Related Topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Choose Prime Table Sizes</strong>: Better distribution with division method</li>
+<li><strong>Monitor Load Factor</strong>: Resize before performance degrades</li>
+<li><strong>Use Quality Hash Functions</strong>: Consider built-in functions for complex types</li>
+<li><strong>Handle Collisions Appropriately</strong>: Choose strategy based on use case</li>
+<li><strong>Consider Security</strong>: Use cryptographic hash functions for security-critical applications</li>
+</ol>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="../Dictionary_Operations/">Dictionary Operations</a></strong> - Detailed dictionary methods and techniques</li>
-<li><strong><a href="../../../Problem_Solving/Set_Dictionary_Problems/Array_Intersection/">Array Intersection</a></strong> - Using dictionaries for counting</li>
-<li><strong><a href="../../../Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs/">Anagram Pairs</a></strong> - Dictionary-based anagram detection</li>
-<li><strong><a href="../../../Problem_Solving/String_Problems/Unique_Strings/">Unique Strings</a></strong> - Dictionary-based string problems</li>
+<li><a href="../Hash_Tables_Overview/">Hash Tables Overview</a> - Basic concepts</li>
+<li><a href="../Python_Dictionaries/">Python Dictionaries</a> - Implementation details</li>
+<li><a href="../Hash_Table_Problems/">Hash Table Problems</a> - Practice problems</li>
 </ul>
 
 
@@ -2245,9 +2580,6 @@
 
 
 
-
-  
-  
 
 
 

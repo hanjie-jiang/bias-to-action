@@ -132,4 +132,4 @@ print(result)  # []
 
 - **[Array Intersection](Array_Intersection.md)** - Finding common elements
 - **[String Operations](../String_Problems/String_Operations.md)** - String manipulation techniques
-- **[Dictionary Operations](../../Data_Structures/Python_Dictionaries/Dictionary_Operations.md)** - Dictionary usage patterns
+- **[Dictionary Operations](../../Data_Structures/Hash_Tables/Python_Dictionary_Operations.md)** - Dictionary usage patterns

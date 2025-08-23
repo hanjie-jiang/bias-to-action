@@ -98,7 +98,7 @@ print(6 not in my_set)  # True
 
 ## Related Topics
 
-- **[Set Operations](Set_Operations.md)** - Detailed set operations and methods
+- **[Set Operations](Python_Set_Operations.md)** - Detailed set operations and methods
 - **[Array Intersection](../../Problem_Solving/Set_Dictionary_Problems/Array_Intersection.md)** - Using sets for array intersection
 - **[Non-Repeating Elements](../../Problem_Solving/Set_Dictionary_Problems/Non_Repeating_Elements.md)** - Finding unique elements
 - **[Unique Elements](../../Problem_Solving/Set_Dictionary_Problems/Unique_Elements.md)** - Finding elements unique to each array

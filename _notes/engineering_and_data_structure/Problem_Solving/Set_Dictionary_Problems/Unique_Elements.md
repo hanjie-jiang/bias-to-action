@@ -112,4 +112,4 @@ def unique_elements_counter(list1, list2):
 
 - **[Array Intersection](Array_Intersection.md)** - Finding common elements between arrays
 - **[Non-Repeating Elements](Non_Repeating_Elements.md)** - Finding elements that appear only once
-- **[Set Operations](../../Data_Structures/Python_Sets/Set_Operations.md)** - Understanding set difference operations
+- **[Set Operations](../../Data_Structures/Hash_Tables/Python_Set_Operations.md)** - Understanding set difference operations

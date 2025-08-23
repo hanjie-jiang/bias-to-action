@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Problem_Solving/String_Problems/String_Operations/">
+        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Dictionary_Operations/">
       
       
-        <link rel="prev" href="../Unique_Strings/">
+        <link rel="prev" href="../Python_Dictionaries/">
       
       
-        <link rel="next" href="../../../Resources/Common_Patterns/">
+        <link rel="next" href="../Python_Sets/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>String Operations - Machine Learning Notes</title>
+        <title>Dictionary Operations - Machine Learning Notes</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#string-operations" class="md-skip">
+        <a href="#dictionary-operations" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              String Operations
+              Dictionary Operations
             
           </span>
         </div>
@@ -291,6 +291,8 @@
                 
   
   
+    
+  
   
   
     
@@ -300,11 +302,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -320,7 +322,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Data Structures
@@ -331,6 +333,8 @@
                 
   
   
+    
+  
   
   
     
@@ -340,11 +344,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
@@ -360,7 +364,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2_1">
             <span class="md-nav__icon md-icon"></span>
             Hash Tables
@@ -374,7 +378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structures/Hash_Tables/Hash_Tables_Overview/" class="md-nav__link">
+      <a href="../Hash_Tables_Overview/" class="md-nav__link">
         
   
   
@@ -397,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structures/Hash_Tables/Hash_Functions_and_Collisions/" class="md-nav__link">
+      <a href="../Hash_Functions_and_Collisions/" class="md-nav__link">
         
   
   
@@ -420,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structures/Hash_Tables/Python_Dictionaries/" class="md-nav__link">
+      <a href="../Python_Dictionaries/" class="md-nav__link">
         
   
   
@@ -440,10 +444,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../Data_Structures/Hash_Tables/Python_Dictionary_Operations/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Python Dictionary Operations
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -454,6 +480,227 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-dictionary-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Dictionary Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Dictionary Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-and-modifying" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating and Modifying
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-dictionary-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing Dictionary Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-dictionary-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Dictionary Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Dictionary Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dictionary-comprehension" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dictionary Comprehension
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merging-dictionaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merging Dictionaries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-dictionaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nested Dictionaries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dictionary-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dictionary Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dictionary Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time Complexity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grouping-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grouping Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cachingmemoization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caching/Memoization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Topics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -466,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structures/Hash_Tables/Python_Sets/" class="md-nav__link">
+      <a href="../Python_Sets/" class="md-nav__link">
         
   
   
@@ -489,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structures/Hash_Tables/Python_Set_Operations/" class="md-nav__link">
+      <a href="../Python_Set_Operations/" class="md-nav__link">
         
   
   
@@ -512,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structures/Hash_Tables/Hash_Table_Problems/" class="md-nav__link">
+      <a href="../Hash_Table_Problems/" class="md-nav__link">
         
   
   
@@ -548,8 +795,6 @@
                 
   
   
-    
-  
   
   
     
@@ -559,11 +804,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -579,7 +824,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Problem Solving
@@ -633,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Set_Dictionary_Problems/Array_Intersection/" class="md-nav__link">
+      <a href="../../../Problem_Solving/Set_Dictionary_Problems/Array_Intersection/" class="md-nav__link">
         
   
   
@@ -656,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Set_Dictionary_Problems/Non_Repeating_Elements/" class="md-nav__link">
+      <a href="../../../Problem_Solving/Set_Dictionary_Problems/Non_Repeating_Elements/" class="md-nav__link">
         
   
   
@@ -679,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Set_Dictionary_Problems/Unique_Elements/" class="md-nav__link">
+      <a href="../../../Problem_Solving/Set_Dictionary_Problems/Unique_Elements/" class="md-nav__link">
         
   
   
@@ -702,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Set_Dictionary_Problems/Anagram_Pairs/" class="md-nav__link">
+      <a href="../../../Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs/" class="md-nav__link">
         
   
   
@@ -730,8 +975,6 @@
                 
   
   
-    
-  
   
   
     
@@ -741,11 +984,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
         
           
           <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
@@ -761,7 +1004,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3_2">
             <span class="md-nav__icon md-icon"></span>
             String Problems
@@ -775,7 +1018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Unique_Strings/" class="md-nav__link">
+      <a href="../../../Problem_Solving/String_Problems/Unique_Strings/" class="md-nav__link">
         
   
   
@@ -795,32 +1038,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    String Operations
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Problem_Solving/String_Problems/String_Operations/" class="md-nav__link">
         
   
   
@@ -831,254 +1052,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-string-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic String Operations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Basic String Operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#string-creation-and-access" class="md-nav__link">
-    <span class="md-ellipsis">
-      String Creation and Access
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#string-concatenation" class="md-nav__link">
-    <span class="md-ellipsis">
-      String Concatenation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#string-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      String Methods
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="String Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#case-manipulation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Case Manipulation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#string-searching-and-replacing" class="md-nav__link">
-    <span class="md-ellipsis">
-      String Searching and Replacing
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#string-splitting-and-joining" class="md-nav__link">
-    <span class="md-ellipsis">
-      String Splitting and Joining
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#string-stripping-and-padding" class="md-nav__link">
-    <span class="md-ellipsis">
-      String Stripping and Padding
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-string-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced String Operations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advanced String Operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#string-formatting" class="md-nav__link">
-    <span class="md-ellipsis">
-      String Formatting
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#string-validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      String Validation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#string-encoding-and-decoding" class="md-nav__link">
-    <span class="md-ellipsis">
-      String Encoding and Decoding
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-string-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common String Patterns
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common String Patterns">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#palindrome-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      Palindrome Check
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#anagram-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      Anagram Check
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#string-reversal" class="md-nav__link">
-    <span class="md-ellipsis">
-      String Reversal
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#character-frequency" class="md-nav__link">
-    <span class="md-ellipsis">
-      Character Frequency
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#performance-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance Considerations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Performance Considerations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#string-concatenation_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      String Concatenation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#string-vs-list-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      String vs List Operations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Best Practices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-topics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Related Topics
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2275,215 +2248,230 @@
 
 
 
-<h1 id="string-operations">String Operations<a class="headerlink" href="#string-operations" title="Permanent link">&para;</a></h1>
-<p>Common string manipulation techniques and operations in Python.</p>
-<h2 id="basic-string-operations">Basic String Operations<a class="headerlink" href="#basic-string-operations" title="Permanent link">&para;</a></h2>
-<h3 id="string-creation-and-access">String Creation and Access<a class="headerlink" href="#string-creation-and-access" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># String literals</span>
-<span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;Python Programming&#39;</span>
-<span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Multi-line</span>
-<span class="s2">string&quot;&quot;&quot;</span>
+<h1 id="dictionary-operations">Dictionary Operations<a class="headerlink" href="#dictionary-operations" title="Permanent link">&para;</a></h1>
+<p>Detailed dictionary operations and methods in Python.</p>
+<h2 id="basic-dictionary-methods">Basic Dictionary Methods<a class="headerlink" href="#basic-dictionary-methods" title="Permanent link">&para;</a></h2>
+<h3 id="creating-and-modifying">Creating and Modifying<a class="headerlink" href="#creating-and-modifying" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create dictionary</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{}</span>
 
-<span class="c1"># String indexing</span>
-<span class="n">first_char</span> <span class="o">=</span> <span class="n">s1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>      <span class="c1"># &#39;H&#39;</span>
-<span class="n">last_char</span> <span class="o">=</span> <span class="n">s1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>      <span class="c1"># &#39;!&#39;</span>
-<span class="n">substring</span> <span class="o">=</span> <span class="n">s1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>     <span class="c1"># &#39;Hello&#39;</span>
+<span class="c1"># Add/Update items</span>
+<span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span>
+<span class="n">my_dict</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;key2&#39;</span><span class="p">:</span> <span class="s1">&#39;value2&#39;</span><span class="p">,</span> <span class="s1">&#39;key3&#39;</span><span class="p">:</span> <span class="s1">&#39;value3&#39;</span><span class="p">})</span>
 
-<span class="c1"># String length</span>
-<span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>        <span class="c1"># 13</span>
+<span class="c1"># Get value with default</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;default_value&#39;</span><span class="p">)</span>
+
+<span class="c1"># Remove items</span>
+<span class="k">del</span> <span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span>  <span class="c1"># Raises KeyError if key doesn&#39;t exist</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">)</span>  <span class="c1"># Returns default if key doesn&#39;t exist</span>
+<span class="n">my_dict</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>  <span class="c1"># Remove all items</span>
 </code></pre></div>
-<h3 id="string-concatenation">String Concatenation<a class="headerlink" href="#string-concatenation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Using + operator</span>
-<span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s2">&quot;World&quot;</span>  <span class="c1"># &quot;Hello World&quot;</span>
+<h3 id="accessing-dictionary-data">Accessing Dictionary Data<a class="headerlink" href="#accessing-dictionary-data" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">}</span>
 
-<span class="c1"># Using join() method</span>
-<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">]</span>
-<span class="n">result</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>  <span class="c1"># &quot;Hello World Python&quot;</span>
+<span class="c1"># Get keys, values, and items</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>      <span class="c1"># dict_keys([&#39;name&#39;, &#39;age&#39;, &#39;city&#39;])</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>  <span class="c1"># dict_values([&#39;John&#39;, 30, &#39;New York&#39;])</span>
+<span class="n">items</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>    <span class="c1"># dict_items([(&#39;name&#39;, &#39;John&#39;), (&#39;age&#39;, 30), (&#39;city&#39;, &#39;New York&#39;)])</span>
 
-<span class="c1"># Using f-strings (Python 3.6+)</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
-<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
-<span class="n">result</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old&quot;</span>
+<span class="c1"># Iterate through dictionary</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">person</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">person</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">person</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="string-methods">String Methods<a class="headerlink" href="#string-methods" title="Permanent link">&para;</a></h2>
-<h3 id="case-manipulation">Case Manipulation<a class="headerlink" href="#case-manipulation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+<h2 id="advanced-dictionary-operations">Advanced Dictionary Operations<a class="headerlink" href="#advanced-dictionary-operations" title="Permanent link">&para;</a></h2>
+<h3 id="dictionary-comprehension">Dictionary Comprehension<a class="headerlink" href="#dictionary-comprehension" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create dictionary from list</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">squares</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">}</span>  <span class="c1"># {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}</span>
 
-<span class="c1"># Convert case</span>
-<span class="n">upper_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>      <span class="c1"># &quot;HELLO WORLD&quot;</span>
-<span class="n">lower_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>      <span class="c1"># &quot;hello world&quot;</span>
-<span class="n">title_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>      <span class="c1"># &quot;Hello World&quot;</span>
-<span class="n">capitalize_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>  <span class="c1"># &quot;Hello world&quot;</span>
-<span class="n">swapcase_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">swapcase</span><span class="p">()</span>      <span class="c1"># &quot;hELLO wORLD&quot;</span>
+<span class="c1"># Filter dictionary</span>
+<span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">,</span> <span class="s1">&#39;phone&#39;</span><span class="p">:</span> <span class="s1">&#39;123-456&#39;</span><span class="p">}</span>
+<span class="n">string_values</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">person</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">)}</span>
+
+<span class="c1"># Conditional comprehension</span>
+<span class="n">grades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Alice&#39;</span><span class="p">:</span> <span class="mi">85</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">:</span> <span class="mi">92</span><span class="p">,</span> <span class="s1">&#39;Charlie&#39;</span><span class="p">:</span> <span class="mi">78</span><span class="p">,</span> <span class="s1">&#39;David&#39;</span><span class="p">:</span> <span class="mi">95</span><span class="p">}</span>
+<span class="n">passed</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">grade</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">grade</span> <span class="ow">in</span> <span class="n">grades</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">}</span>
 </code></pre></div>
-<h3 id="string-searching-and-replacing">String Searching and Replacing<a class="headerlink" href="#string-searching-and-replacing" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello World Hello&quot;</span>
+<h3 id="merging-dictionaries">Merging Dictionaries<a class="headerlink" href="#merging-dictionaries" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
 
-<span class="c1"># Find substring</span>
-<span class="n">index</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">)</span>     <span class="c1"># 6</span>
-<span class="n">index</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">)</span>    <span class="c1"># -1 (not found)</span>
+<span class="c1"># Using update() method (modifies dict1)</span>
+<span class="n">dict1</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dict2</span><span class="p">)</span>
 
-<span class="c1"># Count occurrences</span>
-<span class="n">count</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>    <span class="c1"># 2</span>
+<span class="c1"># Using | operator (Python 3.9+)</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="n">dict1</span> <span class="o">|</span> <span class="n">dict2</span>
 
-<span class="c1"># Replace substring</span>
-<span class="n">new_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;Hi&quot;</span><span class="p">)</span>  <span class="c1"># &quot;Hi World Hi&quot;</span>
+<span class="c1"># Using ** unpacking</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">dict1</span><span class="p">,</span> <span class="o">**</span><span class="n">dict2</span><span class="p">}</span>
 
-<span class="c1"># Check if string starts/ends with</span>
-<span class="n">starts_with</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>  <span class="c1"># True</span>
-<span class="n">ends_with</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;World&quot;</span><span class="p">)</span>      <span class="c1"># False</span>
+<span class="c1"># Using dict() constructor</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">dict1</span><span class="p">,</span> <span class="o">**</span><span class="n">dict2</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="string-splitting-and-joining">String Splitting and Joining<a class="headerlink" href="#string-splitting-and-joining" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;apple,banana,cherry,date&quot;</span>
+<h3 id="nested-dictionaries">Nested Dictionaries<a class="headerlink" href="#nested-dictionaries" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create nested dictionary</span>
+<span class="n">students</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Alice&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;courses&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Math&#39;</span><span class="p">,</span> <span class="s1">&#39;Physics&#39;</span><span class="p">]},</span>
+    <span class="s1">&#39;Bob&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">:</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;courses&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Chemistry&#39;</span><span class="p">,</span> <span class="s1">&#39;Biology&#39;</span><span class="p">]}</span>
+<span class="p">}</span>
 
-<span class="c1"># Split by delimiter</span>
-<span class="n">fruits</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>  <span class="c1"># [&#39;apple&#39;, &#39;banana&#39;, &#39;cherry&#39;, &#39;date&#39;]</span>
+<span class="c1"># Access nested values</span>
+<span class="n">alice_age</span> <span class="o">=</span> <span class="n">students</span><span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">][</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>
+<span class="n">alice_courses</span> <span class="o">=</span> <span class="n">students</span><span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">][</span><span class="s1">&#39;courses&#39;</span><span class="p">]</span>
 
-<span class="c1"># Split with max splits</span>
-<span class="n">parts</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># [&#39;apple&#39;, &#39;banana&#39;, &#39;cherry,date&#39;]</span>
-
-<span class="c1"># Join strings</span>
-<span class="n">joined</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>  <span class="c1"># &quot;apple-banana-cherry-date&quot;</span>
-
-<span class="c1"># Split by whitespace</span>
-<span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;Hello   World   Python&quot;</span>
-<span class="n">words</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>  <span class="c1"># [&#39;Hello&#39;, &#39;World&#39;, &#39;Python&#39;]</span>
+<span class="c1"># Modify nested values</span>
+<span class="n">students</span><span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">][</span><span class="s1">&#39;grade&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;A+&#39;</span>
+<span class="n">students</span><span class="p">[</span><span class="s1">&#39;Bob&#39;</span><span class="p">][</span><span class="s1">&#39;courses&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Math&#39;</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="string-stripping-and-padding">String Stripping and Padding<a class="headerlink" href="#string-stripping-and-padding" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;   Hello World   &quot;</span>
+<h2 id="dictionary-methods">Dictionary Methods<a class="headerlink" href="#dictionary-methods" title="Permanent link">&para;</a></h2>
+<h3 id="default-values">Default Values<a class="headerlink" href="#default-values" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
 
-<span class="c1"># Remove whitespace</span>
-<span class="n">stripped</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>        <span class="c1"># &quot;Hello World&quot;</span>
-<span class="n">left_stripped</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>  <span class="c1"># &quot;Hello World   &quot;</span>
-<span class="n">right_stripped</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span> <span class="c1"># &quot;   Hello World&quot;</span>
+<span class="c1"># Default dictionary with list</span>
+<span class="n">dd</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="n">dd</span><span class="p">[</span><span class="s1">&#39;fruits&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;apple&#39;</span><span class="p">)</span>
+<span class="n">dd</span><span class="p">[</span><span class="s1">&#39;fruits&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">)</span>
+<span class="n">dd</span><span class="p">[</span><span class="s1">&#39;vegetables&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;carrot&#39;</span><span class="p">)</span>
 
-<span class="c1"># Padding</span>
-<span class="n">padded</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span>  <span class="c1"># &quot;***Hello World****&quot;</span>
-<span class="n">left_padded</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span>  <span class="c1"># &quot;Hello World********&quot;</span>
-<span class="n">right_padded</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span> <span class="c1"># &quot;********Hello World&quot;</span>
+<span class="c1"># Default dictionary with int (for counting)</span>
+<span class="n">word_count</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;cherry&#39;</span><span class="p">]:</span>
+    <span class="n">word_count</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 </code></pre></div>
-<h2 id="advanced-string-operations">Advanced String Operations<a class="headerlink" href="#advanced-string-operations" title="Permanent link">&para;</a></h2>
-<h3 id="string-formatting">String Formatting<a class="headerlink" href="#string-formatting" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
-<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
-<span class="n">height</span> <span class="o">=</span> <span class="mf">1.75</span>
-
-<span class="c1"># Old-style formatting</span>
-<span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Name: </span><span class="si">%s</span><span class="s2">, Age: </span><span class="si">%d</span><span class="s2">, Height: </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
-
-<span class="c1"># str.format() method</span>
-<span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Name: </span><span class="si">{}</span><span class="s2">, Age: </span><span class="si">{}</span><span class="s2">, Height: </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Name: </span><span class="si">{n}</span><span class="s2">, Age: </span><span class="si">{a}</span><span class="s2">, Height: </span><span class="si">{h:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">age</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">height</span><span class="p">)</span>
-
-<span class="c1"># f-strings (recommended)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, Age: </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2">, Height: </span><span class="si">{</span><span class="n">height</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
-</code></pre></div>
-<h3 id="string-validation">String Validation<a class="headerlink" href="#string-validation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello123&quot;</span>
-
-<span class="c1"># Check character types</span>
-<span class="n">is_alpha</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>      <span class="c1"># False (contains digits)</span>
-<span class="n">is_digit</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>      <span class="c1"># False (contains letters)</span>
-<span class="n">is_alnum</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">isalnum</span><span class="p">()</span>      <span class="c1"># True (alphanumeric)</span>
-<span class="n">is_lower</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span>      <span class="c1"># False (contains uppercase)</span>
-<span class="n">is_upper</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span>      <span class="c1"># False (contains lowercase)</span>
-<span class="n">is_space</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span>      <span class="c1"># False (no spaces)</span>
-</code></pre></div>
-<h3 id="string-encoding-and-decoding">String Encoding and Decoding<a class="headerlink" href="#string-encoding-and-decoding" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello, 世界&quot;</span>
-
-<span class="c1"># Encode to bytes</span>
-<span class="n">utf8_bytes</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-<span class="n">ascii_bytes</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
-
-<span class="c1"># Decode from bytes</span>
-<span class="n">decoded_text</span> <span class="o">=</span> <span class="n">utf8_bytes</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-</code></pre></div>
-<h2 id="common-string-patterns">Common String Patterns<a class="headerlink" href="#common-string-patterns" title="Permanent link">&para;</a></h2>
-<h3 id="palindrome-check">Palindrome Check<a class="headerlink" href="#palindrome-check" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_palindrome</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="c1"># Remove non-alphanumeric characters and convert to lowercase</span>
-    <span class="n">cleaned</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span> <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isalnum</span><span class="p">())</span>
-    <span class="k">return</span> <span class="n">cleaned</span> <span class="o">==</span> <span class="n">cleaned</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="c1"># Example</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s2">&quot;A man, a plan, a canal: Panama&quot;</span><span class="p">))</span>  <span class="c1"># True</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">is_palindrome</span><span class="p">(</span><span class="s2">&quot;race a car&quot;</span><span class="p">))</span>  <span class="c1"># False</span>
-</code></pre></div>
-<h3 id="anagram-check">Anagram Check<a class="headerlink" href="#anagram-check" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_anagram</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
-    <span class="c1"># Remove spaces and convert to lowercase</span>
-    <span class="n">s1_clean</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-    <span class="n">s2_clean</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s2</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-
-    <span class="c1"># Sort and compare</span>
-    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">s1_clean</span><span class="p">)</span> <span class="o">==</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">s2_clean</span><span class="p">)</span>
-
-<span class="c1"># Example</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">is_anagram</span><span class="p">(</span><span class="s2">&quot;listen&quot;</span><span class="p">,</span> <span class="s2">&quot;silent&quot;</span><span class="p">))</span>  <span class="c1"># True</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">is_anagram</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">))</span>    <span class="c1"># False</span>
-</code></pre></div>
-<h3 id="string-reversal">String Reversal<a class="headerlink" href="#string-reversal" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
-
-<span class="c1"># Using slice</span>
-<span class="n">reversed_text</span> <span class="o">=</span> <span class="n">text</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># &quot;dlroW olleH&quot;</span>
-
-<span class="c1"># Using reversed() function</span>
-<span class="n">reversed_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>  <span class="c1"># &quot;dlroW olleH&quot;</span>
-
-<span class="c1"># Word by word reversal</span>
-<span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<span class="n">reversed_words</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">)</span>  <span class="c1"># &quot;olleH dlroW&quot;</span>
-</code></pre></div>
-<h3 id="character-frequency">Character Frequency<a class="headerlink" href="#character-frequency" title="Permanent link">&para;</a></h3>
+<h3 id="counter">Counter<a class="headerlink" href="#counter" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">char_frequency</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">Counter</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="c1"># Count occurrences</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;cherry&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">]</span>
+<span class="n">word_counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word_counts</span><span class="p">)</span>  <span class="c1"># Counter({&#39;apple&#39;: 3, &#39;banana&#39;: 2, &#39;cherry&#39;: 1})</span>
 
-<span class="c1"># Example</span>
-<span class="n">freq</span> <span class="o">=</span> <span class="n">char_frequency</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span>  <span class="c1"># Counter({&#39;l&#39;: 3, &#39;o&#39;: 2, &#39;h&#39;: 1, &#39;e&#39;: 1, &#39; &#39;: 1, &#39;w&#39;: 1, &#39;r&#39;: 1, &#39;d&#39;: 1})</span>
+<span class="c1"># Most common elements</span>
+<span class="n">most_common</span> <span class="o">=</span> <span class="n">word_counts</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># [(&#39;apple&#39;, 3), (&#39;banana&#39;, 2)]</span>
+
+<span class="c1"># Arithmetic operations</span>
+<span class="n">counter1</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">])</span>
+<span class="n">counter2</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">])</span>
+<span class="n">combined</span> <span class="o">=</span> <span class="n">counter1</span> <span class="o">+</span> <span class="n">counter2</span>  <span class="c1"># Counter({&#39;a&#39;: 3, &#39;b&#39;: 2, &#39;c&#39;: 1, &#39;d&#39;: 1})</span>
 </code></pre></div>
 <h2 id="performance-considerations">Performance Considerations<a class="headerlink" href="#performance-considerations" title="Permanent link">&para;</a></h2>
-<h3 id="string-concatenation_1">String Concatenation<a class="headerlink" href="#string-concatenation_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Inefficient: creates new string each time</span>
-<span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<h3 id="time-complexity">Time Complexity<a class="headerlink" href="#time-complexity" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Average Case</th>
+<th>Worst Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Insert/Update</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Iteration</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="memory-usage">Memory Usage<a class="headerlink" href="#memory-usage" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Dictionaries use more memory than lists due to hash table overhead</li>
+<li>Trade-off: memory for speed</li>
+<li>Use dictionaries when you need fast key-based lookups</li>
+</ul>
+<h2 id="common-patterns">Common Patterns<a class="headerlink" href="#common-patterns" title="Permanent link">&para;</a></h2>
+<h3 id="grouping-data">Grouping Data<a class="headerlink" href="#grouping-data" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Group students by grade</span>
+<span class="n">students</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">:</span> <span class="s1">&#39;B&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Charlie&#39;</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;David&#39;</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">}</span>
+<span class="p">]</span>
 
-<span class="c1"># Efficient: use list and join</span>
-<span class="n">parts</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
-    <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-<span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
+<span class="n">grouped</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+    <span class="n">grade</span> <span class="o">=</span> <span class="n">student</span><span class="p">[</span><span class="s1">&#39;grade&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">grade</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
+        <span class="n">grouped</span><span class="p">[</span><span class="n">grade</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">grouped</span><span class="p">[</span><span class="n">grade</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+
+<span class="c1"># Result: {&#39;A&#39;: [&#39;Alice&#39;, &#39;Charlie&#39;], &#39;B&#39;: [&#39;Bob&#39;], &#39;C&#39;: [&#39;David&#39;]}</span>
 </code></pre></div>
-<h3 id="string-vs-list-operations">String vs List Operations<a class="headerlink" href="#string-vs-list-operations" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># String operations create new objects</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
-<span class="n">text</span> <span class="o">+=</span> <span class="s2">&quot; World&quot;</span>  <span class="c1"># Creates new string</span>
+<h3 id="cachingmemoization">Caching/Memoization<a class="headerlink" href="#cachingmemoization" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Simple memoization decorator</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">memoize</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
 
-<span class="c1"># List operations modify in place</span>
-<span class="n">chars</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
-<span class="n">chars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>  <span class="c1"># Modifies existing list</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">args</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>
+            <span class="n">cache</span><span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">args</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@memoize</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="configuration-management">Configuration Management<a class="headerlink" href="#configuration-management" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Default configuration with overrides</span>
+<span class="n">default_config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">8080</span><span class="p">,</span>
+    <span class="s1">&#39;debug&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;timeout&#39;</span><span class="p">:</span> <span class="mi">30</span>
+<span class="p">}</span>
+
+<span class="n">user_config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;192.168.1.100&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;debug&#39;</span><span class="p">:</span> <span class="kc">True</span>
+<span class="p">}</span>
+
+<span class="c1"># Merge configurations</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">default_config</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">config</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">user_config</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Use f-strings for formatting</strong>: More readable and efficient</li>
-<li><strong>Use join() for concatenation</strong>: More efficient than + operator in loops</li>
-<li><strong>Use appropriate string methods</strong>: Built-in methods are optimized</li>
-<li><strong>Consider immutability</strong>: Strings are immutable, operations create new objects</li>
-<li><strong>Use raw strings for regex</strong>: <code>r"pattern"</code> to avoid escaping backslashes</li>
-<li><strong>Handle encoding properly</strong>: Be explicit about encoding when working with files</li>
+<li><strong>Use <code>.get()</code> for safe access</strong>: Avoid KeyError exceptions</li>
+<li><strong>Use dictionary comprehension</strong>: More readable than loops</li>
+<li><strong>Use <code>defaultdict</code> for counting/grouping</strong>: Avoid checking if key exists</li>
+<li><strong>Use <code>Counter</code> for frequency counting</strong>: Built-in functionality</li>
+<li><strong>Consider memory usage</strong>: Dictionaries use more memory than lists</li>
+<li><strong>Use appropriate data structures</strong>: Lists for order, sets for uniqueness, dicts for key-value pairs</li>
 </ol>
 <h2 id="related-topics">Related Topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="../Unique_Strings/">Unique Strings</a></strong> - Finding unique strings in a list</li>
-<li><strong><a href="../../Set_Dictionary_Problems/Array_Intersection/">Array Intersection</a></strong> - String-based intersection problems</li>
-<li><strong><a href="../../Set_Dictionary_Problems/Anagram_Pairs/">Anagram Pairs</a></strong> - String anagram detection</li>
-<li><strong><a href="../../../Resources/Common_Patterns/">Common Patterns</a></strong> - General problem-solving patterns</li>
+<li><strong><a href="../Python_Dictionaries/">Dictionaries Overview</a></strong> - Basic dictionary concepts and characteristics</li>
+<li><strong><a href="../../../Problem_Solving/Set_Dictionary_Problems/Array_Intersection/">Array Intersection</a></strong> - Using dictionaries for counting</li>
+<li><strong><a href="../../../Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs/">Anagram Pairs</a></strong> - Dictionary-based anagram detection</li>
+<li><strong><a href="../../../Problem_Solving/String_Problems/Unique_Strings/">Unique Strings</a></strong> - Dictionary-based string problems</li>
 </ul>
 
 

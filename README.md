@@ -28,12 +28,14 @@ _notes/
 │   ├── Overview/
 │   │   └── Engineering_and_Data_Structure_Overview.md
 │   ├── Data_Structures/
-│   │   ├── Python_Sets/
-│   │   │   ├── Sets_Overview.md
-│   │   │   └── Set_Operations.md
-│   │   └── Python_Dictionaries/
-│   │       ├── Dictionaries_Overview.md
-│   │       └── Dictionary_Operations.md
+│   │   └── Hash_Tables/
+│   │       ├── Hash_Tables_Overview.md
+│   │       ├── Hash_Functions_and_Collisions.md
+│   │       ├── Python_Dictionaries.md
+│   │       ├── Python_Dictionary_Operations.md
+│   │       ├── Python_Sets.md
+│   │       ├── Python_Set_Operations.md
+│   │       └── Hash_Table_Problems.md
 │   ├── Problem_Solving/
 │   │   ├── Set_Dictionary_Problems/
 │   │   │   ├── Array_Intersection.md
@@ -106,13 +108,16 @@ _notes/
 - **Visual Learning**: Diagrams, charts, and mathematical equations
 
 ## Update logs
+### version 2025-08-23
+- restructured the `_notes\engineering_and_data_structure` section to make it self-contained
+- reorganized Data Structures section under Hash Tables with comprehensive theory and Python implementations
+- added Hash Tables Overview, Hash Functions and Collisions, and Hash Table Problems sections
+- consolidated Python Sets and Python Dictionaries under the Hash Tables umbrella for better conceptual organization
+- added in the `_notes\calculus_and_linear_algebra` section for fundamental mathematics review in the future
+- updated the README.md format to describe the website structure
 ### version 2025-08-22
 - added in the engineering and data structure related pages for future reference when coding
 - refactored the front page design and made sure that the pastel hero looks ok
 - fixed the math equations not showing properly but in raw format
 - restructured the ML fundamentals section to be more organized and readable
 - upgraded the front page to have hover over drop-down menu
-
-### version 2025-08-23
-- restructured the `_notes\engineering_and_data_structure` section to make it self-contained
-- added in the `_notes\calculus_and_linear_algebra` section for fundamental mathematics review in the future

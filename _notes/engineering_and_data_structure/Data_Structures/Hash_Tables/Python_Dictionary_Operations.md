@@ -232,7 +232,7 @@ config.update(user_config)
 
 ## Related Topics
 
-- **[Dictionaries Overview](Dictionaries_Overview.md)** - Basic dictionary concepts and characteristics
+- **[Dictionaries Overview](Python_Dictionaries.md)** - Basic dictionary concepts and characteristics
 - **[Array Intersection](../../Problem_Solving/Set_Dictionary_Problems/Array_Intersection.md)** - Using dictionaries for counting
 - **[Anagram Pairs](../../Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs.md)** - Dictionary-based anagram detection
 - **[Unique Strings](../../Problem_Solving/String_Problems/Unique_Strings.md)** - Dictionary-based string problems
