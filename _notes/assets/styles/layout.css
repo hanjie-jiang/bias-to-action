@@ -410,16 +410,16 @@
   display: list-item !important;
 }
 
-/* Force all lists to show bullets except hero dropdown */
-* ul:not(.hero-dropdown ul),
-* ol:not(.hero-dropdown ol) {
+/* Force content lists to show bullets except hero dropdown and navigation */
+.md-content ul:not(.hero-dropdown ul):not(.md-nav ul),
+.md-content ol:not(.hero-dropdown ol):not(.md-nav ol) {
   list-style-type: disc !important;
   list-style: disc !important;
   padding-left: 2rem !important;
 }
 
-* ul li:not(.hero-dropdown li),
-* ol li:not(.hero-dropdown li) {
+.md-content ul li:not(.hero-dropdown li):not(.md-nav li),
+.md-content ol li:not(.hero-dropdown li):not(.md-nav li) {
   list-style-type: disc !important;
   list-style: disc !important;
   display: list-item !important;
