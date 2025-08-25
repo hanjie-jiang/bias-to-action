@@ -108,6 +108,9 @@ _notes/
 - **Visual Learning**: Diagrams, charts, and mathematical equations
 
 ## Update logs
+### version 2025-08-25
+- updated the `engineering_and_data_structure` folder with newly added recursion content
+- updated the README.md format to describe the website structure
 ### version 2025-08-23
 - restructured the `_notes\engineering_and_data_structure` section to make it self-contained
 - reorganized Data Structures section under Hash Tables with comprehensive theory and Python implementations
