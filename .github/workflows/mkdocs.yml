@@ -1,8 +1,8 @@
-name: Build & Deploy MkDocs to GitHub Pages
+name: Build and Deploy MkDocs to GitHub Pages
 
 on:
   push:
-    branches: [ master ]   # change to [ master ] if that's your default
+    branches: [ master ]
 
 permissions:
   contents: read
@@ -11,7 +11,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.12
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -28,21 +28,9 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then
-            pip install -r requirements.txt
-          else
-            pip install mkdocs mkdocs-material mkdocs-roamlinks-plugin==0.3.2
-          fi
+          pip install -r requirements.txt
 
-      - name: Verify mkdocs.yml basics
-        run: |
-          echo "Checking docs_dir is _notes and required plugins/extensions exist..."
-          grep -q "docs_dir: _notes" mkdocs.yml
-          grep -q "roamlinks" mkdocs.yml
-          grep -q "md_in_html" mkdocs.yml
-          grep -q "pymdownx.arithmatex" mkdocs.yml
-
-      - name: Build (strict)
+      - name: Build site
         run: mkdocs build --strict
 
       - name: Upload artifact
