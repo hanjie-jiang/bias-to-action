@@ -1,11 +1,15 @@
 ---
 title: Python Dictionaries Overview
 ---
-
 # Python Dictionaries Overview
 
 Python dictionaries are mutable, unordered collections of key-value pairs. They provide fast O(1) average time complexity for lookups, insertions, and deletions.
 
+In a hash table (or Python dictionary), there isn’t a concept of a fixed “index” for key-value pairs like in a list—the data is stored based on the hash of the key, not in a specific order.
+- Dictionaries are unordered (before Python 3.7) or insertion-ordered (Python 3.7+), but you still can’t access by index directly.
+- If you really need the “index” (position in the list of items), you could convert the items to a list and use `.index()`.
+
+Python dictionaries can be used to tackle tasks that involve the **manipulation and analysis of strings, validating password strengths, and managing personnel data.**
 ## Key Characteristics
 
 - **Key-Value Pairs**: Each element is a key-value pair
@@ -35,12 +39,15 @@ dict_from_pairs = dict(pairs)
 
 ### Accessing and Modifying
 
+```Python
+age = person.get('age', 0)  # Returns default value if key doesn't exist
+```
+
 ```python
 person = {'name': 'John', 'age': 30}
 
 # Accessing values
 name = person['name']  # Raises KeyError if key doesn't exist
-age = person.get('age', 0)  # Returns default value if key doesn't exist
 
 # Adding/Modifying
 person['city'] = 'New York'  # Add new key-value pair
@@ -50,6 +57,9 @@ person['age'] = 31  # Modify existing value
 del person['age']  # Raises KeyError if key doesn't exist
 city = person.pop('city', 'Unknown')  # Returns default if key doesn't exist
 person.clear()  # Remove all items
+
+# Accessing keys via known values
+matched_key = [key for key, val in book_ratings.items() if val == value]
 ```
 
 ## Common Methods

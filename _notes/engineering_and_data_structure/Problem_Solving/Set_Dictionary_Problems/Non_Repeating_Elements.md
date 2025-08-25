@@ -1,7 +1,6 @@
 ---
 title: Non-Repeating Elements
 ---
-
 # Non-Repeating Elements
 
 Find elements that appear only once in an array using Python sets.

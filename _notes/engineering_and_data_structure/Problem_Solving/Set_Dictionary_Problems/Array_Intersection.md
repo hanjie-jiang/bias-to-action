@@ -1,7 +1,6 @@
 ---
 title: Array Intersection
 ---
-
 # Array Intersection
 
 Find the intersection of two arrays using Python sets.

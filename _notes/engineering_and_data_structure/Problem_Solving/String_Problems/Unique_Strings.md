@@ -111,4 +111,4 @@ print(result)  # "unique"
 
 - **[Non-Repeating Elements](../Set_Dictionary_Problems/Non_Repeating_Elements.md)** - Finding non-repeating numbers
 - **[Array Intersection](../Set_Dictionary_Problems/Array_Intersection.md)** - Finding common elements
-- **[String Operations](String_Operations.md)** - Other string manipulation techniques
+- **[String Operations](../../Data_Structures/Hash_Tables/String_Operations.md)** - Other string manipulation techniques

@@ -9,11 +9,19 @@ Welcome to the Engineering & Data Structure section! This comprehensive guide co
 ## Learning Path
 
 ### 1. Data Structures
+
+#### Hash Tables
 - **[Hash Tables Overview](../Data_Structures/Hash_Tables/Hash_Tables_Overview.md)** - Fundamental concepts and applications
 - **[Hash Functions & Collisions](../Data_Structures/Hash_Tables/Hash_Functions_and_Collisions.md)** - Implementation details and collision resolution
 - **[Python Dictionaries](../Data_Structures/Hash_Tables/Python_Dictionaries.md)** - Key-value pair data structures
 - **[Python Sets](../Data_Structures/Hash_Tables/Python_Sets.md)** - Unordered collections of unique elements
 - **[Hash Table Problems](../Data_Structures/Hash_Tables/Hash_Table_Problems.md)** - Common coding problems and solutions
+
+#### Recursion
+- **[Recursion Fundamentals](../Data_Structures/Recursion/Recursion_Fundamentals.md)** - Basic concepts and structure
+- **[Recursive Algorithms](../Data_Structures/Recursion/Recursive_Algorithms.md)** - Common recursive algorithms
+- **[Recursion vs Iteration](../Data_Structures/Recursion/Recursion_vs_Iteration.md)** - When to choose each approach
+- **[Common Recursive Patterns](../Data_Structures/Recursion/Common_Recursive_Patterns.md)** - Problem-solving patterns
 
 ### 2. Problem Solving
 - **[Set & Dictionary Problems](../Problem_Solving/Set_Dictionary_Problems/Array_Intersection.md)** - Set operations and dictionary applications
@@ -32,6 +40,9 @@ Welcome to the Engineering & Data Structure section! This comprehensive guide co
 - **Python Dictionaries**: Key-value mappings for efficient lookups and counting
 - **Python Sets**: Unordered collections with unique elements, O(1) lookups
 - **Hash Table Applications**: Caching, frequency counting, fast lookups, and data indexing
+- **Recursion**: Problem-solving technique where functions call themselves with modified parameters
+- **Recursive Algorithms**: Divide and conquer, tree traversal, backtracking, and mathematical computations
+- **Recursion Patterns**: Linear, binary, multiple, tail recursion, and memoization techniques
 
 ### Problem-Solving Patterns
 - **Set-based Solutions**: Removing duplicates, finding intersections, uniqueness
@@ -46,9 +57,10 @@ Welcome to the Engineering & Data Structure section! This comprehensive guide co
 
 ## Getting Started
 
-1. **Begin with Hash Tables**: Start with the Hash Tables Overview to understand the fundamental concepts, then explore Python implementations
-2. **Practice with Problems**: Work through the problem-solving sections to see practical applications
-3. **Study Patterns**: Learn common patterns and time complexity analysis
-4. **Prepare for Interviews**: Use the interview strategies and practice problems
+1. **Begin with Fundamentals**: Start with Hash Tables Overview and Recursion Fundamentals to understand core concepts
+2. **Explore Data Structures**: Study hash tables for efficient lookups and recursion for algorithmic thinking
+3. **Practice with Problems**: Work through the problem-solving sections to see practical applications
+4. **Study Patterns**: Learn common patterns, recursive techniques, and time complexity analysis
+5. **Prepare for Interviews**: Use the interview strategies and practice problems
 
 Each section includes practical examples, code implementations, and common interview questions to help you master these concepts.

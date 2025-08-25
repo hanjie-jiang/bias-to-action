@@ -259,7 +259,7 @@ chars.append("!")  # Modifies existing list
 
 ## Related Topics
 
-- **[Unique Strings](Unique_Strings.md)** - Finding unique strings in a list
-- **[Array Intersection](../Set_Dictionary_Problems/Array_Intersection.md)** - String-based intersection problems
-- **[Anagram Pairs](../Set_Dictionary_Problems/Anagram_Pairs.md)** - String anagram detection
+- **[Unique Strings](../../Problem_Solving/String_Problems/Unique_Strings.md)** - Finding unique strings in a list
+- **[Array Intersection](../../Problem_Solving/Set_Dictionary_Problems/Array_Intersection.md)** - String-based intersection problems
+- **[Anagram Pairs](../../Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs.md)** - String anagram detection
 - **[Common Patterns](../../Resources/Common_Patterns.md)** - General problem-solving patterns

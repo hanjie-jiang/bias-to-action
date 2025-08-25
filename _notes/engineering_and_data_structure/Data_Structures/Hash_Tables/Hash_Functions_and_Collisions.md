@@ -3,25 +3,20 @@
 ## Hash Functions
 
 A hash function is the heart of any hash table. It takes a key as input and produces an integer (hash code) that determines where the key-value pair should be stored in the underlying array.
-
 ### Properties of Good Hash Functions
 
 #### 1. Deterministic
 - Same input always produces same output
 - Essential for consistent lookups
-
 #### 2. Uniform Distribution
 - Keys should be spread evenly across the hash table
 - Minimizes clustering and collisions
-
 #### 3. Fast Computation
 - Should be O(1) time complexity
 - Avoid expensive operations
-
 #### 4. Avalanche Effect
 - Small changes in input cause large changes in output
 - Helps distribute similar keys
-
 ### Common Hash Function Techniques
 
 #### 1. Division Method
@@ -57,7 +52,13 @@ def hash_string(s, table_size):
 
 ## Collisions
 
-A collision occurs when two different keys hash to the same index. Since hash tables have finite size, collisions are inevitable (pigeonhole principle).
+A collision occurs when two different keys hash to the same index. Since hash tables have finite size, collisions are inevitable (pigeonhole principle). When a collision occurs, we are faced with a dilemma - where do we store the new key-value pair since that index is already occupied?
+
+Here are two common strategies to handle such scenarios:
+
+1. **Chaining**: In this method, each index (or `bucket`) in the array hosts a linked list of all key-value pairs that hash to the same index. When a collision occurs, we simply go to the collided index and append the new key-value pair to the existing linked list.
+    
+2. **Open Addressing**: Upon encountering a collision, the hash table searches for another free slot or index in the table (possibly the next available empty slot) and assigns that location to the new key-value pair. This approach requires a suitable probing strategy to ensure efficient use of table space.
 
 ### Collision Resolution Strategies
 

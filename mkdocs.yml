@@ -62,7 +62,13 @@ nav:
               - Python Dictionary Operations: engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Dictionary_Operations.md
               - Python Sets: engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Sets.md
               - Python Set Operations: engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Set_Operations.md
+              - String Operations: engineering_and_data_structure/Data_Structures/Hash_Tables/String_Operations.md
               - Hash Table Problems: engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Table_Problems.md
+          - Recursion:
+              - Recursion Fundamentals: engineering_and_data_structure/Data_Structures/Recursion/Recursion_Fundamentals.md
+              - Recursive Algorithms: engineering_and_data_structure/Data_Structures/Recursion/Recursive_Algorithms.md
+              - Recursion vs Iteration: engineering_and_data_structure/Data_Structures/Recursion/Recursion_vs_Iteration.md
+              - Common Recursive Patterns: engineering_and_data_structure/Data_Structures/Recursion/Common_Recursive_Patterns.md
       - Problem Solving:
           - Set & Dictionary Problems:
               - Array Intersection: engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Array_Intersection.md
@@ -71,7 +77,6 @@ nav:
               - Anagram Pairs: engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs.md
           - String Problems:
               - Unique Strings: engineering_and_data_structure/Problem_Solving/String_Problems/Unique_Strings.md
-              - String Operations: engineering_and_data_structure/Problem_Solving/String_Problems/String_Operations.md
       - Resources:
           - Common Patterns: engineering_and_data_structure/Resources/Common_Patterns.md
           - Time Complexity Guide: engineering_and_data_structure/Resources/Time_Complexity_Guide.md

@@ -1,7 +1,6 @@
 ---
 title: Unique Elements
 ---
-
 # Unique Elements
 
 Find elements that are unique to each of two arrays using Python sets.
