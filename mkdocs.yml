@@ -55,6 +55,10 @@ nav:
   - Engineering and Data Structure:
       - Overview: engineering_and_data_structure/Overview/Engineering_and_Data_Structure_Overview.md
       - Data Structures:
+          - Arrays:
+              - Arrays Overview: engineering_and_data_structure/Data_Structures/Arrays/Arrays_Overview.md
+              - Dynamic Arrays: engineering_and_data_structure/Data_Structures/Arrays/Dynamic_Arrays.md
+              - Array Problems: engineering_and_data_structure/Data_Structures/Arrays/Array_Problems.md
           - Hash Tables:
               - Hash Tables Overview: engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Tables_Overview.md
               - Hash Functions & Collisions: engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Functions_and_Collisions.md
@@ -69,6 +73,26 @@ nav:
               - Recursive Algorithms: engineering_and_data_structure/Data_Structures/Recursion/Recursive_Algorithms.md
               - Recursion vs Iteration: engineering_and_data_structure/Data_Structures/Recursion/Recursion_vs_Iteration.md
               - Common Recursive Patterns: engineering_and_data_structure/Data_Structures/Recursion/Common_Recursive_Patterns.md
+      - Algorithms:
+          - Search Algorithms:
+              - Search Overview: engineering_and_data_structure/Algorithms/Search_Algorithms/Search_Algorithms_Overview.md
+              - Binary Search: engineering_and_data_structure/Algorithms/Search_Algorithms/Binary_Search_Fundamentals.md
+              - Binary Search Variations: engineering_and_data_structure/Algorithms/Search_Algorithms/Binary_Search_Variations.md
+              - Search Problems: engineering_and_data_structure/Algorithms/Search_Algorithms/Search_Problems.md
+          - Sorting Algorithms:
+              - Sorting Overview: engineering_and_data_structure/Algorithms/Sorting_Algorithms/Sorting_Algorithms_Overview.md
+              - Sorting Problems: engineering_and_data_structure/Algorithms/Sorting_Algorithms/Sorting_Problems.md
+      - Algorithmic Patterns:
+          - Two Pointers:
+              - Two Pointers Overview: engineering_and_data_structure/Algorithmic_Patterns/Two_Pointers/Two_Pointers_Overview.md
+              - Opposite Direction: engineering_and_data_structure/Algorithmic_Patterns/Two_Pointers/Opposite_Direction_Pointers.md
+              - Same Direction: engineering_and_data_structure/Algorithmic_Patterns/Two_Pointers/Same_Direction_Pointers.md
+              - Two Pointers Problems: engineering_and_data_structure/Algorithmic_Patterns/Two_Pointers/Two_Pointers_Problems.md
+          - Sliding Window:
+              - Sliding Window Overview: engineering_and_data_structure/Algorithmic_Patterns/Sliding_Window/Sliding_Window_Overview.md
+              - Fixed Size Window: engineering_and_data_structure/Algorithmic_Patterns/Sliding_Window/Fixed_Size_Window.md
+              - Variable Size Window: engineering_and_data_structure/Algorithmic_Patterns/Sliding_Window/Variable_Size_Window.md
+              - Sliding Window Problems: engineering_and_data_structure/Algorithmic_Patterns/Sliding_Window/Sliding_Window_Problems.md
       - Problem Solving:
           - Set & Dictionary Problems:
               - Array Intersection: engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Array_Intersection.md

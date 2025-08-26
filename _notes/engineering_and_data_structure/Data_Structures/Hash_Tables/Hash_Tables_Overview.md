@@ -106,6 +106,6 @@ for char in text:
 4. [Hash Table Problems](Hash_Table_Problems.md) - Practice common coding problems
 
 ## Related Topics
-- [[Array Intersection]] - Using hash tables for set operations
-- [[Non-Repeating Elements]] - Hash table applications
-- [[Time Complexity Guide]] - Understanding Big O notation
+o- [[Array_Intersection]] - Using hash tables for set operations  
+- [[Non_Repeating_Elements]] - Hash table applications
+- [[Time_Complexity_Guide]] - Understanding Big O notation

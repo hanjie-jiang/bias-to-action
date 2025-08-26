@@ -374,7 +374,7 @@ print(permutations([1, 2, 3]))
 def subsets(arr, index=0):
     # Base case
     if index >= len(arr):
-        return [[]]
+        return \[\[\]\]  # Return list containing empty subset
     
     # Get subsets without current element
     subsets_without_current = subsets(arr, index + 1)

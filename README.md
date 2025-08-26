@@ -110,6 +110,7 @@ _notes/
 ## Update logs
 ### version 2025-08-25
 - updated the `engineering_and_data_structure` folder with newly added recursion content
+- added in the search and sort algorithm sections in appropriate folders
 - updated the README.md format to describe the website structure
 ### version 2025-08-23
 - restructured the `_notes\engineering_and_data_structure` section to make it self-contained

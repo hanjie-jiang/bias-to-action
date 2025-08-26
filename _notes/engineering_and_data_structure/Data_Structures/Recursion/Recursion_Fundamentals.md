@@ -1,7 +1,6 @@
 ---
 title: Recursion Fundamentals
 ---
-
 # Recursion Fundamentals
 
 Recursion is a programming technique where a function calls itself to solve a problem by breaking it down into smaller, similar subproblems.
@@ -56,7 +55,8 @@ print(factorial(5))  # Output: 120
 - factorial(2) = 2 * factorial(1)
 - factorial(1) = 1 (base case)
 
-### Example 2: Fibonacci Sequence
+### Example 2: 
+#### Fibonacci Sequence: Naive approach
 
 ```python
 def fibonacci(n):
@@ -71,6 +71,16 @@ def fibonacci(n):
 print(fibonacci(6))  # Output: 8
 ```
 
+#### Fibonacci Sequence: Efficient Implementation using **memoization**
+
+```Python
+def fibonacci(n, computed = {0: 0, 1: 1}):
+	if n not in computed:
+		computed[n] = fib(n-1, computed) + fib(n-2, computed)
+	return computed[n]
+```
+
+This computes the n-th Fibonacci number in linear time, O(n)
 ### Example 3: Sum of Array
 
 ```python
@@ -78,10 +88,8 @@ def array_sum(arr, index=0):
     # Base case
     if index >= len(arr):
         return 0
-    
     # Recursive case
     return arr[index] + array_sum(arr, index + 1)
-
 # Usage
 numbers = [1, 2, 3, 4, 5]
 print(array_sum(numbers))  # Output: 15
