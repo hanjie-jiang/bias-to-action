@@ -1,9 +1,11 @@
-## Personal Notes for ML & AI Fundamentals
+# Bias to Action — __Build intuition, then build models.__ 
+
+## Notes for ML & AI Fundamentals that Minimizes Confusion
 
 This is the Obsidian notes for ML & AI learnings purposes based on different sources that one could 
 find with plain language and easy to understand content. Resources are all included in the notes as a standalone package.
 
-All the materials can also be found readable at GitPage URL (https://hanjie-jiang.github.io/ml-learning-notes/)
+All the materials can also be found readable at GitPage URL (https://hanjie-jiang.github.io/bias-to-action/)
 
 ## 📁 Repository Structure
 
