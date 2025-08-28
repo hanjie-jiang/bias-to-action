@@ -1,6 +1,6 @@
 # Binary Search Variations
 
-While basic binary search finds if an element exists, many real-world problems require variations of binary search. These patterns extend the core concept to solve more complex problems.
+While basic binary search finds if an element exists, many real-world problems require variations of binary search. These patterns extend the core concept to solve more complex problems. For example, binary search algorithm can be applied onto continuous functions too. which will provide new insight on how to determine a specific function value within a continuous interval. This approach broadens the application of binary search from discrete space to continuous functions. The mechanism of binary search remains much the same, but instead of comparing the middle element to the target, we compare the middle point x's function value f(x) to the target.
 
 ## Common Binary Search Patterns
 
@@ -80,7 +80,7 @@ def search_insert_position(arr, target):
 ```
 
 ### 4. **Find Range**
-Find the range [first, last] of target occurrences.
+Find the range \[first, last\] of target occurrences.
 
 ```python
 def find_range(arr, target):
@@ -116,6 +116,31 @@ def find_range(arr, target):
 # Returns: [3, 4]
 ```
 
+### 5. **Find the answer of function**
+```Python
+# Define the function
+def f(x):
+    return x * x - 2
+
+# Define the binary search function 
+def binary_search(target, left, right, precision):
+    while right - left > precision:
+        mid = (left + right) / 2
+        if f(mid) < target: # If the midpoint value is less than the target...
+            left = mid  # ...update the left boundary to be the midpoint.
+        else:
+            right = mid  # Otherwise, update the right boundary.
+    return left # Return the left boundary of our final, narrow interval.
+
+epsilon = 1e-6
+result = binary_search(0, 1, 2, epsilon)
+print("x for which f(x) is approximately 0:", result)
+
+# Outputs:
+# x for which f(x) is approximately 0: 1.4142131805419922
+```
+
+Binary search only works reliably if the function is **monotonic** (always increasing or always decreasing) in the interval you search.
 ## Advanced Binary Search Patterns
 
 ### 1. **Peak Finding**
@@ -176,6 +201,8 @@ def search_rotated_array(arr, target):
 
 ### 3. **Find Minimum in Rotated Array**
 Find the minimum element in a rotated sorted array.
+
+Naive Approach: A straightforward solution involves scanning each element in the array until we find a match or exhaust the list. This linear search approach is simple but computationally expensive for large lists - its time complexity is O(n).
 
 ```python
 def find_min_rotated(arr):

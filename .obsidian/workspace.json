@@ -4,39 +4,91 @@
     "type": "split",
     "children": [
       {
-        "id": "f068bf85b093298e",
-        "type": "tabs",
+        "id": "4c5ea8f7f3c1e310",
+        "type": "split",
         "children": [
           {
-            "id": "731190164876a8f7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_notes/Foundational knowledge plan.md",
-                "mode": "source",
-                "source": false
+            "id": "f068bf85b093298e",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "731190164876a8f7",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "_notes/Foundational knowledge plan.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Foundational knowledge plan"
+                }
               },
-              "icon": "lucide-file",
-              "title": "Foundational knowledge plan"
-            }
+              {
+                "id": "ef405ffda0e8ce35",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "_notes/engineering_and_data_structure/Algorithms/Search_Algorithms/Binary_Search_Variations.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Binary_Search_Variations"
+                }
+              }
+            ],
+            "currentTab": 1
           },
           {
-            "id": "ef405ffda0e8ce35",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_notes/engineering_and_data_structure/Data_Structures/Recursion/Recursion_Fundamentals.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Recursion_Fundamentals"
-            }
+            "id": "c9b1f6770d4f7b7c",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "72c181072f2647d2",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "terminal:terminal",
+                  "state": {
+                    "terminal:terminal": {
+                      "cwd": "C:\\Users\\Hanjie\\Documents\\obsidian",
+                      "focus": false,
+                      "profile": {
+                        "args": [],
+                        "executable": "C:\\Windows\\System32\\cmd.exe",
+                        "name": "",
+                        "platforms": {
+                          "win32": true
+                        },
+                        "pythonExecutable": "python3",
+                        "restoreHistory": false,
+                        "rightClickAction": "copyPaste",
+                        "successExitCodes": [
+                          "0",
+                          "SIGINT",
+                          "SIGTERM"
+                        ],
+                        "terminalOptions": {
+                          "documentOverride": null
+                        },
+                        "type": "integrated",
+                        "useWin32Conhost": true
+                      },
+                      "serial": null
+                    }
+                  },
+                  "pinned": true,
+                  "icon": "terminal",
+                  "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
+                }
+              }
+            ]
           }
         ],
-        "currentTab": 1
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -93,7 +145,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "c17c536f17d080a0",
@@ -195,8 +248,12 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "ef405ffda0e8ce35",
+  "active": "72c181072f2647d2",
   "lastOpenFiles": [
+    "_notes/engineering_and_data_structure/Algorithms/Search_Algorithms/Binary_Search_Variations.md",
+    "_notes/engineering_and_data_structure/Algorithms/Search_Algorithms/Binary_Search_Fundamentals.md",
+    "_notes/engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Table_Problems.md",
+    "_notes/engineering_and_data_structure/Data_Structures/Recursion/Recursion_Fundamentals.md",
     "_notes/engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Implement_a_Keyword_Index.md",
     "_notes/engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Frequent_Words_Find.md",
     "_notes/engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Majority_Vote_Problem.md",
@@ -212,7 +269,6 @@
     "_notes/engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs.md",
     "_notes/engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Unique_Elements.md",
     "_notes/engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Non_Repeating_Elements.md",
-    "_notes/engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Table_Problems.md",
     "_notes/engineering_and_data_structure/Overview/Engineering_and_Data_Structure_Overview.md",
     "_notes/engineering_and_data_structure/Data_Structures/Linked_Lists",
     "site/engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Set_Operations/index.html",
@@ -236,12 +292,9 @@
     "site/ml_fundamentals/model_evaluation/resources/p-r_curve.png",
     "site/ml_fundamentals/model_evaluation/resources/gini_index_2.png",
     "site/ml_fundamentals/model_evaluation/resources/gini_index_1.png",
-    "_notes/ml_fundamentals/classical_algorithms/logistic_regression.md",
     "_notes/ml_fundamentals/model_evaluation/resources/Screenshot 2025-08-05 at 9.30.27 PM.png",
     "_notes/ml_fundamentals/model_evaluation/resources/Screenshot 2025-08-05 at 8.22.11 PM.png",
     "_notes/ml_fundamentals/model_evaluation/resources/p-r_curve.png",
-    "_notes/ml_fundamentals/model_evaluation/resources/gini_index_2.png",
-    "_notes/ml_fundamentals/unsupervised_learning/k_means_clustering.md",
-    "_notes/ml_fundamentals/unsupervised_learning/k_nearest_neighbors.md"
+    "_notes/ml_fundamentals/model_evaluation/resources/gini_index_2.png"
   ]
 }

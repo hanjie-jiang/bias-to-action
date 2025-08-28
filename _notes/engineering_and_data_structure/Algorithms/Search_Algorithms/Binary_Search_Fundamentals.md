@@ -50,10 +50,16 @@ def binary_search(arr, target):
             left = mid + 1  # Search right half
         else:
             right = mid - 1  # Search left half
-    
-    return -1  # Target not found
+	    if 0 <= low < len(data) and data[low] == target:
+	        return low
+	    else:
+	        return -1
 ```
 
+For classic binary search on a sorted list:
+- If using `[low, high)` (right-exclusive), update `high = mid` and `low = mid + 1`
+- If using `[low, high]` (both inclusive), update `high = mid - 1` and `low = mid + 1`
+It's important to keep your interval logic and updates consistent.
 ### Recursive Approach
 ```python
 def binary_search_recursive(arr, target, left=0, right=None):
@@ -77,6 +83,8 @@ def binary_search_recursive(arr, target, left=0, right=None):
         return binary_search_recursive(arr, target, left, mid - 1)
 ```
 
+- If you use `[low, high)` (half-open), check when `high - low == 1` and compare `data[low]` to `target`.
+- If you use `[left, right]` (closed), check when `left > right` and return `-1` (or `None`), and compare `arr[mid]` to `target` as usual.
 ## Time and Space Complexity
 
 ### Time Complexity: O(log n)
