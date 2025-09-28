@@ -7,8 +7,6 @@ find with plain language and easy to understand content. Resources are all inclu
 
 All the materials can also be found readable at GitPage URL (https://hanjie-jiang.github.io/bias-to-action/)
 
-test
-
 ## 📁 Repository Structure
 
 ```
