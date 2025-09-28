@@ -31,6 +31,7 @@ Welcome to the Engineering & Data Structure section! This comprehensive guide co
 - **[Time Complexity Guide](../Resources/Time_Complexity_Guide.md)** - Understanding algorithm efficiency
 - **[Common Patterns](../Resources/Common_Patterns.md)** - Frequently used problem-solving patterns
 - **[Interview Strategies](../Resources/Interview_Strategies.md)** - Tips for technical interviews
+- **[MIT 6.006 Integration Templates](../Resources/MIT_6006_Integration_Templates.md)** - Templates for adding theoretical depth to existing content
 
 ## Key Concepts Covered
 

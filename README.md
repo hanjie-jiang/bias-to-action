@@ -3,7 +3,9 @@
 ## Notes for ML & AI Fundamentals that Minimizes Confusion
 
 This is the Obsidian notes for ML & AI learnings purposes based on different sources that one could 
-find with plain language and easy to understand content. Resources are all included in the notes as a standalone package.
+find with plain language and easy to understand content. The engineering section is being enhanced with 
+systematic algorithmic foundations from MIT 6.006 Introduction to Algorithms, seamlessly integrated 
+with existing practical implementations and ML applications. Resources are all included in the notes as a standalone package.
 
 All the materials can also be found readable at GitPage URL (https://hanjie-jiang.github.io/bias-to-action/)
 
@@ -102,14 +104,22 @@ _notes/
 ## Key Features
 
 - **Comprehensive Coverage**: From basic probability to advanced neural networks
+- **MIT 6.006 Integration**: Systematic algorithmic foundations seamlessly integrated with practical applications
 - **Interconnected**: Cross-references and links between related topics
+- **Theory + Practice**: Rigorous analysis combined with hands-on implementations
 - **Practical Examples**: Real code examples and problem-solving patterns
+- **Template-Driven**: Structured templates for consistent content organization and easy expansion
 - **Modern UI**: Pastel-themed responsive design with hover dropdowns
 - **Mobile-Friendly**: Optimized for reading on any device
 - **Searchable**: Full-text search across all content
 - **Visual Learning**: Diagrams, charts, and mathematical equations
 
 ## Update logs
+### version 2025-09-28
+- **MIT 6.006 Integration Framework**: Added structured templates for seamlessly integrating MIT Introduction to Algorithms content
+- **Template System**: Created comprehensive content templates for consistent expansion of theoretical foundations
+- **Enhanced Learning Path**: Designed integration strategy combining intuitive understanding with systematic rigor
+- **Preserved Content**: All existing materials maintained while adding framework for algorithmic depth
 ### version 2025-08-25
 - updated the `engineering_and_data_structure` folder with newly added recursion content
 - added in the search and sort algorithm sections in appropriate folders
