@@ -60,7 +60,7 @@ $$Z = \frac{x-\mu}{\sigma}$$
 - Support vector machines
 - Neural networks
 
-**Example:** When two numerical features, $x_1$ of range [0,10] and $x_2$ of range [0,3], are not normalized, the ![Screenshot](<../resources/Screenshot 2025-08-05 at 8.22.11 PM.png>) gradient descent would not be as efficient as when normalization is applied.
+**Example:** When two numerical features, $x_1$ of range [0,10] and $x_2$ of range [0,3], are not normalized, the ![Screenshot](</ml-learning-notes/assets/ml_fundamentals/Screenshot 2025-08-05 at 8.22.11 PM.png>) gradient descent would not be as efficient as when normalization is applied.
 
 #### **Tree-Based Models (Don't Require Normalization)**
 - Decision trees

@@ -16,7 +16,7 @@ In order to eliminate the magnitude impact between features, we should always do
 $$X_{\text{norm}} = \frac{X-X_{\text{min}}}{X_{\text{max}-X_{\text{min}}}}$$
 - *Z-Score normalization*: It would project the original data to a mean of 0 and variance = 1 distribution. Specifically, assume that the original feature has mean $\mu$ and variance $\sigma$ , then the normalization equation would be defined as:
 $$Z = \frac{x-\mu}{\sigma}$$ 
-Using stochastic gradient descent (SGD) as an example, when two numerical features, $x_1$ of range \[0,10\] and $x_2$ of range \[0,3\], then when the $x_1$ and $x_2$ are not normalized, the ![Screenshot](<resources/Screenshot 2025-08-05 at 8.22.11 PM.png>) gradient descent would not be as efficient as when one does the normalization of the features. However, feature normalization is not always working. In real life, <span style="background-color: #FEE9E7"> whenever a model utilizes SGD, it is suggested to use the normalization, including linear regression, logistic regression, support vector machine, neural networks, whereas decision tress it does not help. </span> As for decision tree models, the node split usually is determined by the data and how much [[^1]information gain ratio](https://en.wikipedia.org/wiki/Information_gain_ratio) that data contains about X. This information gain ratio is not impacted by whether the feature has been normalized, rather it would not change the information gain of the specific feature X.
+Using stochastic gradient descent (SGD) as an example, when two numerical features, $x_1$ of range \[0,10\] and $x_2$ of range \[0,3\], then when the $x_1$ and $x_2$ are not normalized, the ![Screenshot](</ml-learning-notes/assets/ml_fundamentals/Screenshot 2025-08-05 at 8.22.11 PM.png>) gradient descent would not be as efficient as when one does the normalization of the features. However, feature normalization is not always working. In real life, <span style="background-color: #FEE9E7"> whenever a model utilizes SGD, it is suggested to use the normalization, including linear regression, logistic regression, support vector machine, neural networks, whereas decision tress it does not help. </span> As for decision tree models, the node split usually is determined by the data and how much [[^1]information gain ratio](https://en.wikipedia.org/wiki/Information_gain_ratio) that data contains about X. This information gain ratio is not impacted by whether the feature has been normalized, rather it would not change the information gain of the specific feature X.
 
 [^1]: need to work on the definition of this and learn more about information theory
 
@@ -44,7 +44,7 @@ Using logistic regression as an example, when a data set contains feature vector
 
 We have understood how to use dimension reduction to reduce the number of parameters that the model needs to learn given a feature cross of two high-dimensional features. <span style="background-color: #FEE9E7"> But in reality, we are facing a variety of high-dimensional features. So a single feature crosses of all the different pairs would induce 1) too many parameters and 2) overfitting issues. </span>
 #### How to effectively select the feature combinations?
-We introduce a feature cross selection based on decision tree models. Taking CTR prediction as an example, assume that the input includes age, gender, user type (free vs paid), searched item type (skincare vs foods), etc. We could thus make a decision tree from the original input and their labels. ![Screenshot](<resources/Screenshot 2025-08-05 at 9.30.27 PM.png>) We could then view the feature crosses from the tree, that contains four different type of pairs:
+We introduce a feature cross selection based on decision tree models. Taking CTR prediction as an example, assume that the input includes age, gender, user type (free vs paid), searched item type (skincare vs foods), etc. We could thus make a decision tree from the original input and their labels. ![Screenshot](</ml-learning-notes/assets/ml_fundamentals/Screenshot 2025-08-05 at 9.30.27 PM.png>) We could then view the feature crosses from the tree, that contains four different type of pairs:
 1. age + gender
 2. age + searched item type
 3. paid user + search item type
@@ -167,7 +167,7 @@ def mean_precision_at_k(ground_truth_sets, ranked_lists, k):
 Hence, in general, when people evaluate the goodness of a sort algorithm, they also look at the P-R curve, where in this curve, the x-axis corresponds to recall rate whereas the y-axis corresponds to precision rate. 
 
 ##### Use of P-R Curve for model evaluation and threshold choice
-![p-r_curve](<resources/p-r_curve.png>)
+![p-r_curve](</ml-learning-notes/assets/ml_fundamentals/p-r_curve.png>)
 Each data point on the curve corresponds to a precision-recall combination at a certain threshold for True samples of choice, for example 0.95 / 0.9, etc. The closer to the origin (0,0) point, the bigger the threshold is.
 
 ##### How to pick the threshold in practice
@@ -793,7 +793,7 @@ Now let's use an example to better understand how to compute Gini index:
 
 |                               Loves Popcorn                                |                                 Loves Soda                                 |
 | :------------------------------------------------------------------------: | :------------------------------------------------------------------------: |
-| <img src="resources/gini_index_1.png" alt="drawing" style="width:200px;"/> | <img src="resources/gini_index_2.png" alt="drawing" style="width:200px;"/> |
+| <img src="/ml-learning-notes/assets/ml_fundamentals/gini_index_1.png" alt="drawing" style="width:200px;"/> | <img src="/ml-learning-notes/assets/ml_fundamentals/gini_index_2.png" alt="drawing" style="width:200px;"/> |
 
 All the three leaves except for the fourth one are called impure leaves, where the fourth one is called a pure leaf node. As both leaf nodes from `loves Popcorn` are impure but there is only one node from `Loves Soda` being impure, it means that the `Loves Soda` does a better job predicting who will and will not the movie. 
 

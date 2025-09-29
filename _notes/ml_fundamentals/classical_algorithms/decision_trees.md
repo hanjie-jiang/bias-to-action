@@ -37,7 +37,7 @@ Now let's use an example to better understand how to compute Gini index:
 
 |                               Loves Popcorn                                |                                 Loves Soda                                 |
 | :------------------------------------------------------------------------: | :------------------------------------------------------------------------: |
-| <img src="../resources/gini_index_1.png" alt="drawing" style="width:200px;"/> | <img src="../resources/gini_index_2.png" alt="drawing" style="width:200px;"/> |
+| <img src="/ml-learning-notes/assets/ml_fundamentals/gini_index_1.png" alt="drawing" style="width:200px;"/> | <img src="/ml-learning-notes/assets/ml_fundamentals/gini_index_2.png" alt="drawing" style="width:200px;"/> |
 
 All the three leaves except for the fourth one are called impure leaves, where the fourth one is called a pure leaf node. As both leaf nodes from `loves Popcorn` are impure but there is only one node from `Loves Soda` being impure, it means that the `Loves Soda` does a better job predicting who will and will not the movie.
 

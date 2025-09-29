@@ -18,8 +18,15 @@ _notes/
 ├── Information_Theory.md                 # Information theory concepts
 ├── Integration_and_Project.md            # Integration projects
 │
-├── assets/                               # Website styling
-│   ├── images/                              # Image resources
+├── assets/                               # Website resources
+│   ├── images/                              # General image resources
+│   ├── ml_fundamentals/                     # ML fundamentals resources (moved from scattered locations)
+│   │   ├── Screenshot 2025-08-05 at 8.22.11 PM.png
+│   │   ├── Screenshot 2025-08-05 at 9.30.27 PM.png
+│   │   ├── baimian-ml.pdf
+│   │   ├── gini_index_1.png
+│   │   ├── gini_index_2.png
+│   │   └── p-r_curve.png
 │   └── styles/
 │       ├── hero.css                         # Hero section styling
 │       └── layout.css                       # Main layout styling

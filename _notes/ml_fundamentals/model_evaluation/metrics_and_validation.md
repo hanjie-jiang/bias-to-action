@@ -75,7 +75,7 @@ Hence, in general, when people evaluate the goodness of a sort algorithm, they a
 
 ### Use of P-R Curve for Model Evaluation and Threshold Choice
 
-![p-r_curve](<resources/p-r_curve.png>)
+![p-r_curve](</ml-learning-notes/assets/ml_fundamentals/p-r_curve.png>)
 
 Each data point on the curve corresponds to a precision-recall combination at a certain threshold for True samples of choice, for example 0.95 / 0.9, etc. The closer to the origin (0,0) point, the bigger the threshold is.
 

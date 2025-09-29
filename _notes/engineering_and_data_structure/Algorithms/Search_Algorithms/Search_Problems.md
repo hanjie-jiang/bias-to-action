@@ -2,6 +2,204 @@
 
 This section contains practice problems that use various search algorithms. Problems are organized by difficulty and algorithm type.
 
+## Toy Problem for Algorithmic Thinking - Peak Finder Problem
+
+### One-dimensional List Problem
+
+Given an array arr[] where no two adjacent elements are same, find the index of a peak element. An element is considered to be a peak element if it is strictly greater than its adjacent elements. If there are multiple peak elements, return the index of any one of them.
+
+Note: Consider the element before the first element and the element after the last element to be negative infinity.
+
+#### Naive Linear Search Solution
+
+```python
+def peakElement(arr):
+    n = len(arr)
+
+    for i in range(n):
+        left = True
+        right = True
+
+        # Check for element to the left
+        if i > 0 and arr[i] <= arr[i - 1]:
+            left = False
+
+        # Check for element to the right
+        if i < n - 1 and arr[i] <= arr[i + 1]:
+            right = False
+
+        # If arr[i] is greater than its left as well as
+        # its right element, return its index
+        if left and right:
+            return i
+
+if __name__ == "__main__":
+	arr = [1, 2, 4, 5, 7, 8, 3]
+	print(peakElement(arr))
+```
+
+#### Binary Search Approach and Motivation Explained
+
+The key insight for the binary search approach is that we can eliminate half of the search space at each step by comparing the middle element with its neighbor.
+
+![Peak Finder Binary Search](/ml-learning-notes/assets/images/peak_finder_binary.png)
+
+**Binary Search Implementation:**
+
+```python
+def peakElement_binary_search(arr):
+    """
+    Find a peak element using binary search approach.
+    Time Complexity: O(log n)
+    Space Complexity: O(1)
+    """
+    left, right = 0, len(arr) - 1
+    
+    while left < right:
+        mid = left + (right - left) // 2
+        
+        # If mid element is greater than its right neighbor,
+        # then peak lies on the left side (including mid)
+        if arr[mid] > arr[mid + 1]:
+            right = mid
+        else:
+            # Peak lies on the right side
+            left = mid + 1
+    
+    return left
+
+# Example usage
+if __name__ == "__main__":
+    arr = [1, 2, 4, 5, 7, 8, 3]
+    print(f"Peak element index (binary search): {peakElement_binary_search(arr)}")
+    print(f"Peak element value: {arr[peakElement_binary_search(arr)]}")
+```
+
+### 2D Peak Finder Problem
+
+The 2D peak finder extends the concept to a 2D matrix where a peak element is greater than or equal to its four neighbors (up, down, left, right).
+
+![2D Peak Finder](/ml-learning-notes/assets/images/peak_finder_2d.png)
+
+**Problem Statement:** Given a 2D matrix where no two adjacent elements are the same, find any peak element. An element is a peak if it's greater than or equal to all its neighbors.
+
+Borrowing the idea from one-dimensional list problem solution, we could find some ideas, but not all of them are working: 
+
+#### Solution 1: Efficient Algorithm but does not work
+First pick the middle column `j = m/2` and find the column peak at position `(i,j)`, and then use `(i,j)` as a start to find the one-dimensional peak at row `i`. 
+
+But when the column / row does not have a peak, it would not return anything, i.e. a 2-D peak may not exist on row `i`.
+
+#### Solution 2: 
+Pick middle column `j = m/2` and find the global maximum on column `j` at `(i,j)` and compare the `(i,j-1)`, `(i,j)` and `(i,j+1)`. 
+
+From here, pick the left columns if `(i,j-1)` > `(i,j)` and similarly for the right. If `(i,j)` is both larger than its adjacent neighbors, then it is the 2-D peak. Solve the new problem with half of the columns / rows. When you have a single column, find the global maximum and the peak is found.
+
+**Algorithmic Approaches:**
+
+#### Naive O(nm) Solution:
+```python
+def find_2d_peak_naive(matrix):
+    """
+    Naive approach: Check every element
+    Time Complexity: O(nm) where n,m are dimensions
+    """
+    rows, cols = len(matrix), len(matrix[0])
+    
+    for i in range(rows):
+        for j in range(cols):
+            is_peak = True
+            current = matrix[i][j]
+            
+            # Check all four neighbors
+            directions = [(-1,0), (1,0), (0,-1), (0,1)]
+            for di, dj in directions:
+                ni, nj = i + di, j + dj
+                if 0 <= ni < rows and 0 <= nj < cols:
+                    if matrix[ni][nj] > current:
+                        is_peak = False
+                        break
+            
+            if is_peak:
+                return (i, j)
+    
+    return None  # No peak found
+```
+
+#### Optimized O(n log m) Solution:
+```python
+def find_2d_peak_optimized(matrix):
+    """
+    Divide and conquer approach on columns
+    Time Complexity: O(n log m) where n=rows, m=cols
+    """
+    def find_max_in_column(matrix, col):
+        max_val = matrix[0][col]
+        max_row = 0
+        for i in range(1, len(matrix)):
+            if matrix[i][col] > max_val:
+                max_val = matrix[i][col]
+                max_row = i
+        return max_row
+    
+    def find_peak_recursive(matrix, start_col, end_col):
+        if start_col == end_col:
+            max_row = find_max_in_column(matrix, start_col)
+            return (max_row, start_col)
+        
+        mid_col = (start_col + end_col) // 2
+        max_row = find_max_in_column(matrix, mid_col)
+        
+        # Check left neighbor
+        left_val = matrix[max_row][mid_col - 1] if mid_col > 0 else -1
+        # Check right neighbor  
+        right_val = matrix[max_row][mid_col + 1] if mid_col < len(matrix[0]) - 1 else -1
+        
+        current_val = matrix[max_row][mid_col]
+        
+        if current_val >= left_val and current_val >= right_val:
+            return (max_row, mid_col)  # Found peak
+        elif left_val > current_val:
+            return find_peak_recursive(matrix, start_col, mid_col - 1)
+        else:
+            return find_peak_recursive(matrix, mid_col + 1, end_col)
+    
+    if not matrix or not matrix[0]:
+        return None
+    
+    return find_peak_recursive(matrix, 0, len(matrix[0]) - 1)
+
+# Example usage
+if __name__ == "__main__":
+    matrix = [
+        [10, 8, 10, 10],
+        [14, 13, 12, 11],
+        [15, 9, 11, 21],
+        [16, 17, 19, 20]
+    ]
+    
+    peak_naive = find_2d_peak_naive(matrix)
+    peak_optimized = find_2d_peak_optimized(matrix)
+    
+    print(f"Naive approach found peak at: {peak_naive}")
+    print(f"Optimized approach found peak at: {peak_optimized}")
+    if peak_optimized:
+        row, col = peak_optimized
+        print(f"Peak value: {matrix[row][col]}")
+```
+
+**Key Insights:**
+- **Divide and Conquer Strategy**: Focus on middle column, find max element
+- **Recursive Elimination**: Compare with left/right neighbors to eliminate half the columns
+- **Guaranteed Peak Existence**: Algorithm ensures a peak will always be found
+- **Time Complexity**: O(n log m) - much better than naive O(nm) approach
+- **Space Complexity**: O(log m) due to recursion stack
+
+**Applications:**
+- **Image Processing**: Finding local maxima in intensity matrices
+- **Optimization Problems**: Peak finding in 2D objective functions  
+- **Data Analysis**: Identifying outliers or significant points in 2D datasets
+
 ## Linear Search Problems
 
 ### Easy Problems
