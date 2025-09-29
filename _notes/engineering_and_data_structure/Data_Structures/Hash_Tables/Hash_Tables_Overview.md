@@ -179,9 +179,9 @@ A hash table implements the dictionary Abstract Data Type (ADT) supporting:
 
 ### Related Topics  
 - **Within This Section**: [Hash_Functions_and_Collisions](Hash_Functions_and_Collisions.md), [Python_Dictionaries](Python_Dictionaries.md)
-- **Other Engineering Sections**: [Arrays](../Arrays/), [String_Problems](../../Problem_Solving/String_Problems/)  
-- **ML Fundamentals**: [Feature Engineering](../../../ml_fundamentals/feature_engineering/), [Model Evaluation](../../../ml_fundamentals/model_evaluation/)
-- **Mathematics**: [Probability Theory](../../../probability_and_markov/)
+- **Other Engineering Sections**: [Data Structures Overview](../../Overview/Engineering_and_Data_Structure_Overview.md), [String_Problems](../../Problem_Solving/String_Problems/Unique_Strings.md)  
+- **ML Fundamentals**: [Feature Engineering](../../../ml_fundamentals/feature_engineering/data_types_and_normalization.md), [Model Evaluation](../../../ml_fundamentals/model_evaluation/metrics_and_validation.md)
+- **Mathematics**: [Probability Theory](../../../probability_and_markov/Probability_and_Markov_Overview.md)
 
 ### MIT 6.006 References
 - **Lecture Numbers**: 8 (Hashing with Chaining), 9 (Table Doubling, Karp-Rabin)

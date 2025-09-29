@@ -111,9 +111,11 @@ nav:
           - Bayes’ Rule: probability_and_markov/probability_and_markov_sections/conditional_probability_and_bayes_rule.md
           - Naive Bayes: probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes.md
           - Joint & Marginal: probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions.md
-      - Linear Algebra:
-           - Linear Algebra for ML: calculus_and_linear_algebra/Linear_Algebra_for_ML.md
-           - Calculus and Gradient Descent: calculus_and_linear_algebra/Calculus_and_Gradient_Descent.md
+      - Mathematical Foundations:
+          - Overview: calculus_and_linear_algebra/Calculus_and_Linear_Algebra_Overview.md
+          - Linear Algebra for ML: calculus_and_linear_algebra/Linear_Algebra_for_ML.md
+          - Calculus and Gradient Descent: calculus_and_linear_algebra/Calculus_and_Gradient_Descent.md
+          - Asymptotic Analysis Theory: calculus_and_linear_algebra/Asymptotic_Analysis_Theory.md
       - ML Fundamentals:
           - Overview: ml_fundamentals/ML_Fundamentals_Overview.md
           - Feature Engineering:

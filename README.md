@@ -32,8 +32,10 @@ _notes/
 │       └── layout.css                       # Main layout styling
 │
 ├── calculus_and_linear_algebra/          # Mathematical Foundations
-│   ├── Calculus_and_Gradient_Descent.md     # Calculus concepts
-│   └── Linear_Algebra_for_ML.md             # Linear algebra for ML
+│   ├── Calculus_and_Linear_Algebra_Overview.md  # Mathematical foundations overview
+│   ├── Linear_Algebra_for_ML.md             # Vectors, matrices, and ML operations
+│   ├── Calculus_and_Gradient_Descent.md     # Optimization and gradient methods
+│   └── Asymptotic_Analysis_Theory.md        # Complexity theory and algorithm analysis
 │
 ├── engineering_and_data_structure/       # Programming & Data Structures
 │   ├── Overview/

@@ -47,8 +47,10 @@ Discover algorithms for finding patterns in unlabeled data.
 - **[Probability & Markov](../probability_and_markov/Probability_and_Markov_Overview.md)** - Probability foundations and Bayesian methods
 - **[Language Models](../language_model/Ngram_Language_Modeling.md)** - Text processing and NLP techniques
 - **[Information Theory](../Information_Theory.md)** - Entropy, cross-entropy, and KL divergence
-- **[Linear Algebra](../calculus_and_linear_algebra/Linear_Algebra_for_ML.md)** - Mathematical foundations for ML
+- **[Calculus & Linear Algebra Overview](../calculus_and_linear_algebra/Calculus_and_Linear_Algebra_Overview.md)** - Mathematical foundations overview
+- **[Linear Algebra](../calculus_and_linear_algebra/Linear_Algebra_for_ML.md)** - Vectors, matrices, and ML operations
 - **[Calculus & Gradient Descent](../calculus_and_linear_algebra/Calculus_and_Gradient_Descent.md)** - Optimization techniques
+- **[Asymptotic Analysis Theory](../calculus_and_linear_algebra/Asymptotic_Analysis_Theory.md)** - Complexity analysis and algorithm efficiency
 
 ## 🎯 Key Learning Objectives
 
