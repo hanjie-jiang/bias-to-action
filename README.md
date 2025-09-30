@@ -41,14 +41,26 @@ _notes/
 │   ├── Overview/
 │   │   └── Engineering_and_Data_Structure_Overview.md
 │   ├── Data_Structures/
-│   │   └── Hash_Tables/
-│   │       ├── Hash_Tables_Overview.md
-│   │       ├── Hash_Functions_and_Collisions.md
-│   │       ├── Python_Dictionaries.md
-│   │       ├── Python_Dictionary_Operations.md
-│   │       ├── Python_Sets.md
-│   │       ├── Python_Set_Operations.md
-│   │       └── Hash_Table_Problems.md
+│   │   ├── Arrays/
+│   │   │   ├── Arrays_Overview.md               # Comprehensive arrays vs linked lists comparison
+│   │   │   ├── Dynamic_Arrays.md                # Resizable arrays and Python lists
+│   │   │   └── Array_Problems.md                # Array-based coding problems
+│   │   ├── Hash_Tables/
+│   │   │   ├── Hash_Tables_Overview.md
+│   │   │   ├── Hash_Functions_and_Collisions.md
+│   │   │   ├── Python_Dictionaries.md
+│   │   │   ├── Python_Dictionary_Operations.md
+│   │   │   ├── Python_Sets.md
+│   │   │   ├── Python_Set_Operations.md
+│   │   │   └── Hash_Table_Problems.md
+│   │   └── Recursion/
+│   │       └── recursion_overview.md
+│   ├── Algorithms/
+│   │   └── Search_Algorithms/
+│   │       ├── Search_Algorithms_Overview.md
+│   │       ├── Binary_Search_Fundamentals.md
+│   │       ├── Binary_Search_Variations.md
+│   │       └── Search_Problems.md              # Peak finding and search applications
 │   ├── Problem_Solving/
 │   │   ├── Set_Dictionary_Problems/
 │   │   │   ├── Array_Intersection.md
@@ -59,6 +71,7 @@ _notes/
 │   │       ├── String_Operations.md
 │   │       └── Unique_Strings.md
 │   └── Resources/
+│       ├── MIT_6006_Integration_Templates.md   # Templates for systematic algorithm integration
 │       ├── Common_Patterns.md
 │       ├── Time_Complexity_Guide.md
 │       └── Interview_Strategies.md
@@ -112,18 +125,27 @@ _notes/
 ```
 ## Key Features
 
-- **Comprehensive Coverage**: From basic probability to advanced neural networks
-- **MIT 6.006 Integration**: Systematic algorithmic foundations seamlessly integrated with practical applications
-- **Interconnected**: Cross-references and links between related topics
-- **Theory + Practice**: Rigorous analysis combined with hands-on implementations
-- **Practical Examples**: Real code examples and problem-solving patterns
-- **Template-Driven**: Structured templates for consistent content organization and easy expansion
-- **Modern UI**: Pastel-themed responsive design with hover dropdowns
-- **Mobile-Friendly**: Optimized for reading on any device
-- **Searchable**: Full-text search across all content
-- **Visual Learning**: Diagrams, charts, and mathematical equations
+- **Comprehensive Coverage**: From basic probability to advanced neural networks with mathematical foundations
+- **MIT 6.006 Integration**: Systematic algorithmic foundations seamlessly integrated with practical applications and theoretical depth
+- **Mathematical Rigor**: Complete asymptotic analysis, complexity theory, and calculus connections for ML optimization
+- **Data Structures Mastery**: In-depth coverage of arrays, linked lists, hash tables with implementation details and complexity analysis
+- **Interconnected**: Cross-references and links between related topics across mathematics, algorithms, and ML applications  
+- **Theory + Practice**: Rigorous mathematical analysis combined with hands-on implementations and real-world examples
+- **Template-Driven**: Structured templates for consistent content organization and systematic expansion of algorithmic concepts
+- **Visual Learning**: Mathematical equations (LaTeX), algorithm diagrams, complexity comparisons, and data structure visualizations
+- **Modern UI**: Pastel-themed responsive design with hover dropdowns and optimized mathematical rendering
+- **Searchable & Organized**: Full-text search across all content with centralized asset management and logical navigation structure
 
 ## Update logs
+
+### version 2025-09-29
+- **Mathematical Foundations Continued**: Added comprehensive Mathematical Foundations section with Asymptotic Analysis Theory and enhanced Calculus & Gradient Descent
+- **Arrays & Linked Lists Integration**: Created complete comparison guide with static arrays vs linked lists, time complexities, and implementation examples  
+- **Enhanced Arrays Overview**: Merged comprehensive data structures content into unified Arrays Overview with visual comparisons and MIT 6.006 connections
+- **Navigation Fixes**: Resolved MkDocs navigation issues and proper mathematical equation rendering across all content
+- **Asset Reorganization**: Centralized all images and resources to `/assets/` directory structure for better organization
+- **Content Optimization**: Fixed mathematical notation formatting, improved cross-references, and enhanced code examples with detailed explanations
+
 ### version 2025-09-28
 - **MIT 6.006 Integration Framework**: Added structured templates for seamlessly integrating MIT Introduction to Algorithms content
 - **Template System**: Created comprehensive content templates for consistent expansion of theoretical foundations

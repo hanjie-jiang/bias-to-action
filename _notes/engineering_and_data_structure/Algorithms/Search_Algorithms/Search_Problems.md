@@ -42,10 +42,17 @@ if __name__ == "__main__":
 
 The key insight for the binary search approach is that we can eliminate half of the search space at each step by comparing the middle element with its neighbor.
 
+**General Idea**
+- start in the middle:  the running time $\Theta(1)$
+- look at neighbor and see if local peak: the running time $\Theta(1)$
+- if not figure out which way to go: the running time $\Theta(N/2)$
+
+The overall run time for this problem is: $T(N) = \Theta(1) + T(N/2) = c + T(N/2) = nc + T(N/2^c)$. Due to that we know $T(1) = \Theta(1)$, we could then make $nc + T(N/2^c) = T(1)$, i.e. $N/2^c = 1$, therefore, $i = \log(n)$. Plugging back in, $nc +  T(N/2^c) = c \cdot \log(N) + \Theta(1) = \Theta(1) \cdot \log(N) + \Theta(1) = \Theta(\log(N))$.
+
 ![Peak Finder Binary Search](/ml-learning-notes/assets/images/peak_finder_binary.png)
 
 **Binary Search Implementation:**
-
+ 
 ```python
 def peakElement_binary_search(arr):
     """
@@ -91,9 +98,18 @@ First pick the middle column `j = m/2` and find the column peak at position `(i,
 But when the column / row does not have a peak, it would not return anything, i.e. a 2-D peak may not exist on row `i`.
 
 #### Solution 2: 
-Pick middle column `j = m/2` and find the global maximum on column `j` at `(i,j)` and compare the `(i,j-1)`, `(i,j)` and `(i,j+1)`. 
+Pick middle column `j = m/2` and find the global maximum on column `j` at `(i,j)` (1. via the 1-D peak finder ($\Theta(\log(M))$) or 2. find max of column ($\Theta(M)$)) and compare the `(i,j-1)`, `(i,j)` and `(i,j+1)`. 
 
 From here, pick the left columns if `(i,j-1)` > `(i,j)` and similarly for the right. If `(i,j)` is both larger than its adjacent neighbors, then it is the 2-D peak. Solve the new problem with half of the columns / rows. When you have a single column, find the global maximum and the peak is found.
+
+Run time for this solution 2:
+base case:
+
+$$T(1, N) = \Theta(N)$$
+
+recursively:
+
+$$T(M, N) = \Theta(1) + \Theta(N) + T(M/2, N) = \Theta(N) + T(M/2, N) = \Theta(M) \cdot \Theta(\log(N)) = \Theta(M\log(N))$$
 
 **Algorithmic Approaches:**
 
