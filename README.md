@@ -9,7 +9,7 @@ with existing practical implementations and ML applications. Resources are all i
 
 All the materials can also be found readable at GitPage URL (https://hanjie-jiang.github.io/bias-to-action/)
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 _notes/
@@ -137,6 +137,13 @@ _notes/
 - **Searchable & Organized**: Full-text search across all content with centralized asset management and logical navigation structure
 
 ## Update logs
+
+### version 2025-10-01
+- **Fundamental Concepts Enhancement**: Added comprehensive "Interface vs Data Structure" distinction to Engineering & Data Structure Overview explaining the difference between abstract operations and concrete implementations
+- **Python Sets Page Enhancement**: Updated Python Sets page title to "Sets and Python Sets Overview" for better clarity and scope representation
+- **Reference Updates**: Updated all cross-references across Engineering & Data Structure Overview, Hash Tables Overview, and mkdocs.yml to maintain consistency with new page titles
+- **Data Structure Comparison Table**: Implemented comprehensive comparison table showing time complexities for different data structures (Array, Sorted Array, Hash Table/Set, Binary Search Tree) across various operations (Build, Search, Insert/Delete, find_min(), find_prev())
+- **Documentation Consistency**: Ensured all internal links and navigation references reflect updated page titles and content structure
 
 ### version 2025-09-29
 - **Mathematical Foundations Continued**: Added comprehensive Mathematical Foundations section with Asymptotic Analysis Theory and enhanced Calculus & Gradient Descent

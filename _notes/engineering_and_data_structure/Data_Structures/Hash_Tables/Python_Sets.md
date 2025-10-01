@@ -1,6 +1,33 @@
 ---
-title: Python Sets Overview
+title: Sets and Python Sets Overview
 ---
+
+# Set Interface
+
+|Operations|Syntax|What does it do|
+|---|---|---|
+|Container|`build(A)`|given an iterable `A`, build sequence fro items in `A`|
+|Container|`len(A)`|return the number of stored items|
+|Static|`find(k)`|return the stored item with key `k`|
+|Dynamic|`insert(x)`|add `x` to set (replace item with key `x.key` if one already exists)|
+|Dynamic|`delete(x)`|remove and return the stored item with key `k`|
+|Order|`iter_ord()`|return the stored items one-by-one in key order|
+|Order|`find_min()`|return the stored items with smallest key|
+|Order|`find_max()`|return the stored items with largest key|
+|Order|`find_next(k)`|return the stored items with smallest key larger than `k`|
+|Order|`find_prev(k)`|return the stored items with largest key smaller than `k`|
+
+# Set Implementations and Operations Cost
+
+|Data Structure|Build|Search|Insert/Delete|`find_min()`|`find_prev(k)`|
+|---|---|---|---|---|---|
+|Array|$O(n)$|$O(n)$|$O(n)$|$O(n)$|$O(n)$|
+|Sorted Array|$O(n\log n)$|$O(\log n)$|$O(n)$|$O(1)$|$O(\log n)$|
+|Hash Table/Set|$O(n)$|$O(1)$|$O(1)$|$O(n)$|N/A|
+|Binary Search Tree|$O(n\log n)$|$O(\log n)$|$O(\log n)$|$O(\log n)$|$O(\log n)$|
+
+
+**An unordered array** would be more than a reasonable way to implement this **set interface** and would have a linear search time.
 
 # Python Sets Overview
 

@@ -2,6 +2,12 @@
 
 Sorting algorithms arrange elements in a specific order (typically ascending or descending). They are fundamental to computer science and serve as building blocks for many other algorithms.
 
+Your inputs are usually an array of $n$ numbers or keys `A`, and outputs are the sorted arrays `B`.
+
+## Sorting Vocabulary
+- Destructive: Overwrites the input array
+- In place: Uses $O(1)$ extra space
+
 ## Why Sorting Matters
 
 ### 1. **Enables Binary Search**
@@ -34,6 +40,7 @@ Sorting algorithms arrange elements in a specific order (typically ascending or 
 
 | Algorithm | Best Case | Average Case | Worst Case | Space | Stable | In-place |
 |-----------|-----------|--------------|------------|-------|--------|----------|
+| Permutation Sort | O(n!n) | O(n!n) | O(n!n) | O(n) | ❌ | ❌ |
 | Bubble Sort | O(n) | O(n²) | O(n²) | O(1) | ✅ | ✅ |
 | Selection Sort | O(n²) | O(n²) | O(n²) | O(1) | ❌ | ✅ |
 | Insertion Sort | O(n) | O(n²) | O(n²) | O(1) | ✅ | ✅ |
@@ -46,6 +53,25 @@ Sorting algorithms arrange elements in a specific order (typically ascending or 
 *k = range of input, d = number of digits*
 
 ## Simple Sorting Algorithms (O(n²))
+
+### 0. Permutation Sort
+```python
+def permutation_sort(arr):
+    '''Sort arr'''
+    for B in permutations(arr):
+        if is_sorted(B):
+            return B
+```
+**Key techniques:**
+1. enumerate all the permutations: Best case scenario = $\Omega(n!)$
+2. check if the particular permutation is sorted: Average case = $O(n)$
+```python
+    for i in range(1, n-1):
+        if B[i] <= B[i+1]:
+            continue
+        else:
+            break
+```
 
 ### 1. Bubble Sort
 ```python
@@ -80,6 +106,26 @@ def selection_sort(arr):
 # Good for: Minimizing memory writes, small datasets
 # Bad for: Large datasets, when stability is needed
 ```
+
+```python
+def selection_sort(arr):
+    ''' Selecting the biggest element'''
+    n = len(arr)
+    for i in range(n-1, 0, -1): # index of the max index should be from last element to 1
+        max_idx = 0 # find the first element in the unsorted portion of the list
+        for j in range(1, i+1):
+            if arr[j] > arr[max_idx]:
+                max_idx = j
+        arr[i], arr[max_idx] = arr[max_idx], arr[i]
+    return arr
+
+# Good for: Minimizing memory writes, small datasets
+# Bad for: Large datasets, when stability is needed
+```
+**Key techniques:**
+1. find the biggest with index <= 1
+2. swap the biggest element to end of array
+3. sort from 1 to i - 1 for the unsorted part
 
 ### 3. Insertion Sort
 ```python
