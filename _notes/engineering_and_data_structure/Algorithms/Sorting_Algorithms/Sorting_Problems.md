@@ -284,6 +284,51 @@ def top_k_frequent_bucket(nums, k):
 # Heap: O(n log k), Bucket: O(n)
 ```
 
+#### 5. Count the Number of Inversions in a List
+Our second problem entails a list of integers, and your task is to deduce the number of inversions in the list.
+
+An inversion is a pair of elements where the larger element appears before the smaller one. In other words, if we have two indices i and j, where i < j and the element at position i is greater than the element at position j (`numbers[i] > numbers[j]`), we have an inversion.
+
+For example, for `numbers = [4, 2, 1, 3]`, there are four inversions: `(4, 2), (4, 1), (4, 3), (2, 1)`.
+
+The easiest approach consists of a double loop, which leads to a time complexity of $O(n^2)$, an inefficient allocation of computational resources for larger lists.
+
+**Merge Sort Approach**
+
+In this code: 
+`left_sorted, right_sorted`: sorted left and right halves
+`left_inversions, right_inversions`: inversion counts from left and right halves
+`merged_sorted`: the merged, sorted array
+`merge_inversions`: inversions found during merging
+`total_inversions`: total inversions for this call
+
+```Python
+def count_inversions(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    mid = len(arr) // 2
+    left_sorted, left_inversions = count_inversions(arr[:mid])
+    right_sorted, right_inversions = count_inversions(arr[mid:])
+    merged_sorted, merge_inversions = merge_count_inversions(left_sorted, right_sorted)
+    total_inversions = left_inversions + right_inversions + merge_inversions
+    return merged_sorted, total_inversions
+
+def merge_count_inversions(left_half, right_half):
+    merged_result = []
+    left_index = right_index = inversion_count = 0
+    while left_index < len(left_half) and right_index < len(right_half):
+        if left_half[left_index] <= right_half[right_index]:
+            merged_result.append(left_half[left_index])
+            left_index += 1
+        else:
+            merged_result.append(right_half[right_index])
+            inversion_count += len(left_half) - left_index
+            right_index += 1
+    merged_result += left_half[left_index:]
+    merged_result += right_half[right_index:]
+    return merged_result, inversion_count
+```
+
 ## Advanced Sorting Problems
 
 ### Hard Problems
