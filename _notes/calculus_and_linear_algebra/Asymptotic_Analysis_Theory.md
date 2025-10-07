@@ -2,8 +2,6 @@
 title: Asymptotic Analysis Theory
 ---
 
-# Asymptotic Analysis Theory
-
 **Common Complexity Classes:**
 The most commonly used complexity orders include $O(1)$, $O(\log N)$, $O(N)$, $O(N\log N)$, and $O(N^2)$.ion
 

@@ -120,16 +120,82 @@ def sort_colors(nums):
 ```
 
 #### 2. Kth Largest Element (LeetCode 215)
+
+This problem has multiple approaches. The optimal solution uses **Quickselect** algorithm (see [[Sorting_Algorithms_Overview]] for detailed quicksort and quickselect explanations).
+
+##### Approach 1: Simple Sorting
+```python
+def find_kth_largest_simple(nums, k):
+    """Sort and return kth element."""
+    nums.sort()
+    return nums[len(nums) - k]
+
+# Time: O(n log n), Space: O(1)
+```
+
+Or using quick select:
+
+```Python
+import random
+
+def find_kth_smallest(numbers, k):
+    if numbers:
+        pos = partition(numbers, 0, len(numbers) - 1)
+        if k - 1 == pos:
+            # The pivot is the k-th element after partitioning
+            return numbers[pos]
+        elif k - 1 < pos:
+            # The pivot index after partitioning is larger than k
+            # We'll keep searching in the left part
+            return find_kth_smallest(numbers[:pos], k)
+        else:
+            # The pivot index after partitioning is smaller than k
+            # We'll keep searching in the right part
+            return find_kth_smallest(numbers[pos + 1:], k - pos - 1)
+
+def partition(nums, left, right):
+    # Choose a random pivot and move it to the start
+    pivot_index = random.randint(left, right)
+    nums[left], nums[pivot_index] = nums[pivot_index], nums[left]
+    pivot_value = nums[left]
+    store_index = left
+
+    for i in range(left + 1, right + 1):
+        if nums[i] <= pivot_value:
+            store_index += 1
+            nums[i], nums[store_index] = nums[store_index], nums[i]
+    nums[left], nums[store_index] = nums[store_index], nums[left]
+    return store_index
+```
+
+##### Approach 2: Min Heap
+```python
+def find_kth_largest_heap(nums, k):
+    """Use min heap of size k."""
+    import heapq
+    
+    heap = nums[:k]
+    heapq.heapify(heap)
+    
+    for num in nums[k:]:
+        if num > heap[0]:
+            heapq.heapreplace(heap, num)
+    
+    return heap[0]
+
+# Time: O(n log k), Space: O(k)
+```
+
+##### Approach 3: Quickselect (Optimal)
 ```python
 def find_kth_largest(nums, k):
-    """Find kth largest element using quickselect."""
+    """Find kth largest using quickselect - O(n) average."""
     import random
     
     def quickselect(left, right, k_smallest):
         if left == right:
             return nums[left]
         
-        # Random pivot for better average performance
         pivot_index = random.randint(left, right)
         pivot_index = partition(left, right, pivot_index)
         
@@ -142,7 +208,6 @@ def find_kth_largest(nums, k):
     
     def partition(left, right, pivot_index):
         pivot = nums[pivot_index]
-        # Move pivot to end
         nums[pivot_index], nums[right] = nums[right], nums[pivot_index]
         
         store_index = left
@@ -151,7 +216,6 @@ def find_kth_largest(nums, k):
                 nums[store_index], nums[i] = nums[i], nums[store_index]
                 store_index += 1
         
-        # Move pivot to final position
         nums[right], nums[store_index] = nums[store_index], nums[right]
         return store_index
     

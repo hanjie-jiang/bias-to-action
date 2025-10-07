@@ -132,6 +132,10 @@ def merge(left, right):
 ```
 
 ### 2. Quick Sort
+
+**Quicksort** is a divide-and-conquer algorithm that works by selecting a 'pivot' element and partitioning the array around it.
+
+#### Basic Implementation
 ```python
 def quick_sort(arr, low=0, high=None):
     if high is None:
@@ -159,6 +163,149 @@ def partition(arr, low, high):
 # Good for: Average case performance, in-place sorting
 # Bad for: Worst-case guarantees, already sorted data (without optimization)
 ```
+
+#### Detailed Step-by-Step Example
+
+Let's sort `[8, 3, 5, 4, 7, 6, 1, 2]` to understand how quicksort works:
+
+```python
+def quicksort_detailed(arr, low, high):
+    """Quicksort with detailed steps."""
+    if low < high:
+        # Step 1: Partition and get pivot position
+        pivot_pos = partition(arr, low, high)
+        print(f"After partition around {arr[pivot_pos]}: {arr}")
+        
+        # Step 2: Recursively sort left and right subarrays
+        quicksort_detailed(arr, low, pivot_pos - 1)   # Left side
+        quicksort_detailed(arr, pivot_pos + 1, high)  # Right side
+
+def partition(arr, low, high):
+    """Partition array around pivot (last element)."""
+    pivot = arr[high]  # Choose last element as pivot
+    print(f"Partitioning around pivot: {pivot}")
+    
+    i = low - 1  # Index of smaller element
+    
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+            print(f"  Swap {arr[j]} and {arr[i]}: {arr}")
+    
+    # Place pivot in correct position
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    print(f"  Place pivot {pivot} at position {i + 1}: {arr}")
+    return i + 1
+```
+
+**Detailed Walkthrough:**
+
+**Initial Array**: `[8, 3, 5, 4, 7, 6, 1, 2]`
+
+**Step 1: First Partition (pivot = 2)**
+
+```
+Array:  [8, 3, 5, 4, 7, 6, 1, 2]
+Indices: 0  1  2  3  4  5  6  7
+Pivot = 2 (at index 7, last element)
+store_index = 0 (where next small element goes)
+```
+
+**Step-by-step partitioning:**
+- Check 8: Is 8 ≤ 2? NO → no swap
+- Check 3: Is 3 ≤ 2? NO → no swap  
+- Check 5: Is 5 ≤ 2? NO → no swap
+- Check 4: Is 4 ≤ 2? NO → no swap
+- Check 7: Is 7 ≤ 2? NO → no swap
+- Check 6: Is 6 ≤ 2? NO → no swap
+- Check 1: Is 1 ≤ 2? **YES!** → Swap positions 0 and 6
+
+```
+Before: [8, 3, 5, 4, 7, 6, 1, 2]
+After:  [1, 3, 5, 4, 7, 6, 8, 2]
+```
+
+**Place pivot:** Swap pivot with position 1
+```
+Final:  [1, 2, 5, 4, 7, 6, 8, 3]
+        ↑  ↑  ↑─────────────↑
+      ≤2  pivot    >2
+```
+
+**Key Insight: Partitioning ≠ Sorting!**
+
+The partition step **ONLY** guarantees:
+- All elements ≤ pivot go to LEFT side
+- All elements > pivot go to RIGHT side  
+- **It does NOT sort within each side**
+
+**Why elements appear "jumbled":** Only elements that needed to move (1 and 2) actually moved. Elements 5, 4, 7, 6, 8, 3 stayed in their relative positions until recursive sorting happens later.
+
+**Step 2: Recursively sort subarrays**
+- Left: `[1]` - already sorted
+- Right: `[5, 4, 7, 6, 8, 3]` - needs recursive sorting
+
+This process continues until all subarrays are sorted.
+
+#### Quickselect Algorithm
+
+**Quickselect** uses quicksort's partitioning but only recurses on one side to find the kth element in O(n) average time:
+
+```python
+def quickselect(nums, k):
+    """Find kth largest element using quickselect."""
+    import random
+    
+    def quickselect_helper(left, right, k_smallest):
+        if left == right:
+            return nums[left]
+        
+        # Random pivot for better average performance
+        pivot_index = random.randint(left, right)
+        pivot_index = partition(left, right, pivot_index)
+        
+        if k_smallest == pivot_index:
+            return nums[k_smallest]
+        elif k_smallest < pivot_index:
+            return quickselect_helper(left, pivot_index - 1, k_smallest)
+        else:
+            return quickselect_helper(pivot_index + 1, right, k_smallest)
+    
+    def partition(left, right, pivot_index):
+        pivot = nums[pivot_index]
+        # Move pivot to end
+        nums[pivot_index], nums[right] = nums[right], nums[pivot_index]
+        
+        store_index = left
+        for i in range(left, right):
+            if nums[i] < pivot:
+                nums[store_index], nums[i] = nums[i], nums[store_index]
+                store_index += 1
+        
+        # Move pivot to final position
+        nums[right], nums[store_index] = nums[store_index], nums[right]
+        return store_index
+    
+    return quickselect_helper(0, len(nums) - 1, len(nums) - k)
+
+# Average: O(n), Worst: O(n²), Space: O(1)
+```
+
+**Example**: Find 3rd largest in `[3, 2, 1, 5, 6, 4]`
+- Convert to finding (6-3) = 3rd smallest (0-indexed: index 3)
+- Partition around pivot 4: `[3, 2, 1, 4, 6, 5]`
+- Pivot 4 is at index 3 = target index → Answer is 4!
+
+**Why Quickselect is Better than Sorting:**
+- **Sorting**: O(n log n) - processes all elements
+- **Quickselect**: O(n) average - only processes one partition each recursion
+
+#### Time Complexity Analysis
+- **Best/Average Case**: O(n log n) - balanced partitions
+- **Worst Case**: O(n²) - unbalanced partitions (e.g., already sorted with poor pivot)
+- **Space**: O(log n) - recursion stack for balanced partitions
+- **Quickselect Average**: O(n) - only recurses on one side
 
 ## Specialized Sorting Algorithms
 
@@ -221,6 +368,34 @@ def counting_sort_by_digit(arr, exp):
 
 # Good for: Fixed-width integers, linear time needed
 # Bad for: Variable-length data, small datasets
+```
+
+## Built-in Sort Function in Python
+### sorting values
+`sorted` function sorts a given list without modifying the original one. Instead, it returns a new list with the elements of the original list in sorted order.
+
+### sorting tuples
+The `sorted()` function can sort complex data structures like tuples using the `key` parameter. This parameter defines a function that takes an input element and 
+returns a key that Python will use for sorting purposes. Note that `.sort()` function does the same but sorts the list in place.
+
+```Python
+def sort_tuples(tuples):
+    return sorted(tuples, key=lambda x: x[1])
+```
+
+The lambda function `x: x[1]` takes an element from `tuples` and returns its second element (i.e., `x[1]`). The `sorted()` function uses these second elements to sort the tuples.
+On top of that, if the second element can include ties we need to eliminate, a tuple comes to the rescue, as tuples in Python are automatically comparable:
+
+```Python
+def sort_tuples_ties(values):
+    return values.sort(key=lambda x: (x[1], x[0]))
+```
+
+Similarly, we could also osrt a dictionary based on values:
+
+```Python
+def sort_dict(dictionary):
+    return sorted(dictionart.items(), key=lambda x: x[1])
 ```
 
 ## Choosing the Right Sorting Algorithm
