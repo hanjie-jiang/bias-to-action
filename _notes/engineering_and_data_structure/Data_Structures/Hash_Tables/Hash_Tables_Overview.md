@@ -102,7 +102,7 @@ for char in text:
 
 1. [Hash Functions and Collisions](Hash_Functions_and_Collisions.md) - Learn about hash function design and collision resolution
 2. [Python Dictionaries](Python_Dictionaries.md) - Explore Python's dict implementation
-3. [Python Sets](Python_Sets.md) - Understand Python's set implementation
+3. [Sets and Python Sets Overview](Python_Sets.md) - Understand Python's set implementation
 4. [Hash Table Problems](Hash_Table_Problems.md) - Practice common coding problems
 
 ## Related Topics

@@ -14,7 +14,7 @@ Welcome to the Engineering & Data Structure section! This comprehensive guide co
 - **[Hash Tables Overview](../Data_Structures/Hash_Tables/Hash_Tables_Overview.md)** - Fundamental concepts and applications
 - **[Hash Functions & Collisions](../Data_Structures/Hash_Tables/Hash_Functions_and_Collisions.md)** - Implementation details and collision resolution
 - **[Python Dictionaries](../Data_Structures/Hash_Tables/Python_Dictionaries.md)** - Key-value pair data structures
-- **[Python Sets](../Data_Structures/Hash_Tables/Python_Sets.md)** - Unordered collections of unique elements
+- **[Sets and Python Sets Overview](../Data_Structures/Hash_Tables/Python_Sets.md)** - Unordered collections of unique elements
 - **[Hash Table Problems](../Data_Structures/Hash_Tables/Hash_Table_Problems.md)** - Common coding problems and solutions
 
 #### Recursion
@@ -34,6 +34,26 @@ Welcome to the Engineering & Data Structure section! This comprehensive guide co
 - **[MIT 6.006 Integration Templates](../Resources/MIT_6006_Integration_Templates.md)** - Templates for adding theoretical depth to existing content
 
 ## Key Concepts Covered
+
+### Fundamental Distinctions
+
+#### Interface vs Data Structure
+Understanding the distinction between interface and data structure is crucial for mastering computer science concepts:
+
+- **Interface**: The abstract definition of what operations a data structure supports - the "what" you can do with it
+  - Defines the **set of operations (methods)** available, for example sequence & set
+  - Specifies the behavior and contracts of operations
+  - Independent of implementation details
+  - Examples: Stack interface (push, pop, peek), Queue interface (enqueue, dequeue)
+
+- **Data Structure**: The concrete implementation of how data is organized and stored in memory - the "how" it actually works
+  - Defines the physical layout and organization of data
+  - Determines the efficiency of operations
+  - Includes implementation-specific details
+  - **Ways to store data** that supports a set of operations
+  - Examples: Array-based stack, linked list-based stack, heap-based priority queue
+
+**Key Insight**: The same interface can be implemented using different data structures, each with different performance characteristics. For example, a stack interface can be implemented using arrays (O(1) access but fixed size) or linked lists (dynamic size but O(n) access to arbitrary elements).
 
 ### Data Structures
 - **Hash Tables**: Fundamental data structure providing O(1) average case operations
