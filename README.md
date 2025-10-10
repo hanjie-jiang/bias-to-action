@@ -56,11 +56,14 @@ _notes/
 │   │   └── Recursion/
 │   │       └── recursion_overview.md
 │   ├── Algorithms/
-│   │   └── Search_Algorithms/
-│   │       ├── Search_Algorithms_Overview.md
-│   │       ├── Binary_Search_Fundamentals.md
-│   │       ├── Binary_Search_Variations.md
-│   │       └── Search_Problems.md              # Peak finding and search applications
+│   │   ├── Search_Algorithms/
+│   │   │   ├── Search_Algorithms_Overview.md
+│   │   │   ├── Binary_Search_Fundamentals.md
+│   │   │   ├── Binary_Search_Variations.md
+│   │   │   └── Search_Problems.md              # Peak finding and search applications
+│   │   └── Sorting_Algorithms/
+│   │       ├── Sorting_Algorithms_Overview.md   # Comprehensive sorting theory with quicksort details
+│   │       └── Sorting_Problems.md              # LeetCode problems and inversion counting
 │   ├── Problem_Solving/
 │   │   ├── Set_Dictionary_Problems/
 │   │   │   ├── Array_Intersection.md
@@ -129,6 +132,7 @@ _notes/
 - **MIT 6.006 Integration**: Systematic algorithmic foundations seamlessly integrated with practical applications and theoretical depth
 - **Mathematical Rigor**: Complete asymptotic analysis, complexity theory, and calculus connections for ML optimization
 - **Data Structures Mastery**: In-depth coverage of arrays, linked lists, hash tables with implementation details and complexity analysis
+- **Algorithms Foundations**: Complete search and sorting algorithms with step-by-step visualizations, quicksort/quickselect theory, and inversion counting
 - **Interconnected**: Cross-references and links between related topics across mathematics, algorithms, and ML applications  
 - **Theory + Practice**: Rigorous mathematical analysis combined with hands-on implementations and real-world examples
 - **Template-Driven**: Structured templates for consistent content organization and systematic expansion of algorithmic concepts
@@ -137,6 +141,13 @@ _notes/
 - **Searchable & Organized**: Full-text search across all content with centralized asset management and logical navigation structure
 
 ## Update logs
+
+### version 2025-10-09
+- **Sorting Algorithms Mastery**: Completed comprehensive sorting algorithms section with detailed quicksort step-by-step visualizations, quickselect algorithm analysis, and partitioning mechanics
+- **Search & Sort Integration**: Finalized both search algorithms (binary search, peak finding) and sorting algorithms (quicksort, mergesort, inversion counting) with theoretical depth and practical implementations
+- **Advanced Problem Solving**: Added LeetCode problems including Kth Largest Element with multiple approaches, inversion counting with merge sort, and sorting-based techniques
+- **Algorithm Visualization**: Created detailed partitioning examples showing element-by-element moves and explaining why "partitioning ≠ sorting" concept
+- **Cross-Reference Optimization**: Established proper links between sorting theory (Overview) and practical applications (Problems) for better learning flow
 
 ### version 2025-10-01
 - **Fundamental Concepts Enhancement**: Added comprehensive "Interface vs Data Structure" distinction to Engineering & Data Structure Overview explaining the difference between abstract operations and concrete implementations

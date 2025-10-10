@@ -329,6 +329,43 @@ def merge_count_inversions(left_half, right_half):
     return merged_result, inversion_count
 ```
 
+#### 6. Count the number of Anti Inversions in a List
+your task is to count anti-inversion pairs. More specifically, the anti-inversion is a pair of indices (i, j) that fulfill the specific condition: $i < j$ and $nums[i] < nums[j]$.
+
+ ```python
+def count_anti_inversions(arr):
+    if len(arr) <= 1:
+        return arr, 0
+    else:
+        middle = len(arr) // 2
+        left, a = count_anti_inversions(arr[:middle])
+        right, b = count_anti_inversions(arr[middle:])
+        total, c = merge_count_anti_inversions(left, right)
+        return total, (a + b + c)
+
+def merge_count_anti_inversions(x, y):
+    count, i, j = 0, 0, 0
+    merged = []
+    while i < len(x) and j < len(y):
+        if x[i] < y[j]:
+            merged.append(x[i])
+            i = i + 1
+            # when x[i] < y[j], x[i] should also be smaller than all the other ys that has index > j, forming (i,j) - (i, len(y)) pairs of anti-inversion:
+            count = count + len(y) - j
+        else:
+            merged.append(y[j])
+            j = j + 1
+    merged.extend(x[i:])
+    merged.extend(y[j:])
+    return merged, count
+            
+
+# Testing the function
+test_array = [2, 4, 1, 3, 5]
+_, inv_count = count_anti_inversions(test_array)
+print(f'Number of anti-inversions in {test_array} is {inv_count}')  # Expected Output: 7
+ ```
+
 ## Advanced Sorting Problems
 
 ### Hard Problems

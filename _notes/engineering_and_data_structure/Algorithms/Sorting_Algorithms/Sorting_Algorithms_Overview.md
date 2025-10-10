@@ -179,32 +179,47 @@ def merge(left, right):
 
 ### 2. Quick Sort
 
-**Quicksort** is a divide-and-conquer algorithm that works by selecting a 'pivot' element and partitioning the array around it.
+**Quicksort** is a divide-and-conquer algorithm that works by selecting a 'pivot' element and partitioning the array around it. 
+
+Notes for the Quick Sort algorithm when implementing it:
+- In Quick Sort, after partitioning, the pivot is at its correct position. You should not include the pivot index in both recursive calls.
+
+#### Recursive Implementation
+```python
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot_position = len(arr) // 2
+    pivot_value = arr[pivot_position]
+
+    mid = [x for x in arr if x == pivot_value]
+    left = [x for x in arr if x < pivot_value]
+    right = [x for x in arr if x > pivot_value]
+
+    return quick_sort(left) + mid + quick_sort(right)
+```
 
 #### Basic Implementation
 ```python
-def quick_sort(arr, low=0, high=None):
-    if high is None:
-        high = len(arr) - 1
-    
-    if low < high:
-        pivot_idx = partition(arr, low, high)
-        quick_sort(arr, low, pivot_idx - 1)
-        quick_sort(arr, pivot_idx + 1, high)
-    
+def quick_sort_desc(arr, left, right):
+    if left < right:
+        # find a index
+        pivot_index = partition(arr, left, right)
+        # first sort left half
+        # the pivot index should not be included in both recursive calls.
+        quick_sort_desc(arr, left, pivot_index - 1)
+        quick_sort_desc(arr, pivot_index + 1, right)
     return arr
-
-def partition(arr, low, high):
-    pivot = arr[high]
-    i = low - 1
-    
-    for j in range(low, high):
-        if arr[j] <= pivot:
-            i += 1
+        
+def partition(arr, left, right):
+    i = left # starting the position of which value > pivot (in this case arr[right]) from left index 
+    for j in range(left, right):
+        if arr[j] >= arr[right]: # arr[right] is always the pivot
             arr[i], arr[j] = arr[j], arr[i]
+            i = i + 1
     
-    arr[i + 1], arr[high] = arr[high], arr[i + 1]
-    return i + 1
+    arr[i], arr[right] = arr[right], arr[i] # at the end of comparison, swapping pivot value with index indicating the position of which values are larger than pivot
+    return i
 
 # Good for: Average case performance, in-place sorting
 # Bad for: Worst-case guarantees, already sorted data (without optimization)
@@ -294,46 +309,65 @@ The partition step **ONLY** guarantees:
 
 This process continues until all subarrays are sorted.
 
+
+
 #### Quickselect Algorithm
 
-**Quickselect** uses quicksort's partitioning but only recurses on one side to find the kth element in O(n) average time:
+**Quickselect** uses quicksort's partitioning but only recurses on one side to find the kth element in O(n) average time. A good tutorial of QuickSelect can be found at:
+- https://www.youtube.com/watch?v=wiNfjkMDl3A. 
+- https://www.youtube.com/watch?v=XEmy13g1Qxc.
+
+A pivot is the fundmanetal component of this algorithm, which determines whether a number in the array goes to the first half or the second half, i.e. based on partition. 
+
+Easiest solution:
 
 ```python
-def quickselect(nums, k):
-    """Find kth largest element using quickselect."""
-    import random
-    
-    def quickselect_helper(left, right, k_smallest):
-        if left == right:
-            return nums[left]
-        
-        # Random pivot for better average performance
-        pivot_index = random.randint(left, right)
-        pivot_index = partition(left, right, pivot_index)
-        
-        if k_smallest == pivot_index:
-            return nums[k_smallest]
-        elif k_smallest < pivot_index:
-            return quickselect_helper(left, pivot_index - 1, k_smallest)
+def findKthLargest(self, nums: List[int], k:int) -> int:
+    nums.sort()
+    return nums[len(nums) - k]
+```
+
+```python
+import random
+
+def find_kth_largest(numbers, k):
+    if numbers:
+        # find pivot
+        pivot = partition(numbers, 0, len(numbers)-1)
+        # compare k with pivot index
+        if k - 1 == pivot: # the k - 1 rank value in the list is the kth largest number
+            return numbers[pivot]
+        # k smaller than pivot
+        elif k - 1 < pivot: # meaning rank k-1 value (k largest) is smaller in rank than pivot, i.e. rank k-1 value should be bigger than numbers[pivot], we should be searching in the left half where values are bigger when the list is descending order
+            return find_kth_largest(numbers[:pivot], k)
+        # k - 1 > pivot, meaning k - 1 ranks lower in magnitude, i.e. value k - 1 is smaller in value than pivot, hence with descending order, it should be in second / right half
         else:
-            return quickselect_helper(pivot_index + 1, right, k_smallest)
-    
-    def partition(left, right, pivot_index):
-        pivot = nums[pivot_index]
-        # Move pivot to end
-        nums[pivot_index], nums[right] = nums[right], nums[pivot_index]
+            return find_kth_largest(numbers[pivot+1:], k - 1 - pivot)
         
-        store_index = left
-        for i in range(left, right):
-            if nums[i] < pivot:
-                nums[store_index], nums[i] = nums[i], nums[store_index]
-                store_index += 1
         
-        # Move pivot to final position
-        nums[right], nums[store_index] = nums[store_index], nums[right]
-        return store_index
+def partition(nums, l, r):
+    # assign the store point for comparison for how many values are smaller than pivot
+    i = l
+    print("old nums:", nums)
+    # choose pivot, i.e. could also be random int
+    pivot_index = random.randint(l, r)
+    pivot_value = nums[pivot_index]
+    print("pivot value:", pivot_value)
     
-    return quickselect_helper(0, len(nums) - 1, len(nums) - k)
+    # always make sure the pivot is at right end
+    nums[r], nums[pivot_index] = nums[pivot_index], nums[r]
+
+    # loop and compare with pivot
+    for j in range(l, r):
+        if nums[j] >= pivot_value: # only when value is bigger than pivot we swap, i.e. the new list will have smaller on left of pivot and bigger on right
+            print("nums[", j, "]:", nums[j], ", swapping with nums[", i, "]:", nums[i])
+            nums[i], nums[j] = nums[j], nums[i]
+            i = i + 1
+    
+    nums[i], nums[r] = nums[r], nums[i]
+    print("new nums:", nums, r, "pivot:", i)
+    # partition always return store point
+    return i
 
 # Average: O(n), Worst: O(n²), Space: O(1)
 ```
