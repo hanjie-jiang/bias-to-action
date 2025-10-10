@@ -169,10 +169,12 @@ _notes/
 - **Template System**: Created comprehensive content templates for consistent expansion of theoretical foundations
 - **Enhanced Learning Path**: Designed integration strategy combining intuitive understanding with systematic rigor
 - **Preserved Content**: All existing materials maintained while adding framework for algorithmic depth
+
 ### version 2025-08-25
 - updated the `engineering_and_data_structure` folder with newly added recursion content
 - added in the search and sort algorithm sections in appropriate folders
 - updated the README.md format to describe the website structure
+
 ### version 2025-08-23
 - restructured the `_notes\engineering_and_data_structure` section to make it self-contained
 - reorganized Data Structures section under Hash Tables with comprehensive theory and Python implementations
@@ -180,6 +182,7 @@ _notes/
 - consolidated Python Sets and Python Dictionaries under the Hash Tables umbrella for better conceptual organization
 - added in the `_notes\calculus_and_linear_algebra` section for fundamental mathematics review in the future
 - updated the README.md format to describe the website structure
+
 ### version 2025-08-22
 - added in the engineering and data structure related pages for future reference when coding
 - refactored the front page design and made sure that the pastel hero looks ok
