@@ -59,6 +59,18 @@ nav:
               - Arrays Overview: engineering_and_data_structure/Data_Structures/Arrays/Arrays_Overview.md
               - Dynamic Arrays: engineering_and_data_structure/Data_Structures/Arrays/Dynamic_Arrays.md
               - Array Problems: engineering_and_data_structure/Data_Structures/Arrays/Array_Problems.md
+          - Linked Lists:
+              - Linked Lists Overview: engineering_and_data_structure/Data_Structures/Linked_Lists/Linked_Lists_Overview.md
+              - Implementation: engineering_and_data_structure/Data_Structures/Linked_Lists/Linked_List_Implementation.md
+              - Problems: engineering_and_data_structure/Data_Structures/Linked_Lists/Linked_List_Problems.md
+          - Stacks:
+              - Stacks Overview: engineering_and_data_structure/Data_Structures/Stacks/Stacks_Overview.md
+              - Implementation: engineering_and_data_structure/Data_Structures/Stacks/Stack_Implementation.md
+              - Problems: engineering_and_data_structure/Data_Structures/Stacks/Stack_Problems.md
+          - Queues:
+              - Queues Overview: engineering_and_data_structure/Data_Structures/Queues/Queues_Overview.md
+              - Implementation: engineering_and_data_structure/Data_Structures/Queues/Queue_Implementation.md
+              - Problems: engineering_and_data_structure/Data_Structures/Queues/Queue_Problems.md
           - Hash Tables:
               - Hash Tables Overview: engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Tables_Overview.md
               - Hash Functions & Collisions: engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Functions_and_Collisions.md

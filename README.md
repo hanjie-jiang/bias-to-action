@@ -45,6 +45,18 @@ _notes/
 │   │   │   ├── Arrays_Overview.md               # Comprehensive arrays vs linked lists comparison
 │   │   │   ├── Dynamic_Arrays.md                # Resizable arrays and Python lists
 │   │   │   └── Array_Problems.md                # Array-based coding problems
+│   │   ├── Linked_Lists/
+│   │   │   ├── Linked_Lists_Overview.md         # Singly, doubly, circular linked lists theory
+│   │   │   ├── Linked_List_Implementation.md    # Python implementation with node structures
+│   │   │   └── Linked_List_Problems.md          # Two pointers, reversal, merging patterns
+│   │   ├── Stacks/
+│   │   │   ├── Stacks_Overview.md               # LIFO operations, applications, patterns
+│   │   │   ├── Stack_Implementation.md          # Array vs linked list implementations
+│   │   │   └── Stack_Problems.md                # Valid parentheses, monotonic stack, DFS
+│   │   ├── Queues/
+│   │   │   ├── Queues_Overview.md               # FIFO operations, variants (priority, deque)
+│   │   │   ├── Queue_Implementation.md          # Array vs linked list implementations
+│   │   │   └── Queue_Problems.md                # BFS, sliding window, level-order traversal
 │   │   ├── Hash_Tables/
 │   │   │   ├── Hash_Tables_Overview.md
 │   │   │   ├── Hash_Functions_and_Collisions.md
@@ -131,8 +143,9 @@ _notes/
 - **Comprehensive Coverage**: From basic probability to advanced neural networks with mathematical foundations
 - **MIT 6.006 Integration**: Systematic algorithmic foundations seamlessly integrated with practical applications and theoretical depth
 - **Mathematical Rigor**: Complete asymptotic analysis, complexity theory, and calculus connections for ML optimization
-- **Data Structures Mastery**: In-depth coverage of arrays, linked lists, hash tables with implementation details and complexity analysis
-- **Algorithms Foundations**: Complete search and sorting algorithms with step-by-step visualizations, quicksort/quickselect theory, and inversion counting
+- **Complete Data Structures**: Arrays, linked lists, stacks, queues, and hash tables with implementation details and complexity analysis
+- **Algorithms Foundations**: Search and sorting algorithms with step-by-step visualizations, quicksort/quickselect theory, and inversion counting
+- **Linear Data Structures**: LIFO (stacks) and FIFO (queues) operations with real-world applications and problem patterns
 - **Interconnected**: Cross-references and links between related topics across mathematics, algorithms, and ML applications  
 - **Theory + Practice**: Rigorous mathematical analysis combined with hands-on implementations and real-world examples
 - **Template-Driven**: Structured templates for consistent content organization and systematic expansion of algorithmic concepts
@@ -141,6 +154,15 @@ _notes/
 - **Searchable & Organized**: Full-text search across all content with centralized asset management and logical navigation structure
 
 ## Update logs
+
+### version 2025-10-13
+- **Complete Data Structures Suite**: Added comprehensive coverage of linked lists, stacks, and queues with dedicated folders and structured content
+- **Linear Data Structures Mastery**: Detailed theory, implementations, and problem patterns for LIFO (stacks) and FIFO (queues) operations
+- **Linked Lists Deep Dive**: Singly, doubly, and circular linked lists with implementation details and comparison to arrays
+- **Stack Applications**: Valid parentheses, monotonic stacks, DFS algorithms, and expression evaluation with real problem solutions
+- **Queue Variants**: Simple queues, circular queues, priority queues, and deques with BFS and sliding window applications
+- **Navigation Integration**: Updated MkDocs navigation, front page cards, and cross-references for seamless learning flow
+- **Implementation Focus**: Array-based vs linked list-based implementations with performance trade-offs and use case analysis
 
 ### version 2025-10-09
 - **Sorting Algorithms Mastery**: Completed comprehensive sorting algorithms section with detailed quicksort step-by-step visualizations, quickselect algorithm analysis, and partitioning mechanics

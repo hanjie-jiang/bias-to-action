@@ -8,8 +8,8 @@ hide:
 
 <div class="hero">
   <div class="hero__content">
-    <h1>Machine Learning Notes</h1>
-    <p class="subtitle">Curated notes on probability, foundations, and neural networks.</p>
+    <h1>ML & Computer Science Fundamentals</h1>
+    <p class="subtitle">From algorithms and data structures to machine learning and neural networks.</p>
     <p class="hero__actions">
       <div class="hero-button-container">
         <a class="hero-button" href="ml_fundamentals/ML_Fundamentals_Overview/">ML Fundamentals</a>
@@ -40,21 +40,37 @@ hide:
       </div>
       
       <div class="hero-button-container">
-        <a class="hero-button" href="engineering_and_data_structure/Overview/Engineering_and_Data_Structure_Overview/">Engineering & Data Structure</a>
+        <a class="hero-button" href="engineering_and_data_structure/Overview/Engineering_and_Data_Structure_Overview/">Algorithms & Data Structures</a>
         <div class="hero-dropdown">
-          <h4>Engineering & Data Structure</h4>
+          <h4>Data Structures</h4>
           <ul>
-            <li><a href="engineering_and_data_structure/Overview/Engineering_and_Data_Structure_Overview/">Overview</a></li>
-            <li><a href="engineering_and_data_structure/Data_Structures/Python_Sets/Sets_Overview/">Python Sets</a></li>
-            <li><a href="engineering_and_data_structure/Data_Structures/Python_Dictionaries/Dictionaries_Overview/">Python Dictionaries</a></li>
-            <li><a href="engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Array_Intersection/">Problem Solving</a></li>
-            <li><a href="engineering_and_data_structure/Resources/Common_Patterns/">Resources</a></li>
+            <li><a href="engineering_and_data_structure/Data_Structures/Arrays/Arrays_Overview/">Arrays & Linked Lists</a></li>
+            <li><a href="engineering_and_data_structure/Data_Structures/Stacks/Stacks_Overview/">Stacks (LIFO)</a></li>
+            <li><a href="engineering_and_data_structure/Data_Structures/Queues/Queues_Overview/">Queues (FIFO)</a></li>
+            <li><a href="engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Tables_Overview/">Hash Tables</a></li>
+          </ul>
+          <h4>Algorithms</h4>
+          <ul>
+            <li><a href="engineering_and_data_structure/Algorithms/Sorting_Algorithms/Sorting_Algorithms_Overview/">Sorting Algorithms</a></li>
+            <li><a href="engineering_and_data_structure/Algorithms/Search_Algorithms/Search_Algorithms_Overview/">Search Algorithms</a></li>
           </ul>
         </div>
       </div>
       
       <div class="hero-button-container">
-        <a class="hero-button" href="language_model/Ngram_Language_Modeling/">Language Model</a>
+        <a class="hero-button" href="calculus_and_linear_algebra/Calculus_and_Linear_Algebra_Overview/">Mathematical Foundations</a>
+        <div class="hero-dropdown">
+          <h4>Mathematical Foundations</h4>
+          <ul>
+            <li><a href="calculus_and_linear_algebra/Linear_Algebra_for_ML/">Linear Algebra for ML</a></li>
+            <li><a href="calculus_and_linear_algebra/Calculus_and_Gradient_Descent/">Calculus & Optimization</a></li>
+            <li><a href="calculus_and_linear_algebra/Asymptotic_Analysis_Theory/">Complexity Theory</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="hero-button-container">
+        <a class="hero-button" href="language_model/Ngram_Language_Modeling/">Language Models</a>
         <div class="hero-dropdown">
           <h4>Language Models</h4>
           <ul>
@@ -67,20 +83,84 @@ hide:
 </div>
 
 <section class="cards">
-  <a class="card" href="/ml-learning-notes/engineering_and_data_structure/Overview/Engineering_and_Data_Structure_Overview/">
-    <h3>Engineering & Data Structure</h3>
-    <p>Sets, dictionaries, problem solving patterns, and interview preparation.</p>
+  <a class="card" href="engineering_and_data_structure/Overview/Engineering_and_Data_Structure_Overview/">
+    <h3>🔗 Data Structures</h3>
+    <p>Arrays, linked lists, stacks, queues, and hash tables with implementation details and time complexity analysis.</p>
   </a>
-  <a class="card" href="/ml-learning-notes/Information_Theory/">
-    <h3>Information Theory</h3>
-    <p>Entropy, cross-entropy and KL divergence.</p>
+  <a class="card" href="engineering_and_data_structure/Algorithms/Sorting_Algorithms/Sorting_Algorithms_Overview/">
+    <h3>⚡ Sorting & Search</h3>
+    <p>Complete quicksort visualizations, binary search, and algorithm complexity with step-by-step examples.</p>
   </a>
-  <a class="card" href="/ml-learning-notes/Neural_Networks_and_Backprop/">
-    <h3>Neural Networks</h3>
-    <p>Backpropagation, activations, training tips.</p>
+  <a class="card" href="calculus_and_linear_algebra/Linear_Algebra_for_ML/">
+    <h3>📊 Mathematical Foundations</h3>
+    <p>Linear algebra, calculus, and asymptotic analysis for machine learning optimization.</p>
   </a>
-  <a class="card" href="/ml-learning-notes/Linear_Algebra_for_ML/">
-    <h3>Linear Algebra</h3>
-    <p>Vectors, matrices, SVD and more.</p>
+  <a class="card" href="ml_fundamentals/ML_Fundamentals_Overview/">
+    <h3>🤖 Machine Learning</h3>
+    <p>Feature engineering, model evaluation, regularization, and classical algorithms.</p>
   </a>
+  <a class="card" href="probability_and_markov/Probability_and_Markov_Overview/">
+    <h3>📈 Probability & Statistics</h3>
+    <p>Bayes' rule, distributions, naive Bayes, and Markov processes for ML foundations.</p>
+  </a>
+  <a class="card" href="neural_networks_and_deep_learning/Neural_Networks_and_Deep_Learning_Overview/">
+    <h3>🧠 Neural Networks</h3>
+    <p>Deep learning fundamentals, backpropagation, and neural network architectures.</p>
+  </a>
+</section>
+
+<section class="learning-pathway">
+  <div class="pathway-content">
+    <h2>🎯 Comprehensive Learning Journey</h2>
+    <div class="pathway-grid">
+      <div class="pathway-step">
+        <h3>1. Mathematical Foundations</h3>
+        <p>Start with linear algebra, calculus, and complexity theory to build the mathematical intuition needed for algorithms and ML.</p>
+      </div>
+      <div class="pathway-step">
+        <h3>2. Data Structures & Algorithms</h3>
+        <p>Master fundamental data structures and sorting/search algorithms with detailed visualizations and MIT 6.006 integration.</p>
+      </div>
+      <div class="pathway-step">
+        <h3>3. Machine Learning Foundations</h3>
+        <p>Apply your algorithmic knowledge to ML fundamentals, probability, and statistical learning theory.</p>
+      </div>
+      <div class="pathway-step">
+        <h3>4. Advanced Applications</h3>
+        <p>Dive into neural networks, deep learning, and modern ML applications with solid theoretical grounding.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features-highlight">
+  <div class="features-content">
+    <h2>✨ What Makes These Notes Special</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <h4>🔍 Step-by-Step Visualizations</h4>
+        <p>Detailed algorithm walkthroughs like quicksort partitioning with element-by-element moves</p>
+      </div>
+      <div class="feature">
+        <h4>🎓 MIT 6.006 Integration</h4>
+        <p>Systematic algorithmic foundations seamlessly integrated with practical implementations</p>
+      </div>
+      <div class="feature">
+        <h4>⚡ Time Complexity Analysis</h4>
+        <p>Complete asymptotic analysis and complexity theory connections throughout</p>
+      </div>
+      <div class="feature">
+        <h4>💡 Theory + Practice</h4>
+        <p>Rigorous mathematical analysis combined with hands-on coding and LeetCode problems</p>
+      </div>
+      <div class="feature">
+        <h4>🔗 Interconnected Learning</h4>
+        <p>Cross-references and links between related topics across mathematics, algorithms, and ML</p>
+      </div>
+      <div class="feature">
+        <h4>📱 Modern Interface</h4>
+        <p>Responsive design with LaTeX math rendering, searchable content, and intuitive navigation</p>
+      </div>
+    </div>
+  </div>
 </section>

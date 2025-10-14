@@ -245,6 +245,7 @@ This comparison aligns with MIT 6.006's emphasis on:
 
 ## Next Topics
 
+- **[Linked Lists Overview](../Linked_Lists/Linked_Lists_Overview.md)** - Detailed coverage of singly, doubly, and circular linked lists
 - **[Dynamic Arrays](Dynamic_Arrays.md)** - Resizable arrays combining benefits of both
 - **[Binary Search Fundamentals](../../Algorithms/Search_Algorithms/Binary_Search_Fundamentals.md)** - Efficient searching in sorted arrays
 - **[Array Problems](Array_Problems.md)** - Common array-based coding problems
