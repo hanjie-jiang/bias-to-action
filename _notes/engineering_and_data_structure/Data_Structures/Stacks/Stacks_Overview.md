@@ -93,4 +93,4 @@ Overall, the space complexity is $O(n)$, where $n$ is the number of elements in 
 - **[Stack Implementation](Stack_Implementation.md)** - Python implementation details
 - **[Stack Problems](Stack_Problems.md)** - LeetCode problems and patterns
 - **[Queues Overview](../Queues/Queues_Overview.md)** - FIFO counterpart to stacks
-- **[Recursion Overview](../Recursion/recursion_overview.md)** - Natural stack-based process
+- **[Recursion Fundamentals](../Recursion/Recursion_Fundamentals.md)** - Natural stack-based process

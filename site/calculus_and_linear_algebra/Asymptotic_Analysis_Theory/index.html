@@ -1,0 +1,3996 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://hanjie-jiang.github.io/ml-learning-notes/calculus_and_linear_algebra/Asymptotic_Analysis_Theory/">
+      
+      
+        <link rel="prev" href="../Calculus_and_Gradient_Descent/">
+      
+      
+        <link rel="next" href="../../ml_fundamentals/ML_Fundamentals_Overview/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Asymptotic Analysis Theory - Machine Learning Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/styles/layout.css">
+    
+      <link rel="stylesheet" href="../../assets/styles/hero.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mathematical-foundations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Machine Learning Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Asymptotic Analysis Theory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Machine Learning Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Engineering and Data Structure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Engineering and Data Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Overview/Engineering_and_Data_Structure_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Structures
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Data Structures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Arrays
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Arrays
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Arrays/Arrays_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arrays Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Arrays/Dynamic_Arrays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Arrays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Arrays/Array_Problems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Array Problems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Linked Lists
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Linked Lists
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Linked_Lists/Linked_Lists_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linked Lists Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Linked_Lists/Linked_List_Implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Linked_Lists/Linked_List_Problems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Stacks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Stacks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Stacks/Stacks_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Stacks Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Stacks/Stack_Implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Stacks/Stack_Problems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Queues
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Queues
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Queues/Queues_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Queues Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Queues/Queue_Implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Queues/Queue_Problems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Hash Tables
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hash Tables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Tables_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hash Tables Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Functions_and_Collisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hash Functions & Collisions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Dictionaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Dictionaries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Dictionary_Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Dictionary Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Sets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sets and Python Sets Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Hash_Tables/Python_Set_Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Set Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Hash_Tables/String_Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    String Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Hash_Tables/Hash_Table_Problems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hash Table Problems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Recursion
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Recursion
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Recursion/Recursion_Fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursion Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Recursion/Recursive_Algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursive Algorithms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Recursion/Recursion_vs_Iteration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recursion vs Iteration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Data_Structures/Recursion/Common_Recursive_Patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Common Recursive Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithms
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Search Algorithms
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Search Algorithms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Algorithms/Search_Algorithms/Search_Algorithms_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Search Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Algorithms/Search_Algorithms/Binary_Search_Fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Binary Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Algorithms/Search_Algorithms/Binary_Search_Variations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Binary Search Variations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Algorithms/Search_Algorithms/Search_Problems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Search Problems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Sorting Algorithms
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Sorting Algorithms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Algorithms/Sorting_Algorithms/Sorting_Algorithms_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sorting Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Algorithms/Sorting_Algorithms/Sorting_Problems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sorting Problems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithmic Patterns
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithmic Patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Two Pointers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Two Pointers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Algorithmic_Patterns/Two_Pointers/Two_Pointers_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Two Pointers Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Algorithmic_Patterns/Two_Pointers/Opposite_Direction_Pointers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Opposite Direction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Algorithmic_Patterns/Two_Pointers/Same_Direction_Pointers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Same Direction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Algorithmic_Patterns/Two_Pointers/Two_Pointers_Problems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Two Pointers Problems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Sliding Window
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Sliding Window
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Algorithmic_Patterns/Sliding_Window/Sliding_Window_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sliding Window Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Algorithmic_Patterns/Sliding_Window/Fixed_Size_Window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fixed Size Window
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Algorithmic_Patterns/Sliding_Window/Variable_Size_Window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variable Size Window
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Algorithmic_Patterns/Sliding_Window/Sliding_Window_Problems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sliding Window Problems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Problem Solving
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Problem Solving
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_1" id="__nav_2_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Set & Dictionary Problems
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Set & Dictionary Problems
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Array_Intersection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Array Intersection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Non_Repeating_Elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Non-Repeating Elements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Unique_Elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unique Elements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Problem_Solving/Set_Dictionary_Problems/Anagram_Pairs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Anagram Pairs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    String Problems
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            String Problems
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Problem_Solving/String_Problems/Unique_Strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unique Strings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Resources
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Resources/Common_Patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Common Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Resources/Time_Complexity_Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Time Complexity Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../engineering_and_data_structure/Resources/Interview_Strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interview Strategies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    ML Foundations and Algorithms
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            ML Foundations and Algorithms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Probability & Markov
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Probability & Markov
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../probability_and_markov/Probability_and_Markov_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../probability_and_markov/probability_and_markov_sections/conditional_probability_and_bayes_rule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bayes’ Rule
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../probability_and_markov/probability_and_markov_sections/naive_bayes_and_gaussian_naive_bayes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Naive Bayes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../probability_and_markov/probability_and_markov_sections/joint_and_marginal_distributions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Joint & Marginal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Mathematical Foundations
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Mathematical Foundations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Calculus_and_Linear_Algebra_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linear_Algebra_for_ML/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linear Algebra for ML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Calculus_and_Gradient_Descent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Calculus and Gradient Descent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Asymptotic Analysis Theory
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Asymptotic Analysis Theory
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Foundations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mathematical Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limit-theory-and-growth-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limit Theory and Growth Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asymptotic-notations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asymptotic Notations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asymptotic Notations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#big-o-notation-upper-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      Big O Notation (Upper Bound)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#big-omega-notation-lower-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      Big Omega Notation (Lower Bound)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#big-theta-notation-tight-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      Big Theta Notation (Tight Bound)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#little-o-notation-strict-upper-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      Little o Notation (Strict Upper Bound)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#little-omega-notation-strict-lower-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      Little omega Notation (Strict Lower Bound)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-growth-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Growth Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Growth Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#polynomial-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polynomial Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponential-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exponential Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logarithmic-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logarithmic Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-of-asymptotic-complexity-in-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples of Asymptotic Complexity in Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples of Asymptotic Complexity in Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-polynomial-dominance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1: Polynomial Dominance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-upper-bound-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2: Upper Bound Only
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recurrence-relations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recurrence Relations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recurrence Relations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#master-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Master Theorem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substitution-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Substitution Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amortized-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amortized Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Amortized Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregate Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounting-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accounting Method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#potential-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Potential Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smoothed-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Smoothed Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculus-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculus Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calculus Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#derivatives-and-growth-rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Derivatives and Growth Rates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-and-summation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration and Summation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lhopitals-rule-for-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'Hôpital's Rule for Limits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-to-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications to Machine Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications to Machine Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#training-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Complexity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#space-time-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Space-Time Tradeoffs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convergence-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithm-analysis-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm Analysis Steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes to Avoid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-references-and-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-References and Connections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cross-References and Connections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Topics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Extensions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ML Fundamentals
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            ML Fundamentals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/ML_Fundamentals_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Feature Engineering
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Feature Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/feature_engineering/data_types_and_normalization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Types & Normalization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/feature_engineering/categorical_encoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Categorical Encoding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/feature_engineering/feature_crosses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Feature Crosses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Model Evaluation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Model Evaluation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/model_evaluation/evaluation_methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation Methods
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/model_evaluation/metrics_and_validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metrics & Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/model_evaluation/hyperparameter_tuning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hyperparameter Tuning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_4" id="__nav_3_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Regularization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Regularization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/regularization/overfitting_underfitting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overfitting & Underfitting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/regularization/l1_l2_regularization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L1/L2 Regularization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/regularization/early_stopping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Early Stopping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_5" id="__nav_3_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Classical Algorithms
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Classical Algorithms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/classical_algorithms/linear_regression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linear Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/classical_algorithms/logistic_regression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Logistic Regression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/classical_algorithms/decision_trees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Decision Trees
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_6" id="__nav_3_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Unsupervised Learning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Unsupervised Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/unsupervised_learning/k_nearest_neighbors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K-Nearest Neighbors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml_fundamentals/unsupervised_learning/k_means_clustering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K-Means Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../language_model/Ngram_Language_Modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Language Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Neural Networks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Neural Networks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../neural_networks_and_deep_learning/Neural_Networks_and_Deep_Learning_Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../neural_networks_and_deep_learning/neural_networks_sections/Introduction_to_Perceptron_Algorithm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Perceptron Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Asymptotic Analysis Theory</h1>
+
+<p><strong>Common Complexity Classes:</strong>
+The most commonly used complexity orders include <span class="arithmatex">\(O(1)\)</span>, <span class="arithmatex">\(O(\log N)\)</span>, <span class="arithmatex">\(O(N)\)</span>, <span class="arithmatex">\(O(N\log N)\)</span>, and <span class="arithmatex">\(O(N^2)\)</span>.ion</p>
+<p>Asymptotic analysis provides the mathematical foundation for understanding algorithm complexity. It uses calculus concepts like limits and mathematical functions to formally analyze how algorithms scale with input size, forming the theoretical backbone of computer science performance analysis.</p>
+<h2 id="mathematical-foundations">Mathematical Foundations<a class="headerlink" href="#mathematical-foundations" title="Permanent link">&para;</a></h2>
+<h3 id="limit-theory-and-growth-functions">Limit Theory and Growth Functions<a class="headerlink" href="#limit-theory-and-growth-functions" title="Permanent link">&para;</a></h3>
+<p>The core of asymptotic analysis relies on limit theory from calculus:</p>
+<div class="arithmatex">\[\lim_{n \to \infty} \frac{f(n)}{g(n)}\]</div>
+<p>This limit determines the relationship between functions <span class="arithmatex">\(f(n)\)</span> and <span class="arithmatex">\(g(n)\)</span> as <span class="arithmatex">\(n\)</span> approaches infinity.</p>
+<h3 id="asymptotic-notations">Asymptotic Notations<a class="headerlink" href="#asymptotic-notations" title="Permanent link">&para;</a></h3>
+<h4 id="big-o-notation-upper-bound">Big O Notation (Upper Bound)<a class="headerlink" href="#big-o-notation-upper-bound" title="Permanent link">&para;</a></h4>
+<p><strong>Definition:</strong> <span class="arithmatex">\(f(n) = O(g(n))\)</span> if there exist positive constants <span class="arithmatex">\(c\)</span> and <span class="arithmatex">\(n_0\)</span> such that:
+<span class="arithmatex">\(<span class="arithmatex">\(f(n) \leq c \cdot g(n) \text{ for all } n \geq n_0\)</span>\)</span></p>
+<p><strong>Mathematical Interpretation:</strong>
+- <span class="arithmatex">\(g(n)\)</span> provides an asymptotic upper bound for <span class="arithmatex">\(f(n)\)</span>
+- The constant <span class="arithmatex">\(c\)</span> allows for scaling differences
+- <span class="arithmatex">\(n_0\)</span> ensures the bound holds for sufficiently large inputs</p>
+<h4 id="big-omega-notation-lower-bound">Big Omega Notation (Lower Bound)<a class="headerlink" href="#big-omega-notation-lower-bound" title="Permanent link">&para;</a></h4>
+<p><strong>Definition:</strong> <span class="arithmatex">\(f(n) = \Omega(g(n))\)</span> if there exist positive constants <span class="arithmatex">\(c\)</span> and <span class="arithmatex">\(n_0\)</span> such that:
+<span class="arithmatex">\(<span class="arithmatex">\(f(n) \geq c \cdot g(n) \text{ for all } n \geq n_0\)</span>\)</span></p>
+<h4 id="big-theta-notation-tight-bound">Big Theta Notation (Tight Bound)<a class="headerlink" href="#big-theta-notation-tight-bound" title="Permanent link">&para;</a></h4>
+<p><strong>Definition:</strong> <span class="arithmatex">\(f(n) = \Theta(g(n))\)</span> if and only if:
+<span class="arithmatex">\(<span class="arithmatex">\(f(n) = O(g(n)) \text{ and } f(n) = \Omega(g(n))\)</span>\)</span></p>
+<p>This means: <span class="arithmatex">\(c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n)\)</span> for constants <span class="arithmatex">\(c_1, c_2 &gt; 0\)</span></p>
+<h4 id="little-o-notation-strict-upper-bound">Little o Notation (Strict Upper Bound)<a class="headerlink" href="#little-o-notation-strict-upper-bound" title="Permanent link">&para;</a></h4>
+<p><strong>Definition:</strong> <span class="arithmatex">\(f(n) = o(g(n))\)</span> if:
+<span class="arithmatex">\(<span class="arithmatex">\(\lim_{n \to \infty} \frac{f(n)}{g(n)} = 0\)</span>\)</span></p>
+<h4 id="little-omega-notation-strict-lower-bound">Little omega Notation (Strict Lower Bound)<a class="headerlink" href="#little-omega-notation-strict-lower-bound" title="Permanent link">&para;</a></h4>
+<p><strong>Definition:</strong> <span class="arithmatex">\(f(n) = \omega(g(n))\)</span> if:
+<span class="arithmatex">\(<span class="arithmatex">\(\lim_{n \to \infty} \frac{f(n)}{g(n)} = \infty\)</span>\)</span></p>
+<h2 id="common-growth-functions">Common Growth Functions<a class="headerlink" href="#common-growth-functions" title="Permanent link">&para;</a></h2>
+<h3 id="polynomial-functions">Polynomial Functions<a class="headerlink" href="#polynomial-functions" title="Permanent link">&para;</a></h3>
+<p>For polynomial <span class="arithmatex">\(P(n) = a_k n^k + a_{k-1} n^{k-1} + \cdots + a_1 n + a_0\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(P(n) = \Theta(n^k)\)</span>\)</span></p>
+<p>The highest degree term dominates asymptotic behavior.</p>
+<h3 id="exponential-functions">Exponential Functions<a class="headerlink" href="#exponential-functions" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[2^n = \Omega(n^k) \text{ for any constant } k\]</div>
+<p>Exponential functions grow faster than any polynomial.</p>
+<h3 id="logarithmic-functions">Logarithmic Functions<a class="headerlink" href="#logarithmic-functions" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\log_a n = \Theta(\log_b n) \text{ for any constants } a, b &gt; 1\]</div>
+<p>Base of logarithm doesn't affect asymptotic class.</p>
+<h2 id="examples-of-asymptotic-complexity-in-equations">Examples of Asymptotic Complexity in Equations<a class="headerlink" href="#examples-of-asymptotic-complexity-in-equations" title="Permanent link">&para;</a></h2>
+<h3 id="example-1-polynomial-dominance">Example 1: Polynomial Dominance<a class="headerlink" href="#example-1-polynomial-dominance" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[g(x) = 1.1x^2 + (10 + \sin(x+1.5)) \cdot x^{1.5} + 6006\]</div>
+<div class="arithmatex">\[g(x) = \Theta(x^2)\]</div>
+<p>When making <span class="arithmatex">\(x\)</span> scale larger and larger, the shape of the function only depends on the <span class="arithmatex">\(x^2\)</span> term, with all the other terms viewed as noise since <span class="arithmatex">\(x^2\)</span> grows much faster than the other terms. The lower bound of this function when approaching infinity would be approximately <span class="arithmatex">\(x^2\)</span>, whereas the upper bound would be approximately <span class="arithmatex">\(1.2x^2\)</span>.</p>
+<h3 id="example-2-upper-bound-only">Example 2: Upper Bound Only<a class="headerlink" href="#example-2-upper-bound-only" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[g(x) = x \cdot (1 + \sin(x))\]</div>
+<div class="arithmatex">\[f_{upper}(x) = 2x\]</div>
+<p>In this case, we cannot establish a consistent lower bound since <span class="arithmatex">\(\sin(x)\)</span> oscillates and the function can approach zero. However, we know that this function will never exceed <span class="arithmatex">\(f_{upper}(x) = 2x\)</span>. Therefore, we can only say that <span class="arithmatex">\(g(x) = O(2x)\)</span>. This demonstrates what Big-O notation really means: when analyzing algorithms, we typically focus on the worst-case scenario (upper bound) rather than best-case performance.</p>
+<h3 id="example-3">Example 3:<a class="headerlink" href="#example-3" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[g(x) = (1 + \sin(x)) x^{1.5} + x^{1.4}\]</div>
+<div class="arithmatex">\[f_{upper}(x) = 2x^{1.5} + x^{1.4}\]</div>
+<div class="arithmatex">\[f_{lower}(x) = x^{1.4}\]</div>
+<p>In this case, <span class="arithmatex">\(g(x)\)</span> has both <span class="arithmatex">\(\Omega(x^{1.4})\)</span> and <span class="arithmatex">\(O(x^{1.5})\)</span> bounds. However, we cannot say that <span class="arithmatex">\(g(x)\)</span> has a tight <span class="arithmatex">\(\Theta\)</span> bound because the upper and lower bounds have different expressions and growth rates.</p>
+<p>The most commonly used big-O orders include <span class="arithmatex">\(O(1)\)</span>, <span class="arithmatex">\(O(\log(N))\)</span>, <span class="arithmatex">\(O(N)\)</span>, <span class="arithmatex">\(O(N\log(N))\)</span> and <span class="arithmatex">\(\log(N^2)\)</span>.</p>
+<h2 id="recurrence-relations">Recurrence Relations<a class="headerlink" href="#recurrence-relations" title="Permanent link">&para;</a></h2>
+<h3 id="master-theorem">Master Theorem<a class="headerlink" href="#master-theorem" title="Permanent link">&para;</a></h3>
+<p>For recurrences of the form <span class="arithmatex">\(T(n) = aT(n/b) + f(n)\)</span> where <span class="arithmatex">\(a \geq 1, b &gt; 1\)</span>:</p>
+<p><strong>Case 1:</strong> If <span class="arithmatex">\(f(n) = O(n^{\log_b a - \epsilon})\)</span> for some <span class="arithmatex">\(\epsilon &gt; 0\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(T(n) = \Theta(n^{\log_b a})\)</span>\)</span></p>
+<p><strong>Case 2:</strong> If <span class="arithmatex">\(f(n) = \Theta(n^{\log_b a} \log^k n)\)</span> for some <span class="arithmatex">\(k \geq 0\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(T(n) = \Theta(n^{\log_b a} \log^{k+1} n)\)</span>\)</span></p>
+<p><strong>Case 3:</strong> If <span class="arithmatex">\(f(n) = \Omega(n^{\log_b a + \epsilon})\)</span> for some <span class="arithmatex">\(\epsilon &gt; 0\)</span> and <span class="arithmatex">\(af(n/b) \leq cf(n)\)</span> for some <span class="arithmatex">\(c &lt; 1\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(T(n) = \Theta(f(n))\)</span>\)</span></p>
+<h3 id="substitution-method">Substitution Method<a class="headerlink" href="#substitution-method" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Guess</strong> the form of the solution</li>
+<li><strong>Verify</strong> by mathematical induction</li>
+<li><strong>Solve</strong> for constants</li>
+</ol>
+<p><strong>Example:</strong> For <span class="arithmatex">\(T(n) = 2T(n/2) + n\)</span>, guess <span class="arithmatex">\(T(n) = O(n \log n)\)</span></p>
+<p><em>Base case:</em> <span class="arithmatex">\(T(1) = 1 \leq c \cdot 1 \cdot \log 1 = 0\)</span> (need to adjust)</p>
+<p><em>Inductive step:</em> Assume <span class="arithmatex">\(T(k) \leq ck \log k\)</span> for <span class="arithmatex">\(k &lt; n\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(T(n) = 2T(n/2) + n \leq 2c(n/2)\log(n/2) + n = cn\log(n/2) + n\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(= cn\log n - cn\log 2 + n = cn\log n + n(1 - c\log 2)\)</span>\)</span></p>
+<p>Choose <span class="arithmatex">\(c \geq 1/\log 2\)</span> to make this <span class="arithmatex">\(\leq cn\log n\)</span>.</p>
+<h3 id="iteration-method">Iteration Method<a class="headerlink" href="#iteration-method" title="Permanent link">&para;</a></h3>
+<p>Expand the recurrence by substituting repeatedly:</p>
+<p><strong>Example:</strong> <span class="arithmatex">\(T(n) = T(n-1) + n\)</span>
+- <span class="arithmatex">\(T(n) = T(n-1) + n\)</span>
+- <span class="arithmatex">\(T(n-1) = T(n-2) + (n-1)\)</span>
+- <span class="arithmatex">\(T(n-2) = T(n-3) + (n-2)\)</span>
+- ...
+- <span class="arithmatex">\(T(1) = 1\)</span></p>
+<p>Sum: <span class="arithmatex">\(T(n) = 1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2} = \Theta(n^2)\)</span></p>
+<h2 id="advanced-concepts">Advanced Concepts<a class="headerlink" href="#advanced-concepts" title="Permanent link">&para;</a></h2>
+<h3 id="amortized-analysis">Amortized Analysis<a class="headerlink" href="#amortized-analysis" title="Permanent link">&para;</a></h3>
+<p>Analyzes average performance over a sequence of operations:</p>
+<h4 id="aggregate-method">Aggregate Method<a class="headerlink" href="#aggregate-method" title="Permanent link">&para;</a></h4>
+<p>Total cost of <span class="arithmatex">\(n\)</span> operations divided by <span class="arithmatex">\(n\)</span>.</p>
+<h4 id="accounting-method">Accounting Method<a class="headerlink" href="#accounting-method" title="Permanent link">&para;</a></h4>
+<p>Assign costs to operations such that expensive operations are "paid for" by cheaper ones.</p>
+<h4 id="potential-method">Potential Method<a class="headerlink" href="#potential-method" title="Permanent link">&para;</a></h4>
+<p>Uses a potential function <span class="arithmatex">\(\Phi\)</span> to measure "stored energy" in the data structure:
+<span class="arithmatex">\(<span class="arithmatex">\(\text{Amortized cost} = \text{Actual cost} + \Phi(\text{after}) - \Phi(\text{before})\)</span>\)</span></p>
+<h3 id="smoothed-analysis">Smoothed Analysis<a class="headerlink" href="#smoothed-analysis" title="Permanent link">&para;</a></h3>
+<p>Combination of worst-case and average-case analysis, considering small random perturbations.</p>
+<h2 id="calculus-connections">Calculus Connections<a class="headerlink" href="#calculus-connections" title="Permanent link">&para;</a></h2>
+<h3 id="derivatives-and-growth-rates">Derivatives and Growth Rates<a class="headerlink" href="#derivatives-and-growth-rates" title="Permanent link">&para;</a></h3>
+<p>The derivative <span class="arithmatex">\(f'(n)\)</span> indicates the growth rate of <span class="arithmatex">\(f(n)\)</span>:
+- If <span class="arithmatex">\(f'(n)\)</span> grows without bound, <span class="arithmatex">\(f(n)\)</span> has superlinear growth
+- If <span class="arithmatex">\(f'(n)\)</span> approaches a constant, <span class="arithmatex">\(f(n)\)</span> has linear growth</p>
+<h3 id="integration-and-summation">Integration and Summation<a class="headerlink" href="#integration-and-summation" title="Permanent link">&para;</a></h3>
+<p>Asymptotic behavior of sums can be analyzed using integrals:
+<span class="arithmatex">\(<span class="arithmatex">\(\sum_{i=1}^n f(i) \approx \int_1^n f(x) dx\)</span>\)</span></p>
+<p><strong>Example:</strong> <span class="arithmatex">\(\sum_{i=1}^n i = \frac{n(n+1)}{2} \approx \int_1^n x dx = \frac{n^2}{2}\)</span></p>
+<h3 id="lhopitals-rule-for-limits">L'Hôpital's Rule for Limits<a class="headerlink" href="#lhopitals-rule-for-limits" title="Permanent link">&para;</a></h3>
+<p>When comparing growth rates:
+<span class="arithmatex">\(<span class="arithmatex">\(\lim_{n \to \infty} \frac{f(n)}{g(n)} = \lim_{n \to \infty} \frac{f'(n)}{g'(n)}\)</span>\)</span></p>
+<p><strong>Example:</strong> Comparing <span class="arithmatex">\(n\)</span> vs <span class="arithmatex">\(\ln n\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(\lim_{n \to \infty} \frac{n}{\ln n} = \lim_{n \to \infty} \frac{1}{1/n} = \lim_{n \to \infty} n = \infty\)</span>\)</span></p>
+<p>Therefore, <span class="arithmatex">\(\ln n = o(n)\)</span>.</p>
+<h2 id="applications-to-machine-learning">Applications to Machine Learning<a class="headerlink" href="#applications-to-machine-learning" title="Permanent link">&para;</a></h2>
+<h3 id="training-complexity">Training Complexity<a class="headerlink" href="#training-complexity" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Linear Models:</strong> <span class="arithmatex">\(O(nd)\)</span> where <span class="arithmatex">\(n\)</span> = samples, <span class="arithmatex">\(d\)</span> = features</li>
+<li><strong>Neural Networks:</strong> <span class="arithmatex">\(O(nWE)\)</span> where <span class="arithmatex">\(W\)</span> = weights, <span class="arithmatex">\(E\)</span> = epochs</li>
+<li><strong>Kernel Methods:</strong> <span class="arithmatex">\(O(n^3)\)</span> for matrix inversion</li>
+</ul>
+<h3 id="space-time-tradeoffs">Space-Time Tradeoffs<a class="headerlink" href="#space-time-tradeoffs" title="Permanent link">&para;</a></h3>
+<p>Many ML algorithms exhibit tradeoffs described by asymptotic analysis:
+- <strong>Memoization in Dynamic Programming:</strong> <span class="arithmatex">\(O(n)\)</span> space for <span class="arithmatex">\(O(1)\)</span> lookup
+- <strong>Hash Tables in Feature Engineering:</strong> <span class="arithmatex">\(O(1)\)</span> average access vs <span class="arithmatex">\(O(n)\)</span> worst case</p>
+<h3 id="convergence-analysis">Convergence Analysis<a class="headerlink" href="#convergence-analysis" title="Permanent link">&para;</a></h3>
+<p>Optimization algorithms' convergence rates:
+- <strong>Gradient Descent:</strong> <span class="arithmatex">\(O(1/\epsilon)\)</span> iterations for <span class="arithmatex">\(\epsilon\)</span>-accuracy
+- <strong>Newton's Method:</strong> <span class="arithmatex">\(O(\log \log(1/\epsilon))\)</span> quadratic convergence
+- <strong>SGD:</strong> <span class="arithmatex">\(O(1/\epsilon^2)\)</span> for non-convex problems</p>
+<h2 id="practical-examples">Practical Examples<a class="headerlink" href="#practical-examples" title="Permanent link">&para;</a></h2>
+<h3 id="algorithm-analysis-steps">Algorithm Analysis Steps<a class="headerlink" href="#algorithm-analysis-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Identify the basic operation</strong> (comparison, assignment, etc.)</li>
+<li><strong>Count operations</strong> as a function of input size</li>
+<li><strong>Apply asymptotic notation</strong> to express growth rate</li>
+<li><strong>Verify with mathematical proof</strong></li>
+</ol>
+<h3 id="common-mistakes-to-avoid">Common Mistakes to Avoid<a class="headerlink" href="#common-mistakes-to-avoid" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Confusing worst-case with average-case</li>
+<li>Ignoring lower-order terms too early in analysis</li>
+<li>Misapplying the Master Theorem conditions</li>
+<li>Forgetting constant factors matter in practice</li>
+</ul>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="../../engineering_and_data_structure/Resources/Time_Complexity_Guide/">Time Complexity Guide</a></strong> - Practical algorithm complexity analysis</li>
+<li><strong><a href="../../engineering_and_data_structure/Resources/MIT_6006_Integration_Templates/">MIT 6.006 Integration</a></strong> - Apply theory to systematic algorithm design</li>
+<li><strong><a href="../Calculus_and_Gradient_Descent/">Gradient Descent</a></strong> - See calculus applications in ML optimization</li>
+<li><strong><a href="../Linear_Algebra_for_ML/">Linear Algebra</a></strong> - Mathematical foundations for ML algorithms</li>
+</ul>
+<h2 id="cross-references-and-connections">Cross-References and Connections<a class="headerlink" href="#cross-references-and-connections" title="Permanent link">&para;</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Mathematical Background:</strong> Calculus (limits, derivatives), basic discrete mathematics</li>
+<li><strong>Recommended Reading:</strong> <a href="../Calculus_and_Gradient_Descent/">Calculus &amp; Gradient Descent</a></li>
+</ul>
+<h3 id="related-topics">Related Topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Engineering Applications:</strong> <a href="../../engineering_and_data_structure/Algorithms/Sorting_Algorithms/Sorting_Algorithms_Overview/">Algorithm Analysis</a></li>
+<li><strong>ML Applications:</strong> <a href="../../ml_fundamentals/model_evaluation/metrics_and_validation/">Model Evaluation</a> - complexity affects scalability</li>
+<li><strong>Theoretical Foundations:</strong> <a href="../../Information_Theory/">Information Theory</a> - entropy and complexity connections</li>
+</ul>
+<h3 id="advanced-extensions">Advanced Extensions<a class="headerlink" href="#advanced-extensions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Computational Complexity Theory:</strong> P vs NP, complexity classes</li>
+<li><strong>Approximation Algorithms:</strong> When exact solutions are intractable</li>
+<li><strong>Online Algorithms:</strong> Competitive analysis and worst-case ratios</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.top", "content.code.copy", "content.code.annotate", "content.action.edit", "content.tabs.link", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="../../javascripts/floating-nav.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
