@@ -22,6 +22,18 @@
             }
           },
           {
+            "id": "932a64788dd3ed8a",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.14"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.14"
+            }
+          },
+          {
             "id": "ef405ffda0e8ce35",
             "type": "leaf",
             "state": {
@@ -35,7 +47,8 @@
               "title": "Binary_Search_Variations"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -194,7 +207,7 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "731190164876a8f7",
+  "active": "932a64788dd3ed8a",
   "lastOpenFiles": [
     "_notes/Foundational knowledge plan.md",
     "_notes/engineering_and_data_structure/Algorithms/Search_Algorithms/Binary_Search_Variations.md",

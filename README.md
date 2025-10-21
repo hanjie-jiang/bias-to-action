@@ -138,6 +138,7 @@ _notes/
     ├── mathjax.js                           # Mathematical equation rendering
     └── floating-nav.js                      # Navigation enhancements
 ```
+
 ## Key Features
 
 - **Comprehensive Coverage**: From basic probability to advanced neural networks with mathematical foundations
@@ -155,7 +156,16 @@ _notes/
 
 ## Update logs
 
+### version 2025-10-20
+
+- **Monotonic Stack Problems**: Added Daily Temperatures (LeetCode #739) with comprehensive solution using decreasing monotonic stack
+- **Temperature Analysis Patterns**: Implemented both warmer and cooler temperature finding algorithms with O(n) time complexity
+- **Stack Problem Collection**: Enhanced Stack Problems section with detailed explanations of monotonic stack techniques
+- **_Algorithm Optimization**: Demonstrated how monotonic stacks improve from O(n²) brute force to O(n) optimal solutions
+- **Problem Pattern Recognition**: Added examples showing "next greater/smaller element" problem variations
+
 ### version 2025-10-13
+
 - **Complete Data Structures Suite**: Added comprehensive coverage of linked lists, stacks, and queues with dedicated folders and structured content
 - **Linear Data Structures Mastery**: Detailed theory, implementations, and problem patterns for LIFO (stacks) and FIFO (queues) operations
 - **Linked Lists Deep Dive**: Singly, doubly, and circular linked lists with implementation details and comparison to arrays
@@ -165,6 +175,7 @@ _notes/
 - **Implementation Focus**: Array-based vs linked list-based implementations with performance trade-offs and use case analysis
 
 ### version 2025-10-09
+
 - **Sorting Algorithms Mastery**: Completed comprehensive sorting algorithms section with detailed quicksort step-by-step visualizations, quickselect algorithm analysis, and partitioning mechanics
 - **Search & Sort Integration**: Finalized both search algorithms (binary search, peak finding) and sorting algorithms (quicksort, mergesort, inversion counting) with theoretical depth and practical implementations
 - **Advanced Problem Solving**: Added LeetCode problems including Kth Largest Element with multiple approaches, inversion counting with merge sort, and sorting-based techniques
@@ -179,6 +190,7 @@ _notes/
 - **Documentation Consistency**: Ensured all internal links and navigation references reflect updated page titles and content structure
 
 ### version 2025-09-29
+
 - **Mathematical Foundations Continued**: Added comprehensive Mathematical Foundations section with Asymptotic Analysis Theory and enhanced Calculus & Gradient Descent
 - **Arrays & Linked Lists Integration**: Created complete comparison guide with static arrays vs linked lists, time complexities, and implementation examples  
 - **Enhanced Arrays Overview**: Merged comprehensive data structures content into unified Arrays Overview with visual comparisons and MIT 6.006 connections
@@ -187,17 +199,20 @@ _notes/
 - **Content Optimization**: Fixed mathematical notation formatting, improved cross-references, and enhanced code examples with detailed explanations
 
 ### version 2025-09-28
+
 - **MIT 6.006 Integration Framework**: Added structured templates for seamlessly integrating MIT Introduction to Algorithms content
 - **Template System**: Created comprehensive content templates for consistent expansion of theoretical foundations
 - **Enhanced Learning Path**: Designed integration strategy combining intuitive understanding with systematic rigor
 - **Preserved Content**: All existing materials maintained while adding framework for algorithmic depth
 
 ### version 2025-08-25
+
 - updated the `engineering_and_data_structure` folder with newly added recursion content
 - added in the search and sort algorithm sections in appropriate folders
 - updated the README.md format to describe the website structure
 
 ### version 2025-08-23
+
 - restructured the `_notes\engineering_and_data_structure` section to make it self-contained
 - reorganized Data Structures section under Hash Tables with comprehensive theory and Python implementations
 - added Hash Tables Overview, Hash Functions and Collisions, and Hash Table Problems sections
@@ -206,6 +221,7 @@ _notes/
 - updated the README.md format to describe the website structure
 
 ### version 2025-08-22
+
 - added in the engineering and data structure related pages for future reference when coding
 - refactored the front page design and made sure that the pastel hero looks ok
 - fixed the math equations not showing properly but in raw format
