@@ -2,6 +2,29 @@
 
 A queue is a **First In, First Out (FIFO)** data structure where elements are added at one end (rear/back) and removed from the other end (front).
 
+In Python, we can implement Queues using built-in data types. Indeed, the Python list datatype comes in handy here. Python lists, however, have a significant drawback: the pop(0) method has $O(n)$ time complexity, while we would like it to be $O(1)$. There is another Python module named collections that offers deque, a flexible container that serves both as queue and stack implementations. We will use the deque data structure to implement the queue in this lesson.
+
+## Python Implementation
+
+In Python, there is a `deque` module, that lets you add or remove elements from both the front and the back efficiently. It's part of the collections module and is much faster than using a list for queue operations. In the case of a Queue implemented using the collections.deque, the time complexity for both the enqueue (adding an element at the end of the Queue) and dequeue (removing an element from the start of the Queue) operations is $O(1)$. This is because dequeue is implemented in a way that is very fast to change the first and the last elements. We will talk about this implementation, called Doubly Linked Lists, in further lessons.
+
+```python
+from collections import deque # double-ended queue
+queue = deque()
+
+# Add elements
+queue.append('Alice')
+queue.append('Bob')
+queue.append('Charlie')
+
+print(queue)  # Output: deque(['Alice', 'Bob', 'Charlie'])
+
+# Remove an element
+queue.popleft()
+
+print(queue)  # Output: deque(['Bob', 'Charlie'])
+```
+
 ## Queue Operations
 
 ### Core Operations

@@ -140,7 +140,7 @@ def days_until_cooler(temps):
         while stack and temps[stack[-1]] >= temps[i]: #stack[-1] should be the index of coolest temperature and compare it with current temp, if the current coolest is higher than current, then pop and substitute it with current temp
             stack.pop()
         result[i] = stack[-1] - i if stack else -1
-        stack.append(i)
+        stack.append(i) # if not going into while loop, then directly add the current index to stack for count of lower temperature
     
     return result
 ```
