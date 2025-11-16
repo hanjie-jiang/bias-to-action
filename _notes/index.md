@@ -9,7 +9,7 @@ hide:
 <div class="hero">
   <div class="hero__content">
     <h1>ML & Computer Science Fundamentals</h1>
-    <p class="subtitle">From algorithms and data structures to machine learning and neural networks.</p>
+    <p class="subtitle">From algorithms and data structures to machine learning, transformers, and modern deep learning.</p>
     <p class="hero__actions">
       <div class="hero-button-container">
         <a class="hero-button" href="ml_fundamentals/ML_Fundamentals_Overview/">ML Fundamentals</a>
@@ -78,6 +78,21 @@ hide:
           </ul>
         </div>
       </div>
+
+      <div class="hero-button-container">
+        <a class="hero-button" href="attention_and_transformer_modern_neural_network/Attention_and_Transformers_Overview/">Attention & Transformers</a>
+        <div class="hero-dropdown">
+          <h4>Modern Neural Networks</h4>
+          <ul>
+            <li><a href="attention_and_transformer_modern_neural_network/Attention_and_Transformers_Overview/">Overview</a></li>
+            <li><a href="attention_and_transformer_modern_neural_network/attention_fundamentals/Attention_Mechanism_Overview/">Attention Mechanism</a></li>
+            <li><a href="attention_and_transformer_modern_neural_network/self_attention/Self_Attention_Overview/">Self-Attention</a></li>
+            <li><a href="attention_and_transformer_modern_neural_network/multi_head_attention/Multi_Head_Attention_Overview/">Multi-Head Attention</a></li>
+            <li><a href="attention_and_transformer_modern_neural_network/transformer_architecture/Transformer_Architecture_Overview/">Transformer Architecture</a></li>
+            <li><a href="attention_and_transformer_modern_neural_network/transformer_variants/BERT_and_GPT_Overview/">BERT & GPT</a></li>
+          </ul>
+        </div>
+      </div>
     </p>
   </div>
 </div>
@@ -107,6 +122,10 @@ hide:
     <h3>🧠 Neural Networks</h3>
     <p>Deep learning fundamentals, backpropagation, and neural network architectures.</p>
   </a>
+  <a class="card" href="attention_and_transformer_modern_neural_network/Attention_and_Transformers_Overview/">
+    <h3>⚡ Attention & Transformers</h3>
+    <p>Modern deep learning: attention mechanisms, self-attention, transformers, BERT, and GPT architectures.</p>
+  </a>
 </section>
 
 <section class="learning-pathway">
@@ -126,8 +145,8 @@ hide:
         <p>Apply your algorithmic knowledge to ML fundamentals, probability, and statistical learning theory.</p>
       </div>
       <div class="pathway-step">
-        <h3>4. Advanced Applications</h3>
-        <p>Dive into neural networks, deep learning, and modern ML applications with solid theoretical grounding.</p>
+        <h3>4. Neural Networks & Deep Learning</h3>
+        <p>Progress through classical neural networks, attention mechanisms, and transformers to modern architectures like BERT and GPT.</p>
       </div>
     </div>
   </div>
