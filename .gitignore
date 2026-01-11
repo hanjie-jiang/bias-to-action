@@ -2,15 +2,11 @@
 site/
 
 # Python
-*.pyc
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-env/
-venv/
-ENV/
 build/
 develop-eggs/
 dist/
@@ -100,6 +96,9 @@ yarn-error.log*
 .env
 .env.local
 .env.*.local
+.venv/
+env/
+ENV/
 
 # Temporary files
 *.tmp
